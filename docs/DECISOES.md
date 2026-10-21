@@ -153,7 +153,7 @@ A psicologia engaja mais por like, mas tem demanda relativa menor; nenhum canal 
 - **Handle:** `@Dossie45` confirmado e no ar em 21/10/2026. Na checagem inicial, `@ArquivoNoturno`, `@SalaEscura`, `@Dossie404`, `@Canal3AM`, `@ORelatorio`, `@ArquivoDaMeiaNoite`, `@Arquivo3AM`, `@DossieNoturno` e `@RelatorioNoturno` estavam ocupados; `@Dossie45`, `@ArquivoNoturno45` e `@Arquivo307` retornaram 404. Alternativas: **Dossiê 45** (adotado), **Arquivo 3:07** (`@Arquivo307`), **Arquivo Noturno 45**.
 - **Por que rebrandar e não criar canal novo:** 6 inscritos não são continuidade relevante; o piloto já está no canal; uma marca é mais simples de operar. Criar canal novo só se o handle/nome escolhido estiver indisponível ou se quisermos preservar o canal antigo.
 
-**Execução em 21/10/2026:** handle `@Dossie45` e avatar/banner no ar. A página pública ainda mostra `Dossie45`, descrição vazia e 10 shorts (9 de psicologia). Antes de publicar o 002, fechar nome/descrição e deslistar os antigos; ver `docs/REBRANDING.md`.
+**Execução em 21/10/2026:** handle `@Dossie45` e avatar/banner no ar; nome público **Dossiê 45** confirmado; os 9 shorts de psicologia foram privados e a aba Shorts mostra só o piloto. Falta colar a descrição de `identidade/descricao-canal.txt` no Studio. Ver `docs/REBRANDING.md`.
 
 ## youtube-agent-skill — adoção seletiva em 2026-10-21
 

@@ -4,6 +4,24 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-21**.
 
+## 2026-10-21 — Rebranding fechado: Dossiê 45, 9 shorts privados, descrição criada
+
+**Entregue**
+- Nome público **Dossiê 45** confirmado em `youtube.com/@Dossie45`.
+- Os 9 shorts de psicologia foram privados; a aba Shorts mostra **1** vídeo
+  público, o piloto `001-faroleiros`.
+- Descrição do canal criada em `identidade/descricao-canal.txt` — 520
+  caracteres, impessoal, com proposta, método, frequência e hashtags.
+- `docs/REBRANDING.md`, `docs/IDENTIDADE.md`, `MEMORIA.md` e `docs/PLANO.md`
+  atualizados com o estado real do canal.
+
+**Pendente**
+- Colar a descrição no Studio e salvar palavras-chave/país.
+- Conferir em janela anônima: nome novo, bio nova e 1 Short de mistério.
+
+**Decisão**
+- Só publicar o 002 depois de colar a descrição e conferir a vitrine pública.
+
 ## 2026-10-21 — youtube-agent-skill adotado seletivamente; auditoria do rebranding
 
 **Entregue**
@@ -19,14 +37,13 @@
 - Skills atualizadas: `gancho` aponta para as 21 fórmulas; `publicacao` roda o
   lint de título; nova skill `retencao` para as 48 h.
 
-**Auditoria do rebranding (verificação pública em 21/10/2026)**
+**Auditoria do rebranding (verificação pública em 21/10/2026 — estado na época; resolvido na entrada acima)**
 - Avatar e banner **estão no ar**: avatar 900×900 e banner recortado em
   2048×339; o texto principal e o subtítulo cabem na área segura.
-- A página pública ainda mostra o nome **`Dossie45`** (sem acento/espaço),
-  descrição vazia e **10 shorts** na aba Shorts — os 9 de psicologia continuam
-  listados. Pode haver cache no nome, mas a lista de Shorts não é cache.
-- Antes do 002: salvar `Dossiê 45`, preencher a descrição e deslistar os 9
-  shorts antigos; só então publicar.
+- Naquele momento, a página pública ainda mostrava o nome **`Dossie45`** (sem
+  acento/espaço), descrição vazia e **10 shorts** na aba Shorts. O nome foi
+  corrigido e os 9 shorts antigos foram privados na sequência.
+- Antes do 002: colar a descrição e conferir a vitrine pública.
 
 **Decisão**
 - Adotar `yt-retention`, `hooks.json` e `yt-title` agora.

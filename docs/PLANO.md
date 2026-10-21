@@ -14,7 +14,7 @@
 
 > **Fase 1 concluída e Fase 2 iniciada (21/10/2026):** piloto `001-faroleiros` — 13 cenas, 45,01 s, QA técnico **PASS** (−15,6 LUFS), template `misterio-45` extraído e **vídeo aprovado pelo usuário** (“ficou perfeito”). Piloto **publicado no YouTube Shorts**: https://youtube.com/shorts/WKuNVjl3d5M. Próximo: validação de nicho + 5 vídeos.
 
-> **Nicho decidido em 21/10/2026:** Mistério/Arquivo é a âncora (0,10 views/inscrito por canal vs 0,06 da psicologia; 3 canais ≥1,0 vs 0). A validação passa a ser **6 vídeos de mistério** (piloto + 5), no canal **Dossiê 45** (`@Dossie45`). O rebranding visual (avatar/banner) está no ar; nome, descrição e deslistagem dos 9 shorts antigos ainda precisam ser confirmados antes do 002. Psicologia fica como fallback em canal novo se a retenção falhar. Dados em `docs/NICHO.md`; decisão em `docs/DECISOES.md`.
+> **Nicho decidido em 21/10/2026:** Mistério/Arquivo é a âncora (0,10 views/inscrito por canal vs 0,06 da psicologia; 3 canais ≥1,0 vs 0). A validação passa a ser **6 vídeos de mistério** (piloto + 5), no canal **Dossiê 45** (`@Dossie45`). O rebranding visual está no ar; nome e deslistagem dos 9 shorts antigos concluídos. Falta colar a descrição de `identidade/descricao-canal.txt` antes do 002. Psicologia fica como fallback em canal novo se a retenção falhar. Dados em `docs/NICHO.md`; decisão em `docs/DECISOES.md`.
 
 ## Capacidade desta máquina
 

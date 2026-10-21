@@ -73,7 +73,7 @@ Marca de trabalho: **Dossiê 45** (handle `@Dossie45`, confirmado no canal).
 | Dossiê Noturno | `@DossieNoturno` | ocupado |
 | Relatório Noturno | `@RelatorioNoturno` | ocupado |
 
-> Checagem por HTTP 404 no perfil; não é garantia até confirmar dentro do YouTube Studio. “Dossiê 45” é a proposta: nome de arquivo/investigação + duração do formato.
+> Checagem por HTTP 404 no perfil; não é garantia até confirmar dentro do YouTube Studio. **“Dossiê 45” foi adotado e confirmado no canal em 21/10/2026.**
 
 ## Arquivos de marca
 
@@ -81,6 +81,7 @@ Marca de trabalho: **Dossiê 45** (handle `@Dossie45`, confirmado no canal).
 |---|---|---|
 | `identidade/banner.png` | banner do canal | 2048×1152; todo o texto dentro da área segura 1235×338 |
 | `identidade/avatar.png` | avatar do canal | 800×800 |
+| `identidade/descricao-canal.txt` | descrição do canal | 520 caracteres, pronta para colar no Studio |
 | `identidade/banner.html` | fonte editável do banner | paleta e tipografia do projeto |
 | `identidade/avatar.html` | fonte editável do avatar | idem |
 
@@ -114,9 +115,9 @@ Para o avatar, trocar `2048,1152` por `800,800` e o nome do arquivo. Se o caminh
 
 - [x] Confirmar `@Dossie45` no canal — **21/10/2026**, mesmo channel ID do piloto (`UCwgP68Uen2KoIh2R-j231Yw`).
 - [x] Subir `identidade/avatar.png` e `identidade/banner.png` — verificados no ar em 21/10.
-- [ ] Nome de exibição: usuário confirma **Dossiê 45**; a página pública ainda mostra `Dossie45` (possível cache). Reconfirmar no Studio.
-- [ ] Descrição impessoal: “Arquivo de casos sem solução. Fatos com fonte; lendas marcadas como lenda.” A página pública ainda mostra vazio.
-- [ ] Unlistar/privar os 9 shorts de psicologia; a aba Shorts ainda mostra 10 vídeos.
-- [ ] Revisar links, país, palavras-chave e configurações de upload.
+- [x] Nome de exibição **Dossiê 45** — confirmado na página pública em 21/10.
+- [x] Privar os 9 shorts de psicologia; a aba Shorts mostra **1** vídeo (o piloto).
+- [ ] Colar a descrição de `identidade/descricao-canal.txt` (520 caracteres) e salvar palavras-chave/país.
+- [ ] Revisar links e configurações de upload.
 - [ ] Atualizar `docs/`, `MEMORIA.md` e `biblioteca/publicados.csv` se o nome do canal aparecer.
 - [ ] Só depois publicar o vídeo 002.

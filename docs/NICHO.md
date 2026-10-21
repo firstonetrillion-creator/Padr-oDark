@@ -68,7 +68,7 @@ Candidatos avaliados: **Dossiê 45** (handle `@Dossie45`, **adotado**) e **Arqui
 
 ## Canal atual — auditoria em 2026-10-21
 
-Canal: [Cod Mind Million](https://www.youtube.com/@CodMindMillion) — **6 inscritos**, 10 shorts, sem aba de vídeos longos. Rebranding para [Dossiê 45](https://www.youtube.com/@Dossie45) em curso.
+Canal: [Cod Mind Million](https://www.youtube.com/@CodMindMillion) — **6 inscritos**, 10 shorts, sem aba de vídeos longos. Rebranding para [Dossiê 45](https://www.youtube.com/@Dossie45) concluído: nome novo, 9 shorts antigos privados e 1 piloto público.
 
 Conteúdo existente: psicologia/desenvolvimento pessoal. Exemplos: “Sinais de que alguém está te manipulando” (546 views) e “O ego espiritual e o autoengano do desenvolvimento pessoal” (1.600 views). O piloto de mistério “Os três faroleiros que sumiram de um farol trancado” tem 6 views.
 

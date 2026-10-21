@@ -66,8 +66,8 @@ Sem admin: tudo em `C:\Users\valentim\Tools` e no perfil do usuário.
 
 ## Próximos passos
 
-1. Fechar o rebranding do canal **Dossiê 45** (`@Dossie45`): nome, descrição,
-   avatar/banner e deslistagem dos 9 shorts de psicologia.
+1. Colar a descrição de `identidade/descricao-canal.txt` no Studio e salvar
+   palavras-chave/país. Nome, avatar/banner e deslistagem já estão prontos.
 2. Publicar os 5 vídeos restantes de **Mistério 45** (o piloto é 1/6).
 3. Em 23/10, medir o piloto com
    `tools/youtube-agent-skill/yt-retention/retention.py` e preencher

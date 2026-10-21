@@ -19,7 +19,7 @@
 | Validação de nicho | **concluída (metadados)** | `logs/nicho-2026-10-21.json`, `docs/NICHO.md` |
 | Versionamento | **git iniciado (21/10/2026)** | commit `782df62`, tag `ep-001-publicado` |
 | 6 vídeos de validação | **1/6 publicado** | piloto + 5 restantes |
-| Canal | **Dossiê 45**: handle e avatar/banner no ar; página pública ainda mostra nome antigo, bio vazia e 10 shorts | [canal](https://youtube.com/@Dossie45), `docs/REBRANDING.md` |
+| Canal | **Dossiê 45**: nome, avatar/banner e 9 shorts antigos privados; falta colar a descrição | [canal](https://youtube.com/@Dossie45), `docs/REBRANDING.md` |
 | Ferramentas de análise | **adotadas seletivamente** | `tools/youtube-agent-skill/`, `docs/GANCHOS-21.md` |
 | `codebase-memory-mcp` | **não instalado** (adiado) | decisão em `docs/DECISOES.md` |
 
@@ -220,7 +220,7 @@ ffmpeg -i final_raw.mp4 -c:v copy `
 - PI-Desktop fica fora do MVP; reavaliar só depois do primeiro vídeo (ver `docs/DECISOES.md`).
 - Hypit é referência conceitual, não dependência do MVP; não empacotar no kit sem licença comercial.
 - Um canal = um nicho; não misturar Mistério/Arquivo com Psicologia sombria.
-- Mistério/Arquivo é a âncora da Fase 2; o Cod Mind Million foi rebrandado para **Dossiê 45** (handle `@Dossie45`, avatar/banner no ar). Nome/descrição/deslistagem ainda precisam ser confirmados na página pública. Psicologia fica como fallback em canal novo, não no mesmo canal.
+- Mistério/Arquivo é a âncora da Fase 2; o Cod Mind Million foi rebrandado para **Dossiê 45** (handle `@Dossie45`, avatar/banner no ar). Nome público e deslistagem dos 9 shorts antigos concluídos; falta colar a descrição de `identidade/descricao-canal.txt`. Psicologia fica como fallback em canal novo, não no mesmo canal.
 - `youtube-agent-skill` é adotado **seletivamente** (retenção, hooks como checklist, lint de título). `yt-viral` e `yt-audit` ficam para depois dos 6 vídeos; `hookscore.py` não é usado em PT-BR.
 
 ## 9. Protocolo de memória

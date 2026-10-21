@@ -9,10 +9,10 @@
 | Item | Estado em 21/10/2026 |
 |---|---|
 | Handle `@Dossie45` | **no ar** — mesmo canal do piloto (`UCwgP68Uen2KoIh2R-j231Yw`) |
-| Nome de exibição | usuário confirma **Dossiê 45**; a página pública consultada agora ainda mostra `Dossie45` (possível cache) |
-| Descrição / palavras-chave | **vazias na página pública** — confirmar se foram salvas no Studio |
+| Nome de exibição | **Dossiê 45** — confirmado na página pública em 21/10/2026 |
+| Descrição / palavras-chave | descrição **pronta em `identidade/descricao-canal.txt`**, ainda vazia no canal; palavras-chave pendentes |
 | Avatar / banner | **no ar** — avatar 900×900 e banner recortado em 2048×339; texto dentro da área segura |
-| Shorts de psicologia | **ainda públicos** — a aba Shorts mostra 10 vídeos (9 antigos + piloto) |
+| Shorts de psicologia | **privados** — a aba Shorts mostra **1** vídeo público (o piloto de mistério) |
 
 ## Antes de tocar em qualquer coisa
 
@@ -34,16 +34,20 @@ Dossiê 45
 @Dossie45
 ```
 
-**Descrição do canal**
+**Descrição do canal** — 520 caracteres, também em `identidade/descricao-canal.txt`
 
 ```
 Casos sem solução, contados em 45 segundos.
 
-Arquivo de mistérios reais: faróis abandonados, navios que não chegaram, registros que param no meio. Cada vídeo parte de um fato documentado e termina na pergunta que ninguém respondeu.
+O Dossiê 45 é um arquivo de mistérios documentados: faróis abandonados, navios que nunca chegaram, registros que param no meio, pessoas que desapareceram sem deixar explicação.
 
-Fatos com fonte. Lendas marcadas como lenda. Nada de reupload.
+Cada vídeo parte de um fato verificável e termina na pergunta que ninguém respondeu. Fatos têm fonte. Lendas são marcadas como lendas. Nada de reupload.
 
 Casos novos toda semana.
+
+Se você coleciona casos sem solução, o arquivo está aberto.
+
+#mistério #casossemsolução #arquivo
 ```
 
 **Palavras-chave do canal** (Studio → Configurações → Canal → Informações básicas)
@@ -74,12 +78,12 @@ Fonte: <órgão, documento ou arquivo>
 
 | # | Onde | Ação | Por quê nesta ordem |
 |---|---|---|---|
-| 1 | Studio → Personalização → Informações básicas | Trocar **nome** para “Dossiê 45” | ⚠️ usuário confirma; página pública ainda mostra `Dossie45` (cache ou não salvo) |
+| 1 | Studio → Personalização → Informações básicas | Trocar **nome** para “Dossiê 45” | ✅ feito em 21/10 |
 | 2 | Studio → Personalização → Informações básicas | Trocar **handle** para `@Dossie45` | ✅ feito em 21/10 |
-| 3 | Studio → Personalização → Informações básicas | Colar descrição, palavras-chave e país | ⚠️ página pública ainda mostra descrição vazia |
+| 3 | Studio → Personalização → Informações básicas | Colar descrição, palavras-chave e país | ⚠️ texto pronto; falta colar no Studio |
 | 4 | Studio → Personalização → Imagem da marca | Subir avatar (800×800) e banner (2048×1152, área segura 1235×338) | ✅ avatar e banner no ar em 21/10 |
-| 5 | Studio → Conteúdo | **Não listar** os 9 shorts de psicologia | ⚠️ aba Shorts ainda mostra 10 vídeos |
-| 6 | Studio → Conteúdo | Conferir que `001-faroleiros` continua **público** | É a prova social da marca nova |
+| 5 | Studio → Conteúdo | **Não listar** os 9 shorts de psicologia | ✅ feito; a aba Shorts mostra só o piloto |
+| 6 | Studio → Conteúdo | Conferir que `001-faroleiros` continua **público** | ✅ é a prova social da marca nova |
 | 7 | Studio → Playlists | Criar “Casos” e adicionar o 001 | Dá destino ao link da descrição |
 | 8 | janela anônima | Abrir `youtube.com/@Dossie45` | Ver o canal como o público vê: nome, bio, só mistério na aba Shorts |
 
@@ -115,8 +119,8 @@ O `001` **não** se re-renderiza por causa do nome. A regra é não gastar 3 min
 
 - [x] Confirmar `@Dossie45` no Studio.
 - [x] Subir avatar e banner (verificados no ar em 21/10).
-- [ ] Salvar o nome de exibição **Dossiê 45** com acento e espaço; a página pública ainda mostra `Dossie45`.
-- [ ] Salvar descrição, palavras-chave e país; a página pública ainda mostra descrição vazia.
-- [ ] Deslistar os 9 shorts de psicologia; a aba Shorts ainda mostra 10 vídeos.
-- [ ] Conferir o canal em janela anônima com **1** Short de mistério visível.
+- [x] Salvar o nome de exibição **Dossiê 45** com acento e espaço; confirmado na página pública.
+- [x] Privar os 9 shorts de psicologia; a aba Shorts mostra **1** vídeo (o piloto).
+- [ ] Colar a descrição de `identidade/descricao-canal.txt` e salvar palavras-chave/país.
+- [ ] Conferir o canal em janela anônima com nome novo, bio nova e **1** Short de mistério.
 - [ ] Só então publicar o 002.
