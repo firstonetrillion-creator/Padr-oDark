@@ -18,7 +18,7 @@ O último registro do diário de bordo é de **8h de 25 de novembro de 1872**, a
 > Wikipedia foi usada apenas como porta de entrada para as referências acima; não é a fonte citada no vídeo.
 
 ## Twist
-A cena mais famosa do caso — o jantar ainda na mesa, o chá quente — **não está nos registros originais**. Ela aparece em um retelling de 1883, com detalhes inventados. O que os documentos sustentam é outra coisa: um navio navegável, um bote faltando, dez pessoas desaparecidas e nenhum corpo.
+A cena mais famosa do caso — o jantar ainda na mesa — **não está nos registros originais**. O núcleo dela aparece em um retelling de 1883, com detalhes inventados; versões posteriores acrescentaram o chá quente. O que os documentos sustentam é outra coisa: um navio navegável, um bote faltando, dez pessoas desaparecidas e nenhum corpo.
 
 ## Pistas
 1. O navio foi encontrado com velas parciais, navegável, sem tripulação e com o bote salva-vidas ausente.

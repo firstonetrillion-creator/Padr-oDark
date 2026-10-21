@@ -17,7 +17,7 @@ Lint PT-BR: **98/100**. Único aviso: truncamento no feed mobile (“Mary Celest
 
 ## Descrição
 
-Em dezembro de 1872, o Mary Celeste foi encontrado à deriva no Atlântico, sem ninguém a bordo. O bote salva-vidas faltava. Dez pessoas desapareceram — e nunca foram encontradas. A cena do jantar servido é uma invenção posterior; o que os registros mostram é um navio navegável e uma evacuação sem explicação.
+Em dezembro de 1872, o Mary Celeste foi encontrado à deriva no Atlântico, sem ninguém a bordo. O bote salva-vidas faltava. Dez pessoas desapareceram — e nunca foram encontradas. A cena do jantar servido é uma invenção posterior; o que os registros mostram é um navio navegável e um abandono sem explicação.
 
 Fontes: Paul Begg, *Mary Celeste: The Greatest Mystery of the Sea* (2005); Brian Hicks, *Ghost Ship* (2004); Charles Edey Fay, *Mary Celeste* (1942); registros do Tribunal de Vice-Almirantado de Gibraltar (1872–73).
 
