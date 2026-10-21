@@ -25,7 +25,7 @@ Ao fim de **cada etapa**, atualizar `MEMORIA.md` (§1–§3) e acrescentar uma e
 ## Fluxo
 
 ```
-briefing -> gancho -> roteiro -> shotlist -> voz -> render -> QA -> publicação
+briefing -> gancho -> roteiro -> shotlist -> voz -> render -> QA -> publicação -> retenção (48 h)
 ```
 
 Cada etapa tem uma skill em `.opencode/skills/<id>/SKILL.md` e um artefato em `episodios/<slug>/`.
@@ -38,12 +38,13 @@ Cada etapa tem uma skill em `.opencode/skills/<id>/SKILL.md` e um artefato em `e
 | `docs/` | decisões, stack, nicho, plano, QA, identidade, arquitetura, histórico |
 | `docs/ARQUITETURA.md` | contratos do código |
 | `docs/HISTORICO.md` | linha do tempo do que foi entregue |
-| `.opencode/skills/` | instruções operacionais (briefing, gancho, roteiro, voz, render, qa, publicacao) |
+| `.opencode/skills/` | instruções operacionais (briefing, gancho, roteiro, voz, render, qa, publicacao, retencao) |
 | `templates/misterio-45/` | composição validada + beat sheet + README |
 | `biblioteca/` | ganchos, fontes, métricas |
 | `episodios/` | um diretório por vídeo |
 | `models/vozes/` | Piper |
 | `scripts/` | instalação, verificação, voz, transcrição, QA, benchmark |
+| `tools/youtube-agent-skill/` | vendor MIT: retenção, hooks.json, lint de título |
 | `bench/` | composição de teste G0 |
 
 ## Ferramentas

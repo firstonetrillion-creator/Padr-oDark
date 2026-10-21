@@ -6,13 +6,13 @@
 
 ## Estado em 21/10/2026
 
-| Item | Estado |
+| Item | Estado em 21/10/2026 |
 |---|---|
 | Handle `@Dossie45` | **no ar** — mesmo canal do piloto (`UCwgP68Uen2KoIh2R-j231Yw`) |
-| Nome de exibição | `Dossie45` — trocar para **Dossiê 45** (acento e espaço) |
-| Descrição / palavras-chave | vazias |
-| Avatar / banner | gerados em `identidade/` — falta subir |
-| Shorts de psicologia | **ainda públicos** (a aba Shorts mostra 10 vídeos) |
+| Nome de exibição | usuário confirma **Dossiê 45**; a página pública consultada agora ainda mostra `Dossie45` (possível cache) |
+| Descrição / palavras-chave | **vazias na página pública** — confirmar se foram salvas no Studio |
+| Avatar / banner | **no ar** — avatar 900×900 e banner recortado em 2048×339; texto dentro da área segura |
+| Shorts de psicologia | **ainda públicos** — a aba Shorts mostra 10 vídeos (9 antigos + piloto) |
 
 ## Antes de tocar em qualquer coisa
 
@@ -74,11 +74,11 @@ Fonte: <órgão, documento ou arquivo>
 
 | # | Onde | Ação | Por quê nesta ordem |
 |---|---|---|---|
-| 1 | Studio → Personalização → Informações básicas | Trocar **nome** para “Dossiê 45” | ✅ handle feito; falta o acento no nome |
+| 1 | Studio → Personalização → Informações básicas | Trocar **nome** para “Dossiê 45” | ⚠️ usuário confirma; página pública ainda mostra `Dossie45` (cache ou não salvo) |
 | 2 | Studio → Personalização → Informações básicas | Trocar **handle** para `@Dossie45` | ✅ feito em 21/10 |
-| 3 | Studio → Personalização → Informações básicas | Colar descrição, palavras-chave e país | Fecha a identidade textual |
-| 4 | Studio → Personalização → Imagem da marca | Subir avatar (800×800) e banner (2048×1152, área segura 1235×338) | Último item visual; sem eles o canal fica “novo pela metade” |
-| 5 | Studio → Conteúdo | **Não listar** os 9 shorts de psicologia | Limpa o canal sem apagar métrica; privado também serve, mas não listado preserva acesso por link |
+| 3 | Studio → Personalização → Informações básicas | Colar descrição, palavras-chave e país | ⚠️ página pública ainda mostra descrição vazia |
+| 4 | Studio → Personalização → Imagem da marca | Subir avatar (800×800) e banner (2048×1152, área segura 1235×338) | ✅ avatar e banner no ar em 21/10 |
+| 5 | Studio → Conteúdo | **Não listar** os 9 shorts de psicologia | ⚠️ aba Shorts ainda mostra 10 vídeos |
 | 6 | Studio → Conteúdo | Conferir que `001-faroleiros` continua **público** | É a prova social da marca nova |
 | 7 | Studio → Playlists | Criar “Casos” e adicionar o 001 | Dá destino ao link da descrição |
 | 8 | janela anônima | Abrir `youtube.com/@Dossie45` | Ver o canal como o público vê: nome, bio, só mistério na aba Shorts |
@@ -113,8 +113,10 @@ O `001` **não** se re-renderiza por causa do nome. A regra é não gastar 3 min
 
 ## Pendências que só você pode fazer
 
-- [ ] Confirmar `@Dossie45` no Studio.
-- [ ] Trocar nome, handle, descrição, palavras-chave e país.
-- [ ] Subir avatar e banner.
-- [ ] Deslistar os 9 shorts de psicologia.
-- [ ] Conferir o canal em janela anônima.
+- [x] Confirmar `@Dossie45` no Studio.
+- [x] Subir avatar e banner (verificados no ar em 21/10).
+- [ ] Salvar o nome de exibição **Dossiê 45** com acento e espaço; a página pública ainda mostra `Dossie45`.
+- [ ] Salvar descrição, palavras-chave e país; a página pública ainda mostra descrição vazia.
+- [ ] Deslistar os 9 shorts de psicologia; a aba Shorts ainda mostra 10 vídeos.
+- [ ] Conferir o canal em janela anônima com **1** Short de mistério visível.
+- [ ] Só então publicar o 002.

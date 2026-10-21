@@ -153,6 +153,10 @@ O fade final para preto é intencional e ignorado. O QA **não** substitui a rev
 | `scripts/qa.ps1` | QA técnico automático | `final.mp4` → `QA PASS/FAIL` |
 | `scripts/check-contrato.ps1` | valida os invariantes da composição antes do render | `index.html` → `PASS/FAIL` (exit 1 em falha) |
 | `scripts/novo-episodio.ps1` | cria episódio a partir do template, com carimbo de origem | `NNN-slug` → `episodios/<slug>/` + `.template-version` |
+| `tools/youtube-agent-skill/yt-retention/retention.py` | lê o CSV de retenção do Studio e reporta 3 s, 10 s, 30 s (legado), quedas e slide | `retencao.csv` + `--duration` → texto ou JSON |
+| `tools/youtube-agent-skill/yt-package/title.py` | lint de título + thumbnail em PT-BR | `--title`/`--thumb` ou arquivo → issues + score heurístico |
+| `tools/youtube-agent-skill/yt-script/hooks.json` | fonte das 21 fórmulas de gancho | consulta; adaptação em `docs/GANCHOS-21.md` |
+| `scripts/test_youtube_agent.py` | testes dos helpers de análise | `unittest` (9 casos) |
 
 ## 7. Template × episódio
 
@@ -189,4 +193,5 @@ Não “corrigir” esses avisos sem medir o custo: o render atual leva ~3m18s e
 - Mudou atributo/contrato de cena, áudio, tempo, render ou QA.
 - Novo script ou mudança de entrada/saída.
 - Mudança no template que afete episódios existentes.
+- Mudança no parser de retenção ou nas janelas de 3 s/10 s.
 - Descoberta de armadilha nova (registrar também em `MEMORIA.md` §7).

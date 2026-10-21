@@ -2,8 +2,9 @@
 
 Framework de produção de vídeo curto **faceless** ("dark") para YouTube Shorts, TikTok e Reels.
 
-> Status: **cérebro instalado** + **piloto 001 aprovado** (QA PASS, −15,6 LUFS) + template `misterio-45`.
-> Pronto para publicar e validar o nicho.
+> Status: **cérebro instalado** + **piloto 001 aprovado** (QA PASS, −15,6 LUFS) +
+> template `misterio-45` + **Dossiê 45 em rebranding** + ferramentas de análise
+> (retenção 3 s/10 s, 21 ganchos e lint de título).
 > Última atualização: 2026-10-21
 
 ## O que é
@@ -36,6 +37,7 @@ Padrao-Dark/
 ├── models/vozes/    modelos Piper
 ├── bench/           composição de teste (gate G0)
 ├── scripts/         instalação e automação
+├── tools/           vendor seletivo de ferramentas de análise
 └── logs/            instalação e execução
 ```
 
@@ -64,8 +66,11 @@ Sem admin: tudo em `C:\Users\valentim\Tools` e no perfil do usuário.
 
 ## Próximos passos
 
-1. Aprovar o piloto **Mistério 45** (`001-faroleiros`) e publicar
-2. Validar nicho com yt-dlp (50 shorts por nicho; views por inscrito)
-3. Publicar 6 vídeos (3 por nicho candidato)
-4. Medir retenção e decidir o nicho âncora
-5. Só depois do primeiro vídeo publicado: instalar `codebase-memory-mcp`
+1. Fechar o rebranding do canal **Dossiê 45** (`@Dossie45`): nome, descrição,
+   avatar/banner e deslistagem dos 9 shorts de psicologia.
+2. Publicar os 5 vídeos restantes de **Mistério 45** (o piloto é 1/6).
+3. Em 23/10, medir o piloto com
+   `tools/youtube-agent-skill/yt-retention/retention.py` e preencher
+   `biblioteca/publicados.csv`.
+4. Decidir manter/ajustar o formato com base na retenção de 3 s e 10 s.
+5. Só depois dos 6 vídeos: reavaliar `yt-viral` e `yt-audit`.

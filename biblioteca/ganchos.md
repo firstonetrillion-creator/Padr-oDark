@@ -32,3 +32,8 @@
 - Sem "você não vai acreditar".
 - O gancho precisa ser entregue pelo vídeo.
 - Testar em voz alta antes de aprovar.
+
+## Checklist ampliado
+
+As 21 fórmulas adaptadas para PT-BR estão em `docs/GANCHOS-21.md`. A fonte
+original (`hooks.json`) fica em `tools/youtube-agent-skill/yt-script/`.

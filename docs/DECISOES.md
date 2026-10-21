@@ -148,10 +148,44 @@ A psicologia engaja mais por like, mas tem demanda relativa menor; nenhum canal 
 
 **Decisão:**
 - **Mistério/Arquivo é o nicho âncora da Fase 2.**
-- **Rebrandar o Cod Mind Million** para uma marca de arquivo/mistério — nome de trabalho **“Dossiê 45”** (handle `@Dossie45`, disponível na checagem; confirmar no YouTube Studio). Arquivar/unlistar os 9 shorts antigos de psicologia e manter o piloto.
+- **Rebrandar o Cod Mind Million** para uma marca de arquivo/mistério — nome **“Dossiê 45”** (handle `@Dossie45`, confirmado em 21/10). Arquivar/unlistar os 9 shorts antigos de psicologia e manter o piloto.
 - **Validar com 6 vídeos de mistério** (piloto + 5), não 3+3, para não misturar nichos no mesmo canal. Se a retenção falhar, testar Psicologia sombria em um canal novo; não no mesmo canal.
-- **Handle:** confirmar no YouTube Studio antes de renomear. Na checagem de 21/10/2026, `@ArquivoNoturno`, `@SalaEscura`, `@Dossie404`, `@Canal3AM`, `@ORelatorio`, `@ArquivoDaMeiaNoite`, `@Arquivo3AM`, `@DossieNoturno` e `@RelatorioNoturno` estão ocupados. `@Dossie45`, `@ArquivoNoturno45` e `@Arquivo307` retornaram 404 (disponíveis na checagem). Alternativas: **Dossiê 45** (preferido), **Arquivo 3:07** (`@Arquivo307`), **Arquivo Noturno 45**.
+- **Handle:** `@Dossie45` confirmado e no ar em 21/10/2026. Na checagem inicial, `@ArquivoNoturno`, `@SalaEscura`, `@Dossie404`, `@Canal3AM`, `@ORelatorio`, `@ArquivoDaMeiaNoite`, `@Arquivo3AM`, `@DossieNoturno` e `@RelatorioNoturno` estavam ocupados; `@Dossie45`, `@ArquivoNoturno45` e `@Arquivo307` retornaram 404. Alternativas: **Dossiê 45** (adotado), **Arquivo 3:07** (`@Arquivo307`), **Arquivo Noturno 45**.
 - **Por que rebrandar e não criar canal novo:** 6 inscritos não são continuidade relevante; o piloto já está no canal; uma marca é mais simples de operar. Criar canal novo só se o handle/nome escolhido estiver indisponível ou se quisermos preservar o canal antigo.
+
+**Execução em 21/10/2026:** handle `@Dossie45` e avatar/banner no ar. A página pública ainda mostra `Dossie45`, descrição vazia e 10 shorts (9 de psicologia). Antes de publicar o 002, fechar nome/descrição e deslistar os antigos; ver `docs/REBRANDING.md`.
+
+## youtube-agent-skill — adoção seletiva em 2026-10-21
+
+Repositório: [`Jakeschincariol/youtube-agent-skill`](https://github.com/Jakeschincariol/youtube-agent-skill).
+Commit vendorizado: `a2feb2104981a375ffd4f87ee04f4f5344ac43c6`. Licença MIT.
+
+**Veredito: adotar como camada de análise e escrita, não como pipeline.** O pack
+não renderiza, não narra, não publica e não substitui HyperFrames/Piper/FFmpeg.
+O vendor fica em `tools/youtube-agent-skill/`; nenhuma skill global do Claude
+Code foi instalada.
+
+| Peça | Decisão | Motivo |
+|---|---|---|
+| `yt-retention/retention.py` | **adotar com patch** | É a leitura que falta para as 48 h do piloto. O original usa janela de 30 s e confunde eixo de segundos com percentual em vídeos < 100 s. |
+| `yt-script/hooks.json` | **adotar como checklist** | 21 fórmulas úteis para revisar o gancho. A versão PT-BR de trabalho é `docs/GANCHOS-21.md`. |
+| `yt-package/title.py` | **adotar com patch** | Lint de título + thumbnail. Precisa de stopwords, termos vagos e nomes próprios em PT-BR. |
+| `yt-viral/swipe.py` | **adiar** | Rankeia por múltiplo sobre a mediana do canal, mas exige 4+ vídeos por canal; nossa amostra tem muitos canais com 1–5. O `nicho.py` já cobre a comparação por canal. Reavaliar após os 6 vídeos. |
+| `yt-audit` | **adiar** | Auditoria de canal com uma correção; faz mais sentido com 6+ vídeos e o canal limpo. |
+| `yt-edit`, `yt-shorts`, `yt-chapters`, `yt-comment`, `yt-plan`, `yt-seo` | **não adotar agora** | Sem dead air (TTS), sem long-form, sem comentários e sem necessidade de plano/SEO paralelo. |
+
+**Não usar `hookscore.py` em PT-BR.** A heurística é calibrada em inglês; o
+score não é válido para nossos ganchos. As 21 fórmulas continuam úteis como
+checklist editorial.
+
+**Licença:** MIT permite uso comercial e inclusão no kit pago, desde que o
+aviso de copyright e a licença sejam preservados. Não há restrição de SaaS
+multi-tenant como em outras ferramentas avaliadas.
+
+**Patches:** detalhes em `tools/youtube-agent-skill/ORIGEM.md`; testes em
+`scripts/test_youtube_agent.py` (9 casos, incluindo o eixo de 45 s e o lint
+PT-BR). O `hooks.json` fica intacto; a adaptação de trabalho fica em
+`docs/GANCHOS-21.md`.
 
 ## Ferramentas de contexto — avaliadas em 2026-10-21
 

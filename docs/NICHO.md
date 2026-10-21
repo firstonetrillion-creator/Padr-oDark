@@ -64,11 +64,11 @@ Gatilho de expansão: template com **> 45% de retenção média em 5 vídeos** �
 | Impessoal (recomendado) | Escalável, voz substituível, vendável como Kit | Menos vínculo |
 | Persona nomeada | Comunidade mais forte | Refém do personagem, não escala |
 
-Candidatos: **Dossiê 45** (handle `@Dossie45`, disponível na checagem) e **Arquivo Noturno 45** (`@ArquivoNoturno45`, disponível). Os nomes antigos — Arquivo Noturno, Sala Escura, Dossiê 404, Canal 3AM, O Relatório — estão ocupados.
+Candidatos avaliados: **Dossiê 45** (handle `@Dossie45`, **adotado**) e **Arquivo Noturno 45** (`@ArquivoNoturno45`, disponível). Os nomes antigos — Arquivo Noturno, Sala Escura, Dossiê 404, Canal 3AM, O Relatório — estão ocupados.
 
 ## Canal atual — auditoria em 2026-10-21
 
-Canal: [Cod Mind Million](https://www.youtube.com/@CodMindMillion) — **6 inscritos**, 10 shorts, sem aba de vídeos longos.
+Canal: [Cod Mind Million](https://www.youtube.com/@CodMindMillion) — **6 inscritos**, 10 shorts, sem aba de vídeos longos. Rebranding para [Dossiê 45](https://www.youtube.com/@Dossie45) em curso.
 
 Conteúdo existente: psicologia/desenvolvimento pessoal. Exemplos: “Sinais de que alguém está te manipulando” (546 views) e “O ego espiritual e o autoengano do desenvolvimento pessoal” (1.600 views). O piloto de mistério “Os três faroleiros que sumiram de um farol trancado” tem 6 views.
 
@@ -83,7 +83,7 @@ Conteúdo existente: psicologia/desenvolvimento pessoal. Exemplos: “Sinais de 
 | Rebrandar Cod Mind Million para mistério/arquivo | se mistério ganhar com folga | arquivar/unlistar os shorts antigos |
 | Criar dois canais novos | se quisermos um teste limpo 3+3 | maior custo operacional |
 
-**Decisão:** Mistério/Arquivo como nicho âncora; rebrandar o canal atual para **Dossiê 45** (handle `@Dossie45`; confirmar no YouTube Studio).
+**Decisão:** Mistério/Arquivo como nicho âncora; rebrandar o canal atual para **Dossiê 45** (handle `@Dossie45`, confirmado; avatar/banner no ar).
 
 <!-- nicho-dados:start -->
 ## Dados coletados em 2026-10-21

@@ -16,6 +16,9 @@
 | `check-contrato.ps1` | antes do QA visual e do render | `episodios/<slug>/index.html` | `PASS`/`FAIL` dos invariantes |
 | `novo-episodio.ps1` | início de um episódio | `NNN-slug` (+ título) | pasta do episódio + `status.md` + carimbo |
 | `nicho.py` | validar nicho | buscas + canais | `logs/nicho-<data>.json`, seção em `docs/NICHO.md` |
+| `tools/.../retention.py` | 48 h após publicar | `retencao.csv` + duração | 3 s, 10 s, quedas, slide |
+| `tools/.../title.py` | antes de publicar | título (+ thumbnail) | issues + score heurístico |
+| `test_youtube_agent.py` | após mexer nesses helpers | — | 9 testes |
 
 ## install-brain.ps1
 
@@ -171,6 +174,47 @@ Coleta metadados públicos de Shorts para comparar nichos. **Não baixa vídeo**
 - Usa `--extractor-args "youtube:player_client=android"` para evitar o bloqueio “Sign in to confirm you're not a bot” na leitura de metadados de vídeo.
 - Não usa cookies. Se o YouTube bloquear, rodar em outro horário ou de outra rede.
 - Sequencial e leve: não roda junto com render.
+
+## Retenção de Shorts — `tools/youtube-agent-skill/yt-retention/retention.py`
+
+Lê o export de retenção do YouTube Studio e separa três problemas: gancho,
+queda pontual e slide. **Não baixa vídeo**; só lê o CSV.
+
+```powershell
+.\.venv\Scripts\python.exe tools\youtube-agent-skill\yt-retention\retention.py `
+  episodios\<slug>\retencao.csv --duration 45 `
+  --transcript episodios\<slug>\transcricao.json
+```
+
+- Janelas de Shorts: **3 s** e **10 s**. 30 s aparece como legado de long-form.
+- `--json` para dados brutos; `--axis seconds|percent` se o CSV vier ambíguo.
+- A heurística original confundia eixo em segundos de um vídeo de 45 s com
+  percentual (máximo 45 ≤ 100,5). O patch usa cabeçalho, duração e
+  interpolação no instante exato.
+- Metas provisórias: 3 s ≥ 70%, 10 s ≥ 45%; calibrar após 6 vídeos.
+- Detalhes do patch: `tools/youtube-agent-skill/ORIGEM.md`.
+
+## Título + thumbnail — `tools/youtube-agent-skill/yt-package/title.py`
+
+Lint PT-BR do par título/thumbnail: corte de 40/60 caracteres, caixa alta,
+termos vagos, número/nome próprio e repetição entre os dois.
+
+```powershell
+.\.venv\Scripts\python.exe tools\youtube-agent-skill\yt-package\title.py `
+  --title "Mary Celeste: o navio encontrado vazio em 1872" `
+  --thumb "NAVIO VAZIO"
+```
+
+O score é heurístico; corrija os `issues`, não persiga 100.
+
+## `test_youtube_agent.py`
+
+Testa o parser de retenção (eixo segundos/percentual, 45 s sem cabeçalho,
+transcrição) e o lint PT-BR.
+
+```powershell
+.\.venv\Scripts\python.exe scripts\test_youtube_agent.py
+```
 
 ## Convenções
 

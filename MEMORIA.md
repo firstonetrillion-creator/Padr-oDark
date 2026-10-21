@@ -6,7 +6,7 @@
 
 ## 1. Onde estamos
 
-**Fase 1 concluída e piloto publicado.** O cérebro está instalado, o gate G0 passou, o piloto `001-faroleiros` foi aprovado pelo usuário ("ficou perfeito") e publicado no YouTube Shorts em 21/10/2026. O template `misterio-45` foi extraído e o QA técnico está assinado. A validação de nicho por metadados foi concluída em 21/10/2026: **Mistério/Arquivo é a âncora**. Agora a Fase 2 segue com os 5 vídeos restantes e a medição de retenção.
+**Fase 1 concluída e piloto publicado.** O cérebro está instalado, o gate G0 passou, o piloto `001-faroleiros` foi aprovado pelo usuário ("ficou perfeito") e publicado no YouTube Shorts em 21/10/2026. O template `misterio-45` foi extraído e o QA técnico está assinado. A validação de nicho por metadados foi concluída em 21/10/2026: **Mistério/Arquivo é a âncora**. Em 21/10/2026 também foi feita a **adoção seletiva do `youtube-agent-skill`** (retenção 3 s/10 s, 21 ganchos e lint de título). Agora a Fase 2 segue com os 5 vídeos restantes e a medição de retenção.
 
 | Frente | Estado | Evidência |
 |---|---|---|
@@ -19,7 +19,8 @@
 | Validação de nicho | **concluída (metadados)** | `logs/nicho-2026-10-21.json`, `docs/NICHO.md` |
 | Versionamento | **git iniciado (21/10/2026)** | commit `782df62`, tag `ep-001-publicado` |
 | 6 vídeos de validação | **1/6 publicado** | piloto + 5 restantes |
-| Canal | **rebranding em curso**: handle `@Dossie45` no ar; falta acento no nome, bio, assets e deslistar 9 shorts | [canal](https://youtube.com/@Dossie45), `docs/REBRANDING.md` |
+| Canal | **Dossiê 45**: handle e avatar/banner no ar; página pública ainda mostra nome antigo, bio vazia e 10 shorts | [canal](https://youtube.com/@Dossie45), `docs/REBRANDING.md` |
+| Ferramentas de análise | **adotadas seletivamente** | `tools/youtube-agent-skill/`, `docs/GANCHOS-21.md` |
 | `codebase-memory-mcp` | **não instalado** (adiado) | decisão em `docs/DECISOES.md` |
 
 ## 2. O que já foi entregue
@@ -32,13 +33,14 @@
 - Correções aplicadas: DLLs VC++ no onnxruntime/venv, `espeak-ng-data` em caminho ASCII, patch do `av` no faster-whisper. Detalhes em `docs/STACK.md`.
 
 ### Conteúdo e método
-- 7 skills operacionais em `.opencode/skills/` (briefing, gancho, roteiro, voz, render, qa, publicacao).
-- `docs/`: decisões, stack, nicho, plano, QA, identidade.
+- 8 skills operacionais em `.opencode/skills/` (briefing, gancho, roteiro, voz, render, qa, publicacao, retencao).
+- `docs/`: decisões, stack, nicho, plano, QA, identidade, `GANCHOS-21.md`.
 - `biblioteca/`: ganchos, fontes, `publicados.csv`.
 - `scripts/qa.ps1`: QA automático (duração, resolução, fps, áudio, loudness, preto inesperado).
 - `scripts/check-contrato.ps1`: 29 invariantes da composição antes do render (resolução, cenas, áudio com duração real via ffprobe, `autoAlpha`, timeline montada).
 - `scripts/novo-episodio.ps1`: cria episódio a partir do template e carimba `.template-version` (sha256 + commit).
 - `scripts/nicho.py`: coleta metadados de Shorts por nicho (views/inscrito, engajamento); não baixa vídeo.
+- `tools/youtube-agent-skill/`: vendor MIT com retenção 3 s/10 s, `hooks.json` e lint de título PT-BR; testes em `scripts/test_youtube_agent.py`.
 
 ### Piloto 001 — Eilean Mor
 - `narracao.txt` (118 palavras) → `voz_raw.wav` 41,45 s → `voz.wav` 45,00 s.
@@ -65,8 +67,8 @@
 
 ### 3.1 Medir o piloto publicado (48 h)
 1. Publicado em 21/10/2026 no YouTube Shorts; TikTok/Reels ficam como reaproveitamento opcional.
-2. Em **23/10/2026**, coletar views, retenção 3 s, retenção média, conclusão, salvos e compartilhados.
-3. Preencher as colunas em aberto da linha de `biblioteca/publicados.csv`.
+2. Em **23/10/2026**, baixar o CSV de retenção do Studio e rodar `tools/youtube-agent-skill/yt-retention/retention.py --duration 45`; coletar também views, retenção média, conclusão, salvos e compartilhados.
+3. Preencher as colunas em aberto da linha de `biblioteca/publicados.csv` e criar `episodios/001-faroleiros/retencao.md`.
 4. Decidir: manter gancho/formato, ajustar ou matar.
 
 ### 3.2 Validação de nicho — concluída (21/10/2026)
@@ -82,8 +84,17 @@
 - Usar `templates/misterio-45/` e o fluxo de `MEMORIA.md` §6.
 - Meta: 5–7 shorts/semana; um render por vez.
 - Se a retenção dos 6 ficar abaixo do gate (média <40% ou nenhum >40%), reavaliar: testar Psicologia sombria em canal novo antes de trocar de ferramenta.
+- Diagnóstico por vídeo: 3 s ≥ 70% e 10 s ≥ 45% são metas provisórias; o gate de 40% de média continua valendo para a fase.
 
-### 3.4 Desbloqueado pelo primeiro vídeo (21/10/2026)
+### 3.4 Ferramentas de análise — concluído (21/10/2026)
+- Vendor seletivo de `Jakeschincariol/youtube-agent-skill` (MIT, commit `a2feb21`) em `tools/youtube-agent-skill/`.
+- `retention.py` com patch para Shorts: 3 s/10 s, eixo de 45 s corrigido, transcrição SRT/VTT/JSON.
+- `hooks.json` mantido intacto; checklist PT-BR em `docs/GANCHOS-21.md`.
+- `title.py` adaptado para PT-BR (stopwords, termos vagos, nome próprio).
+- `scripts/test_youtube_agent.py`: 9 testes passando.
+- `yt-viral` e `yt-audit` adiados para depois dos 6 vídeos; decisão em `docs/PLANO.md` e `docs/DECISOES.md`.
+
+### 3.5 Desbloqueado pelo primeiro vídeo (21/10/2026)
 - `codebase-memory-mcp` pode ser instalado e o projeto indexado, **fora de uma janela de render** (RAM de 8 GB).
 - OpenMontage continua fora até o gate 3 (ver `docs/PLANO.md`).
 
@@ -112,11 +123,13 @@
 | `docs/DECISOES.md` | decisões e descartes |
 | `docs/NICHO.md` | hipóteses de nicho e critérios |
 | `docs/REBRANDING.md` | textos e ordem de execução do rebranding no YouTube Studio |
+| `docs/GANCHOS-21.md` | checklist PT-BR das 21 fórmulas de gancho |
 | `docs/QA.md` | checklist editorial e técnico |
 | `.opencode/skills/` | instruções por etapa |
 | `templates/misterio-45/` | template validado |
 | `episodios/<slug>/` | um diretório por vídeo, com status e QA |
-| `scripts/` | instalação, voz, transcrição, QA, benchmark |
+| `scripts/` | instalação, voz, transcrição, QA, benchmark, testes |
+| `tools/youtube-agent-skill/` | vendor MIT: retenção, hooks e lint de título |
 | `biblioteca/publicados.csv` | registro de publicação e métricas |
 
 ## 6. Comandos canônicos
@@ -144,6 +157,18 @@ $env:Path = "C:\Users\valentim\Tools\node;C:\Users\valentim\Tools\ffmpeg\bin;" +
 .\.venv\Scripts\python.exe scripts\transcribe.py `
   episodios\<slug>\voz.wav --model small --language pt `
   --output episodios\<slug>\transcricao.json
+
+# retenção do Studio (48 h)
+.\.venv\Scripts\python.exe tools\youtube-agent-skill\yt-retention\retention.py `
+  episodios\<slug>\retencao.csv --duration 45 `
+  --transcript episodios\<slug>\transcricao.json
+
+# lint de título + thumbnail
+.\.venv\Scripts\python.exe tools\youtube-agent-skill\yt-package\title.py `
+  --title "<título>" --thumb "<texto da capa>"
+
+# testes das ferramentas de análise
+.\.venv\Scripts\python.exe scripts\test_youtube_agent.py
 
 # QA visual de uma cena, sem render
 $chrome = (Get-ChildItem "$env:USERPROFILE\.cache\hyperframes\chrome\chrome-headless-shell" -Recurse -Filter chrome-headless-shell.exe | Select-Object -First 1).FullName
@@ -180,6 +205,8 @@ ffmpeg -i final_raw.mp4 -c:v copy `
 | Áudio em −22 LUFS | TTS baixo + drone discreto | ganho estático + limitador no pós |
 | `qa.ps1` “falha” no ffmpeg | stderr vira erro no PowerShell | o script já contorna; rodar com Bypass |
 | faster-whisper quebra no `av` 19 | `metadata_errors` removido | patch em `faster_whisper/audio.py` |
+| Retenção de 45 s lida como 100% no fim | eixo em segundos (máx. 45) confundido com percentual | usar o `retention.py` patchado; `--axis seconds` se preciso |
+| Score de gancho estranho em PT-BR | `hookscore.py` é calibrado em inglês | não usar; consultar `docs/GANCHOS-21.md` |
 
 ## 8. Decisões que não se reabrem
 
@@ -193,7 +220,8 @@ ffmpeg -i final_raw.mp4 -c:v copy `
 - PI-Desktop fica fora do MVP; reavaliar só depois do primeiro vídeo (ver `docs/DECISOES.md`).
 - Hypit é referência conceitual, não dependência do MVP; não empacotar no kit sem licença comercial.
 - Um canal = um nicho; não misturar Mistério/Arquivo com Psicologia sombria.
-- Mistério/Arquivo é a âncora da Fase 2; o Cod Mind Million será rebrandado para **Dossiê 45** (handle `@Dossie45`; confirmar no YouTube Studio). Psicologia fica como fallback em canal novo, não no mesmo canal.
+- Mistério/Arquivo é a âncora da Fase 2; o Cod Mind Million foi rebrandado para **Dossiê 45** (handle `@Dossie45`, avatar/banner no ar). Nome/descrição/deslistagem ainda precisam ser confirmados na página pública. Psicologia fica como fallback em canal novo, não no mesmo canal.
+- `youtube-agent-skill` é adotado **seletivamente** (retenção, hooks como checklist, lint de título). `yt-viral` e `yt-audit` ficam para depois dos 6 vídeos; `hookscore.py` não é usado em PT-BR.
 
 ## 9. Protocolo de memória
 

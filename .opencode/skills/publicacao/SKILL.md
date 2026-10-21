@@ -16,6 +16,20 @@ Publicar sem retrabalho e registrar dados para a próxima decisão.
 - Aviso de conteúdo sintético quando exigido.
 - Formato: 9:16 para TikTok/Reels/Shorts.
 
+## Lint de título + thumbnail
+
+Antes de publicar, rodar o lint PT-BR:
+
+```powershell
+.\.venv\Scripts\python.exe tools\youtube-agent-skill\yt-package\title.py `
+  --title "Mary Celeste: o navio encontrado vazio em 1872" `
+  --thumb "NAVIO VAZIO"
+```
+
+- O par título+thumbnail é a unidade; se repetem a mesma palavra, um dos dois está desperdiçado.
+- O score é heurístico. Corrigir os **issues** listados, não perseguir 100.
+- Título e thumbnail não substituem a fonte na descrição.
+
 ## Ordem
 1. YouTube Shorts (índice)
 2. TikTok (alcance)

@@ -39,6 +39,7 @@ Verifica duração, 1080×1920, 30 fps, AAC 48 kHz estéreo, loudness -17..-13 L
 ## Publicação
 
 - [ ] Título com palavra-chave e curiosidade, sem clickbait vazio
+- [ ] Lint de título + thumbnail rodado (`tools/youtube-agent-skill/yt-package/title.py`)
 - [ ] Descrição com contexto e fontes
 - [ ] Hashtags: 3–5, específicas
 - [ ] Declaração de conteúdo de IA quando exigido pela plataforma
@@ -47,7 +48,9 @@ Verifica duração, 1080×1920, 30 fps, AAC 48 kHz estéreo, loudness -17..-13 L
 
 ## Pós-publicação (48 h)
 
+- [ ] CSV de retenção do Studio baixado e rodado com `retention.py --duration 45`
 - [ ] Retenção 3 s anotada
+- [ ] Retenção 10 s anotada
 - [ ] Retenção média anotada
 - [ ] Comentários lidos; objeções viram gancho
 - [ ] Decisão: manter, ajustar ou matar o formato

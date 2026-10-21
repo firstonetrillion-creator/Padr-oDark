@@ -1,6 +1,6 @@
 # Identidade visual e sonora (provisória)
 
-Marca de trabalho: **Dossiê 45** (handle `@Dossie45`; confirmar no YouTube Studio).
+Marca de trabalho: **Dossiê 45** (handle `@Dossie45`, confirmado no canal).
 
 ## Paleta
 
@@ -61,7 +61,7 @@ Marca de trabalho: **Dossiê 45** (handle `@Dossie45`; confirmar no YouTube Stud
 
 | Nome | Handle | Status |
 |---|---|---|
-| **Dossiê 45** | `@Dossie45` | **adotado em 21/10/2026** (handle no ar; nome de exibição ainda `Dossie45`) |
+| **Dossiê 45** | `@Dossie45` | **adotado em 21/10/2026** (handle e assets no ar; nome de exibição a reconfirmar na página pública) |
 | Arquivo 3:07 | `@Arquivo307` | 404 = disponível; nome mais único |
 | Arquivo Noturno 45 | `@ArquivoNoturno45` | 404 = disponível, mas “Arquivo Noturno” já existe |
 | Sala Escura | `@SalaEscura` | ocupado (“A Sala Escura”) |
@@ -84,6 +84,19 @@ Marca de trabalho: **Dossiê 45** (handle `@Dossie45`; confirmar no YouTube Stud
 | `identidade/banner.html` | fonte editável do banner | paleta e tipografia do projeto |
 | `identidade/avatar.html` | fonte editável do avatar | idem |
 
+### Auditoria rápida dos assets (21/10/2026)
+
+- **Banner:** 2048×1152 local; o recorte público tem 2048×339. Título e
+  subtítulo estão dentro da área segura 1235×338; o recorte ao vivo não corta
+  nenhum dos dois. Os microtextos dos cantos (1,6:1 de contraste) ficam fora do
+  recorte e funcionam como textura, não como leitura.
+- **Avatar:** 800×800 local; o canal serve 900×900. O monograma `D45` está
+  centralizado e sobrevive ao corte circular. O vermelho `#B23A2E` tem 3,33:1
+  sobre o fundo — passa para texto grande, mas fica no limite em tamanho de
+  feed; o `D` branco tem 15,87:1.
+- **Consistência:** banner e avatar usam a mesma paleta, Georgia e o motivo
+  `D45`/`DOSSIÊ 45`. Não bloqueiam o 002.
+
 Regerar depois de editar o HTML (Chrome headless, sem dependência nova):
 
 ```powershell
@@ -100,10 +113,10 @@ Para o avatar, trocar `2048,1152` por `800,800` e o nome do arquivo. Se o caminh
 > Textos prontos e ordem de execução: `docs/REBRANDING.md`.
 
 - [x] Confirmar `@Dossie45` no canal — **21/10/2026**, mesmo channel ID do piloto (`UCwgP68Uen2KoIh2R-j231Yw`).
-- [ ] Nome de exibição: está `Dossie45`; trocar para **Dossiê 45** (com acento e espaço).
-- [ ] Subir `identidade/avatar.png` e `identidade/banner.png`.
-- [ ] Descrição impessoal: “Arquivo de casos sem solução. Fatos com fonte; lendas marcadas como lenda.”
-- [ ] Unlistar/privar os 9 shorts de psicologia; manter o piloto `001-faroleiros`.
+- [x] Subir `identidade/avatar.png` e `identidade/banner.png` — verificados no ar em 21/10.
+- [ ] Nome de exibição: usuário confirma **Dossiê 45**; a página pública ainda mostra `Dossie45` (possível cache). Reconfirmar no Studio.
+- [ ] Descrição impessoal: “Arquivo de casos sem solução. Fatos com fonte; lendas marcadas como lenda.” A página pública ainda mostra vazio.
+- [ ] Unlistar/privar os 9 shorts de psicologia; a aba Shorts ainda mostra 10 vídeos.
 - [ ] Revisar links, país, palavras-chave e configurações de upload.
 - [ ] Atualizar `docs/`, `MEMORIA.md` e `biblioteca/publicados.csv` se o nome do canal aparecer.
 - [ ] Só depois publicar o vídeo 002.

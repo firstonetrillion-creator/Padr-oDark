@@ -4,6 +4,40 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-21**.
 
+## 2026-10-21 — youtube-agent-skill adotado seletivamente; auditoria do rebranding
+
+**Entregue**
+- Vendor MIT de `Jakeschincariol/youtube-agent-skill` no commit `a2feb21` em
+  `tools/youtube-agent-skill/`, com `LICENSE` e `ORIGEM.md`.
+- `retention.py` patchado para Shorts: 3 s e 10 s, 30 s como legado, correção
+  do eixo de 45 s, interpolação e transcrição SRT/VTT/JSON.
+- `hooks.json` mantido intacto; checklist PT-BR em `docs/GANCHOS-21.md`.
+- `title.py` adaptado para PT-BR: stopwords, termos vagos, nome próprio e
+  normalização Unicode.
+- `scripts/test_youtube_agent.py`: **9 testes PASS** (retenção em segundos,
+  percentual, CSV de 45 s sem cabeçalho, transcrição, lint PT-BR e hooks).
+- Skills atualizadas: `gancho` aponta para as 21 fórmulas; `publicacao` roda o
+  lint de título; nova skill `retencao` para as 48 h.
+
+**Auditoria do rebranding (verificação pública em 21/10/2026)**
+- Avatar e banner **estão no ar**: avatar 900×900 e banner recortado em
+  2048×339; o texto principal e o subtítulo cabem na área segura.
+- A página pública ainda mostra o nome **`Dossie45`** (sem acento/espaço),
+  descrição vazia e **10 shorts** na aba Shorts — os 9 de psicologia continuam
+  listados. Pode haver cache no nome, mas a lista de Shorts não é cache.
+- Antes do 002: salvar `Dossiê 45`, preencher a descrição e deslistar os 9
+  shorts antigos; só então publicar.
+
+**Decisão**
+- Adotar `yt-retention`, `hooks.json` e `yt-title` agora.
+- Adiar `yt-viral` e `yt-audit` para depois dos 6 vídeos; documentado em
+  `docs/PLANO.md` e `docs/DECISOES.md`.
+- Não usar `hookscore.py` em PT-BR: heurística em inglês, sem calibração local.
+
+**Evidência**
+- `tools/youtube-agent-skill/`; `docs/GANCHOS-21.md`; `scripts/test_youtube_agent.py`;
+  `docs/PLANO.md`; `docs/DECISOES.md`.
+
 ## 2026-10-21 — Handle @Dossie45 no ar; identidade visual gerada
 
 **Entregue**
@@ -11,10 +45,10 @@
 - `identidade/banner.png` (2048×1152, texto dentro da área segura 1235×338) e `identidade/avatar.png` (800×800), gerados por Chrome headless a partir de HTML editável, na paleta e na Georgia do template.
 - `docs/REBRANDING.md` com estado real do canal, textos prontos e ordem de execução.
 
-**Pendente**
-- Nome de exibição está `Dossie45`; trocar para **Dossiê 45**.
+**Pendente na época** (estado atual na entrada acima)
+- Nome de exibição estava `Dossie45`; trocar para **Dossiê 45**.
 - Descrição, palavras-chave, país e links ainda vazios.
-- Subir avatar/banner; deslistar os 9 shorts de psicologia (a aba Shorts ainda mostra 10 vídeos).
+- Avatar/banner já no ar; faltava deslistar os 9 shorts de psicologia.
 
 **Decisão**
 - Marca de tela passa a ser **DOSSIÊ 45** a partir do 002; o 001 não é re-renderizado.
