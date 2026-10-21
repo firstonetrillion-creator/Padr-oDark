@@ -77,6 +77,8 @@ Marca de trabalho: **Dossiê 45** (handle `@Dossie45`; confirmar no YouTube Stud
 
 ## Checklist de rebranding (Cod Mind Million → Dossiê 45)
 
+> Textos prontos e ordem de execução: `docs/REBRANDING.md`.
+
 - [ ] Confirmar `@Dossie45` no YouTube Studio (a checagem externa deu 404, mas o Studio é a fonte).
 - [ ] Trocar nome de exibição, handle, avatar e banner.
 - [ ] Descrição impessoal: “Arquivo de casos sem solução. Fatos com fonte; lendas marcadas como lenda.”

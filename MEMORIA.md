@@ -111,6 +111,7 @@
 | `docs/STACK.md` | instalação, versões, correções de ambiente |
 | `docs/DECISOES.md` | decisões e descartes |
 | `docs/NICHO.md` | hipóteses de nicho e critérios |
+| `docs/REBRANDING.md` | textos e ordem de execução do rebranding no YouTube Studio |
 | `docs/QA.md` | checklist editorial e técnico |
 | `.opencode/skills/` | instruções por etapa |
 | `templates/misterio-45/` | template validado |
