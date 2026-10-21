@@ -17,6 +17,7 @@
 | Documentação de retomada | pronta | este arquivo + `docs/ARQUITETURA.md` + `docs/HISTORICO.md` |
 | Publicação | **publicado** (21/10/2026) | [YouTube Shorts](https://youtube.com/shorts/WKuNVjl3d5M) |
 | Validação de nicho | **concluída (metadados)** | `logs/nicho-2026-10-21.json`, `docs/NICHO.md` |
+| Versionamento | **git iniciado (21/10/2026)** | commit `782df62`, tag `ep-001-publicado` |
 | 6 vídeos de validação | **1/6 publicado** | piloto + 5 restantes |
 | Canal | **rebrandar Cod Mind Million** | decisão em `docs/DECISOES.md` |
 | `codebase-memory-mcp` | **não instalado** (adiado) | decisão em `docs/DECISOES.md` |
@@ -35,6 +36,8 @@
 - `docs/`: decisões, stack, nicho, plano, QA, identidade.
 - `biblioteca/`: ganchos, fontes, `publicados.csv`.
 - `scripts/qa.ps1`: QA automático (duração, resolução, fps, áudio, loudness, preto inesperado).
+- `scripts/check-contrato.ps1`: 29 invariantes da composição antes do render (resolução, cenas, áudio com duração real via ffprobe, `autoAlpha`, timeline montada).
+- `scripts/novo-episodio.ps1`: cria episódio a partir do template e carimba `.template-version` (sha256 + commit).
 - `scripts/nicho.py`: coleta metadados de Shorts por nicho (views/inscrito, engajamento); não baixa vídeo.
 
 ### Piloto 001 — Eilean Mor
@@ -50,6 +53,13 @@
 - `templates/misterio-45/index.html` — composição validada, 13 cenas, áudio `voz`/`drone`, QA por `?t=`.
 - `templates/misterio-45/beat-sheet.md` — 13 beats, tempos e orçamento de palavras.
 - `templates/misterio-45/README.md` — passo a passo completo, incluindo armadilhas.
+
+### Versionamento (21/10/2026)
+- `git init -b main`; commit baseline `782df62` com **59 arquivos de texto/código**; tag anotada `ep-001-publicado`.
+- `.gitignore` deixa fora `.venv/` (415 MB), mídia `*.mp4`/`*.wav`/`*.onnx` (123 MB) e `qa-frames/`. **Nada foi apagado do disco**: evidência continua na pasta.
+- `core.autocrlf false` (local) para evitar churn de CRLF.
+- Identidade provisória `valentim <valentim@localhost>`; sem remote e sem chave SSH, nada foi enviado.
+- Fluxo: commit por etapa, tag por episódio publicado.
 
 ## 3. O que falta (em ordem)
 
@@ -116,6 +126,12 @@ $env:Path = "C:\Users\valentim\Tools\node;C:\Users\valentim\Tools\ffmpeg\bin;" +
 
 # verificar instalação
 .\scripts\verify.ps1
+
+# criar episódio novo (carimba o template usado)
+.\scripts\novo-episodio.ps1 002-slug "Título do episódio"
+
+# contrato antes do QA visual e do render
+.\scripts\check-contrato.ps1 episodios\<slug>\index.html
 
 # voz (sempre pelo wrapper, nunca piper.exe)
 .\.venv\Scripts\python.exe scripts\tts.py `

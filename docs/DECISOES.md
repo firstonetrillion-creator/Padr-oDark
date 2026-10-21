@@ -153,6 +153,40 @@ A psicologia engaja mais por like, mas tem demanda relativa menor; nenhum canal 
 - **Handle:** confirmar no YouTube Studio antes de renomear. Na checagem de 21/10/2026, `@ArquivoNoturno`, `@SalaEscura`, `@Dossie404`, `@Canal3AM`, `@ORelatorio`, `@ArquivoDaMeiaNoite`, `@Arquivo3AM`, `@DossieNoturno` e `@RelatorioNoturno` estão ocupados. `@Dossie45`, `@ArquivoNoturno45` e `@Arquivo307` retornaram 404 (disponíveis na checagem). Alternativas: **Dossiê 45** (preferido), **Arquivo 3:07** (`@Arquivo307`), **Arquivo Noturno 45**.
 - **Por que rebrandar e não criar canal novo:** 6 inscritos não são continuidade relevante; o piloto já está no canal; uma marca é mais simples de operar. Criar canal novo só se o handle/nome escolhido estiver indisponível ou se quisermos preservar o canal antigo.
 
+## Ferramentas de contexto — avaliadas em 2026-10-21
+
+### Graphify-Labs/graphify — útil no corpus de docs, não no código
+
+Medido no projeto real, não no README:
+
+| Corpus | Antes | Com grafo | Ganho | Leitura |
+|---|---:|---:|---:|---|
+| Código do projeto | 4.466 tokens | 4.030 | **1,1×** | não compensa: 67 nós, 33 deles em `scripts/nicho.py` |
+| `docs/` + `MEMORIA.md` + `AGENTS.md` | 5.066 | 2.423 | **2,1×** | 76 nós, 101 arestas, 9 comunidades, 0 dangling, 65% EXTRACTED |
+
+- A consulta “narração → áudio → vídeo” no grafo de código começou em `.video()` e devolveu 4.611 tokens — pior que ler os arquivos.
+- O próprio relatório avisa: “corpus de ~9.833 palavras cabe numa janela de contexto; talvez você não precise de grafo”.
+- **Veredito:** não usar como economizador de token no código. Usar em `docs/` + `episodios/` quando houver ~10 episódios (a razão cresce; hoje é 2×).
+- **Não** adicionar a regra “consulte o grafo antes de grep” ao `AGENTS.md` enquanto o grafo de código for pior que a leitura direta.
+- O grafo **não** depende do git; só o `graphify hook install` (rebuild por commit) depende.
+
+### thedotmack/claude-mem — não instalar agora
+
+Captura cada chamada de ferramenta via hooks, grava em SQLite+FTS5, comprime com IA e reinjeta contexto. Roda worker Express persistente (Node 20+/Bun) e MCP de busca.
+
+- **Compatível** com OpenCode: contrato V1/V2 corrigido no PR #4577, validado no OpenCode 2.0.22.
+- **Não adotado** porque: (1) worker + compressão por observação competem com Chrome headless + FFmpeg numa máquina de 8 GB com a regra “um render por vez”; (2) captura *tool calls*, e o valor do projeto está em decisões e medições (−15,6 LUFS, 2m32,8s), que não aparecem em tool call; (3) cria segunda fonte de verdade contra `MEMORIA.md` curado e pode mascarar memória desatualizada; (4) custo de compressão recorrente para um corpus de ~10 mil palavras.
+- **O que aproveitar:** automatizar a *escrita* da memória (uma skill de fechamento de etapa), não a captura.
+- **Reavaliar se:** multi-projeto/multi-agente, 16 GB+ de RAM, ou se o `MEMORIA.md` deixar de ser mantido à mão.
+
+### Git — adotado em 2026-10-21
+
+- Git 2.56.0 já estava instalado em `C:\Users\valentim\Tools`; faltava o repositório.
+- `git init -b main`, commit baseline `782df62` (59 arquivos de texto/código), tag `ep-001-publicado`.
+- `.gitignore` exclui `.venv/`, mídia (`*.mp4`, `*.wav`, `*.onnx`) e `qa-frames/`; **nada foi apagado do disco**.
+- Motivo: rollback de experimento de fonte/template, diff de contrato entre episódios e baseline antes do rebranding. Não é pré-requisito do graphify.
+
+
 
 
 

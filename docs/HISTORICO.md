@@ -4,6 +4,20 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-21**.
 
+## 2026-10-21 — Baseline versionado e contrato testável
+
+**Entregue**
+- Repositório git iniciado em `Padrao-Dark` (`main`, commit `782df62`, 59 arquivos de texto/código, tag `ep-001-publicado`).
+- `.gitignore` deixa fora `.venv/` (415 MB), mídia (123 MB) e `qa-frames/`; **nada foi apagado do disco**. `core.autocrlf false`.
+- `scripts/check-contrato.ps1`: 29 invariantes antes do render (stage, cenas, tempos, CSS por cena, áudio com duração real via `ffprobe`, `autoAlpha`, `window.__timelines`). Validado no `001`: 29 PASS, 0 avisos.
+- `scripts/novo-episodio.ps1`: cria episódio do template, troca `data-composition-id`, chave da timeline, dossiê e título, grava `.template-version` (sha256 + commit) e `status.md`. Testado com slug descartável; pasta de teste removida.
+- Documentação: `docs/ARQUITETURA.md` §6/§7, `scripts/README.md`, `docs/DECISOES.md` (graphify, claude-mem, git).
+
+**Decisão**
+- Git entrou por **rollback e drift de template**, não por causa do graphify (que só usa git no hook opcional).
+- graphify segue adiado para o corpus de docs/episódios; claude-mem não será instalado agora (detalhes em `docs/DECISOES.md`).
+- Próximo passo segue sendo o rebranding e o vídeo 002 — ferramenta não é o gargalo.
+
 ## 2026-10-21 — Validação de nicho concluída; Mistério/Arquivo é a âncora
 
 **Entregue**

@@ -151,11 +151,15 @@ O fade final para preto é intencional e ignorado. O QA **não** substitui a rev
 | `scripts/tts.py` | wrapper do Piper para caminhos acentuados | `narracao.txt` → `voz_raw.wav` |
 | `scripts/transcribe.py` | transcrição com timestamps por palavra | `voz.wav` → `transcricao.json` |
 | `scripts/qa.ps1` | QA técnico automático | `final.mp4` → `QA PASS/FAIL` |
+| `scripts/check-contrato.ps1` | valida os invariantes da composição antes do render | `index.html` → `PASS/FAIL` (exit 1 em falha) |
+| `scripts/novo-episodio.ps1` | cria episódio a partir do template, com carimbo de origem | `NNN-slug` → `episodios/<slug>/` + `.template-version` |
 
 ## 7. Template × episódio
 
 - `templates/misterio-45/` é a **base validada** (13 cenas, CSS, GSAP, áudio, QA).
 - Cada episódio nasce de uma cópia e muda **apenas**: textos, tempos, tamanhos de fonte e áudio.
+- `scripts/novo-episodio.ps1` faz a cópia e troca só o que é contrato: `data-composition-id`, chave de `window.__timelines`, número do dossiê e título.
+- Cada episódio guarda `.template-version` (sha256 do `index.html` do template + commit). Se o template mudar, comparar o hash antes de propagar para episódios já fechados.
 - Se um contrato mudar (ex.: nova forma de esconder cena), mudar primeiro no template e depois propagar para episódios ativos.
 - O template **não inclui** `voz.wav`/`drone.wav`; cada episódio gera os seus.
 

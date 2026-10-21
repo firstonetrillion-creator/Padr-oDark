@@ -13,6 +13,8 @@
 | `tts.py` | gerar narração | `narracao.txt` | `voz_raw.wav` |
 | `transcribe.py` | obter tempos das cenas | `voz.wav` | `transcricao.json` |
 | `qa.ps1` | antes de publicar | `final.mp4` | `QA PASS`/`QA FAIL` |
+| `check-contrato.ps1` | antes do QA visual e do render | `episodios/<slug>/index.html` | `PASS`/`FAIL` dos invariantes |
+| `novo-episodio.ps1` | início de um episódio | `NNN-slug` (+ título) | pasta do episódio + `status.md` + carimbo |
 | `nicho.py` | validar nicho | buscas + canais | `logs/nicho-<data>.json`, seção em `docs/NICHO.md` |
 
 ## install-brain.ps1
@@ -110,6 +112,46 @@ Detalhes de implementação:
 - `pix_th=0.02` evita que o fundo escuro do canal (`#0A0A0B`) seja classificado como “preto”.
 - O fade final (`44,3–45 s`) é intencional e ignorado.
 - Sai com código 0 (`PASS`) ou 1 (`FAIL`), próprio para gate de publicação.
+
+## check-contrato.ps1
+
+Valida em ~1 s os invariantes da composição antes de gastar 3min de render:
+
+```powershell
+.\scripts\check-contrato.ps1 episodios\<slug>\index.html
+# ou, se houver só um episódio com index.html:
+.\scripts\check-contrato.ps1
+```
+
+Confere 29 pontos, entre eles:
+
+- `#stage` com `1080×1920`, `30 fps`, `data-start="0"` e `data-composition-id` no padrão `epNNN`;
+- cada `<section class="scene clip">` com `id`, `data-start`/`data-duration` numéricos, `data-track-index="1"`, ids únicos, sem sobreposição, começando em 0 e cobrindo até 45 s;
+- regra CSS `.<id> h1` para cada cena (sem ela o título cai no tamanho padrão);
+- `audio#voz` e `audio#drone` com duração 45, `src` válido e arquivos presentes (duração medida por `ffprobe`);
+- `autoAlpha` por cena, loop lendo `dataset.start`/`dataset.duration` e `window.__timelines.<composição>` batendo com o `data-composition-id`;
+- `#fade`, suporte a `?t=` e aviso se o texto de exemplo do template ainda estiver no arquivo.
+
+Sai com código 1 se houver `FAIL`. **Não substitui** o QA visual nem o `qa.ps1`: ele pega erro de contrato, não erro de composição.
+
+## novo-episodio.ps1
+
+Cria a pasta do episódio a partir do template validado, sem sobrescrever nada:
+
+```powershell
+.\scripts\novo-episodio.ps1 002-voo-914 "Voo 914: o avião que pousou vazio"
+```
+
+O que ele troca: `data-composition-id` (`ep002`), a chave `window.__timelines.ep002`, o número do dossiê e o `<title>`. Opcional: `-Marca "DOSSIÊ 45"` para trocar o texto do canto superior.
+
+O que ele grava:
+
+- `index.html` + `gsap.min.js`;
+- `.template-version` com sha256 do template, data e commit do repositório no momento — responde “de qual template saiu este episódio?”;
+- `status.md` com a tabela de etapas em `pendente` e espaço para as medições;
+- um comentário de origem no topo do HTML.
+
+Os textos do 001 continuam no `index.html` de propósito: o script avisa, e o `check-contrato.ps1` também.
 
 ## nicho.py
 
