@@ -1,0 +1,590 @@
+{
+  "language": "pt",
+  "duration": 45.0,
+  "segments": [
+    {
+      "start": 0.27,
+      "end": 8.37,
+      "text": "Os homens sumiram de um farol trancado. Ele anor escosse 1900. O farol ficava a 30 quilômetros da costa.",
+      "words": [
+        {
+          "start": 0.27,
+          "end": 0.81,
+          "word": "Os"
+        },
+        {
+          "start": 0.81,
+          "end": 1.03,
+          "word": "homens"
+        },
+        {
+          "start": 1.03,
+          "end": 1.45,
+          "word": "sumiram"
+        },
+        {
+          "start": 1.45,
+          "end": 1.63,
+          "word": "de"
+        },
+        {
+          "start": 1.63,
+          "end": 1.75,
+          "word": "um"
+        },
+        {
+          "start": 1.75,
+          "end": 1.99,
+          "word": "farol"
+        },
+        {
+          "start": 1.99,
+          "end": 2.65,
+          "word": "trancado."
+        },
+        {
+          "start": 2.91,
+          "end": 3.03,
+          "word": "Ele"
+        },
+        {
+          "start": 3.03,
+          "end": 3.39,
+          "word": "anor"
+        },
+        {
+          "start": 3.39,
+          "end": 4.13,
+          "word": "escosse"
+        },
+        {
+          "start": 4.13,
+          "end": 4.69,
+          "word": "1900."
+        },
+        {
+          "start": 5.77,
+          "end": 5.91,
+          "word": "O"
+        },
+        {
+          "start": 5.91,
+          "end": 6.19,
+          "word": "farol"
+        },
+        {
+          "start": 6.19,
+          "end": 6.63,
+          "word": "ficava"
+        },
+        {
+          "start": 6.63,
+          "end": 6.79,
+          "word": "a"
+        },
+        {
+          "start": 6.79,
+          "end": 6.99,
+          "word": "30"
+        },
+        {
+          "start": 6.99,
+          "end": 7.45,
+          "word": "quilômetros"
+        },
+        {
+          "start": 7.45,
+          "end": 7.71,
+          "word": "da"
+        },
+        {
+          "start": 7.71,
+          "end": 8.37,
+          "word": "costa."
+        }
+      ]
+    },
+    {
+      "start": 8.59,
+      "end": 15.41,
+      "text": "Em dezembro, uma tempestade isolou aía por dias. Em 26 de dezembro, o baco de reabastecimento chegou.",
+      "words": [
+        {
+          "start": 8.59,
+          "end": 8.69,
+          "word": "Em"
+        },
+        {
+          "start": 8.69,
+          "end": 9.17,
+          "word": "dezembro,"
+        },
+        {
+          "start": 9.45,
+          "end": 9.57,
+          "word": "uma"
+        },
+        {
+          "start": 9.57,
+          "end": 10.17,
+          "word": "tempestade"
+        },
+        {
+          "start": 10.17,
+          "end": 10.57,
+          "word": "isolou"
+        },
+        {
+          "start": 10.57,
+          "end": 10.83,
+          "word": "aía"
+        },
+        {
+          "start": 10.83,
+          "end": 11.05,
+          "word": "por"
+        },
+        {
+          "start": 11.05,
+          "end": 11.43,
+          "word": "dias."
+        },
+        {
+          "start": 11.93,
+          "end": 12.09,
+          "word": "Em"
+        },
+        {
+          "start": 12.09,
+          "end": 12.37,
+          "word": "26"
+        },
+        {
+          "start": 12.37,
+          "end": 12.97,
+          "word": "de"
+        },
+        {
+          "start": 12.97,
+          "end": 13.47,
+          "word": "dezembro,"
+        },
+        {
+          "start": 13.69,
+          "end": 13.73,
+          "word": "o"
+        },
+        {
+          "start": 13.73,
+          "end": 14.01,
+          "word": "baco"
+        },
+        {
+          "start": 14.01,
+          "end": 14.17,
+          "word": "de"
+        },
+        {
+          "start": 14.17,
+          "end": 15.03,
+          "word": "reabastecimento"
+        },
+        {
+          "start": 15.03,
+          "end": 15.41,
+          "word": "chegou."
+        }
+      ]
+    },
+    {
+      "start": 15.89,
+      "end": 22.19,
+      "text": "Não havia ninguém. A porta estava fechada. A lâmpada, a parada. A mesa tinha restos de uma refeição.",
+      "words": [
+        {
+          "start": 15.89,
+          "end": 16.05,
+          "word": "Não"
+        },
+        {
+          "start": 16.05,
+          "end": 16.29,
+          "word": "havia"
+        },
+        {
+          "start": 16.29,
+          "end": 16.67,
+          "word": "ninguém."
+        },
+        {
+          "start": 17.15,
+          "end": 17.29,
+          "word": "A"
+        },
+        {
+          "start": 17.29,
+          "end": 17.47,
+          "word": "porta"
+        },
+        {
+          "start": 17.47,
+          "end": 17.79,
+          "word": "estava"
+        },
+        {
+          "start": 17.79,
+          "end": 18.41,
+          "word": "fechada."
+        },
+        {
+          "start": 18.73,
+          "end": 18.83,
+          "word": "A"
+        },
+        {
+          "start": 18.83,
+          "end": 19.23,
+          "word": "lâmpada,"
+        },
+        {
+          "start": 19.51,
+          "end": 19.65,
+          "word": "a"
+        },
+        {
+          "start": 19.65,
+          "end": 19.97,
+          "word": "parada."
+        },
+        {
+          "start": 20.39,
+          "end": 20.51,
+          "word": "A"
+        },
+        {
+          "start": 20.51,
+          "end": 20.67,
+          "word": "mesa"
+        },
+        {
+          "start": 20.67,
+          "end": 20.89,
+          "word": "tinha"
+        },
+        {
+          "start": 20.89,
+          "end": 21.31,
+          "word": "restos"
+        },
+        {
+          "start": 21.31,
+          "end": 21.49,
+          "word": "de"
+        },
+        {
+          "start": 21.49,
+          "end": 21.61,
+          "word": "uma"
+        },
+        {
+          "start": 21.61,
+          "end": 22.19,
+          "word": "refeição."
+        }
+      ]
+    },
+    {
+      "start": 22.65,
+      "end": 27.45,
+      "text": "Uma cadeira estava virada. Do lado de fora, o mar havia destruído o pate do ancorador.",
+      "words": [
+        {
+          "start": 22.65,
+          "end": 22.81,
+          "word": "Uma"
+        },
+        {
+          "start": 22.81,
+          "end": 23.29,
+          "word": "cadeira"
+        },
+        {
+          "start": 23.29,
+          "end": 23.57,
+          "word": "estava"
+        },
+        {
+          "start": 23.57,
+          "end": 24.07,
+          "word": "virada."
+        },
+        {
+          "start": 24.39,
+          "end": 24.49,
+          "word": "Do"
+        },
+        {
+          "start": 24.49,
+          "end": 24.71,
+          "word": "lado"
+        },
+        {
+          "start": 24.71,
+          "end": 24.87,
+          "word": "de"
+        },
+        {
+          "start": 24.87,
+          "end": 25.19,
+          "word": "fora,"
+        },
+        {
+          "start": 25.51,
+          "end": 25.59,
+          "word": "o"
+        },
+        {
+          "start": 25.59,
+          "end": 25.69,
+          "word": "mar"
+        },
+        {
+          "start": 25.69,
+          "end": 25.97,
+          "word": "havia"
+        },
+        {
+          "start": 25.97,
+          "end": 26.49,
+          "word": "destruído"
+        },
+        {
+          "start": 26.49,
+          "end": 26.71,
+          "word": "o"
+        },
+        {
+          "start": 26.71,
+          "end": 26.85,
+          "word": "pate"
+        },
+        {
+          "start": 26.85,
+          "end": 27.03,
+          "word": "do"
+        },
+        {
+          "start": 27.03,
+          "end": 27.45,
+          "word": "ancorador."
+        }
+      ]
+    },
+    {
+      "start": 27.45,
+      "end": 34.43,
+      "text": "O diário parou no dia 15. Depois disso, nenhum registro. A teoria mais aceita é uma onda gigante.",
+      "words": [
+        {
+          "start": 27.45,
+          "end": 28.01,
+          "word": "O"
+        },
+        {
+          "start": 28.01,
+          "end": 28.43,
+          "word": "diário"
+        },
+        {
+          "start": 28.43,
+          "end": 28.79,
+          "word": "parou"
+        },
+        {
+          "start": 28.79,
+          "end": 28.89,
+          "word": "no"
+        },
+        {
+          "start": 28.89,
+          "end": 29.09,
+          "word": "dia"
+        },
+        {
+          "start": 29.09,
+          "end": 29.55,
+          "word": "15."
+        },
+        {
+          "start": 29.89,
+          "end": 30.17,
+          "word": "Depois"
+        },
+        {
+          "start": 30.17,
+          "end": 30.51,
+          "word": "disso,"
+        },
+        {
+          "start": 30.57,
+          "end": 30.75,
+          "word": "nenhum"
+        },
+        {
+          "start": 30.75,
+          "end": 31.43,
+          "word": "registro."
+        },
+        {
+          "start": 31.69,
+          "end": 31.83,
+          "word": "A"
+        },
+        {
+          "start": 31.83,
+          "end": 32.19,
+          "word": "teoria"
+        },
+        {
+          "start": 32.19,
+          "end": 32.59,
+          "word": "mais"
+        },
+        {
+          "start": 32.59,
+          "end": 33.15,
+          "word": "aceita"
+        },
+        {
+          "start": 33.15,
+          "end": 33.43,
+          "word": "é"
+        },
+        {
+          "start": 33.43,
+          "end": 33.57,
+          "word": "uma"
+        },
+        {
+          "start": 33.57,
+          "end": 33.79,
+          "word": "onda"
+        },
+        {
+          "start": 33.79,
+          "end": 34.43,
+          "word": "gigante."
+        }
+      ]
+    },
+    {
+      "start": 34.71,
+      "end": 40.49,
+      "text": "Mas os 3 estavam em pontos diferentes daía. E nenhum corpo apareceu. O arquivo foi fechado.",
+      "words": [
+        {
+          "start": 34.71,
+          "end": 34.95,
+          "word": "Mas"
+        },
+        {
+          "start": 34.95,
+          "end": 35.15,
+          "word": "os"
+        },
+        {
+          "start": 35.15,
+          "end": 35.31,
+          "word": "3"
+        },
+        {
+          "start": 35.31,
+          "end": 35.79,
+          "word": "estavam"
+        },
+        {
+          "start": 35.79,
+          "end": 35.99,
+          "word": "em"
+        },
+        {
+          "start": 35.99,
+          "end": 36.21,
+          "word": "pontos"
+        },
+        {
+          "start": 36.21,
+          "end": 36.67,
+          "word": "diferentes"
+        },
+        {
+          "start": 36.67,
+          "end": 37.41,
+          "word": "daía."
+        },
+        {
+          "start": 37.65,
+          "end": 37.77,
+          "word": "E"
+        },
+        {
+          "start": 37.77,
+          "end": 37.99,
+          "word": "nenhum"
+        },
+        {
+          "start": 37.99,
+          "end": 38.29,
+          "word": "corpo"
+        },
+        {
+          "start": 38.29,
+          "end": 38.97,
+          "word": "apareceu."
+        },
+        {
+          "start": 39.27,
+          "end": 39.37,
+          "word": "O"
+        },
+        {
+          "start": 39.37,
+          "end": 39.65,
+          "word": "arquivo"
+        },
+        {
+          "start": 39.65,
+          "end": 39.87,
+          "word": "foi"
+        },
+        {
+          "start": 39.87,
+          "end": 40.49,
+          "word": "fechado."
+        }
+      ]
+    },
+    {
+      "start": 40.75,
+      "end": 41.65,
+      "text": "A pergunta, não.",
+      "words": [
+        {
+          "start": 40.75,
+          "end": 40.85,
+          "word": "A"
+        },
+        {
+          "start": 40.85,
+          "end": 41.17,
+          "word": "pergunta,"
+        },
+        {
+          "start": 41.51,
+          "end": 41.65,
+          "word": "não."
+        }
+      ]
+    }
+  ]
+}

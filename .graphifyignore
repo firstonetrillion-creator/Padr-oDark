@@ -1,0 +1,28 @@
+# Entram no grafo: docs/, scripts/, templates/, episodios/**/*.md, biblioteca/
+# Fora: ambiente, binarios e saidas de render.
+
+.venv/
+__pycache__/
+node_modules/
+.hyperframes/
+.preview.hf-transaction-*/
+
+# midia e binarios
+*.mp4
+*.wav
+*.png
+*.jpg
+*.onnx
+*.zip
+*.pyc
+*.exe
+gsap.min.js
+
+# saidas de render e QA visual
+episodios/*/renders/
+episodios/*/qa-frames/
+bench/*.mp4
+bench/frame_*.png
+
+# caches
+logs/nicho-cache/

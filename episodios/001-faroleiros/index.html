@@ -1,0 +1,267 @@
+<!doctype html>
+<!--
+  EP 001 — Eilean Mor (piloto aprovado em 2026-10-21)
+  Entrega: 45,01 s, 1080x1920, 30 fps, 13 cenas tipograficas, -15,6 LUFS.
+  Tempos: derivados de transcricao.json (voz.wav de 45,00 s).
+  Contratos: audio ids "voz" e "drone"; autoAlpha por cena (sem ghosting);
+              ?t=segundo congela a timeline para QA por screenshot.
+  Render: final_raw.mp4 (standard, segmentado) -> final.mp4 (+6,2 dB, limitador -1,5 dBFS).
+  Detalhes: docs/ARQUITETURA.md.
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>001 — Os faroleiros de Eilean Mor</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #0A0A0B; }
+  #stage {
+    position: relative;
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    background: #0A0A0B;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #E8E6E1;
+  }
+  .bg {
+    position: absolute;
+    inset: -90px;
+    background:
+      radial-gradient(900px 700px at 28% 18%, rgba(178,58,46,0.13), transparent 62%),
+      radial-gradient(1200px 900px at 72% 82%, rgba(60,70,90,0.18), transparent 66%),
+      linear-gradient(160deg, #101014 0%, #0A0A0B 55%, #07070A 100%);
+    transform: scale(1.06);
+  }
+  .vignette {
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 430px 130px rgba(0,0,0,0.88);
+  }
+  .frame {
+    position: absolute;
+    inset: 64px;
+    border: 1px solid rgba(232,230,225,0.10);
+  }
+  .mark {
+    position: absolute;
+    top: 112px;
+    left: 120px;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 21px;
+    letter-spacing: 8px;
+    color: #6B6B70;
+    z-index: 5;
+  }
+  .dossier {
+    position: absolute;
+    top: 112px;
+    right: 120px;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 21px;
+    letter-spacing: 6px;
+    color: #4A4A50;
+    z-index: 5;
+  }
+  .foot {
+    position: absolute;
+    bottom: 190px;
+    left: 120px;
+    right: 120px;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 19px;
+    letter-spacing: 4px;
+    color: #45454C;
+    z-index: 5;
+  }
+  .scene {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 120px;
+    z-index: 2;
+  }
+  .scene h1 {
+    margin: 0;
+    font-weight: 400;
+    line-height: 0.99;
+    letter-spacing: -2px;
+    text-wrap: balance;
+  }
+  .kicker {
+    font-family: Inter, Arial, sans-serif;
+    font-size: 24px;
+    letter-spacing: 7px;
+    color: #B23A2E;
+    margin-bottom: 30px;
+  }
+  .small {
+    display: block;
+    margin-top: 34px;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 28px;
+    line-height: 1.45;
+    letter-spacing: 4px;
+    color: #6B6B70;
+  }
+  .accent {
+    width: 280px;
+    height: 2px;
+    margin-top: 40px;
+    background: #B23A2E;
+    transform-origin: left center;
+  }
+  .s1 h1 { font-size: 106px; }
+  .s2 h1 { font-size: 126px; letter-spacing: 1px; }
+  .s3 h1 { font-size: 104px; }
+  .s4 h1 { font-size: 96px; }
+  .s5 h1 { font-size: 134px; }
+  .s5b h1 { font-size: 96px; }
+  .s6 h1 { font-size: 124px; }
+  .s7 h1 { font-size: 100px; }
+  .s8 h1 { font-size: 92px; }
+  .s9 h1 { font-size: 100px; }
+  .s10 h1 { font-size: 136px; }
+  .s11 h1 { font-size: 80px; }
+  .s12 h1 { font-size: 96px; }
+  #fade {
+    position: absolute;
+    inset: 0;
+    background: #000;
+    opacity: 0;
+    z-index: 20;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+<div id="stage" data-composition-id="ep001" data-start="0" data-width="1080" data-height="1920" data-fps="30">
+  <div class="bg"></div>
+  <div class="vignette"></div>
+  <div class="frame"></div>
+  <div class="mark">ARQUIVO NOTURNO</div>
+  <div class="dossier">001</div>
+
+  <section class="scene s1 clip" id="s1" data-start="0" data-duration="2.90" data-track-index="1">
+    <h1>TRÊS HOMENS<br>SUMIRAM<br>DE UM FAROL<br>TRANCADO.</h1>
+    <div class="accent"></div>
+  </section>
+
+  <section class="scene s2 clip" id="s2" data-start="2.95" data-duration="5.50" data-track-index="1">
+    <div class="kicker">EILEAN MOR</div>
+    <h1>ESCÓCIA<br>1900</h1>
+    <span class="small">30 KM DA COSTA<br>MAR DO NORTE</span>
+  </section>
+
+  <section class="scene s3 clip" id="s3" data-start="8.50" data-duration="3.35" data-track-index="1">
+    <h1>UMA TEMPESTADE<br>ISOLOU A ILHA.</h1>
+  </section>
+
+  <section class="scene s4 clip" id="s4" data-start="11.90" data-duration="3.65" data-track-index="1">
+    <h1>26 DE DEZEMBRO.<br>O BARCO CHEGOU.</h1>
+  </section>
+
+  <section class="scene s5 clip" id="s5" data-start="15.90" data-duration="1.20" data-track-index="1">
+    <h1>NÃO HAVIA<br>NINGUÉM.</h1>
+  </section>
+
+  <section class="scene s5b clip" id="s5b" data-start="17.15" data-duration="1.40" data-track-index="1">
+    <h1>A PORTA ESTAVA<br>FECHADA.</h1>
+  </section>
+
+  <section class="scene s6 clip" id="s6" data-start="18.60" data-duration="1.65" data-track-index="1">
+    <h1>A LÂMPADA,<br>APAGADA.</h1>
+  </section>
+
+  <section class="scene s7 clip" id="s7" data-start="20.30" data-duration="3.95" data-track-index="1">
+    <h1>A MESA POSTA.<br>UMA CADEIRA<br>VIRADA.</h1>
+  </section>
+
+  <section class="scene s8 clip" id="s8" data-start="24.30" data-duration="3.50" data-track-index="1">
+    <h1>O MAR DESTRUIU<br>PARTE DO<br>ANCORADOURO.</h1>
+  </section>
+
+  <section class="scene s9 clip" id="s9" data-start="27.85" data-duration="3.70" data-track-index="1">
+    <h1>O DIÁRIO PAROU<br>NO DIA 15.</h1>
+    <span class="small">DEPOIS DISSO, NENHUM REGISTRO.</span>
+  </section>
+
+  <section class="scene s10 clip" id="s10" data-start="31.60" data-duration="3.00" data-track-index="1">
+    <div class="kicker">A TEORIA MAIS ACEITA</div>
+    <h1>UMA ONDA<br>GIGANTE?</h1>
+  </section>
+
+  <section class="scene s11 clip" id="s11" data-start="34.65" data-duration="4.45" data-track-index="1">
+    <h1>MAS OS TRÊS<br>ESTAVAM EM PONTOS<br>DIFERENTES.</h1>
+    <span class="small">E NENHUM CORPO APARECEU.</span>
+  </section>
+
+  <section class="scene s12 clip" id="s12" data-start="39.15" data-duration="5.85" data-track-index="1">
+    <h1>O ARQUIVO FOI<br>FECHADO.<br>A PERGUNTA, NÃO.</h1>
+  </section>
+
+  <div class="foot">FONTE · NORTHERN LIGHTHOUSE BOARD</div>
+  <div id="fade"></div>
+
+  <audio id="voz" data-start="0" data-duration="45" data-track-index="0" data-volume="1" src="voz.wav"></audio>
+  <audio id="drone" data-start="0" data-duration="45" data-track-index="2" data-volume="0.16" src="drone.wav"></audio>
+
+  <script src="gsap.min.js"></script>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.to({}, { duration: 45 }, 0);
+    tl.fromTo(".bg", { scale: 1.06 }, { scale: 1.14, duration: 45, ease: "none" }, 0);
+
+    const scenes = [
+      ["s1", 0.34],
+      ["s2", 3.00],
+      ["s3", 8.55],
+      ["s4", 11.95],
+      ["s5", 15.95],
+      ["s5b", 17.20],
+      ["s6", 18.65],
+      ["s7", 20.35],
+      ["s8", 24.35],
+      ["s9", 27.90],
+      ["s10", 31.65],
+      ["s11", 34.70],
+      ["s12", 39.20]
+    ];
+
+    scenes.forEach(([id, t]) => {
+      const root = document.getElementById(id);
+      const start = parseFloat(root.dataset.start || "0");
+      const dur = parseFloat(root.dataset.duration || "45");
+      tl.set(root, { autoAlpha: 0 }, 0);
+      tl.set(root, { autoAlpha: 1 }, start);
+      tl.set(root, { autoAlpha: 0 }, start + dur);
+      tl.from(root.querySelector("h1"), { opacity: 0, y: 36, duration: 0.55, ease: "power2.out" }, t);
+      const accent = root.querySelector(".accent");
+      if (accent) tl.from(accent, { scaleX: 0, duration: 0.5, ease: "power2.out" }, t + 0.10);
+      const small = root.querySelector(".small");
+      if (small) tl.from(small, { opacity: 0, y: 14, duration: 0.45, ease: "power2.out" }, t + 0.18);
+      const kicker = root.querySelector(".kicker");
+      if (kicker) tl.from(kicker, { opacity: 0, duration: 0.4, ease: "power1.out" }, t + 0.05);
+    });
+
+    tl.to("#fade", { opacity: 1, duration: 0.7, ease: "power1.in" }, 44.3);
+    window.__timelines = window.__timelines || {};
+    window.__timelines.ep001 = tl;
+
+    // QA: congelar um frame via ?t=12.5 (não afeta o render)
+    const seek = new URLSearchParams(location.search).get("t");
+    if (seek !== null) {
+      const t = Math.max(0, Math.min(45, parseFloat(seek) || 0));
+      tl.time(t, false);
+      document.querySelectorAll(".clip").forEach((el) => {
+        const start = parseFloat(el.dataset.start || "0");
+        const dur = parseFloat(el.dataset.duration || "0");
+        el.style.visibility = (t >= start && t < start + dur) ? "visible" : "hidden";
+      });
+    }
+  </script>
+</div>
+</body>
+</html>

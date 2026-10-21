@@ -1,0 +1,34 @@
+# ===== Ambiente (nao versionar) =====
+.venv/
+__pycache__/
+*.pyc
+
+# ===== Midia e binarios =====
+# Ficam no disco como evidencia; o repo guarda apenas texto, codigo e template.
+*.mp4
+*.wav
+*.mp3
+*.onnx
+*.zip
+*.exe
+gsap.min.js
+
+# ===== Saidas de render e QA visual =====
+episodios/*/renders/
+episodios/*/qa-frames/
+bench/frame_*.png
+
+# ===== Estado interno de render =====
+.hyperframes/
+.preview.hf-transaction-*/
+
+# ===== Caches =====
+logs/nicho-cache/
+
+# ===== graphify =====
+# Descomente para versionar o grafo, ou mantenha ignorado se preferir regerar.
+graphify-out/
+
+# ===== Sistema =====
+Thumbs.db
+desktop.ini

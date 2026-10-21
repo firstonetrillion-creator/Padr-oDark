@@ -1,0 +1,29 @@
+﻿[2026-10-20 22:43:33] download: https://nodejs.org/dist/v22.23.3/node-v22.23.3-win-x64.zip
+[2026-10-20 22:43:40] salvo: C:\Users\valentim\AppData\Local\Temp\brain-install\node-v22.23.3-win-x64.zip (33.9 MB)
+[2026-10-20 22:43:40] extraindo Node v22.23.3
+[2026-10-20 22:44:08] PATH(user) += C:\Users\valentim\Tools\node
+[2026-10-20 22:44:10] node: v22.23.3
+[2026-10-20 22:44:10] download: https://github.com/git-for-windows/git/releases/download/v2.56.0.windows.2/PortableGit-2.56.0.2-64-bit.7z.exe
+[2026-10-20 22:44:22] salvo: C:\Users\valentim\AppData\Local\Temp\brain-install\PortableGit-2.56.0.2-64-bit.7z.exe (57.2 MB)
+[2026-10-20 22:44:22] extraindo PortableGit
+[2026-10-20 22:45:48] PATH(user) += C:\Users\valentim\Tools\git\cmd
+[2026-10-20 22:45:48] git: git version 2.56.0.windows.2
+[2026-10-20 22:45:48] download: https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip
+[2026-10-20 22:49:25] download: https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n8.1-latest-win64-gpl-8.1.zip
+[2026-10-20 22:49:57] salvo: C:\Users\valentim\AppData\Local\Temp\brain-install\ffmpeg-n8.1-win64-gpl.zip (184.1 MB)
+[2026-10-20 22:49:57] extraindo FFmpeg
+[2026-10-20 22:50:25] PATH(user) += C:\Users\valentim\Tools\ffmpeg\bin
+[2026-10-20 22:50:26] ffmpeg: ffmpeg version n8.1.3-18-g46d899d7a0-20261020 Copyright (c) 2000-2026 the FFmpeg developers
+[2026-10-20 22:50:26] instalando uv
+[2026-10-20 22:51:06] instalando uv
+[2026-10-20 22:51:21] uv: uv 0.13.4 (7456b60bc 2026-10-20 x86_64-pc-windows-msvc)
+[2026-10-20 22:51:22] uv python install 3.12
+[2026-10-20 22:51:43] criando .venv (3.12)
+[2026-10-20 22:51:49] instalando pacotes python (piper-tts, faster-whisper, yt-dlp)
+[2026-10-20 22:52:27] python: Python 3.12.15
+[2026-10-20 22:52:27] npm install -g hyperframes
+[2026-10-20 22:53:35] PATH(user) += C:\Users\valentim\AppData\Roaming\npm
+[2026-10-20 22:53:39] download: https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx
+[2026-10-20 22:54:37] salvo: C:\Users\valentim\Documents\Projeto Padrão\Padrao-Dark\models\vozes\pt_BR-faber-medium.onnx (60.3 MB)
+[2026-10-20 22:54:37] download: https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx.json
+[2026-10-20 22:54:37] salvo: C:\Users\valentim\Documents\Projeto Padrão\Padrao-Dark\models\vozes\pt_BR-faber-medium.onnx.json (0 MB)

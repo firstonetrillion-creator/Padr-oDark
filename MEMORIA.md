@@ -1,0 +1,191 @@
+# MEMORIA — Padrao-Dark
+
+> **Leia este arquivo primeiro.** Ele é a memória de retomada do projeto.
+> Depois: `AGENTS.md` (regras) → `docs/PLANO.md` (fases) → `docs/HISTORICO.md` (o que já foi entregue).
+> Última atualização: **2026-10-21**. Se você é uma sessão nova, não refaça o que está marcado como entregue.
+
+## 1. Onde estamos
+
+**Fase 1 concluída e piloto publicado.** O cérebro está instalado, o gate G0 passou, o piloto `001-faroleiros` foi aprovado pelo usuário ("ficou perfeito") e publicado no YouTube Shorts em 21/10/2026. O template `misterio-45` foi extraído e o QA técnico está assinado. A validação de nicho por metadados foi concluída em 21/10/2026: **Mistério/Arquivo é a âncora**. Agora a Fase 2 segue com os 5 vídeos restantes e a medição de retenção.
+
+| Frente | Estado | Evidência |
+|---|---|---|
+| Cérebro (Node, FFmpeg, Python, Piper, faster-whisper, yt-dlp, HyperFrames) | pronto | `docs/STACK.md` |
+| Gate G0 (45 s em 1080×1920) | **PASS** | `logs/bench.json`, 2m32,8s |
+| Piloto `001-faroleiros` | **aprovado** | `episodios/001-faroleiros/final.mp4`, `qa.md` |
+| Template `misterio-45` | pronto | `templates/misterio-45/` |
+| Documentação de retomada | pronta | este arquivo + `docs/ARQUITETURA.md` + `docs/HISTORICO.md` |
+| Publicação | **publicado** (21/10/2026) | [YouTube Shorts](https://youtube.com/shorts/WKuNVjl3d5M) |
+| Validação de nicho | **concluída (metadados)** | `logs/nicho-2026-10-21.json`, `docs/NICHO.md` |
+| 6 vídeos de validação | **1/6 publicado** | piloto + 5 restantes |
+| Canal | **rebrandar Cod Mind Million** | decisão em `docs/DECISOES.md` |
+| `codebase-memory-mcp` | **não instalado** (adiado) | decisão em `docs/DECISOES.md` |
+
+## 2. O que já foi entregue
+
+### Infraestrutura
+- Node v22.23.3, npm 10.9.9, Git 2.56.0, FFmpeg/ffprobe 8.1.3, uv 0.13.4, Python 3.12.15.
+- Piper 1.8.0 + voz `pt_BR-faber-medium`; faster-whisper 1.2.1; yt-dlp 2026.8.19.
+- HyperFrames 0.8.181 + Chrome Headless Shell 152.
+- Tudo em `C:\Users\valentim\Tools` e `.venv` (sem admin).
+- Correções aplicadas: DLLs VC++ no onnxruntime/venv, `espeak-ng-data` em caminho ASCII, patch do `av` no faster-whisper. Detalhes em `docs/STACK.md`.
+
+### Conteúdo e método
+- 7 skills operacionais em `.opencode/skills/` (briefing, gancho, roteiro, voz, render, qa, publicacao).
+- `docs/`: decisões, stack, nicho, plano, QA, identidade.
+- `biblioteca/`: ganchos, fontes, `publicados.csv`.
+- `scripts/qa.ps1`: QA automático (duração, resolução, fps, áudio, loudness, preto inesperado).
+- `scripts/nicho.py`: coleta metadados de Shorts por nicho (views/inscrito, engajamento); não baixa vídeo.
+
+### Piloto 001 — Eilean Mor
+- `narracao.txt` (118 palavras) → `voz_raw.wav` 41,45 s → `voz.wav` 45,00 s.
+- `transcricao.json` com timestamps por palavra; 13 cenas sincronizadas.
+- `index.html` tipográfico, 1080×1920, 30 fps, 13 cenas, `autoAlpha` por cena.
+- `final.mp4`: **45,01 s, 3,3 MB, −15,6 LUFS**, H.264 + AAC 48 kHz estéreo.
+- `qa.md`: QA técnico **PASS**; aprovação humana registrada em 21/10/2026.
+- Cópia de publicação: `001-faroleiros_shorts_v1.mp4`; capa: `capa.png`.
+- **Publicado no YouTube Shorts em 21/10/2026:** https://youtube.com/shorts/WKuNVjl3d5M (canal Cod Mind Million).
+
+### Template
+- `templates/misterio-45/index.html` — composição validada, 13 cenas, áudio `voz`/`drone`, QA por `?t=`.
+- `templates/misterio-45/beat-sheet.md` — 13 beats, tempos e orçamento de palavras.
+- `templates/misterio-45/README.md` — passo a passo completo, incluindo armadilhas.
+
+## 3. O que falta (em ordem)
+
+### 3.1 Medir o piloto publicado (48 h)
+1. Publicado em 21/10/2026 no YouTube Shorts; TikTok/Reels ficam como reaproveitamento opcional.
+2. Em **23/10/2026**, coletar views, retenção 3 s, retenção média, conclusão, salvos e compartilhados.
+3. Preencher as colunas em aberto da linha de `biblioteca/publicados.csv`.
+4. Decidir: manter gancho/formato, ajustar ou matar.
+
+### 3.2 Validação de nicho — concluída (21/10/2026)
+- Coleta completa: 48 shorts de Mistério/Arquivo (14 canais) e 50 de Psicologia sombria (17 canais), canais de 100–500 mil inscritos.
+- **Mistério/Arquivo:** mediana de views/inscrito por canal **0,10**; 3 canais ≥1,0 (Pequeno Contexto 1,50; Penumbroo 1,04; Crimes que Marcaram 1,02); mediana de views por canal 2.075.
+- **Psicologia sombria:** mediana de views/inscrito por canal **0,06**; nenhum canal ≥0,5; mediana de views por canal 1.428.
+- **Engajamento:** psicologia tem like rate maior (6,95% vs 3,37%), mas demanda relativa menor. O like não compensa a diferença de views/inscrito.
+- **Decisão:** Mistério/Arquivo é a âncora da Fase 2. Psicologia fica como fallback, não como teste paralelo.
+- Dados completos em `logs/nicho-2026-10-21.json` e `docs/NICHO.md`.
+
+### 3.3 Produzir 6 vídeos
+- **6 vídeos de Mistério 45** (o piloto é 1/6; faltam 5), no canal rebrandado.
+- Usar `templates/misterio-45/` e o fluxo de `MEMORIA.md` §6.
+- Meta: 5–7 shorts/semana; um render por vez.
+- Se a retenção dos 6 ficar abaixo do gate (média <40% ou nenhum >40%), reavaliar: testar Psicologia sombria em canal novo antes de trocar de ferramenta.
+
+### 3.4 Desbloqueado pelo primeiro vídeo (21/10/2026)
+- `codebase-memory-mcp` pode ser instalado e o projeto indexado, **fora de uma janela de render** (RAM de 8 GB).
+- OpenMontage continua fora até o gate 3 (ver `docs/PLANO.md`).
+
+## 4. Ambiente e restrições
+
+| Item | Valor |
+|---|---|
+| Máquina | Dell Inspiron 5468, i5-7200U 2C/4T, 8 GB RAM, Intel HD 620, Windows 10 22H2 |
+| Disco | C: ~67 GB livres; D:/E: HDD USB |
+| Binários | `C:\Users\valentim\Tools` (Node, FFmpeg, Git) |
+| Python | `.venv` do projeto (Piper, faster-whisper, yt-dlp) |
+| Render | HyperFrames + Chrome headless; **um por vez** |
+| Regra | Sem WebGL/Three.js, sem Docker/WSL, sem Remotion/Hermes3D |
+
+## 5. Mapa de arquivos
+
+| Caminho | O que é |
+|---|---|
+| `MEMORIA.md` | este arquivo; estado e retomada |
+| `AGENTS.md` | regras invioláveis e fluxo |
+| `README.md` | visão do produto e stack |
+| `docs/PLANO.md` | fases, gates, capacidade, métricas |
+| `docs/HISTORICO.md` | linha do tempo do que foi entregue |
+| `docs/ARQUITETURA.md` | contratos do código (cenas, áudio, render, QA) |
+| `docs/STACK.md` | instalação, versões, correções de ambiente |
+| `docs/DECISOES.md` | decisões e descartes |
+| `docs/NICHO.md` | hipóteses de nicho e critérios |
+| `docs/QA.md` | checklist editorial e técnico |
+| `.opencode/skills/` | instruções por etapa |
+| `templates/misterio-45/` | template validado |
+| `episodios/<slug>/` | um diretório por vídeo, com status e QA |
+| `scripts/` | instalação, voz, transcrição, QA, benchmark |
+| `biblioteca/publicados.csv` | registro de publicação e métricas |
+
+## 6. Comandos canônicos
+
+```powershell
+# ambiente novo
+$env:Path = "C:\Users\valentim\Tools\node;C:\Users\valentim\Tools\ffmpeg\bin;" + $env:Path
+
+# verificar instalação
+.\scripts\verify.ps1
+
+# voz (sempre pelo wrapper, nunca piper.exe)
+.\.venv\Scripts\python.exe scripts\tts.py `
+  --model models\vozes\pt_BR-faber-medium.onnx `
+  --input episodios\<slug>\narracao.txt `
+  --output episodios\<slug>\voz_raw.wav --length-scale 1.28
+
+# transcrição com timestamps
+.\.venv\Scripts\python.exe scripts\transcribe.py `
+  episodios\<slug>\voz.wav --model small --language pt `
+  --output episodios\<slug>\transcricao.json
+
+# QA visual de uma cena, sem render
+$chrome = (Get-ChildItem "$env:USERPROFILE\.cache\hyperframes\chrome\chrome-headless-shell" -Recurse -Filter chrome-headless-shell.exe | Select-Object -First 1).FullName
+$uri = [System.Uri]::new((Resolve-Path index.html)).AbsoluteUri
+& $chrome --disable-gpu --hide-scrollbars --window-size=1080,1920 `
+  --virtual-time-budget=1500 --screenshot=qa-frames\t12.5.png "$uri`?t=12.5"
+
+# render segmentado (evita Target closed)
+$env:HF_SEGMENTED_CAPTURE = "true"
+$env:HF_SEGMENT_FRAMES = "300"
+$env:HF_SEGMENT_BROWSER_RECYCLE = "1"
+hyperframes render --output final_raw.mp4 --quality standard --fps 30 `
+  --workers 1 --low-memory-mode --protocol-timeout 600000 --resume
+
+# normalizar áudio (medir antes; o piloto usou +6,2 dB)
+ffmpeg -i final_raw.mp4 -c:v copy `
+  -af "volume=6.2dB,alimiter=limit=0.85:level=disabled" `
+  -c:a aac -b:a 192k -movflags +faststart final.mp4
+
+# QA automático
+.\scripts\qa.ps1 episodios\<slug>\final.mp4
+```
+
+## 7. Armadilhas conhecidas
+
+| Sintoma | Causa | Solução |
+|---|---|---|
+| `piper.exe` falha com caminho acentuado | espeak-ng não lê `Padrão` | usar `scripts/tts.py` |
+| Shims `.ps1` bloqueados | execution policy | chamar `.cmd` ou `-ExecutionPolicy Bypass` |
+| Render mudo | `<audio>` sem `id` | manter `id="voz"` e `id="drone"` |
+| Texto fantasma de outra cena | GSAP só anima entrada | `autoAlpha` por cena (já no template) |
+| Chrome fecha em ~1300/1350 frames | memória acumulada | captura segmentada + 1 worker |
+| Linha quebra diferente no render | fonte na fronteira dos ~840 px | reduzir 4–8 px ou quebrar antes |
+| Áudio em −22 LUFS | TTS baixo + drone discreto | ganho estático + limitador no pós |
+| `qa.ps1` “falha” no ffmpeg | stderr vira erro no PowerShell | o script já contorna; rodar com Bypass |
+| faster-whisper quebra no `av` 19 | `metadata_errors` removido | patch em `faster_whisper/audio.py` |
+
+## 8. Decisões que não se reabrem
+
+- HyperFrames (Apache 2.0), Piper, faster-whisper, yt-dlp, FFmpeg.
+- Vídeo **tipográfico** (texto é a imagem); sem WebGL, Three.js, shaders.
+- PT-BR até o gate de expansão.
+- Nada de reupload de terceiros; `yt-dlp` só metadados.
+- Um render por vez; 1080×1920, 30 fps, H.264 + AAC.
+- Fato precisa de fonte; lenda marcada como lenda.
+- `codebase-memory-mcp` e OpenMontage só depois do primeiro vídeo publicado.
+- PI-Desktop fica fora do MVP; reavaliar só depois do primeiro vídeo (ver `docs/DECISOES.md`).
+- Hypit é referência conceitual, não dependência do MVP; não empacotar no kit sem licença comercial.
+- Um canal = um nicho; não misturar Mistério/Arquivo com Psicologia sombria.
+- Mistério/Arquivo é a âncora da Fase 2; o Cod Mind Million será rebrandado para **Dossiê 45** (handle `@Dossie45`; confirmar no YouTube Studio). Psicologia fica como fallback em canal novo, não no mesmo canal.
+
+## 9. Protocolo de memória
+
+Ao fim de **cada etapa**:
+
+1. Atualizar a tabela da §1 e as listas das §2/§3 deste arquivo.
+2. Acrescentar uma entrada datada em `docs/HISTORICO.md` (o que, evidência, decisão).
+3. Atualizar `episodios/<slug>/status.md` e `qa.md` quando for um episódio.
+4. Se mudar um contrato de código, atualizar `docs/ARQUITETURA.md`.
+5. Nunca apagar evidência (áudio, frames de QA, `final_raw.mp4`).
+
+> Regra de ouro: se uma sessão nova não conseguir retomar lendo `MEMORIA.md` + `AGENTS.md` + `docs/PLANO.md`, esta memória está incompleta.
