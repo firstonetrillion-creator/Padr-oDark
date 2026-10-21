@@ -61,7 +61,7 @@ Marca de trabalho: **Dossiê 45** (handle `@Dossie45`; confirmar no YouTube Stud
 
 | Nome | Handle | Status |
 |---|---|---|
-| **Dossiê 45** | `@Dossie45` | **404 = disponível** na checagem |
+| **Dossiê 45** | `@Dossie45` | **adotado em 21/10/2026** (handle no ar; nome de exibição ainda `Dossie45`) |
 | Arquivo 3:07 | `@Arquivo307` | 404 = disponível; nome mais único |
 | Arquivo Noturno 45 | `@ArquivoNoturno45` | 404 = disponível, mas “Arquivo Noturno” já existe |
 | Sala Escura | `@SalaEscura` | ocupado (“A Sala Escura”) |
@@ -75,12 +75,33 @@ Marca de trabalho: **Dossiê 45** (handle `@Dossie45`; confirmar no YouTube Stud
 
 > Checagem por HTTP 404 no perfil; não é garantia até confirmar dentro do YouTube Studio. “Dossiê 45” é a proposta: nome de arquivo/investigação + duração do formato.
 
+## Arquivos de marca
+
+| Arquivo | Uso | Especificação |
+|---|---|---|
+| `identidade/banner.png` | banner do canal | 2048×1152; todo o texto dentro da área segura 1235×338 |
+| `identidade/avatar.png` | avatar do canal | 800×800 |
+| `identidade/banner.html` | fonte editável do banner | paleta e tipografia do projeto |
+| `identidade/avatar.html` | fonte editável do avatar | idem |
+
+Regerar depois de editar o HTML (Chrome headless, sem dependência nova):
+
+```powershell
+$chrome = "$env:USERPROFILE\.cache\hyperframes\chrome\chrome-headless-shell\win64-152.0.7977.30\chrome-headless-shell-win64\chrome-headless-shell.exe"
+& $chrome --disable-gpu --hide-scrollbars --force-device-scale-factor=1 `
+  --window-size=2048,1152 --virtual-time-budget=2000 `
+  --screenshot="$PWD\identidade\banner.png" "file:///$($PWD.Path.Replace('\','/'))/identidade/banner.html"
+```
+
+Para o avatar, trocar `2048,1152` por `800,800` e o nome do arquivo. Se o caminho tiver acento, copiar o HTML para `%TEMP%` antes de renderizar.
+
 ## Checklist de rebranding (Cod Mind Million → Dossiê 45)
 
 > Textos prontos e ordem de execução: `docs/REBRANDING.md`.
 
-- [ ] Confirmar `@Dossie45` no YouTube Studio (a checagem externa deu 404, mas o Studio é a fonte).
-- [ ] Trocar nome de exibição, handle, avatar e banner.
+- [x] Confirmar `@Dossie45` no canal — **21/10/2026**, mesmo channel ID do piloto (`UCwgP68Uen2KoIh2R-j231Yw`).
+- [ ] Nome de exibição: está `Dossie45`; trocar para **Dossiê 45** (com acento e espaço).
+- [ ] Subir `identidade/avatar.png` e `identidade/banner.png`.
 - [ ] Descrição impessoal: “Arquivo de casos sem solução. Fatos com fonte; lendas marcadas como lenda.”
 - [ ] Unlistar/privar os 9 shorts de psicologia; manter o piloto `001-faroleiros`.
 - [ ] Revisar links, país, palavras-chave e configurações de upload.

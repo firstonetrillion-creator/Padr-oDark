@@ -4,14 +4,21 @@
 > Referência de identidade: `docs/IDENTIDADE.md`. Decisão: `docs/DECISOES.md` (seção “Canal”).
 > Última atualização: **2026-10-21**.
 
+## Estado em 21/10/2026
+
+| Item | Estado |
+|---|---|
+| Handle `@Dossie45` | **no ar** — mesmo canal do piloto (`UCwgP68Uen2KoIh2R-j231Yw`) |
+| Nome de exibição | `Dossie45` — trocar para **Dossiê 45** (acento e espaço) |
+| Descrição / palavras-chave | vazias |
+| Avatar / banner | gerados em `identidade/` — falta subir |
+| Shorts de psicologia | **ainda públicos** (a aba Shorts mostra 10 vídeos) |
+
 ## Antes de tocar em qualquer coisa
 
-1. Abrir o Studio em `youtube.com/@` e conferir se **@Dossie45** está livre. A checagem externa deu 404, mas só o Studio decide.
-2. Se estiver ocupado, a ordem de preferência é:
-   - `@Arquivo307` (Arquivo 3:07)
-   - `@ArquivoNoturno45` (Arquivo Noturno 45)
-3. O YouTube limita a **2 trocas de handle em 14 dias**. Escolher uma vez, com calma.
-4. O nome de exibição pode mudar quantas vezes quiser; o handle, não.
+1. O handle `@Dossie45` **já está no canal**; não é mais necessário checar disponibilidade.
+2. Se um dia precisar trocar de handle, lembrar: o YouTube limita a **2 trocas em 14 dias**.
+3. O nome de exibição pode mudar quantas vezes quiser; o handle, não.
 
 ## Texto pronto
 
@@ -67,8 +74,8 @@ Fonte: <órgão, documento ou arquivo>
 
 | # | Onde | Ação | Por quê nesta ordem |
 |---|---|---|---|
-| 1 | Studio → Personalização → Informações básicas | Trocar **nome** para “Dossiê 45” | Não consome troca de handle |
-| 2 | Studio → Personalização → Informações básicas | Trocar **handle** para `@Dossie45` | Depois de confirmar que está livre; conta as 2 trocas |
+| 1 | Studio → Personalização → Informações básicas | Trocar **nome** para “Dossiê 45” | ✅ handle feito; falta o acento no nome |
+| 2 | Studio → Personalização → Informações básicas | Trocar **handle** para `@Dossie45` | ✅ feito em 21/10 |
 | 3 | Studio → Personalização → Informações básicas | Colar descrição, palavras-chave e país | Fecha a identidade textual |
 | 4 | Studio → Personalização → Imagem da marca | Subir avatar (800×800) e banner (2048×1152, área segura 1235×338) | Último item visual; sem eles o canal fica “novo pela metade” |
 | 5 | Studio → Conteúdo | **Não listar** os 9 shorts de psicologia | Limpa o canal sem apagar métrica; privado também serve, mas não listado preserva acesso por link |

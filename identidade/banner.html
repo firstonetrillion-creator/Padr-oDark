@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Banner — Dossiê 45</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 2048px; height: 1152px; overflow: hidden; background: #0A0A0B; }
+  .bg {
+    position: absolute; inset: -80px;
+    background:
+      radial-gradient(900px 700px at 22% 12%, rgba(178,58,46,0.16), transparent 62%),
+      radial-gradient(1200px 900px at 80% 88%, rgba(60,70,90,0.20), transparent 66%),
+      linear-gradient(160deg, #101014 0%, #0A0A0B 55%, #07070A 100%);
+  }
+  .vignette { position: absolute; inset: 0; box-shadow: inset 0 0 520px 160px rgba(0,0,0,0.90); }
+  .frame { position: absolute; inset: 70px; border: 1px solid rgba(232,230,225,0.10); }
+  .safe {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: 1235px; height: 338px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400; font-size: 190px; line-height: 1;
+    letter-spacing: 4px; color: #E8E6E1;
+  }
+  .rule { width: 300px; height: 2px; background: #B23A2E; margin: 32px 0 26px; }
+  p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 31px; letter-spacing: 8px; text-transform: uppercase; color: #6B6B70;
+  }
+  .corner {
+    position: absolute; font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px; letter-spacing: 7px; color: #34343A;
+  }
+  .corner.tl { left: 108px; top: 96px; }
+  .corner.br { right: 108px; bottom: 96px; }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="vignette"></div>
+  <div class="frame"></div>
+  <div class="corner tl">ARQUIVO DE CASOS SEM SOLUÇÃO</div>
+  <div class="corner br">45 SEGUNDOS · FATO COM FONTE</div>
+  <div class="safe">
+    <h1>DOSSIÊ 45</h1>
+    <div class="rule"></div>
+    <p>Casos sem solução, em 45 segundos</p>
+  </div>
+</body>
+</html>

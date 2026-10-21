@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Avatar — Dossiê 45</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 800px; height: 800px; overflow: hidden; background: #0A0A0B; }
+  .bg {
+    position: absolute; inset: -60px;
+    background:
+      radial-gradient(520px 420px at 30% 18%, rgba(178,58,46,0.20), transparent 64%),
+      radial-gradient(620px 520px at 78% 86%, rgba(60,70,90,0.22), transparent 68%),
+      linear-gradient(160deg, #101014 0%, #0A0A0B 58%, #07070A 100%);
+  }
+  .vignette { position: absolute; inset: 0; box-shadow: inset 0 0 240px 80px rgba(0,0,0,0.88); }
+  .ring { position: absolute; inset: 56px; border: 1px solid rgba(232,230,225,0.12); border-radius: 50%; }
+  .mark {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+  }
+  .d45 {
+    font-family: Georgia, "Times New Roman", serif; font-weight: 400;
+    font-size: 248px; line-height: 1; letter-spacing: 0; color: #E8E6E1;
+  }
+  .d45 span { color: #B23A2E; margin-left: 14px; }
+  .rule { width: 168px; height: 2px; background: #B23A2E; margin-top: 26px; }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="vignette"></div>
+  <div class="ring"></div>
+  <div class="mark">
+    <div class="d45">D<span>45</span></div>
+  </div>
+</body>
+</html>

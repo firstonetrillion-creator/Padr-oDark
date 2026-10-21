@@ -4,6 +4,21 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-21**.
 
+## 2026-10-21 — Handle @Dossie45 no ar; identidade visual gerada
+
+**Entregue**
+- Canal agora responde em `youtube.com/@Dossie45` — mesmo channel ID do piloto (`UCwgP68Uen2KoIh2R-j231Yw`), verificado em 21/10.
+- `identidade/banner.png` (2048×1152, texto dentro da área segura 1235×338) e `identidade/avatar.png` (800×800), gerados por Chrome headless a partir de HTML editável, na paleta e na Georgia do template.
+- `docs/REBRANDING.md` com estado real do canal, textos prontos e ordem de execução.
+
+**Pendente**
+- Nome de exibição está `Dossie45`; trocar para **Dossiê 45**.
+- Descrição, palavras-chave, país e links ainda vazios.
+- Subir avatar/banner; deslistar os 9 shorts de psicologia (a aba Shorts ainda mostra 10 vídeos).
+
+**Decisão**
+- Marca de tela passa a ser **DOSSIÊ 45** a partir do 002; o 001 não é re-renderizado.
+
 ## 2026-10-21 — Baseline versionado e contrato testável
 
 **Entregue**

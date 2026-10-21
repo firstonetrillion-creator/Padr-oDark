@@ -19,7 +19,7 @@
 | Validação de nicho | **concluída (metadados)** | `logs/nicho-2026-10-21.json`, `docs/NICHO.md` |
 | Versionamento | **git iniciado (21/10/2026)** | commit `782df62`, tag `ep-001-publicado` |
 | 6 vídeos de validação | **1/6 publicado** | piloto + 5 restantes |
-| Canal | **rebrandar Cod Mind Million** | decisão em `docs/DECISOES.md` |
+| Canal | **rebranding em curso**: handle `@Dossie45` no ar; falta acento no nome, bio, assets e deslistar 9 shorts | [canal](https://youtube.com/@Dossie45), `docs/REBRANDING.md` |
 | `codebase-memory-mcp` | **não instalado** (adiado) | decisão em `docs/DECISOES.md` |
 
 ## 2. O que já foi entregue
