@@ -6,7 +6,7 @@
 
 ## 1. Onde estamos
 
-**Fase 1 concluída e piloto publicado.** O cérebro está instalado, o gate G0 passou, o piloto `001-faroleiros` foi aprovado pelo usuário ("ficou perfeito") e publicado no YouTube Shorts em 21/10/2026. O template `misterio-45` foi extraído e o QA técnico está assinado. A validação de nicho por metadados foi concluída em 21/10/2026: **Mistério/Arquivo é a âncora**. Em 21/10/2026 também foi feita a **adoção seletiva do `youtube-agent-skill`** (retenção 3 s/10 s, 21 ganchos e lint de título). Agora a Fase 2 segue com os 5 vídeos restantes e a medição de retenção.
+**Fase 1 concluída e piloto publicado.** O cérebro está instalado, o gate G0 passou, o piloto `001-faroleiros` foi aprovado pelo usuário ("ficou perfeito") e publicado no YouTube Shorts em 21/10/2026. O template `misterio-45` foi extraído e o QA técnico está assinado. A validação de nicho por metadados foi concluída em 21/10/2026: **Mistério/Arquivo é a âncora**. Em 21/10/2026 também foi feita a **adoção seletiva do `youtube-agent-skill`** (retenção 3 s/10 s, 21 ganchos e lint de título). O **002-mary-celeste** foi produzido, passou no QA técnico e está **aguardando aprovação humana**; a Fase 2 segue com os 5 vídeos restantes e a medição de retenção.
 
 | Frente | Estado | Evidência |
 |---|---|---|
@@ -18,7 +18,8 @@
 | Publicação | **publicado** (21/10/2026) | [YouTube Shorts](https://youtube.com/shorts/WKuNVjl3d5M) |
 | Validação de nicho | **concluída (metadados)** | `logs/nicho-2026-10-21.json`, `docs/NICHO.md` |
 | Versionamento | **git iniciado (21/10/2026)** | commit `782df62`, tag `ep-001-publicado` |
-| 6 vídeos de validação | **1/6 publicado** | piloto + 5 restantes |
+| 6 vídeos de validação | **1/6 publicado; 002 em aprovação** | piloto + `episodios/002-mary-celeste/` + 4 restantes |
+| Episódio 002 — Mary Celeste | **produzido; QA PASS; aguardando aprovação** | `episodios/002-mary-celeste/` |
 | Canal | **Dossiê 45**: nome, avatar/banner e 9 shorts antigos privados; falta colar a descrição | [canal](https://youtube.com/@Dossie45), `docs/REBRANDING.md` |
 | Ferramentas de análise | **adotadas seletivamente** | `tools/youtube-agent-skill/`, `docs/GANCHOS-21.md` |
 | `codebase-memory-mcp` | **não instalado** (adiado) | decisão em `docs/DECISOES.md` |
@@ -51,6 +52,18 @@
 - Cópia de publicação: `001-faroleiros_shorts_v1.mp4`; capa: `capa.png`.
 - **Publicado no YouTube Shorts em 21/10/2026:** https://youtube.com/shorts/WKuNVjl3d5M (canal Cod Mind Million).
 
+### Episódio 002 — Mary Celeste (21/10/2026)
+- Tema: abandono documentado × lenda do “jantar servido”.
+- `briefing.md`, `gancho.md` (fórmula 17), `roteiro.md` (110 palavras de tela / 121 faladas), `shotlist.md`.
+- `voz_raw.wav` 43,04 s (`length_scale` 1,12) → `voz.wav` 45,00 s; `transcricao.json` por palavra.
+- `index.html` com 13 cenas sincronizadas; gancho visível no frame 1; `autoAlpha` por cena.
+- `check-contrato.ps1`: **OK, 0 avisos** (29 invariantes).
+- `final.mp4`: **45,013 s, 3,6 MB, −15,4 LUFS, pico −1,5 dBFS**, 1080×1920, H.264, 30 fps, AAC 48 kHz estéreo.
+- `qa.md`: QA técnico **PASS**; aprovação humana **pendente**.
+- Cópia de publicação: `002-mary-celeste_shorts_v1.mp4`; capa: `capa.png`.
+- Título: `Mary Celeste: o navio encontrado sem ninguém em 1872` (52 chars; lint 98/100).
+- **Bloqueios:** aprovação humana + colar `identidade/descricao-canal.txt` no Studio.
+
 ### Template
 - `templates/misterio-45/index.html` — composição validada, 13 cenas, áudio `voz`/`drone`, QA por `?t=`.
 - `templates/misterio-45/beat-sheet.md` — 13 beats, tempos e orçamento de palavras.
@@ -80,7 +93,8 @@
 - Dados completos em `logs/nicho-2026-10-21.json` e `docs/NICHO.md`.
 
 ### 3.3 Produzir 6 vídeos
-- **6 vídeos de Mistério 45** (o piloto é 1/6; faltam 5), no canal rebrandado.
+- **6 vídeos de Mistério 45** (o piloto é 1/6; o 002 está pronto para aprovação; faltam 4 depois dele), no canal rebrandado.
+- O 002 só publica depois de (1) aprovação humana explícita e (2) descrição do canal colada no Studio com a vitrine pública conferida.
 - Usar `templates/misterio-45/` e o fluxo de `MEMORIA.md` §6.
 - Meta: 5–7 shorts/semana; um render por vez.
 - Se a retenção dos 6 ficar abaixo do gate (média <40% ou nenhum >40%), reavaliar: testar Psicologia sombria em canal novo antes de trocar de ferramenta.

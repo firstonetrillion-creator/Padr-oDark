@@ -4,6 +4,50 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-21**.
 
+## 2026-10-21 — 002 Mary Celeste: produção fechada, QA PASS, aguardando aprovação
+
+**Entregue**
+- `episodios/002-mary-celeste/` criado a partir de `templates/misterio-45`
+  (sha256 `0e0a2281`, commit `ad2747d`).
+- `briefing.md`, `gancho.md` (fórmula 17 — A Alegação Impossível),
+  `roteiro.md` (110 palavras de tela / 121 faladas), `shotlist.md`,
+  `narracao.txt`, `voz_raw.wav` 43,04 s, `voz.wav` 45,00 s,
+  `transcricao.json`, `index.html` com 13 cenas sincronizadas.
+- `voz_raw.wav` com Piper `pt_BR-faber-medium`, `length_scale` 1,12;
+  `voz.wav` com 0,6 s de respiro e pad para 45,00 s.
+- `check-contrato.ps1`: **OK, 0 avisos** (29 invariantes).
+- `final_raw.mp4` 45,0 s / 3,4 MB; `final.mp4` **45,013 s / 3,6 MB**,
+  1080×1920, H.264, 30 fps, AAC 48 kHz estéreo.
+- Loudness: −21,5 LUFS cru → **−15,4 LUFS** (+6,2 dB, limitador 0,85);
+  pico **−1,5 dBFS**.
+- Render segmentado: **3m00,9s**, 5 segmentos, 0 retries.
+- `qa.ps1`: **QA PASS**. `qa.md` assinado; 15 frames em `qa-frames/`.
+- Cópia de publicação: `002-mary-celeste_shorts_v1.mp4`; capa `capa.png`
+  (frame em 1,5 s).
+- `publicacao.md` com título de 52 chars, descrição, 5 hashtags, fontes
+  e aviso de conteúdo sintético; lint de título **98/100**.
+
+**Decisão**
+- O gancho usa a lenda (“O navio foi encontrado sem ninguém. E com o
+  jantar servido.”), marcada no frame 1 como **A LENDA**, e a cena 2
+  corrige a invenção antes de qualquer afirmação factual.
+- A data narrada é **5 de dezembro** (horário de bordo); o briefing
+  registra a diferença em relação a 4 de dezembro (horário terrestre).
+- “Nove chegaram vazios” descreve a carga em Gênova, não o estado no
+  momento do achado.
+- O 002 continua tipográfico v1; sem footage ou imagem de terceiros.
+
+**Pendente**
+- Aprovação humana do vídeo.
+- Colar `identidade/descricao-canal.txt` no Studio e conferir a vitrine
+  pública.
+- Publicar, registrar em `biblioteca/publicados.csv` e medir retenção
+  em 48 h.
+
+**Evidência**
+- `episodios/002-mary-celeste/` (textos, áudio, composição, `final.mp4`,
+  `qa.md`, `qa-frames/`, `publicacao.md`).
+
 ## 2026-10-21 — Rebranding fechado: Dossiê 45, 9 shorts privados, descrição criada
 
 **Entregue**

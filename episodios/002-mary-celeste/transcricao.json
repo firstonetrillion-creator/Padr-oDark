@@ -1,0 +1,672 @@
+{
+  "language": "pt",
+  "duration": 45.0,
+  "segments": [
+    {
+      "start": 0.24,
+      "end": 6.14,
+      "text": "O navio foi encontrado sem ninguém e, com jantar servido, a cena é famosa, foi inventada",
+      "words": [
+        {
+          "start": 0.24,
+          "end": 0.7,
+          "word": "O"
+        },
+        {
+          "start": 0.7,
+          "end": 0.96,
+          "word": "navio"
+        },
+        {
+          "start": 0.96,
+          "end": 1.18,
+          "word": "foi"
+        },
+        {
+          "start": 1.18,
+          "end": 1.7,
+          "word": "encontrado"
+        },
+        {
+          "start": 1.7,
+          "end": 1.98,
+          "word": "sem"
+        },
+        {
+          "start": 1.98,
+          "end": 2.34,
+          "word": "ninguém"
+        },
+        {
+          "start": 2.34,
+          "end": 2.82,
+          "word": "e,"
+        },
+        {
+          "start": 2.94,
+          "end": 2.96,
+          "word": "com"
+        },
+        {
+          "start": 2.96,
+          "end": 3.32,
+          "word": "jantar"
+        },
+        {
+          "start": 3.32,
+          "end": 3.78,
+          "word": "servido,"
+        },
+        {
+          "start": 4.08,
+          "end": 4.22,
+          "word": "a"
+        },
+        {
+          "start": 4.22,
+          "end": 4.44,
+          "word": "cena"
+        },
+        {
+          "start": 4.44,
+          "end": 4.74,
+          "word": "é"
+        },
+        {
+          "start": 4.74,
+          "end": 5.2,
+          "word": "famosa,"
+        },
+        {
+          "start": 5.54,
+          "end": 5.66,
+          "word": "foi"
+        },
+        {
+          "start": 5.66,
+          "end": 6.14,
+          "word": "inventada"
+        }
+      ]
+    },
+    {
+      "start": 6.14,
+      "end": 6.82,
+      "text": "anos depois.",
+      "words": [
+        {
+          "start": 6.14,
+          "end": 6.36,
+          "word": "anos"
+        },
+        {
+          "start": 6.36,
+          "end": 6.82,
+          "word": "depois."
+        }
+      ]
+    },
+    {
+      "start": 7.42,
+      "end": 13.82,
+      "text": "Em 1872, o Mare Celeste deixou Nova York uma genova, das pessoas a bordo, nenhuma foi",
+      "words": [
+        {
+          "start": 7.42,
+          "end": 7.56,
+          "word": "Em"
+        },
+        {
+          "start": 7.56,
+          "end": 8.88,
+          "word": "1872,"
+        },
+        {
+          "start": 9.5,
+          "end": 9.54,
+          "word": "o"
+        },
+        {
+          "start": 9.54,
+          "end": 9.78,
+          "word": "Mare"
+        },
+        {
+          "start": 9.78,
+          "end": 10.2,
+          "word": "Celeste"
+        },
+        {
+          "start": 10.2,
+          "end": 10.62,
+          "word": "deixou"
+        },
+        {
+          "start": 10.62,
+          "end": 10.86,
+          "word": "Nova"
+        },
+        {
+          "start": 10.86,
+          "end": 11.12,
+          "word": "York"
+        },
+        {
+          "start": 11.12,
+          "end": 11.4,
+          "word": "uma"
+        },
+        {
+          "start": 11.4,
+          "end": 11.92,
+          "word": "genova,"
+        },
+        {
+          "start": 12.22,
+          "end": 12.32,
+          "word": "das"
+        },
+        {
+          "start": 12.32,
+          "end": 12.58,
+          "word": "pessoas"
+        },
+        {
+          "start": 12.58,
+          "end": 12.78,
+          "word": "a"
+        },
+        {
+          "start": 12.78,
+          "end": 13.06,
+          "word": "bordo,"
+        },
+        {
+          "start": 13.4,
+          "end": 13.58,
+          "word": "nenhuma"
+        },
+        {
+          "start": 13.58,
+          "end": 13.82,
+          "word": "foi"
+        }
+      ]
+    },
+    {
+      "start": 13.82,
+      "end": 14.38,
+      "text": "encontrada.",
+      "words": [
+        {
+          "start": 13.82,
+          "end": 14.38,
+          "word": "encontrada."
+        }
+      ]
+    },
+    {
+      "start": 14.72,
+      "end": 20.58,
+      "text": "Em 5 de dezembro, o Degratio encontrou a deriva, telas postas, navio navegável, nenhum corpo.",
+      "words": [
+        {
+          "start": 14.72,
+          "end": 14.82,
+          "word": "Em"
+        },
+        {
+          "start": 14.82,
+          "end": 15.06,
+          "word": "5"
+        },
+        {
+          "start": 15.06,
+          "end": 15.24,
+          "word": "de"
+        },
+        {
+          "start": 15.24,
+          "end": 15.7,
+          "word": "dezembro,"
+        },
+        {
+          "start": 15.98,
+          "end": 16.02,
+          "word": "o"
+        },
+        {
+          "start": 16.02,
+          "end": 16.56,
+          "word": "Degratio"
+        },
+        {
+          "start": 16.56,
+          "end": 17.0,
+          "word": "encontrou"
+        },
+        {
+          "start": 17.0,
+          "end": 17.14,
+          "word": "a"
+        },
+        {
+          "start": 17.14,
+          "end": 17.48,
+          "word": "deriva,"
+        },
+        {
+          "start": 17.72,
+          "end": 17.92,
+          "word": "telas"
+        },
+        {
+          "start": 17.92,
+          "end": 18.38,
+          "word": "postas,"
+        },
+        {
+          "start": 18.78,
+          "end": 19.04,
+          "word": "navio"
+        },
+        {
+          "start": 19.04,
+          "end": 19.66,
+          "word": "navegável,"
+        },
+        {
+          "start": 20.0,
+          "end": 20.2,
+          "word": "nenhum"
+        },
+        {
+          "start": 20.2,
+          "end": 20.58,
+          "word": "corpo."
+        }
+      ]
+    },
+    {
+      "start": 20.98,
+      "end": 24.1,
+      "text": "O Capitão Briggs levava a esposa e a fia de dois anos.",
+      "words": [
+        {
+          "start": 20.98,
+          "end": 21.02,
+          "word": "O"
+        },
+        {
+          "start": 21.02,
+          "end": 21.46,
+          "word": "Capitão"
+        },
+        {
+          "start": 21.46,
+          "end": 21.74,
+          "word": "Briggs"
+        },
+        {
+          "start": 21.74,
+          "end": 22.18,
+          "word": "levava"
+        },
+        {
+          "start": 22.18,
+          "end": 22.34,
+          "word": "a"
+        },
+        {
+          "start": 22.34,
+          "end": 22.74,
+          "word": "esposa"
+        },
+        {
+          "start": 22.74,
+          "end": 23.02,
+          "word": "e"
+        },
+        {
+          "start": 23.02,
+          "end": 23.14,
+          "word": "a"
+        },
+        {
+          "start": 23.14,
+          "end": 23.38,
+          "word": "fia"
+        },
+        {
+          "start": 23.38,
+          "end": 23.5,
+          "word": "de"
+        },
+        {
+          "start": 23.5,
+          "end": 23.7,
+          "word": "dois"
+        },
+        {
+          "start": 23.7,
+          "end": 24.1,
+          "word": "anos."
+        }
+      ]
+    },
+    {
+      "start": 24.54,
+      "end": 28.14,
+      "text": "A CAG, 1.701 barris de álcool, nove chegaram vazios.",
+      "words": [
+        {
+          "start": 24.54,
+          "end": 24.64,
+          "word": "A"
+        },
+        {
+          "start": 24.64,
+          "end": 24.94,
+          "word": "CAG,"
+        },
+        {
+          "start": 25.08,
+          "end": 25.18,
+          "word": "1"
+        },
+        {
+          "start": 25.18,
+          "end": 26.06,
+          "word": ".701"
+        },
+        {
+          "start": 26.06,
+          "end": 26.38,
+          "word": "barris"
+        },
+        {
+          "start": 26.38,
+          "end": 26.54,
+          "word": "de"
+        },
+        {
+          "start": 26.54,
+          "end": 26.84,
+          "word": "álcool,"
+        },
+        {
+          "start": 27.12,
+          "end": 27.3,
+          "word": "nove"
+        },
+        {
+          "start": 27.3,
+          "end": 27.7,
+          "word": "chegaram"
+        },
+        {
+          "start": 27.7,
+          "end": 28.14,
+          "word": "vazios."
+        }
+      ]
+    },
+    {
+      "start": 28.14,
+      "end": 30.82,
+      "text": "O diário parou em 25 de novembro.",
+      "words": [
+        {
+          "start": 28.14,
+          "end": 28.68,
+          "word": "O"
+        },
+        {
+          "start": 28.68,
+          "end": 29.06,
+          "word": "diário"
+        },
+        {
+          "start": 29.06,
+          "end": 29.34,
+          "word": "parou"
+        },
+        {
+          "start": 29.34,
+          "end": 29.46,
+          "word": "em"
+        },
+        {
+          "start": 29.46,
+          "end": 30.1,
+          "word": "25"
+        },
+        {
+          "start": 30.1,
+          "end": 30.32,
+          "word": "de"
+        },
+        {
+          "start": 30.32,
+          "end": 30.82,
+          "word": "novembro."
+        }
+      ]
+    },
+    {
+      "start": 31.04,
+      "end": 31.7,
+      "text": "Depois, nada.",
+      "words": [
+        {
+          "start": 31.04,
+          "end": 31.24,
+          "word": "Depois,"
+        },
+        {
+          "start": 31.48,
+          "end": 31.7,
+          "word": "nada."
+        }
+      ]
+    },
+    {
+      "start": 32.04,
+      "end": 34.9,
+      "text": "A cena real, um bote faltando e um navio navegável.",
+      "words": [
+        {
+          "start": 32.04,
+          "end": 32.12,
+          "word": "A"
+        },
+        {
+          "start": 32.12,
+          "end": 32.3,
+          "word": "cena"
+        },
+        {
+          "start": 32.3,
+          "end": 32.62,
+          "word": "real,"
+        },
+        {
+          "start": 32.84,
+          "end": 32.94,
+          "word": "um"
+        },
+        {
+          "start": 32.94,
+          "end": 33.18,
+          "word": "bote"
+        },
+        {
+          "start": 33.18,
+          "end": 33.68,
+          "word": "faltando"
+        },
+        {
+          "start": 33.68,
+          "end": 33.8,
+          "word": "e"
+        },
+        {
+          "start": 33.8,
+          "end": 33.9,
+          "word": "um"
+        },
+        {
+          "start": 33.9,
+          "end": 34.22,
+          "word": "navio"
+        },
+        {
+          "start": 34.22,
+          "end": 34.9,
+          "word": "navegável."
+        }
+      ]
+    },
+    {
+      "start": 35.16,
+      "end": 40.28,
+      "text": "A teoria mais conhecida, medo de explosão, mas por que ninguém voltou, nenhum corpo apareceu.",
+      "words": [
+        {
+          "start": 35.16,
+          "end": 35.24,
+          "word": "A"
+        },
+        {
+          "start": 35.24,
+          "end": 35.52,
+          "word": "teoria"
+        },
+        {
+          "start": 35.52,
+          "end": 35.78,
+          "word": "mais"
+        },
+        {
+          "start": 35.78,
+          "end": 36.36,
+          "word": "conhecida,"
+        },
+        {
+          "start": 36.62,
+          "end": 36.84,
+          "word": "medo"
+        },
+        {
+          "start": 36.84,
+          "end": 36.98,
+          "word": "de"
+        },
+        {
+          "start": 36.98,
+          "end": 37.5,
+          "word": "explosão,"
+        },
+        {
+          "start": 37.76,
+          "end": 37.86,
+          "word": "mas"
+        },
+        {
+          "start": 37.86,
+          "end": 38.06,
+          "word": "por"
+        },
+        {
+          "start": 38.06,
+          "end": 38.22,
+          "word": "que"
+        },
+        {
+          "start": 38.22,
+          "end": 38.36,
+          "word": "ninguém"
+        },
+        {
+          "start": 38.36,
+          "end": 38.92,
+          "word": "voltou,"
+        },
+        {
+          "start": 39.24,
+          "end": 39.42,
+          "word": "nenhum"
+        },
+        {
+          "start": 39.42,
+          "end": 39.72,
+          "word": "corpo"
+        },
+        {
+          "start": 39.72,
+          "end": 40.28,
+          "word": "apareceu."
+        }
+      ]
+    },
+    {
+      "start": 40.58,
+      "end": 42.16,
+      "text": "O arquivo explica o abandono.",
+      "words": [
+        {
+          "start": 40.58,
+          "end": 40.66,
+          "word": "O"
+        },
+        {
+          "start": 40.66,
+          "end": 40.94,
+          "word": "arquivo"
+        },
+        {
+          "start": 40.94,
+          "end": 41.38,
+          "word": "explica"
+        },
+        {
+          "start": 41.38,
+          "end": 41.48,
+          "word": "o"
+        },
+        {
+          "start": 41.48,
+          "end": 42.16,
+          "word": "abandono."
+        }
+      ]
+    },
+    {
+      "start": 42.34,
+      "end": 43.36,
+      "text": "Não explica o silêncio.",
+      "words": [
+        {
+          "start": 42.34,
+          "end": 42.42,
+          "word": "Não"
+        },
+        {
+          "start": 42.42,
+          "end": 42.8,
+          "word": "explica"
+        },
+        {
+          "start": 42.8,
+          "end": 42.9,
+          "word": "o"
+        },
+        {
+          "start": 42.9,
+          "end": 43.36,
+          "word": "silêncio."
+        }
+      ]
+    }
+  ]
+}
