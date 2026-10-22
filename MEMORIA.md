@@ -79,6 +79,8 @@
 ## 3. O que falta (em ordem)
 
 ### 3.1 Medir os publicados 001 e 002 (48 h)
+> Checklist do gate e fila provisória 003–006: `docs/PLANO.md` §Execução imediata.
+
 1. Publicados em 21/10/2026 no YouTube Shorts; TikTok/Reels ficam como reaproveitamento opcional.
 2. Em **23/10/2026**, baixar o CSV de retenção do Studio para 001 e 002 e rodar `tools/youtube-agent-skill/yt-retention/retention.py --duration 45` em cada; coletar também views, retenção média, conclusão, salvos e compartilhados.
 3. Preencher as colunas em aberto das linhas de `biblioteca/publicados.csv` e criar `episodios/001-faroleiros/retencao.md` e `episodios/002-mary-celeste/retencao.md`.

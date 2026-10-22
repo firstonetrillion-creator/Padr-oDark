@@ -4,6 +4,26 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-21**.
 
+## 2026-10-21 — Plano de execução 003–006 definido
+
+**Entregue**
+- `docs/PLANO.md` ganhou a seção **Execução imediata**, com o gate de
+  retenção de 001/002 em **23/10/2026**.
+- Fila provisória para os 4 vídeos restantes, com janela-alvo, fonte
+  principal, ângulo e status de validação: Roanoke, MV Joyita, Voo 19 e
+  Passo Dyatlov.
+- Gate 2 definido para depois do 006: medir 48 h dos 6 e comparar com a
+  meta de retenção média > 40% em 3 vídeos.
+- `MEMORIA.md` agora aponta para o checklist e a fila em `docs/PLANO.md`.
+
+**Decisão**
+- A fila 003–006 só trava depois do gate de 23/10; a retenção pode exigir
+  ajuste de gancho/ritmo antes de produzir os 4.
+- Temas entram como **candidatos** até validação das fontes.
+
+**Evidência**
+- `docs/PLANO.md` §Execução imediata; `MEMORIA.md` §3.1.
+
 ## 2026-10-21 — 002 Mary Celeste publicado no YouTube Shorts
 
 **Entregue**
