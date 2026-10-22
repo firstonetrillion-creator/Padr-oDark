@@ -4,6 +4,28 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-21**.
 
+## 2026-10-21 — 003 Roanoke: briefing e gancho prontos
+
+**Entregue**
+- `episodios/003-roanoke/` criado a partir de `templates/misterio-45`
+  (commit `ac25c1e`), com `index.html` e `status.md`.
+- `briefing.md` com o fato central, a correção da lenda e fontes oficiais:
+  NPS Fort Raleigh (1587, 1590 e teorias) e David Beers Quinn,
+  *The Roanoke Voyages, 1584–1590* (Hakluyt Society, 1955).
+- `gancho.md` com 10 opções; escolhido **“117 pessoas sumiram. Deixaram
+  uma palavra.”** (fórmula 1 — O Dado).
+- `status.md` marca briefing e gancho como prontos; roteiro pendente.
+
+**Decisão**
+- A produção final do 003 continua travada até o gate de retenção de
+  001/002 em **23/10**; o roteiro pode ser adiantado.
+- O número de colonos varia entre 117 e 118 nas páginas do NPS; o
+  briefing registra a variação e usa 117 no gancho.
+
+**Evidência**
+- `episodios/003-roanoke/briefing.md`, `gancho.md` e `status.md`;
+  `docs/PLANO.md` §Execução imediata.
+
 ## 2026-10-21 — Plano de execução 003–006 definido
 
 **Entregue**

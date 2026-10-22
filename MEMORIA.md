@@ -96,6 +96,7 @@
 
 ### 3.3 Produzir 6 vídeos
 - **6 vídeos de Mistério 45** (2/6 publicados; faltam 4), no canal rebrandado.
+- **003-roanoke** em pré-produção: briefing e gancho prontos; roteiro pendente; produção final só depois do gate de 23/10.
 - Manter o gate para os próximos: aprovação humana explícita e descrição do canal conferida antes de publicar.
 - Usar `templates/misterio-45/` e o fluxo de `MEMORIA.md` §6.
 - Meta: 5–7 shorts/semana; um render por vez.
