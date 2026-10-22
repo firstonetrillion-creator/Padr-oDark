@@ -6,7 +6,7 @@
 
 ## 1. Onde estamos
 
-**Fase 1 concluída e piloto publicado.** O cérebro está instalado, o gate G0 passou, o piloto `001-faroleiros` foi aprovado pelo usuário ("ficou perfeito") e publicado no YouTube Shorts em 21/10/2026. O template `misterio-45` foi extraído e o QA técnico está assinado. A validação de nicho por metadados foi concluída em 21/10/2026: **Mistério/Arquivo é a âncora**. Em 21/10/2026 também foi feita a **adoção seletiva do `youtube-agent-skill`** (retenção 3 s/10 s, 21 ganchos e lint de título). O **002-mary-celeste** foi produzido, passou no QA técnico e está **aguardando aprovação humana**; a Fase 2 segue com os 5 vídeos restantes e a medição de retenção.
+**Fase 1 concluída e piloto publicado.** O cérebro está instalado, o gate G0 passou, o piloto `001-faroleiros` foi aprovado pelo usuário ("ficou perfeito") e publicado no YouTube Shorts em 21/10/2026. O template `misterio-45` foi extraído e o QA técnico está assinado. A validação de nicho por metadados foi concluída em 21/10/2026: **Mistério/Arquivo é a âncora**. Em 21/10/2026 também foi feita a **adoção seletiva do `youtube-agent-skill`** (retenção 3 s/10 s, 21 ganchos e lint de título). O **002-mary-celeste** foi produzido, passou no QA técnico e foi **publicado no YouTube Shorts em 21/10/2026**; a Fase 2 segue com os 4 vídeos restantes e a medição de retenção de 001 e 002.
 
 | Frente | Estado | Evidência |
 |---|---|---|
@@ -15,12 +15,12 @@
 | Piloto `001-faroleiros` | **aprovado** | `episodios/001-faroleiros/final.mp4`, `qa.md` |
 | Template `misterio-45` | pronto | `templates/misterio-45/` |
 | Documentação de retomada | pronta | este arquivo + `docs/ARQUITETURA.md` + `docs/HISTORICO.md` |
-| Publicação | **publicado** (21/10/2026) | [YouTube Shorts](https://youtube.com/shorts/WKuNVjl3d5M) |
+| Publicação | **publicado** (21/10/2026) | 001: [Shorts](https://youtube.com/shorts/WKuNVjl3d5M); 002: [Shorts](https://youtube.com/shorts/n6dtveQguf4) |
 | Validação de nicho | **concluída (metadados)** | `logs/nicho-2026-10-21.json`, `docs/NICHO.md` |
 | Versionamento | **git iniciado (21/10/2026)** | commit `782df62`, tag `ep-001-publicado` |
-| 6 vídeos de validação | **1/6 publicado; 002 em aprovação** | piloto + `episodios/002-mary-celeste/` + 4 restantes |
-| Episódio 002 — Mary Celeste | **produzido; QA PASS; aguardando aprovação** | `episodios/002-mary-celeste/` |
-| Canal | **Dossiê 45**: nome, avatar/banner e 9 shorts antigos privados; falta colar a descrição | [canal](https://youtube.com/@Dossie45), `docs/REBRANDING.md` |
+| 6 vídeos de validação | **2/6 publicados** | piloto + 002 + 4 restantes |
+| Episódio 002 — Mary Celeste | **publicado** (21/10/2026) | `episodios/002-mary-celeste/`, [Shorts](https://youtube.com/shorts/n6dtveQguf4) |
+| Canal | **Dossiê 45**: nome, avatar/banner, descrição no ar e 9 shorts antigos privados | [canal](https://youtube.com/@Dossie45), `docs/REBRANDING.md` |
 | Ferramentas de análise | **adotadas seletivamente** | `tools/youtube-agent-skill/`, `docs/GANCHOS-21.md` |
 | `codebase-memory-mcp` | **não instalado** (adiado) | decisão em `docs/DECISOES.md` |
 
@@ -59,10 +59,10 @@
 - `index.html` com 13 cenas sincronizadas; gancho visível no frame 1; `autoAlpha` por cena.
 - `check-contrato.ps1`: **OK, 0 avisos** (29 invariantes).
 - `final.mp4`: **45,013 s, 3,6 MB, −15,4 LUFS, pico −1,5 dBFS**, 1080×1920, H.264, 30 fps, AAC 48 kHz estéreo.
-- `qa.md`: QA técnico **PASS**; aprovação humana **pendente**.
+- `qa.md`: QA técnico **PASS**; aprovação humana em 21/10/2026.
 - Cópia de publicação: `002-mary-celeste_shorts_v1.mp4`; capa: `capa.png`.
 - Título: `Mary Celeste: o navio encontrado sem ninguém em 1872` (52 chars; lint 98/100).
-- **Bloqueios:** aprovação humana + colar `identidade/descricao-canal.txt` no Studio.
+- **Publicado no YouTube Shorts em 21/10/2026:** https://youtube.com/shorts/n6dtveQguf4. Aviso de conteúdo sintético marcado; selo **AI** visível.
 
 ### Template
 - `templates/misterio-45/index.html` — composição validada, 13 cenas, áudio `voz`/`drone`, QA por `?t=`.
@@ -78,10 +78,10 @@
 
 ## 3. O que falta (em ordem)
 
-### 3.1 Medir o piloto publicado (48 h)
-1. Publicado em 21/10/2026 no YouTube Shorts; TikTok/Reels ficam como reaproveitamento opcional.
-2. Em **23/10/2026**, baixar o CSV de retenção do Studio e rodar `tools/youtube-agent-skill/yt-retention/retention.py --duration 45`; coletar também views, retenção média, conclusão, salvos e compartilhados.
-3. Preencher as colunas em aberto da linha de `biblioteca/publicados.csv` e criar `episodios/001-faroleiros/retencao.md`.
+### 3.1 Medir os publicados 001 e 002 (48 h)
+1. Publicados em 21/10/2026 no YouTube Shorts; TikTok/Reels ficam como reaproveitamento opcional.
+2. Em **23/10/2026**, baixar o CSV de retenção do Studio para 001 e 002 e rodar `tools/youtube-agent-skill/yt-retention/retention.py --duration 45` em cada; coletar também views, retenção média, conclusão, salvos e compartilhados.
+3. Preencher as colunas em aberto das linhas de `biblioteca/publicados.csv` e criar `episodios/001-faroleiros/retencao.md` e `episodios/002-mary-celeste/retencao.md`.
 4. Decidir: manter gancho/formato, ajustar ou matar.
 
 ### 3.2 Validação de nicho — concluída (21/10/2026)
@@ -93,8 +93,8 @@
 - Dados completos em `logs/nicho-2026-10-21.json` e `docs/NICHO.md`.
 
 ### 3.3 Produzir 6 vídeos
-- **6 vídeos de Mistério 45** (o piloto é 1/6; o 002 está pronto para aprovação; faltam 4 depois dele), no canal rebrandado.
-- O 002 só publica depois de (1) aprovação humana explícita e (2) descrição do canal colada no Studio com a vitrine pública conferida.
+- **6 vídeos de Mistério 45** (2/6 publicados; faltam 4), no canal rebrandado.
+- Manter o gate para os próximos: aprovação humana explícita e descrição do canal conferida antes de publicar.
 - Usar `templates/misterio-45/` e o fluxo de `MEMORIA.md` §6.
 - Meta: 5–7 shorts/semana; um render por vez.
 - Se a retenção dos 6 ficar abaixo do gate (média <40% ou nenhum >40%), reavaliar: testar Psicologia sombria em canal novo antes de trocar de ferramenta.
@@ -234,7 +234,7 @@ ffmpeg -i final_raw.mp4 -c:v copy `
 - PI-Desktop fica fora do MVP; reavaliar só depois do primeiro vídeo (ver `docs/DECISOES.md`).
 - Hypit é referência conceitual, não dependência do MVP; não empacotar no kit sem licença comercial.
 - Um canal = um nicho; não misturar Mistério/Arquivo com Psicologia sombria.
-- Mistério/Arquivo é a âncora da Fase 2; o Cod Mind Million foi rebrandado para **Dossiê 45** (handle `@Dossie45`, avatar/banner no ar). Nome público e deslistagem dos 9 shorts antigos concluídos; falta colar a descrição de `identidade/descricao-canal.txt`. Psicologia fica como fallback em canal novo, não no mesmo canal.
+- Mistério/Arquivo é a âncora da Fase 2; o Cod Mind Million foi rebrandado para **Dossiê 45** (handle `@Dossie45`, avatar/banner no ar). Nome público, descrição de `identidade/descricao-canal.txt` e deslistagem dos 9 shorts antigos concluídos. Psicologia fica como fallback em canal novo, não no mesmo canal.
 - `youtube-agent-skill` é adotado **seletivamente** (retenção, hooks como checklist, lint de título). `yt-viral` e `yt-audit` ficam para depois dos 6 vídeos; `hookscore.py` não é usado em PT-BR.
 
 ## 9. Protocolo de memória

@@ -48,14 +48,15 @@
 
 - [x] Título, descrição e hashtags em `publicacao.md`
 - [x] Lint de título PT-BR: **98/100** (único aviso: truncamento no feed mobile)
-- [ ] Aviso de conteúdo sintético marcado na plataforma
-- [ ] Aprovação humana do vídeo — **pendente**
-- [ ] Publicar no YouTube Shorts
-- [ ] Registrar em `biblioteca/publicados.csv`
-- [ ] Medir retenção em 48 h
+- [x] Aviso de conteúdo sintético marcado na plataforma (selo **AI** visível)
+- [x] Aprovação humana do vídeo — **aprovado em 21/10/2026**
+- [x] Publicar no YouTube Shorts — https://youtube.com/shorts/n6dtveQguf4
+- [x] Registrar em `biblioteca/publicados.csv`
+- [ ] Medir retenção em 48 h — **agendado para 23/10/2026**
 
 ## Veredito
 
-**QA técnico: PASS.** O vídeo está pronto para aprovação humana.
+**QA técnico: PASS. Publicado no YouTube Shorts em 21/10/2026.**
 
-**Não publicar** antes de: (1) aprovação humana explícita; (2) descrição do canal colada no Studio e vitrine pública conferida.
+Publicado após aprovação humana explícita e com a descrição do canal conferida
+na vitrine pública.

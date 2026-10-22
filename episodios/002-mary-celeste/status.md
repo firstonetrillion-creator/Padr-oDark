@@ -15,8 +15,8 @@
 | Composição | pronto | `index.html` (13 cenas sincronizadas) |
 | QA visual | pronto | `qa-frames/` (frame 1, 13 cenas, fade e bordas) |
 | Render | pronto | `final.mp4`, `final_raw.mp4`, `002-mary-celeste_shorts_v1.mp4` |
-| QA | **PASS** | `qa.md` (técnico; aprovação humana pendente) |
-| Publicação | **pendente** | aguardando aprovação humana e descrição do canal |
+| QA | **PASS** | `qa.md` (técnico + aprovação humana em 21/10/2026) |
+| Publicação | **publicado** | YouTube Shorts, 21/10/2026 — https://youtube.com/shorts/n6dtveQguf4 |
 
 ## Medições
 
@@ -30,9 +30,17 @@
 - `final.mp4`: **45,013 s**, **3,6 MB**, 1080×1920, H.264, 30 fps, AAC 48 kHz estéreo
 - Título: 52 caracteres; lint **98/100**
 
+## Publicação
+
+- **YouTube Shorts:** https://youtube.com/shorts/n6dtveQguf4
+- **Data:** 21/10/2026
+- **Visibilidade:** Público
+- **Aviso de conteúdo sintético:** marcado no Studio; selo **AI** visível na página
+- **Métricas:** medir em **23/10/2026** (48 h)
+
 ## Próximos passos
 
-1. Aprovação humana do vídeo (`002-mary-celeste_shorts_v1.mp4`).
-2. Colar `identidade/descricao-canal.txt` no Studio e conferir a vitrine pública.
-3. Publicar no YouTube Shorts e registrar em `biblioteca/publicados.csv`.
-4. Medir retenção em 48 h após a publicação.
+1. Em 23/10/2026, baixar o CSV de retenção do 002 no Studio e rodar `retention.py --duration 45`.
+2. Coletar views, retenção em 3 s/10 s, retenção média, conclusão, salvos e compartilhados.
+3. Preencher `biblioteca/publicados.csv` e criar `retencao.md` do 002.
+4. Comparar com o 001 e decidir manter, ajustar ou matar o formato.

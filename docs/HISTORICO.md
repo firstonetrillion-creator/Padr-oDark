@@ -4,6 +4,29 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-21**.
 
+## 2026-10-21 — 002 Mary Celeste publicado no YouTube Shorts
+
+**Entregue**
+- `002-mary-celeste` publicado no **YouTube Shorts** em 21/10/2026:
+  https://youtube.com/shorts/n6dtveQguf4
+- Título público: **Mary Celeste: o navio encontrado sem ninguém em 1872**
+  (52 caracteres; lint 98/100).
+- Descrição com contexto, fontes e 5 hashtags; capa `capa.png`; visibilidade
+  **Público**.
+- Aviso de conteúdo sintético marcado no Studio; selo **AI** visível na página.
+- `biblioteca/publicados.csv` recebeu a linha do 002.
+- `publicacao.md`, `status.md`, `qa.md` e `MEMORIA.md` atualizados para o
+  estado publicado.
+- Medição de 48 h agendada para **23/10/2026**, junto com o 001.
+
+**Decisão**
+- O 002 entra na validação de nicho como **2/6**; restam 4 vídeos de mistério.
+- Manter o formato tipográfico v1 e o gate de aprovação humana para os
+  próximos episódios.
+
+**Evidência**
+- URL pública acima; `episodios/002-mary-celeste/`; `biblioteca/publicados.csv`.
+
 ## 2026-10-21 — 002 Mary Celeste: produção fechada, QA PASS, aguardando aprovação
 
 **Entregue**
@@ -37,7 +60,7 @@
   momento do achado.
 - O 002 continua tipográfico v1; sem footage ou imagem de terceiros.
 
-**Pendente**
+**Pendente na época** (resolvido na entrada acima)
 - Aprovação humana do vídeo.
 - Colar `identidade/descricao-canal.txt` no Studio e conferir a vitrine
   pública.
@@ -316,7 +339,8 @@
 ## Próximos marcos (ainda sem data)
 
 - [x] Publicar `001-faroleiros` e registrar em `biblioteca/publicados.csv`.
+- [x] Publicar `002-mary-celeste` (2/6) e registrar em `biblioteca/publicados.csv`.
 - [ ] Escrever o script de validação de nicho (`yt-dlp`, 50 shorts/nicho, views por inscrito).
-- [ ] Produzir e publicar 6 vídeos de validação.
+- [ ] Produzir e publicar os 4 vídeos restantes de validação.
 - [ ] Medir retenção em 48 h e escolher o nicho âncora.
 - [ ] Instalar `codebase-memory-mcp` após o primeiro vídeo publicado.

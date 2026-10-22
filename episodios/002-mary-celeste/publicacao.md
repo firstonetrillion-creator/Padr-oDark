@@ -1,7 +1,8 @@
 # Publicação — 002-mary-celeste
 
-> Status: **pronto para aprovação humana; não publicado.**
-> Bloqueios: aprovação do vídeo + descrição do canal colada no Studio.
+> Status: **publicado no YouTube Shorts em 21/10/2026.**
+> URL: https://youtube.com/shorts/n6dtveQguf4
+> Medição de retenção agendada para **23/10/2026** (48 h).
 
 ## Título
 
@@ -47,26 +48,27 @@ Narração sintética (Piper TTS); composição tipográfica original. Nenhuma i
 - [x] Arquivo `002-mary-celeste_shorts_v1.mp4` (1080×1920, 45,01 s)
 - [x] `qa.ps1` com **QA PASS**
 - [x] `qa.md` assinado
-- [ ] Descrição do canal colada no Studio → Personalização → Informações básicas
-- [ ] Vitrine pública conferida em janela anônima
-- [ ] Aprovação humana explícita do vídeo
-- [ ] Publicar no YouTube Shorts
-- [ ] Registrar em `biblioteca/publicados.csv`
-- [ ] Agendar medição de retenção para 48 h
+- [x] Descrição do canal colada no Studio → Personalização → Informações básicas
+- [x] Vitrine pública conferida em janela anônima
+- [x] Aprovação humana explícita do vídeo (21/10/2026)
+- [x] Aviso de conteúdo sintético marcado no Studio (selo **AI** visível)
+- [x] Publicar no YouTube Shorts
+- [x] Registrar em `biblioteca/publicados.csv`
+- [x] Agendar medição de retenção para 48 h
 
 ## Registro pós-publicação
 
-Preencher em `biblioteca/publicados.csv`:
-
 | Campo | Valor |
 |---|---|
-| data | — |
+| data | **2026-10-21** |
 | slug | `002-mary-celeste` |
 | nicho | `misterio` |
 | plataforma | `YouTube Shorts` |
-| views_48h | — |
-| retencao_3s | — |
-| retencao_media | — |
-| conclusao | — |
-| salvos | — |
-| compartilhados | — |
+| url | **https://youtube.com/shorts/n6dtveQguf4** |
+| visibilidade | **Público** |
+| views_48h | — (medir em 2026-10-23) |
+| retencao_3s | — (medir em 2026-10-23) |
+| retencao_media | — (medir em 2026-10-23) |
+| conclusao | — (medir em 2026-10-23) |
+| salvos | — (medir em 2026-10-23) |
+| compartilhados | — (medir em 2026-10-23) |
