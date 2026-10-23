@@ -2,7 +2,34 @@
 
 > Linha do tempo do que foi **entregue**, com data, evidência e decisão.
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
-> Mais recente no topo. Última atualização: **2026-10-22**.
+> Mais recente no topo. Última atualização: **2026-10-23**.
+
+## 2026-10-23 — Gate 1 verificado: 002 passa, 001 fica sem curva
+
+**Entregue**
+- CSV de retenção do 002 exportado e salvo em
+  `episodios/002-mary-celeste/retencao.csv`; `retencao.md` criado.
+- `episodios/001-faroleiros/retencao.csv` salvo (vazio) e `retencao.md`
+  criado com a leitura possível.
+- `biblioteca/publicados.csv` atualizado com views, 3 s e retenção média.
+- `retention.py` corrigido para normalizar retenção absoluta (>100%) do
+  export avançado do Studio.
+
+**Números**
+- **002:** 234 views; 103 engaged; 1,2 h; 0:40; 48,3% ficaram; 87,0% de
+  retenção média; **3 s = 91,6%**, **10 s = 61,8%**.
+- **001:** 31 views; 9 engaged; 0,0 h; 0:15; 24,3% ficaram; 33,3% de
+  retenção média; sem curva de 3 s/10 s.
+
+**Decisão**
+- Manter o formato v1, sem antecipar o visual v2.
+- **003 autorizado**: revisar o gancho para acrescentar informação nova
+  (“Nenhum corpo”) e entregar CROATOAN na cena 2.
+
+**Evidência**
+- `episodios/002-mary-celeste/retencao.md`;
+  `episodios/001-faroleiros/retencao.md`;
+  `biblioteca/publicados.csv`; `tools/youtube-agent-skill/yt-retention/retention.py`.
 
 ## 2026-10-22 — Backlog visual v2 registrado
 

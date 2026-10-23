@@ -104,6 +104,30 @@ class RetentionTests(unittest.TestCase):
             self.assertAlmostEqual(hooks[3.0]["retained"], 90.0, places=1)
             self.assertAlmostEqual(hooks[10.0]["retained"], 70.0, places=1)
 
+    def test_absolute_percent_axis_is_normalized(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            csv_path = Path(tmp) / "retencao.csv"
+            write_csv(
+                csv_path,
+                "Posição no vídeo (%),Retenção absoluta de público (%)",
+                [
+                    (0, 162.11),
+                    (6.6667, 150.0),
+                    (22.2222, 100.0),
+                    (66.6667, 75.0),
+                    (100, 68.0),
+                ],
+            )
+            data = run_json(
+                RETENTION, [str(csv_path), "--duration", "45", "--json"]
+            )
+            self.assertEqual(data["axis"], "percent")
+            self.assertAlmostEqual(data["start"], 100.0, places=1)
+            hooks = {h["seconds"]: h for h in data["hooks"]}
+            self.assertAlmostEqual(hooks[3.0]["retained"], 92.5, places=1)
+            self.assertAlmostEqual(hooks[10.0]["retained"], 61.7, places=1)
+            self.assertAlmostEqual(data["end"], 42.0, places=1)
+
     def test_transcript_names_the_cliff(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             csv_path = Path(tmp) / "retencao.csv"

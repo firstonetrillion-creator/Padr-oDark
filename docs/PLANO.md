@@ -20,11 +20,11 @@
 
 ### Gate 1 — 23/10: retenção do 001 e do 002
 
-- [ ] Baixar o CSV de retenção do Studio para 001 e 002.
-- [ ] Rodar `tools/youtube-agent-skill/yt-retention/retention.py --duration 45` nos dois arquivos.
-- [ ] Preencher `biblioteca/publicados.csv`: views_48h, retenção 3 s/10 s, retenção média, conclusão, salvos e compartilhados.
-- [ ] Criar `episodios/001-faroleiros/retencao.md` e `episodios/002-mary-celeste/retencao.md`.
-- [ ] Decidir: **manter** o formato, **ajustar** gancho/ritmo ou **matar** e reavaliar.
+- [x] Baixar o CSV de retenção do Studio para 001 e 002. O 002 veio com curva; o 001 veio vazio (sem dados).
+- [x] Rodar `tools/youtube-agent-skill/yt-retention/retention.py --duration 45` nos dois arquivos. O parser foi ajustado para retenção absoluta (>100%).
+- [x] Preencher `biblioteca/publicados.csv` com o que existe; salvos, compartilhados e conclusão ficam `n/d`.
+- [x] Criar `episodios/001-faroleiros/retencao.md` e `episodios/002-mary-celeste/retencao.md`.
+- [x] Decidir: **manter** o formato, com **ajuste de gancho** no 003. O 002 passou 3 s (91,6%) e 10 s (61,8%); o 001 ficou em 24,3% de retenção inicial e sem curva.
 
 ### Fila 003–006 (provisória)
 

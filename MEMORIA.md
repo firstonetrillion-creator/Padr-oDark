@@ -78,13 +78,13 @@
 
 ## 3. O que falta (em ordem)
 
-### 3.1 Medir os publicados 001 e 002 (48 h)
+### 3.1 Medir os publicados 001 e 002 (48 h) — concluído (23/10/2026)
 > Checklist do gate e fila provisória 003–006: `docs/PLANO.md` §Execução imediata.
 
 1. Publicados em 21/10/2026 no YouTube Shorts; TikTok/Reels ficam como reaproveitamento opcional.
-2. Em **23/10/2026**, baixar o CSV de retenção do Studio para 001 e 002 e rodar `tools/youtube-agent-skill/yt-retention/retention.py --duration 45` em cada; coletar também views, retenção média, conclusão, salvos e compartilhados.
-3. Preencher as colunas em aberto das linhas de `biblioteca/publicados.csv` e criar `episodios/001-faroleiros/retencao.md` e `episodios/002-mary-celeste/retencao.md`.
-4. Decidir: manter gancho/formato, ajustar ou matar.
+2. **002:** 234 views, 103 engaged, 1,2 h, 0:40, 48,3% ficaram, 87,0% de retenção média; **3 s = 91,6%** e **10 s = 61,8%**. CSV salvo em `episodios/002-mary-celeste/retencao.csv`.
+3. **001:** 31 views, 9 engaged, 0,0 h, 0:15, 24,3% ficaram, 33,3% de retenção média. O CSV veio vazio; **3 s/10 s não disponíveis**. A tabela de “últimas 48 h” (16 views/11 s/25,3%) é uma janela rolante.
+4. **Decisão:** manter o formato v1, ajustar o gancho do 003 e seguir a fila. O 002 passou as metas provisórias de 3 s/10 s; o 001 não.
 
 ### 3.2 Validação de nicho — concluída (21/10/2026)
 - Coleta completa: 48 shorts de Mistério/Arquivo (14 canais) e 50 de Psicologia sombria (17 canais), canais de 100–500 mil inscritos.
@@ -96,7 +96,7 @@
 
 ### 3.3 Produzir 6 vídeos
 - **6 vídeos de Mistério 45** (2/6 publicados; faltam 4), no canal rebrandado.
-- **003-roanoke** em pré-produção: briefing e gancho prontos; roteiro pendente; produção final só depois do gate de 23/10.
+- **003-roanoke** em pré-produção: briefing e gancho prontos; gate de 23/10 concluído; **roteiro autorizado**, com revisão do gancho para não repetir o título.
 - Manter o gate para os próximos: aprovação humana explícita e descrição do canal conferida antes de publicar.
 - Usar `templates/misterio-45/` e o fluxo de `MEMORIA.md` §6.
 - Meta: 5–7 shorts/semana; um render por vez.
@@ -105,7 +105,7 @@
 
 ### 3.4 Ferramentas de análise — concluído (21/10/2026)
 - Vendor seletivo de `Jakeschincariol/youtube-agent-skill` (MIT, commit `a2feb21`) em `tools/youtube-agent-skill/`.
-- `retention.py` com patch para Shorts: 3 s/10 s, eixo de 45 s corrigido, transcrição SRT/VTT/JSON.
+- `retention.py` com patch para Shorts: 3 s/10 s, eixo de 45 s corrigido, transcrição SRT/VTT/JSON e normalização de retenção absoluta (>100%) do export avançado.
 - `hooks.json` mantido intacto; checklist PT-BR em `docs/GANCHOS-21.md`.
 - `title.py` adaptado para PT-BR (stopwords, termos vagos, nome próprio).
 - `scripts/test_youtube_agent.py`: 9 testes passando.

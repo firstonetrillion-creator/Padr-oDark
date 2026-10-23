@@ -136,7 +136,7 @@ def load_csv(path: str) -> tuple[list[tuple[float, float]], Optional[str]]:
             y, _ = values[1]
             if x_kind == "clock":
                 hint = "seconds"
-            if x < 0 or not (0.0 <= y <= 100.5):
+            if x < 0 or not (0.0 <= y <= 1000.0):
                 continue
             rows.append((x, y))
 
@@ -144,7 +144,17 @@ def load_csv(path: str) -> tuple[list[tuple[float, float]], Optional[str]]:
     by_x: dict[float, float] = {}
     for x, y in rows:
         by_x[round(float(x), 6)] = float(y)
-    return sorted(by_x.items()), hint
+    result = sorted(by_x.items())
+
+    # O export avançado do Studio pode vir como "retenção absoluta",
+    # com valores acima de 100% por causa de rewatches. Normaliza pela
+    # primeira amostra para ler 3 s/10 s em percentual relativo.
+    if result and result[0][1] > 100.5:
+        base = result[0][1]
+        if base > 0:
+            result = [(x, y / base * 100.0) for x, y in result]
+
+    return result, hint
 
 
 def detect_axis(
