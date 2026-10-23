@@ -12,7 +12,7 @@
 
 > **G0 medido em 20/10/2026:** 45 s em 1080×1920 renderizados em **2m32,8s** (158,8 s incluindo doctor e probe). Gate **PASS**. A máquina aguenta o formato; o gargalo agora é conteúdo, não render.
 
-> **Fase 1 concluída e Fase 2 iniciada (21/10/2026):** piloto `001-faroleiros` — 13 cenas, 45,01 s, QA técnico **PASS** (−15,6 LUFS), template `misterio-45` extraído e **vídeo aprovado pelo usuário** (“ficou perfeito”). Piloto **publicado no YouTube Shorts**: https://youtube.com/shorts/WKuNVjl3d5M. **Estado em 21/10/2026:** 2/6 publicados; faltam 4.
+> **Fase 1 concluída e Fase 2 iniciada (21/10/2026):** piloto `001-faroleiros` — 13 cenas, 45,01 s, QA técnico **PASS** (−15,6 LUFS), template `misterio-45` extraído e **vídeo aprovado pelo usuário** (“ficou perfeito”). Piloto **publicado no YouTube Shorts**: https://youtube.com/shorts/WKuNVjl3d5M. **Estado em 23/10/2026:** 2/6 publicados; 003 em produção; faltam 004–006.
 
 > **Nicho decidido em 21/10/2026:** Mistério/Arquivo é a âncora (0,10 views/inscrito por canal vs 0,06 da psicologia; 3 canais ≥1,0 vs 0). A validação passa a ser **6 vídeos de mistério** (piloto + 5), no canal **Dossiê 45** (`@Dossie45`). O rebranding visual está no ar; nome, descrição do canal e deslistagem dos 9 shorts antigos concluídos. O **002-mary-celeste** foi publicado em 21/10/2026. Psicologia fica como fallback em canal novo se a retenção falhar. Dados em `docs/NICHO.md`; decisão em `docs/DECISOES.md`.
 
@@ -26,13 +26,20 @@
 - [x] Criar `episodios/001-faroleiros/retencao.md` e `episodios/002-mary-celeste/retencao.md`.
 - [x] Decidir: **manter** o formato, com **ajuste de gancho** no 003. O 002 passou 3 s (91,6%) e 10 s (61,8%); o 001 ficou em 24,3% de retenção inicial e sem curva.
 
-### Fila 003–006 (provisória)
+### 003 — em produção (23/10/2026)
 
-A fila só trava depois do gate de 23/10. Alvo: **1 vídeo a cada 2–3 dias**, concluir os 4 até **04/11/2026**, mantendo aprovação humana antes de publicar.
+- [x] Gancho aprovado, roteiro de 113 palavras e `narracao.txt`.
+- [x] Voz, transcrição, composição v1, contrato e QA visual.
+- [ ] Render segmentado, normalização para ~−15,3 LUFS, QA técnico,
+  aprovação humana e publicação.
+
+### Fila 003–006
+
+A fila foi confirmada após o Gate 1 (23/10). Alvo: **1 vídeo a cada 2–3 dias**, concluir os 4 até **04/11/2026**, mantendo aprovação humana antes de publicar.
 
 | Ordem | Janela-alvo | Tema | Fonte principal | Ângulo | Status |
 |---|---|---|---|---|---|
-| 003 | 24–26/10 | Colônia de Roanoke (1590) | *The Roanoke Voyages, 1584–1590* (David Beers Quinn, Hakluyt Society); registros do Fort Raleigh/NPS | Cerca de 117 colonos desapareceram; “CROATOAN” é a pista documentada. O que os registros permitem concluir — e o que é lenda. | gancho revisado, roteiro (113 palavras) e `narracao.txt` prontos; voz pendente |
+| 003 | 24–26/10 | Colônia de Roanoke (1590) | *The Roanoke Voyages, 1584–1590* (David Beers Quinn, Hakluyt Society); registros do Fort Raleigh/NPS | Cerca de 117 colonos desapareceram; “CROATOAN” é a pista documentada. O que os registros permitem concluir — e o que é lenda. | voz, transcrição, composição v1 e QA visual prontos; render pendente |
 | 004 | 27–29/10 | MV Joyita (1955) | Inquérito oficial de Fiji (1956); arquivos marítimos da Nova Zelândia | 25 pessoas desapareceram; o barco foi achado à deriva, meio submerso. O que o inquérito documenta e o que continua em aberto. | candidato; validar fontes |
 | 005 | 30/10–01/11 | Voo 19 (1945) | Relatório do Board of Inquiry da Marinha dos EUA (1945); Naval History and Heritage Command | Cinco aviões e 14 homens sem destroço. O que o relatório diz — e o que a lenda do Triângulo das Bermudas acrescentou. | candidato; validar fontes |
 | 006 | 02–04/11 | Passo Dyatlov (1959) | Investigação soviética (1959); Gaume & Puzrin, *Communications Earth & Environment* (2021) | Nove caminhantes, uma barraca cortada por dentro e lesões graves. O que o inquérito registrou e o que a ciência propôs. | candidato; validar fontes |

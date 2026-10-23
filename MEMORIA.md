@@ -2,11 +2,11 @@
 
 > **Leia este arquivo primeiro.** Ele é a memória de retomada do projeto.
 > Depois: `AGENTS.md` (regras) → `docs/PLANO.md` (fases) → `docs/HISTORICO.md` (o que já foi entregue).
-> Última atualização: **2026-10-22**. Se você é uma sessão nova, não refaça o que está marcado como entregue.
+> Última atualização: **2026-10-23**. Se você é uma sessão nova, não refaça o que está marcado como entregue.
 
 ## 1. Onde estamos
 
-**Fase 1 concluída e piloto publicado.** O cérebro está instalado, o gate G0 passou, o piloto `001-faroleiros` foi aprovado pelo usuário ("ficou perfeito") e publicado no YouTube Shorts em 21/10/2026. O template `misterio-45` foi extraído e o QA técnico está assinado. A validação de nicho por metadados foi concluída em 21/10/2026: **Mistério/Arquivo é a âncora**. Em 21/10/2026 também foi feita a **adoção seletiva do `youtube-agent-skill`** (retenção 3 s/10 s, 21 ganchos e lint de título). O **002-mary-celeste** foi produzido, passou no QA técnico e foi **publicado no YouTube Shorts em 21/10/2026**; a Fase 2 segue com os 4 vídeos restantes e a medição de retenção de 001 e 002.
+**Fase 1 concluída e piloto publicado.** O cérebro está instalado, o gate G0 passou, o piloto `001-faroleiros` foi aprovado pelo usuário ("ficou perfeito") e publicado no YouTube Shorts em 21/10/2026. O template `misterio-45` foi extraído e o QA técnico está assinado. A validação de nicho por metadados foi concluída em 21/10/2026: **Mistério/Arquivo é a âncora**. Em 21/10/2026 também foi feita a **adoção seletiva do `youtube-agent-skill`** (retenção 3 s/10 s, 21 ganchos e lint de título). O **002-mary-celeste** foi produzido, passou no QA técnico e foi **publicado no YouTube Shorts em 21/10/2026**. Em 23/10/2026 o Gate 1 foi medido: **002 passa** (3 s 91,6%; 10 s 61,8%) e **001 fica sem curva** (24,3% de retenção inicial). Decisão: manter o v1 e ajustar o gancho do **003-roanoke**, que está em produção com voz, transcrição, composição e QA visual prontos; falta o render. A Fase 2 segue com **2/6 publicados** e os episódios 004–006 na fila.
 
 | Frente | Estado | Evidência |
 |---|---|---|
@@ -18,8 +18,9 @@
 | Publicação | **publicado** (21/10/2026) | 001: [Shorts](https://youtube.com/shorts/WKuNVjl3d5M); 002: [Shorts](https://youtube.com/shorts/n6dtveQguf4) |
 | Validação de nicho | **concluída (metadados)** | `logs/nicho-2026-10-21.json`, `docs/NICHO.md` |
 | Versionamento | **git iniciado (21/10/2026)** | commit `782df62`, tag `ep-001-publicado` |
-| 6 vídeos de validação | **2/6 publicados** | piloto + 002 + 4 restantes |
+| 6 vídeos de validação | **2/6 publicados; 003 em produção** | piloto + 002 + 003–006 |
 | Episódio 002 — Mary Celeste | **publicado** (21/10/2026) | `episodios/002-mary-celeste/`, [Shorts](https://youtube.com/shorts/n6dtveQguf4) |
+| Episódio 003 — Roanoke | **em produção** (voz, transcrição, composição e QA visual prontos; render pendente) | `episodios/003-roanoke/status.md` |
 | Canal | **Dossiê 45**: nome, avatar/banner, descrição no ar e 9 shorts antigos privados | [canal](https://youtube.com/@Dossie45), `docs/REBRANDING.md` |
 | Ferramentas de análise | **adotadas seletivamente** | `tools/youtube-agent-skill/`, `docs/GANCHOS-21.md` |
 | `codebase-memory-mcp` | **não instalado** (adiado) | decisão em `docs/DECISOES.md` |
@@ -50,7 +51,7 @@
 - `final.mp4`: **45,01 s, 3,3 MB, −15,6 LUFS**, H.264 + AAC 48 kHz estéreo.
 - `qa.md`: QA técnico **PASS**; aprovação humana registrada em 21/10/2026.
 - Cópia de publicação: `001-faroleiros_shorts_v1.mp4`; capa: `capa.png`.
-- **Publicado no YouTube Shorts em 21/10/2026:** https://youtube.com/shorts/WKuNVjl3d5M (canal Cod Mind Million).
+- **Publicado no YouTube Shorts em 21/10/2026:** https://youtube.com/shorts/WKuNVjl3d5M (canal Dossiê 45; à época, Cod Mind Million).
 
 ### Episódio 002 — Mary Celeste (21/10/2026)
 - Tema: abandono documentado × lenda do “jantar servido”.
@@ -63,6 +64,16 @@
 - Cópia de publicação: `002-mary-celeste_shorts_v1.mp4`; capa: `capa.png`.
 - Título: `Mary Celeste: o navio encontrado sem ninguém em 1872` (52 chars; lint 98/100).
 - **Publicado no YouTube Shorts em 21/10/2026:** https://youtube.com/shorts/n6dtveQguf4. Aviso de conteúdo sintético marcado; selo **AI** visível.
+
+### Episódio 003 — Roanoke (em produção, 23/10/2026)
+- Tema: colônia inglesa de Roanoke; **CROATOAN** como nome de lugar, não código.
+- `briefing.md`, `gancho.md` (fórmula 1), `roteiro.md` com **113 palavras faladas** e 13 cenas; `narracao.txt` canônico.
+- `narracao_tts.txt` grafa **`Croatoun`** nas duas ocorrências para o Piper; a tela usa **`CROATOAN`** e `narracao.txt` usa **`Croatoan`**.
+- `voz_raw.wav` **44,69 s** (`length_scale` 1,00; `noise_scale` 0,65; `noise_w` 0,80) → `voz.wav` **45,00 s**, 48 kHz estéreo, **−21,99 LUFS**, pico **−7,22 dB**. Cadeia: highpass 75 Hz, de-esser, EQ, compressor, limitador, `adelay=260`, `apad`.
+- `transcricao.json` com timestamps por palavra; `index.html` remapeado para 13 cenas em 45,00 s. Gancho sem fade no frame 1; CROATOAN entra em **3,75 s**.
+- `drone.wav` de 45 s com fade-in de 1 s e fade-out de 42–45 s (bed do 002).
+- `check-contrato.ps1`: **OK, 0 avisos**. QA visual em `qa-frames/` (frame 1, 13 cenas, fade), sem overflow.
+- Pendente: render, normalização, QA técnico, aprovação humana e publicação. Detalhes em `status.md`.
 
 ### Template
 - `templates/misterio-45/index.html` — composição validada, 13 cenas, áudio `voz`/`drone`, QA por `?t=`.
@@ -95,8 +106,9 @@
 - Dados completos em `logs/nicho-2026-10-21.json` e `docs/NICHO.md`.
 
 ### 3.3 Produzir 6 vídeos
-- **6 vídeos de Mistério 45** (2/6 publicados; faltam 4), no canal rebrandado.
-- **003-roanoke**: briefing, gancho revisado e `roteiro.md` prontos (113 palavras, 13 cenas); `narracao.txt` criado. Próxima etapa: TTS e processamento para 45,00 s. O gancho aprovado em 23/10 é “117 pessoas sumiram. Nenhum corpo. Uma palavra.”
+- **6 vídeos de Mistério 45** (2/6 publicados; 003 em produção; faltam 004–006), no canal rebrandado.
+- **003-roanoke**: briefing, gancho aprovado, roteiro (113 palavras, 13 cenas), voz, transcrição, composição v1 e QA visual prontos. Próxima etapa: render segmentado, normalização para ~−15,3 LUFS, QA técnico, aprovação humana e publicação. Gancho: “117 pessoas sumiram. Nenhum corpo. Uma palavra.”
+- **004–006**: MV Joyita, Voo 19 e Passo Dyatlov; manter o v1 e validar as fontes antes de cada roteiro.
 - Manter o gate para os próximos: aprovação humana explícita e descrição do canal conferida antes de publicar.
 - Usar `templates/misterio-45/` e o fluxo de `MEMORIA.md` §6.
 - Meta: 5–7 shorts/semana; um render por vez.
@@ -222,6 +234,8 @@ ffmpeg -i final_raw.mp4 -c:v copy `
 | Shims `.ps1` bloqueados | execution policy | chamar `.cmd` ou `-ExecutionPolicy Bypass` |
 | Render mudo | `<audio>` sem `id` | manter `id="voz"` e `id="drone"` |
 | Texto fantasma de outra cena | GSAP só anima entrada | `autoAlpha` por cena (já no template) |
+| Texto duplicado em `qa-frames` | screenshot do Chrome headless com escala fracionária | conferir a mesma cena em `?t=` no navegador; validar no render antes de mexer na composição |
+| TTS erra a pronúncia de CROATOAN | grafia inglesa no Piper | usar `Croatoun` só em `narracao_tts.txt`; manter `CROATOAN` na tela |
 | Chrome fecha em ~1300/1350 frames | memória acumulada | captura segmentada + 1 worker |
 | Linha quebra diferente no render | fonte na fronteira dos ~840 px | reduzir 4–8 px ou quebrar antes |
 | Áudio em −22 LUFS | TTS baixo + drone discreto | ganho estático + limitador no pós |

@@ -1,0 +1,606 @@
+{
+  "language": "pt",
+  "duration": 45.0,
+  "segments": [
+    {
+      "start": 0.66,
+      "end": 8.38,
+      "text": "117 pessoas sumiram, nenhum corpo. Uma palavra? Croaton. A palavra estava lavada na madeira. Não era um código. Era o nome de um lugar.",
+      "words": [
+        {
+          "start": 0.66,
+          "end": 1.22,
+          "word": "117"
+        },
+        {
+          "start": 1.22,
+          "end": 1.5,
+          "word": "pessoas"
+        },
+        {
+          "start": 1.5,
+          "end": 1.94,
+          "word": "sumiram,"
+        },
+        {
+          "start": 2.24,
+          "end": 2.44,
+          "word": "nenhum"
+        },
+        {
+          "start": 2.44,
+          "end": 2.82,
+          "word": "corpo."
+        },
+        {
+          "start": 3.04,
+          "end": 3.22,
+          "word": "Uma"
+        },
+        {
+          "start": 3.22,
+          "end": 3.58,
+          "word": "palavra?"
+        },
+        {
+          "start": 3.92,
+          "end": 4.26,
+          "word": "Croaton."
+        },
+        {
+          "start": 4.6,
+          "end": 4.68,
+          "word": "A"
+        },
+        {
+          "start": 4.68,
+          "end": 4.9,
+          "word": "palavra"
+        },
+        {
+          "start": 4.9,
+          "end": 5.24,
+          "word": "estava"
+        },
+        {
+          "start": 5.24,
+          "end": 5.62,
+          "word": "lavada"
+        },
+        {
+          "start": 5.62,
+          "end": 5.76,
+          "word": "na"
+        },
+        {
+          "start": 5.76,
+          "end": 6.26,
+          "word": "madeira."
+        },
+        {
+          "start": 6.54,
+          "end": 6.66,
+          "word": "Não"
+        },
+        {
+          "start": 6.66,
+          "end": 6.82,
+          "word": "era"
+        },
+        {
+          "start": 6.82,
+          "end": 6.92,
+          "word": "um"
+        },
+        {
+          "start": 6.92,
+          "end": 7.28,
+          "word": "código."
+        },
+        {
+          "start": 7.58,
+          "end": 7.74,
+          "word": "Era"
+        },
+        {
+          "start": 7.74,
+          "end": 7.82,
+          "word": "o"
+        },
+        {
+          "start": 7.82,
+          "end": 7.96,
+          "word": "nome"
+        },
+        {
+          "start": 7.96,
+          "end": 8.08,
+          "word": "de"
+        },
+        {
+          "start": 8.08,
+          "end": 8.16,
+          "word": "um"
+        },
+        {
+          "start": 8.16,
+          "end": 8.38,
+          "word": "lugar."
+        }
+      ]
+    },
+    {
+      "start": 8.78,
+      "end": 19.46,
+      "text": "Ju de 1587. Seca de 117, colonos desembacaram em Roanoke. Em agosto, nasceu Virginia Dare, a primeira criança indígena na América. O plano era Chesapeake.",
+      "words": [
+        {
+          "start": 8.78,
+          "end": 8.86,
+          "word": "Ju"
+        },
+        {
+          "start": 8.86,
+          "end": 9.02,
+          "word": "de"
+        },
+        {
+          "start": 9.02,
+          "end": 10.4,
+          "word": "1587."
+        },
+        {
+          "start": 10.92,
+          "end": 11.12,
+          "word": "Seca"
+        },
+        {
+          "start": 11.12,
+          "end": 11.3,
+          "word": "de"
+        },
+        {
+          "start": 11.3,
+          "end": 12.32,
+          "word": "117,"
+        },
+        {
+          "start": 12.46,
+          "end": 12.82,
+          "word": "colonos"
+        },
+        {
+          "start": 12.82,
+          "end": 13.44,
+          "word": "desembacaram"
+        },
+        {
+          "start": 13.44,
+          "end": 13.58,
+          "word": "em"
+        },
+        {
+          "start": 13.58,
+          "end": 14.04,
+          "word": "Roanoke."
+        },
+        {
+          "start": 14.34,
+          "end": 14.44,
+          "word": "Em"
+        },
+        {
+          "start": 14.44,
+          "end": 14.84,
+          "word": "agosto,"
+        },
+        {
+          "start": 15.06,
+          "end": 15.32,
+          "word": "nasceu"
+        },
+        {
+          "start": 15.32,
+          "end": 15.6,
+          "word": "Virginia"
+        },
+        {
+          "start": 15.6,
+          "end": 15.92,
+          "word": "Dare,"
+        },
+        {
+          "start": 16.32,
+          "end": 16.36,
+          "word": "a"
+        },
+        {
+          "start": 16.36,
+          "end": 16.6,
+          "word": "primeira"
+        },
+        {
+          "start": 16.6,
+          "end": 16.84,
+          "word": "criança"
+        },
+        {
+          "start": 16.84,
+          "end": 17.32,
+          "word": "indígena"
+        },
+        {
+          "start": 17.32,
+          "end": 17.68,
+          "word": "na"
+        },
+        {
+          "start": 17.68,
+          "end": 18.04,
+          "word": "América."
+        },
+        {
+          "start": 18.36,
+          "end": 18.46,
+          "word": "O"
+        },
+        {
+          "start": 18.46,
+          "end": 18.7,
+          "word": "plano"
+        },
+        {
+          "start": 18.7,
+          "end": 18.92,
+          "word": "era"
+        },
+        {
+          "start": 18.92,
+          "end": 19.46,
+          "word": "Chesapeake."
+        }
+      ]
+    },
+    {
+      "start": 19.46,
+      "end": 26.06,
+      "text": "O piloto forçou Roanoke. John White buscou suprimentos. A guerra atazou o retorno. Ele voltou três anos depois.",
+      "words": [
+        {
+          "start": 19.46,
+          "end": 19.9,
+          "word": "O"
+        },
+        {
+          "start": 19.9,
+          "end": 20.2,
+          "word": "piloto"
+        },
+        {
+          "start": 20.2,
+          "end": 20.52,
+          "word": "forçou"
+        },
+        {
+          "start": 20.52,
+          "end": 21.02,
+          "word": "Roanoke."
+        },
+        {
+          "start": 21.32,
+          "end": 21.42,
+          "word": "John"
+        },
+        {
+          "start": 21.42,
+          "end": 21.68,
+          "word": "White"
+        },
+        {
+          "start": 21.68,
+          "end": 22.1,
+          "word": "buscou"
+        },
+        {
+          "start": 22.1,
+          "end": 22.7,
+          "word": "suprimentos."
+        },
+        {
+          "start": 23.14,
+          "end": 23.22,
+          "word": "A"
+        },
+        {
+          "start": 23.22,
+          "end": 23.42,
+          "word": "guerra"
+        },
+        {
+          "start": 23.42,
+          "end": 23.94,
+          "word": "atazou"
+        },
+        {
+          "start": 23.94,
+          "end": 24.08,
+          "word": "o"
+        },
+        {
+          "start": 24.08,
+          "end": 24.58,
+          "word": "retorno."
+        },
+        {
+          "start": 24.92,
+          "end": 25.0,
+          "word": "Ele"
+        },
+        {
+          "start": 25.0,
+          "end": 25.28,
+          "word": "voltou"
+        },
+        {
+          "start": 25.28,
+          "end": 25.54,
+          "word": "três"
+        },
+        {
+          "start": 25.54,
+          "end": 25.7,
+          "word": "anos"
+        },
+        {
+          "start": 25.7,
+          "end": 26.06,
+          "word": "depois."
+        }
+      ]
+    },
+    {
+      "start": 26.78,
+      "end": 37.26,
+      "text": "18 de agosto de 1590. Nenhum corpo. Nenhum t?mulo. Casas desmontadas. Nenhum sinal de luto ou fuga. Combinaram. Se mudassem. Deixariam um recado.",
+      "words": [
+        {
+          "start": 26.78,
+          "end": 27.02,
+          "word": "18"
+        },
+        {
+          "start": 27.02,
+          "end": 27.26,
+          "word": "de"
+        },
+        {
+          "start": 27.26,
+          "end": 27.52,
+          "word": "agosto"
+        },
+        {
+          "start": 27.52,
+          "end": 27.68,
+          "word": "de"
+        },
+        {
+          "start": 27.68,
+          "end": 28.68,
+          "word": "1590."
+        },
+        {
+          "start": 29.08,
+          "end": 29.56,
+          "word": "Nenhum"
+        },
+        {
+          "start": 29.56,
+          "end": 30.2,
+          "word": "corpo."
+        },
+        {
+          "start": 30.62,
+          "end": 30.76,
+          "word": "Nenhum"
+        },
+        {
+          "start": 30.76,
+          "end": 30.9,
+          "word": "t"
+        },
+        {
+          "start": 30.9,
+          "end": 31.12,
+          "word": "?mulo."
+        },
+        {
+          "start": 31.32,
+          "end": 31.58,
+          "word": "Casas"
+        },
+        {
+          "start": 31.58,
+          "end": 32.2,
+          "word": "desmontadas."
+        },
+        {
+          "start": 32.64,
+          "end": 32.84,
+          "word": "Nenhum"
+        },
+        {
+          "start": 32.84,
+          "end": 33.2,
+          "word": "sinal"
+        },
+        {
+          "start": 33.2,
+          "end": 33.36,
+          "word": "de"
+        },
+        {
+          "start": 33.36,
+          "end": 33.62,
+          "word": "luto"
+        },
+        {
+          "start": 33.62,
+          "end": 33.82,
+          "word": "ou"
+        },
+        {
+          "start": 33.82,
+          "end": 34.24,
+          "word": "fuga."
+        },
+        {
+          "start": 34.6,
+          "end": 35.12,
+          "word": "Combinaram."
+        },
+        {
+          "start": 35.28,
+          "end": 35.38,
+          "word": "Se"
+        },
+        {
+          "start": 35.38,
+          "end": 36.02,
+          "word": "mudassem."
+        },
+        {
+          "start": 36.18,
+          "end": 36.64,
+          "word": "Deixariam"
+        },
+        {
+          "start": 36.64,
+          "end": 36.74,
+          "word": "um"
+        },
+        {
+          "start": 36.74,
+          "end": 37.26,
+          "word": "recado."
+        }
+      ]
+    },
+    {
+      "start": 37.46,
+      "end": 44.62,
+      "text": "White leu Croaton como uma ía. Uma tempestade o impediu. Nenhuma teoria foi provada. O arquivo explica o recado. O silêncio? Não.",
+      "words": [
+        {
+          "start": 37.46,
+          "end": 37.68,
+          "word": "White"
+        },
+        {
+          "start": 37.68,
+          "end": 37.92,
+          "word": "leu"
+        },
+        {
+          "start": 37.92,
+          "end": 38.24,
+          "word": "Croaton"
+        },
+        {
+          "start": 38.24,
+          "end": 38.48,
+          "word": "como"
+        },
+        {
+          "start": 38.48,
+          "end": 38.66,
+          "word": "uma"
+        },
+        {
+          "start": 38.66,
+          "end": 38.92,
+          "word": "ía."
+        },
+        {
+          "start": 39.12,
+          "end": 39.24,
+          "word": "Uma"
+        },
+        {
+          "start": 39.24,
+          "end": 39.82,
+          "word": "tempestade"
+        },
+        {
+          "start": 39.82,
+          "end": 39.92,
+          "word": "o"
+        },
+        {
+          "start": 39.92,
+          "end": 40.34,
+          "word": "impediu."
+        },
+        {
+          "start": 40.6,
+          "end": 40.88,
+          "word": "Nenhuma"
+        },
+        {
+          "start": 40.88,
+          "end": 41.2,
+          "word": "teoria"
+        },
+        {
+          "start": 41.2,
+          "end": 41.42,
+          "word": "foi"
+        },
+        {
+          "start": 41.42,
+          "end": 41.96,
+          "word": "provada."
+        },
+        {
+          "start": 42.24,
+          "end": 42.3,
+          "word": "O"
+        },
+        {
+          "start": 42.3,
+          "end": 42.58,
+          "word": "arquivo"
+        },
+        {
+          "start": 42.58,
+          "end": 42.96,
+          "word": "explica"
+        },
+        {
+          "start": 42.96,
+          "end": 43.06,
+          "word": "o"
+        },
+        {
+          "start": 43.06,
+          "end": 43.54,
+          "word": "recado."
+        },
+        {
+          "start": 43.76,
+          "end": 43.86,
+          "word": "O"
+        },
+        {
+          "start": 43.86,
+          "end": 44.26,
+          "word": "silêncio?"
+        },
+        {
+          "start": 44.52,
+          "end": 44.62,
+          "word": "Não."
+        }
+      ]
+    }
+  ]
+}

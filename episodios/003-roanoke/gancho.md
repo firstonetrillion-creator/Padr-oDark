@@ -30,9 +30,10 @@
 - **Por que:** número concreto + negação física (“Nenhum corpo”) + objeto incompleto (“uma palavra”) em 7 palavras. A versão anterior repetia “deixaram uma palavra” e o título; a nova acrescenta a ausência de corpos e não entrega o título.
 - **Primeira frase:** 3 palavras; a segunda entrega o loop.
 - **Frame 1:** kicker vermelho **O ARQUIVO · ROANOKE**; texto **117 PESSOAS / SUMIRAM. / NENHUM CORPO. / UMA PALAVRA.**
+- **Tempo no corte:** **0,00–3,75 s**; CROATOAN entra em **3,75 s**.
 - **Marcação:** o fato é documentado; não há marcação de lenda no frame 1. A correção entra na cena 3: “CROATOAN não era um código; era o nome de um lugar.”
 - **Ritmo:** pausa curta depois de “sumiram” e depois de “corpo”; “uma palavra” mais baixo, sem dramaturgia.
-- **Pronúncia:** “CROATOAN” devagar, sem traduzir; “Roanoke” como “ro-a-nok”.
+- **Pronúncia:** “CROATOAN” devagar, sem traduzir; “Roanoke” como “ro-a-nok”. No TTS, `narracao_tts.txt` grafa **`Croatoun`**; a tela usa **`CROATOAN`** e o texto canônico usa **`Croatoan`**.
 
 ## Checagem
 - [x] A primeira frase tem ≤9 palavras.

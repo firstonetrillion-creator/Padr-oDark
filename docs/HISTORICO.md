@@ -4,6 +4,39 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-23**.
 
+## 2026-10-23 — 003 Roanoke: voz, transcrição e composição v1
+
+**Entregue**
+- `narracao_tts.txt` com **`Croatoun`** nas duas ocorrências; a tela usa
+  **`CROATOAN`** e `narracao.txt` usa **`Croatoan`**.
+- Take selecionado: `voz_raw.wav` **44,69 s** (`length_scale` 1,00;
+  `noise_scale` 0,65; `noise_w` 0,80) → `voz.wav` **45,00 s**, 48 kHz
+  estéreo, **−21,99 LUFS**, pico **−7,22 dB**.
+- Cadeia de voz: highpass 75 Hz, de-esser 0,25, EQ 250 Hz −1,5 dB /
+  3,5 kHz +3 dB / 8 kHz +1 dB, compressor −18 dB 3:1, limitador 0,95,
+  `adelay=260`, `apad`, `-t 45`.
+- `drone.wav` de 45 s a partir do bed do 002, com fade-in de 1 s e
+  fade-out de 42–45 s.
+- `transcricao.json` com timestamps por palavra.
+- `index.html` remapeado para 13 cenas: 0–3,75; 3,75–6,50; 6,50–8,60;
+  8,60–14,20; 14,20–18,20; 18,20–21,20; 21,20–24,80; 24,80–29,00;
+  29,00–31,40; 31,40–34,40; 34,40–37,40; 37,40–40,60; 40,60–45,00 s.
+- `check-contrato.ps1`: **OK, 0 avisos**. QA visual em `qa-frames/`
+  (frame 1, 13 cenas, fade), sem overflow; CROATOAN visível em 3,75 s.
+- `status.md` e `roteiro.md` atualizados com tempos reais e nota de
+  pronúncia. O ASR transcreveu “Croaton” nas duas ocorrências; os nomes
+  não são usados como texto final.
+
+**Decisão**
+- Usar `Croatoun` apenas no TTS; não alterar a tela nem o texto canônico.
+- Manter o visual v1; nenhuma fonte ou efeito novo antes do Gate 2.
+- Próxima etapa: render segmentado, normalizar `final_raw.mp4` para
+  ~−15,3 LUFS (~+6,5 dB), QA técnico, aprovação humana e publicação.
+
+**Evidência**
+- `episodios/003-roanoke/status.md`; `voz_raw.wav`; `voz.wav`;
+  `transcricao.json`; `index.html`; `qa-frames/`; `check-contrato.ps1`.
+
 ## 2026-10-23 — 003 Roanoke: roteiro v1 e narração escritos
 
 **Entregue**
