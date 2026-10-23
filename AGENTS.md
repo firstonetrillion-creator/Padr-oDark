@@ -6,11 +6,14 @@ Framework de produção de vídeo curto faceless. **Leia `MEMORIA.md` primeiro**
 
 | Camada | Arquivo | Para quê |
 |---|---|---|
+| Passo | `ESTADO.md` | uma tela; atualizar **a cada passo**. É `instructions` (sobrevive à compactação) |
 | Geral | `MEMORIA.md` | onde estamos, o que falta, comandos, armadilhas |
 | Código | `docs/ARQUITETURA.md` | contratos de cena, áudio, tempo, render e QA |
 | Entrega | `docs/HISTORICO.md` | o que já foi feito, com data e evidência |
 
-Ao fim de **cada etapa**, atualizar `MEMORIA.md` (§1–§3) e acrescentar uma entrada em `docs/HISTORICO.md`. Se mudou um contrato de código, atualizar `docs/ARQUITETURA.md`. Nunca apagar evidência.
+Ao fim de **cada passo**, atualizar `ESTADO.md` (feito / pendente / bloqueio / próximo comando). Ao fim de **cada etapa**, atualizar `MEMORIA.md` (§1–§3) e acrescentar uma entrada em `docs/HISTORICO.md`. Se mudou um contrato de código, atualizar `docs/ARQUITETURA.md`. Nunca apagar evidência.
+
+**Compactação é lossy:** o que só existe no chat desaparece. Compacte entre etapas (`opencode api post /api/session/<id>/compact --data '{}'`) e nunca no meio de um render.
 
 ## Regras invioláveis
 
@@ -61,7 +64,7 @@ cd episodios\<slug>
 $env:HF_SEGMENTED_CAPTURE = "true"
 $env:HF_SEGMENT_FRAMES = "300"
 $env:HF_SEGMENT_BROWSER_RECYCLE = "1"
-hyperframes render --output final_raw.mp4 --quality standard --fps 30 `
+hyperframes.cmd render --output final_raw.mp4 --quality standard --fps 30 `
   --workers 1 --low-memory-mode --protocol-timeout 600000 --resume
 
 # normalizar loudness (medir antes; piloto usou +6,2 dB)

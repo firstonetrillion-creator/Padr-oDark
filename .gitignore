@@ -23,6 +23,7 @@ bench/frame_*.png
 # ===== Estado interno de render =====
 .hyperframes/
 .preview.hf-transaction-*/
+episodios/*/render.log
 
 # ===== Caches =====
 logs/nicho-cache/

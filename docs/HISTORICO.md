@@ -4,6 +4,56 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-23**.
 
+## 2026-10-23 — 004 MV Joyita: render e QA técnico
+
+**Entregue**
+- Cena 6 corrigida: o h1 quebrava em “CARGUEIRO O / ACHOU.”; agora tem
+  **4 linhas explícitas** (`CINCO SEMANAS / DEPOIS, UM / CARGUEIRO / O ACHOU.`).
+  `qa-frames/frame-06.png` e `contact.png` regerados.
+- Render segmentado **5×300 frames**, 1 worker, low-memory: **1350/1350 frames,
+  0 retries, 4 reciclagens de browser**, 3m16s; `final_raw.mp4` **45,000 s**,
+  **−21,64 LUFS**, TP **−7,39 dBFS**.
+- Normalização **+6,5 dB** + `alimiter=limit=0.85:level=disabled`: `final.mp4`
+  **45,013 s**, **3.652.954 bytes**, **−15,16 LUFS**, TP **−1,42 dBFS**.
+  `qa.ps1`: **QA PASS**.
+- QA visual do render em `qa-final/` (14 frames + contact): cena 6 em 4 linhas,
+  fecho em 2 linhas, sem overflow nem fantasma.
+- Capa `capa.png` extraída em **4,0 s** (“25 PESSOAS / NENHUM SINAL”).
+- `qa.md` escrito; SHA-256 do `final.mp4` `406906CE…`.
+- `hyperframes` (shim `.ps1`) é bloqueado pela execution policy; comandos
+  canônicos passaram a usar **`hyperframes.cmd`** em `AGENTS.md` e `MEMORIA.md`.
+
+**Decisão**
+- O 004 fica **pronto para aprovação humana**; não publica sem escuta de
+  “Joyita”, “Tokelau”, “Apia” e sem “Aprovado — publicar”.
+- Alerta registrado em `qa.md`: a cena 2 é um cartão estático de 6,57 s
+  (3,03–9,60 s). Só dividir se a retenção do 003 pedir.
+
+**Evidência**
+- `episodios/004-mv-joyita/final.mp4`, `final_raw.mp4`, `qa.md`, `status.md`,
+  `qa-final/`, `capa.png`, `render.log`.
+
+## 2026-10-23 — Memória de sessão: `ESTADO.md` como instrução
+
+**Entregue**
+- Diagnóstico: a compactação do OpenCode mantém ~15k tokens recentes + resumo;
+  o que existia só no chat se perde. O checkpoint anterior perdeu o meio da etapa
+  do 004 (estado da cena 6 e do render).
+- `opencode.jsonc` na **raiz do workspace** (config não é descoberta em subpasta):
+  `instructions: ["Padrao-Dark/ESTADO.md", "Padrao-Dark/AGENTS.md"]`,
+  `compaction.keep.tokens: 30000`, `compaction.buffer: 24000`.
+- `Padrao-Dark/ESTADO.md`: uma tela, atualizada **a cada passo**. Depois de cada
+  compactação a versão em disco é relida e vira baseline da sessão.
+- `AGENTS.md`: nova camada “Passo” na tabela de memória + regra de compactar
+  **entre etapas**, nunca no meio de um render.
+
+**Decisão**
+- Memória operacional passa a ser por passo (arquivo), não por conversa.
+- `MEMORIA.md` continua sendo a memória longa; `ESTADO.md` é o ponteiro curto.
+
+**Evidência**
+- `opencode.jsonc`, `Padrao-Dark/ESTADO.md`, `Padrao-Dark/AGENTS.md`, `MEMORIA.md` §5.
+
 ## 2026-10-23 — 003 Roanoke publicado no YouTube Shorts
 
 **Entregue**

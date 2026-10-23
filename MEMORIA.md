@@ -24,6 +24,7 @@
 | Canal | **Dossiê 45**: nome, avatar/banner, descrição no ar e 9 shorts antigos privados | [canal](https://youtube.com/@Dossie45), `docs/REBRANDING.md` |
 | Ferramentas de análise | **adotadas seletivamente** | `tools/youtube-agent-skill/`, `docs/GANCHOS-21.md` |
 | `codebase-memory-mcp` | **não instalado** (adiado) | decisão em `docs/DECISOES.md` |
+| Memória de sessão | **`ESTADO.md` como `instructions`** | `opencode.jsonc`, `docs/HISTORICO.md` 2026-10-23 |
 
 ## 2. O que já foi entregue
 
@@ -116,7 +117,9 @@
 ### 3.3 Produzir 6 vídeos
 - **6 vídeos de Mistério 45** (3/6 publicados; 003 publicado; faltam 004–006), no canal rebrandado.
 - **003-roanoke**: briefing, gancho aprovado, roteiro (113 palavras, 13 cenas), voz, transcrição, composição v1, render e QA técnico **PASS** prontos. Marca corrigida para `DOSSIÊ 45`. **Publicado em 23/10/2026** em https://youtube.com/shorts/8ptxqKGe4Bk; selo **AI** visível; retenção em 25/10. Gancho: “117 pessoas sumiram. Nenhum corpo. Uma palavra.”
-- **Próximo:** **004 MV Joyita** (briefing, gancho, roteiro, voz, render e QA).
+- **004-mv-joyita**: briefing (Comissão de Inquérito NZ, Apia 1956), gancho (“O barco foi achado vazio. E ainda flutuava.”), roteiro **131 palavras / 13 cenas**, voz (`voz_raw` 44,117 s → `voz.wav` 45,000 s, −21,63 LUFS, TP −7,37), transcrição e composição remapeada; contrato **OK, 0 avisos**; cena 6 corrigida para 4 linhas.
+- **004 render e QA:** segmentado 5×300, 1 worker, **1350/1350 frames, 0 retries**, 3m16s; `final_raw.mp4` 45,000 s, −21,64 LUFS. Normalizado (+6,5 dB + limitador 0,85): `final.mp4` **45,013 s, 3.652.954 bytes, −15,16 LUFS, TP −1,42 dBFS**; `qa.ps1` **PASS**; `qa.md` escrito; capa `capa.png` em 4,0 s. **Aguardando** escuta (“Joyita”, “Tokelau”, “Apia”) e aprovação humana.
+- **Próximo:** renderizar o **004 MV Joyita** e seguir para **005 Voo 19**.
 - **004–006**: MV Joyita, Voo 19 e Passo Dyatlov; manter o v1 e validar as fontes antes de cada roteiro.
 - Manter o gate para os próximos: aprovação humana explícita e descrição do canal conferida antes de publicar.
 - Usar `templates/misterio-45/` e o fluxo de `MEMORIA.md` §6.
@@ -157,6 +160,7 @@
 | Caminho | O que é |
 |---|---|
 | `MEMORIA.md` | este arquivo; estado e retomada |
+| `ESTADO.md` | estado por passo; carregado como `instructions` (sobrevive à compactação) |
 | `AGENTS.md` | regras invioláveis e fluxo |
 | `README.md` | visão do produto e stack |
 | `docs/PLANO.md` | fases, gates, capacidade, métricas |
@@ -223,7 +227,7 @@ $uri = [System.Uri]::new((Resolve-Path index.html)).AbsoluteUri
 $env:HF_SEGMENTED_CAPTURE = "true"
 $env:HF_SEGMENT_FRAMES = "300"
 $env:HF_SEGMENT_BROWSER_RECYCLE = "1"
-hyperframes render --output final_raw.mp4 --quality standard --fps 30 `
+hyperframes.cmd render --output final_raw.mp4 --quality standard --fps 30 `
   --workers 1 --low-memory-mode --protocol-timeout 600000 --resume
 
 # normalizar áudio (medir antes; o piloto usou +6,2 dB)
@@ -273,6 +277,7 @@ ffmpeg -i final_raw.mp4 -c:v copy `
 
 Ao fim de **cada etapa**:
 
+0. (A cada passo, não só etapa) Atualizar `ESTADO.md`: feito, pendente, bloqueio, próximo comando.
 1. Atualizar a tabela da §1 e as listas das §2/§3 deste arquivo.
 2. Acrescentar uma entrada datada em `docs/HISTORICO.md` (o que, evidência, decisão).
 3. Atualizar `episodios/<slug>/status.md` e `qa.md` quando for um episódio.

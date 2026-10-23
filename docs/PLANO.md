@@ -43,7 +43,7 @@ A fila foi confirmada após o Gate 1 (23/10). Alvo: **1 vídeo a cada 2–3 dias
 | Ordem | Janela-alvo | Tema | Fonte principal | Ângulo | Status |
 |---|---|---|---|---|---|
 | 003 | 24–26/10 | Colônia de Roanoke (1590) | *The Roanoke Voyages, 1584–1590* (David Beers Quinn, Hakluyt Society); registros do Fort Raleigh/NPS | Cerca de 117 colonos desapareceram; “CROATOAN” é a pista documentada. O que os registros permitem concluir — e o que é lenda. | **publicado** em 23/10/2026; retenção em 25/10 |
-| 004 | 27–29/10 | MV Joyita (1955) | Inquérito oficial de Fiji (1956); arquivos marítimos da Nova Zelândia | 25 pessoas desapareceram; o barco foi achado à deriva, meio submerso. O que o inquérito documenta e o que continua em aberto. | candidato; validar fontes |
+| 004 | 27-29/10 | MV Joyita (1955) | Comissão de Inquérito da Nova Zelândia em Apia (1956), relatório C. C. Marsack; Archives NZ IT1/23579122; David G. Wright, *Joyita: Solving the Mystery* | 25 pessoas desapareceram; o barco foi achado à deriva, meio submerso. O que o inquérito documenta e o que continua em aberto. | em produção; fontes validadas |
 | 005 | 30/10–01/11 | Voo 19 (1945) | Relatório do Board of Inquiry da Marinha dos EUA (1945); Naval History and Heritage Command | Cinco aviões e 14 homens sem destroço. O que o relatório diz — e o que a lenda do Triângulo das Bermudas acrescentou. | candidato; validar fontes |
 | 006 | 02–04/11 | Passo Dyatlov (1959) | Investigação soviética (1959); Gaume & Puzrin, *Communications Earth & Environment* (2021) | Nove caminhantes, uma barraca cortada por dentro e lesões graves. O que o inquérito registrou e o que a ciência propôs. | candidato; validar fontes |
 
