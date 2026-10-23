@@ -96,7 +96,7 @@
 
 ### 3.3 Produzir 6 vídeos
 - **6 vídeos de Mistério 45** (2/6 publicados; faltam 4), no canal rebrandado.
-- **003-roanoke** em pré-produção: briefing e gancho prontos; gate de 23/10 concluído; **roteiro autorizado**, com revisão do gancho para não repetir o título.
+- **003-roanoke**: briefing, gancho revisado e `roteiro.md` prontos (113 palavras, 13 cenas); `narracao.txt` criado. Próxima etapa: TTS e processamento para 45,00 s. O gancho aprovado em 23/10 é “117 pessoas sumiram. Nenhum corpo. Uma palavra.”
 - Manter o gate para os próximos: aprovação humana explícita e descrição do canal conferida antes de publicar.
 - Usar `templates/misterio-45/` e o fluxo de `MEMORIA.md` §6.
 - Meta: 5–7 shorts/semana; um render por vez.
@@ -108,7 +108,7 @@
 - `retention.py` com patch para Shorts: 3 s/10 s, eixo de 45 s corrigido, transcrição SRT/VTT/JSON e normalização de retenção absoluta (>100%) do export avançado.
 - `hooks.json` mantido intacto; checklist PT-BR em `docs/GANCHOS-21.md`.
 - `title.py` adaptado para PT-BR (stopwords, termos vagos, nome próprio).
-- `scripts/test_youtube_agent.py`: 9 testes passando.
+- `scripts/test_youtube_agent.py`: 10 testes passando (inclui retenção absoluta normalizada).
 - `yt-viral` e `yt-audit` adiados para depois dos 6 vídeos; decisão em `docs/PLANO.md` e `docs/DECISOES.md`.
 
 ### 3.5 Desbloqueado pelo primeiro vídeo (21/10/2026)

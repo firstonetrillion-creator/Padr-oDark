@@ -4,6 +4,30 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-23**.
 
+## 2026-10-23 — 003 Roanoke: roteiro v1 e narração escritos
+
+**Entregue**
+- Gancho revisado e aprovado: **“117 pessoas sumiram. Nenhum corpo. Uma
+  palavra.”** A versão anterior repetia o título.
+- `episodios/003-roanoke/roteiro.md`: **113 palavras faladas**, 13 cenas,
+  estrutura gancho → CROATOAN → correção → contexto → evidência → twist →
+  fecho.
+- `episodios/003-roanoke/narracao.txt` criado com o texto exato para TTS.
+- `status.md` e `gancho.md` atualizados; `index.html` ainda está no
+  texto-exemplo do 001 e será remapeado depois da voz.
+
+**Decisão**
+- CROATOAN entra na **cena 2**, antes de geografia/contexto, para pagar o
+  gancho imediatamente.
+- O número **117** é usado com a variação **117–118** documentada; “nenhum
+  corpo” significa ausência no sítio, não prova de morte de todos.
+- Próxima etapa: TTS + processamento para 45,00 s; depois transcrição e
+  remapeamento do `index.html`.
+
+**Evidência**
+- `episodios/003-roanoke/roteiro.md`; `narracao.txt`; `gancho.md`;
+  `status.md`; `briefing.md`.
+
 ## 2026-10-23 — Gate 1 verificado: 002 passa, 001 fica sem curva
 
 **Entregue**

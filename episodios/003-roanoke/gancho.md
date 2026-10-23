@@ -1,7 +1,9 @@
 # Ganchos — 003
 
-1. **117 pessoas sumiram. Deixaram uma palavra.**
-   *Fórmula 1 — O Dado.* Primeira frase: 3 palavras. Total: 6.
+> **Revisão 23/10/2026:** o gancho escolhido passou a ser **“117 pessoas sumiram. Nenhum corpo. Uma palavra.”** A versão anterior — “117 pessoas sumiram. Deixaram uma palavra.” — foi descartada porque repetia o título e não acrescentava a ausência de corpos. A decisão veio do Gate 1: o 002 mostrou que o gancho precisa pagar a promessa cedo; o 001 mostrou que repetir o título não segura.
+
+1. **117 pessoas sumiram. Nenhum corpo. Uma palavra.**
+   *Fórmula 1 — O Dado.* Primeira frase: 3 palavras. Total: 7.
 2. A colônia sumiu. A pista era uma palavra.
    *Fórmula 17 — A Alegação Impossível.* Total: 8 palavras.
 3. CROATOAN não era um grito. Era um recado.
@@ -22,19 +24,19 @@
     *Fórmula 17 — A Alegação Impossível.* Total: 8 palavras.
 
 ## Escolhido
-**“117 pessoas sumiram. Deixaram uma palavra.”**
+**“117 pessoas sumiram. Nenhum corpo. Uma palavra.”**
 
 - **Fórmula dominante:** 1 — O Dado.
-- **Por que:** número concreto + objeto incompleto (“uma palavra”) em 6 palavras; cabe em ~2 s e abre uma pergunta que o vídeo responde.
+- **Por que:** número concreto + negação física (“Nenhum corpo”) + objeto incompleto (“uma palavra”) em 7 palavras. A versão anterior repetia “deixaram uma palavra” e o título; a nova acrescenta a ausência de corpos e não entrega o título.
 - **Primeira frase:** 3 palavras; a segunda entrega o loop.
-- **Frame 1:** kicker vermelho **O ARQUIVO · ROANOKE**; texto **117 PESSOAS / SUMIRAM. / DEIXARAM UMA / PALAVRA.**
+- **Frame 1:** kicker vermelho **O ARQUIVO · ROANOKE**; texto **117 PESSOAS / SUMIRAM. / NENHUM CORPO. / UMA PALAVRA.**
 - **Marcação:** o fato é documentado; não há marcação de lenda no frame 1. A correção entra na cena 3: “CROATOAN não era um código; era o nome de um lugar.”
-- **Ritmo:** pausa curta depois de “sumiram”; “deixaram uma palavra” mais baixo, sem dramaturgia.
+- **Ritmo:** pausa curta depois de “sumiram” e depois de “corpo”; “uma palavra” mais baixo, sem dramaturgia.
 - **Pronúncia:** “CROATOAN” devagar, sem traduzir; “Roanoke” como “ro-a-nok”.
 
 ## Checagem
 - [x] A primeira frase tem ≤9 palavras.
-- [x] Cabe em 2 segundos em voz alta.
+- [x] Cabe em ~3 segundos em voz alta.
 - [x] Confirma a promessa do título; não abre outro assunto.
 - [x] Uma ideia só: o recado que virou o último rastro.
 - [x] Tem número e objeto concreto.
