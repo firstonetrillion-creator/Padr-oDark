@@ -16,6 +16,8 @@ gsap.min.js
 # ===== Saidas de render e QA visual =====
 episodios/*/renders/
 episodios/*/qa-frames/
+episodios/*/qa-final/
+episodios/*/*-brand-antigo/
 bench/frame_*.png
 
 # ===== Estado interno de render =====

@@ -4,6 +4,40 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-23**.
 
+## 2026-10-23 — 003 Roanoke: render, QA e correção de marca
+
+**Entregue**
+- Render segmentado **5×300 frames**, 1 worker, low-memory; `final_raw.mp4`
+  **45,000 s**, **−21,9 LUFS**, true peak **−7,2 dBFS**.
+- Normalização **+6,5 dB** + `alimiter=limit=0.85:level=disabled`;
+  `final.mp4` **45,013 s**, **3.557.345 bytes**, **−15,4 LUFS**, true peak
+  **−1,4 dBFS**. O `qa.ps1` lê **−15,5 LUFS** por arredondamento.
+- `qa.ps1`: **QA PASS** (duração, resolução, fps, áudio, loudness, sem preto
+  inesperado).
+- 14 frames em `qa-final/` (`frame-01.png` … `frame-14.png`); frame 1,
+  CROATOAN, twist, fecho e fade conferidos sem overflow, ghosting ou marca
+  errada.
+- `qa.md` criado; `status.md`, `MEMORIA.md` e `docs/PLANO.md` atualizados.
+
+**Correção**
+- O primeiro render ainda exibia a marca antiga `ARQUIVO NOTURNO`. O
+  `index.html` foi corrigido para `DOSSIÊ 45` e o vídeo foi renderizado de
+  novo.
+- Os artefatos do render antigo ficaram preservados como
+  `final_raw_brand-antigo.mp4`, `final_brand-antigo.mp4`,
+  `qa-frames-brand-antigo/`, `qa-final-brand-antigo/`,
+  `renders-brand-antigo/` e `.hyperframes-brand-antigo/`.
+
+**Decisão**
+- Manter o visual v1; nenhuma fonte ou efeito novo antes do Gate 2.
+- **Não publicar** sem aprovação humana explícita do `final.mp4`.
+- Próxima etapa: aprovação; depois cópia `003-roanoke_shorts_v1.mp4`,
+  `capa.png`, `publicacao.md`, publicação e retenção em 48 h.
+
+**Evidência**
+- `episodios/003-roanoke/final.mp4`; `final_raw.mp4`; `qa.md`;
+  `qa-final/`; `status.md`; `index.html`; `scripts/qa.ps1`.
+
 ## 2026-10-23 — 003 Roanoke: voz, transcrição e composição v1
 
 **Entregue**
