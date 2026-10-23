@@ -42,6 +42,34 @@ A fila só trava depois do gate de 23/10. Alvo: **1 vídeo a cada 2–3 dias**, 
 - [ ] Medir 48 h dos 6 vídeos e comparar com o gate da Fase 2: **retenção média > 40% em 3 vídeos**.
 - [ ] Decidir a Fase 3 com dados, não por impressão.
 
+## Melhorias visuais — backlog pós-validação
+
+**Status: não iniciar agora.** A prioridade é validar os 6 vídeos e a retenção. O formato v1 (type-only) fica **congelado no 003–006** para não contaminar a comparação. O v2 entra depois do Gate 2, em um vídeo de teste (007) ou numa nova temporada.
+
+### Diagnóstico
+- O visual v1 é limpo, mas depende de um único gesto (texto entrando/sumindo); pode parecer “letras passando”.
+- O ganho não está em trocar o HyperFrames; está em direção de arte, composição e evidência visual.
+
+### Backlog v2 (avaliar após o Gate 2)
+- 5–6 layouts: capa de dossiê, documento, mapa/rota, número, cronologia, prova e fecho.
+- Tipografia como imagem: palavra gigante, corte pela borda, espaço negativo, camadas de texto.
+- Textura: papel, grão, scanlines, vinheta, carimbo e faixas de redação.
+- Provas visuais: mapas, recortes, documentos e fotos de domínio público, com fonte e licença registradas.
+- Movimento intencional: zoom lento, parallax, máscara e carimbo; não apenas slide.
+- Sound design: drone, impactos secos, papel, máquina de escrever e silêncio antes do twist.
+- Capa/key art que funcione parada no feed.
+- Um “frame de impacto” a cada 5–7 s.
+
+### Critérios para adotar
+- [ ] Ter fechado os 6 vídeos e o Gate 2.
+- [ ] Testar em **1 vídeo A/B**, não reformar todos de uma vez.
+- [ ] Comparar retenção 3 s/10 s e média com o v1; não decidir por gosto.
+- [ ] Medir tempo de produção e RAM; se passar de 90 min/vídeo, recuar.
+
+### Fora de escopo
+- WebGL/Three.js, ReelMimic, OpenMontage e automação de publicação antes do gate 3.
+- Trocar voz/TTS junto com o visual: uma variável por vez.
+
 ## Capacidade desta máquina
 
 | Produção | Volume |

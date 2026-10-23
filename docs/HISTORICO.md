@@ -2,7 +2,26 @@
 
 > Linha do tempo do que foi **entregue**, com data, evidência e decisão.
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
-> Mais recente no topo. Última atualização: **2026-10-21**.
+> Mais recente no topo. Última atualização: **2026-10-22**.
+
+## 2026-10-22 — Backlog visual v2 registrado
+
+**Entregue**
+- `docs/PLANO.md` ganhou a seção **Melhorias visuais — backlog
+  pós-validação**.
+- Direção registrada: layouts múltiplos, tipografia como imagem, textura,
+  provas visuais, movimento intencional, sound design e key art.
+- `MEMORIA.md` §3.6 aponta para o backlog e para a regra de não iniciar.
+
+**Decisão**
+- Primeiro fechar os 6 vídeos e o Gate 2; depois testar o v2 em **1 vídeo
+  A/B**, comparando retenção — não por gosto.
+- **003–006 ficam no formato v1** para não contaminar a comparação.
+- ReelMimic, WebGL/Three.js, OpenMontage e automação de publicação ficam
+  fora do MVP até o gate 3.
+
+**Evidência**
+- `docs/PLANO.md` §Melhorias visuais; `MEMORIA.md` §3.6.
 
 ## 2026-10-21 — 003 Roanoke: briefing e gancho prontos
 

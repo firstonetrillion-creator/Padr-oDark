@@ -2,7 +2,7 @@
 
 > **Leia este arquivo primeiro.** Ele é a memória de retomada do projeto.
 > Depois: `AGENTS.md` (regras) → `docs/PLANO.md` (fases) → `docs/HISTORICO.md` (o que já foi entregue).
-> Última atualização: **2026-10-21**. Se você é uma sessão nova, não refaça o que está marcado como entregue.
+> Última atualização: **2026-10-22**. Se você é uma sessão nova, não refaça o que está marcado como entregue.
 
 ## 1. Onde estamos
 
@@ -114,6 +114,11 @@
 ### 3.5 Desbloqueado pelo primeiro vídeo (21/10/2026)
 - `codebase-memory-mcp` pode ser instalado e o projeto indexado, **fora de uma janela de render** (RAM de 8 GB).
 - OpenMontage continua fora até o gate 3 (ver `docs/PLANO.md`).
+
+### 3.6 Melhorias visuais v2 — backlog (não iniciar)
+- Registro em `docs/PLANO.md` §Melhorias visuais — backlog pós-validação.
+- Só depois dos 6 vídeos e do Gate 2; **003–006 ficam no v1** para não contaminar a comparação.
+- ReelMimic, WebGL/Three.js e afins ficam fora do MVP; reavaliar depois do gate 3.
 
 ## 4. Ambiente e restrições
 
