@@ -6,7 +6,7 @@
 
 ## 1. Onde estamos
 
-**Fase 1 concluída e piloto publicado.** O cérebro está instalado, o gate G0 passou, o piloto `001-faroleiros` foi aprovado pelo usuário ("ficou perfeito") e publicado no YouTube Shorts em 21/10/2026. O template `misterio-45` foi extraído e o QA técnico está assinado. A validação de nicho por metadados foi concluída em 21/10/2026: **Mistério/Arquivo é a âncora**. Em 21/10/2026 também foi feita a **adoção seletiva do `youtube-agent-skill`** (retenção 3 s/10 s, 21 ganchos e lint de título). O **002-mary-celeste** foi produzido, passou no QA técnico e foi **publicado no YouTube Shorts em 21/10/2026**. Em 23/10/2026 o Gate 1 foi medido: **002 passa** (3 s 91,6%; 10 s 61,8%) e **001 fica sem curva** (24,3% de retenção inicial). Decisão: manter o v1 e ajustar o gancho do **003-roanoke**, que está com voz, transcrição, composição, render e QA técnico prontos; falta a aprovação humana. A Fase 2 segue com **2/6 publicados** e os episódios 004–006 na fila.
+**Fase 1 concluída e piloto publicado.** O cérebro está instalado, o gate G0 passou, o piloto `001-faroleiros` foi aprovado pelo usuário ("ficou perfeito") e publicado no YouTube Shorts em 21/10/2026. O template `misterio-45` foi extraído e o QA técnico está assinado. A validação de nicho por metadados foi concluída em 21/10/2026: **Mistério/Arquivo é a âncora**. Em 21/10/2026 também foi feita a **adoção seletiva do `youtube-agent-skill`** (retenção 3 s/10 s, 21 ganchos e lint de título). O **002-mary-celeste** foi produzido, passou no QA técnico e foi **publicado no YouTube Shorts em 21/10/2026**. Em 23/10/2026 o Gate 1 foi medido: **002 passa** (3 s 91,6%; 10 s 61,8%) e **001 fica sem curva** (24,3% de retenção inicial). Decisão: manter o v1 e ajustar o gancho do **003-roanoke**, que foi **publicado no YouTube Shorts em 23/10/2026** (https://youtube.com/shorts/8ptxqKGe4Bk). A Fase 2 segue com **3/6 publicados** e os episódios 004–006 na fila.
 
 | Frente | Estado | Evidência |
 |---|---|---|
@@ -15,12 +15,12 @@
 | Piloto `001-faroleiros` | **aprovado** | `episodios/001-faroleiros/final.mp4`, `qa.md` |
 | Template `misterio-45` | pronto | `templates/misterio-45/` |
 | Documentação de retomada | pronta | este arquivo + `docs/ARQUITETURA.md` + `docs/HISTORICO.md` |
-| Publicação | **publicado** (21/10/2026) | 001: [Shorts](https://youtube.com/shorts/WKuNVjl3d5M); 002: [Shorts](https://youtube.com/shorts/n6dtveQguf4) |
+| Publicação | **publicado** (21/10/2026 e 23/10/2026) | 001: [Shorts](https://youtube.com/shorts/WKuNVjl3d5M); 002: [Shorts](https://youtube.com/shorts/n6dtveQguf4); 003: [Shorts](https://youtube.com/shorts/8ptxqKGe4Bk) |
 | Validação de nicho | **concluída (metadados)** | `logs/nicho-2026-10-21.json`, `docs/NICHO.md` |
 | Versionamento | **git iniciado (21/10/2026)** | commit `782df62`, tag `ep-001-publicado` |
-| 6 vídeos de validação | **2/6 publicados; 003 aguardando aprovação** | piloto + 002 + 003–006 |
+| 6 vídeos de validação | **3/6 publicados; 004–006 na fila** | piloto + 002 + 003 + 004–006 |
 | Episódio 002 — Mary Celeste | **publicado** (21/10/2026) | `episodios/002-mary-celeste/`, [Shorts](https://youtube.com/shorts/n6dtveQguf4) |
-| Episódio 003 — Roanoke | **pronto para aprovação** (render e QA PASS; não publicado) | `episodios/003-roanoke/status.md` |
+| Episódio 003 — Roanoke | **publicado** (23/10/2026) | `episodios/003-roanoke/`, [Shorts](https://youtube.com/shorts/8ptxqKGe4Bk) |
 | Canal | **Dossiê 45**: nome, avatar/banner, descrição no ar e 9 shorts antigos privados | [canal](https://youtube.com/@Dossie45), `docs/REBRANDING.md` |
 | Ferramentas de análise | **adotadas seletivamente** | `tools/youtube-agent-skill/`, `docs/GANCHOS-21.md` |
 | `codebase-memory-mcp` | **não instalado** (adiado) | decisão em `docs/DECISOES.md` |
@@ -65,7 +65,7 @@
 - Título: `Mary Celeste: o navio encontrado sem ninguém em 1872` (52 chars; lint 98/100).
 - **Publicado no YouTube Shorts em 21/10/2026:** https://youtube.com/shorts/n6dtveQguf4. Aviso de conteúdo sintético marcado; selo **AI** visível.
 
-### Episódio 003 — Roanoke (render/QA prontos, 23/10/2026)
+### Episódio 003 — Roanoke (publicado, 23/10/2026)
 - Tema: colônia inglesa de Roanoke; **CROATOAN** como nome de lugar, não código.
 - `briefing.md`, `gancho.md` (fórmula 1), `roteiro.md` com **113 palavras faladas** e 13 cenas; `narracao.txt` canônico.
 - `narracao_tts.txt` grafa **`Croatoun`** nas duas ocorrências para o Piper; a tela usa **`CROATOAN`** e `narracao.txt` usa **`Croatoan`**.
@@ -76,7 +76,11 @@
 - **Marca:** o primeiro render ainda saiu com `ARQUIVO NOTURNO`; o `index.html` foi corrigido para `DOSSIÊ 45` e o vídeo foi renderizado de novo. Artefatos antigos preservados como `*_brand-antigo`.
 - Render segmentado **5×300 frames**, 1 worker: `final_raw.mp4` **45,000 s**, **−21,9 LUFS**, TP **−7,2 dBFS**.
 - `final.mp4`: **45,013 s**, **3.557.345 bytes**, **−15,4 LUFS**, TP **−1,4 dBFS**; `qa.ps1` **PASS**.
-- Pendente: aprovação humana e publicação. Detalhes em `status.md` e `qa.md`.
+- **Aprovado pelo usuário em 23/10/2026** (“Aprovado — publicar”). Cópia de publicação `003-roanoke_shorts_v1.mp4`, idêntica ao `final.mp4` (SHA-256 `D7C9B676…`).
+- Capa `capa.png` extraída em **4,0 s** (CROATOAN), 1080×1920; título `Roanoke: a colônia que sumiu e deixou uma palavra` (49 chars; lint 80/100).
+- **Publicado em 23/10/2026:** https://youtube.com/shorts/8ptxqKGe4Bk. Visibilidade **Público**; **AI use = Yes**; selo **AI** visível na página pública.
+- Metadados públicos via `yt-dlp` sem cookies: `availability=public`, `age_limit=0`, `duration=45`.
+- Retenção de 48 h agendada para **25/10/2026**. Registro em `biblioteca/publicados.csv`.
 
 ### Template
 - `templates/misterio-45/index.html` — composição validada, 13 cenas, áudio `voz`/`drone`, QA por `?t=`.
@@ -99,6 +103,7 @@
 2. **002:** 234 views, 103 engaged, 1,2 h, 0:40, 48,3% ficaram, 87,0% de retenção média; **3 s = 91,6%** e **10 s = 61,8%**. CSV salvo em `episodios/002-mary-celeste/retencao.csv`.
 3. **001:** 31 views, 9 engaged, 0,0 h, 0:15, 24,3% ficaram, 33,3% de retenção média. O CSV veio vazio; **3 s/10 s não disponíveis**. A tabela de “últimas 48 h” (16 views/11 s/25,3%) é uma janela rolante.
 4. **Decisão:** manter o formato v1, ajustar o gancho do 003 e seguir a fila. O 002 passou as metas provisórias de 3 s/10 s; o 001 não.
+5. **003:** publicado em 23/10/2026; baixar o CSV e medir **3 s, 10 s, retenção média e conclusão em 25/10/2026**. Atualizar `publicados.csv` e criar `retencao.md`.
 
 ### 3.2 Validação de nicho — concluída (21/10/2026)
 - Coleta completa: 48 shorts de Mistério/Arquivo (14 canais) e 50 de Psicologia sombria (17 canais), canais de 100–500 mil inscritos.
@@ -109,8 +114,9 @@
 - Dados completos em `logs/nicho-2026-10-21.json` e `docs/NICHO.md`.
 
 ### 3.3 Produzir 6 vídeos
-- **6 vídeos de Mistério 45** (2/6 publicados; 003 aguardando aprovação; faltam 004–006), no canal rebrandado.
-- **003-roanoke**: briefing, gancho aprovado, roteiro (113 palavras, 13 cenas), voz, transcrição, composição v1, render e QA técnico **PASS** prontos. Marca corrigida para `DOSSIÊ 45`. Próxima etapa: aprovação humana e publicação. Gancho: “117 pessoas sumiram. Nenhum corpo. Uma palavra.”
+- **6 vídeos de Mistério 45** (3/6 publicados; 003 publicado; faltam 004–006), no canal rebrandado.
+- **003-roanoke**: briefing, gancho aprovado, roteiro (113 palavras, 13 cenas), voz, transcrição, composição v1, render e QA técnico **PASS** prontos. Marca corrigida para `DOSSIÊ 45`. **Publicado em 23/10/2026** em https://youtube.com/shorts/8ptxqKGe4Bk; selo **AI** visível; retenção em 25/10. Gancho: “117 pessoas sumiram. Nenhum corpo. Uma palavra.”
+- **Próximo:** **004 MV Joyita** (briefing, gancho, roteiro, voz, render e QA).
 - **004–006**: MV Joyita, Voo 19 e Passo Dyatlov; manter o v1 e validar as fontes antes de cada roteiro.
 - Manter o gate para os próximos: aprovação humana explícita e descrição do canal conferida antes de publicar.
 - Usar `templates/misterio-45/` e o fluxo de `MEMORIA.md` §6.

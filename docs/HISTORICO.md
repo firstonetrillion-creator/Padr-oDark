@@ -4,6 +4,32 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-23**.
 
+## 2026-10-23 — 003 Roanoke publicado no YouTube Shorts
+
+**Entregue**
+- Aprovação humana explícita do `final.mp4` em 23/10/2026.
+- Cópia de publicação `003-roanoke_shorts_v1.mp4`, idêntica ao `final.mp4`
+  (SHA-256 `D7C9B676…`); capa `capa.png` extraída em **4,0 s**, 1080×1920.
+- Título `Roanoke: a colônia que sumiu e deixou uma palavra` (49 caracteres;
+  lint **80/100**); descrição com fontes (NPS e Quinn), ressalva 117–118 e
+  hashtags `#misterio #roanoke #croatoan #coloniaperdida #dossie45`.
+- **Publicado como Público:** https://youtube.com/shorts/8ptxqKGe4Bk.
+- **AI use = Yes** no Studio; selo **AI** visível na página pública.
+- Metadados públicos conferidos via `yt-dlp` sem cookies:
+  `availability=public`, `age_limit=0`, `duration=45`.
+- Linha adicionada em `biblioteca/publicados.csv`; retenção de 48 h agendada
+  para **25/10/2026**.
+
+**Decisão**
+- Fase 2 com **3/6 publicados** (001, 002 e 003).
+- Manter o v1 e iniciar o **004 MV Joyita**; 005 Voo 19 e 006 Passo Dyatlov na
+  sequência.
+
+**Evidência**
+- https://youtube.com/shorts/8ptxqKGe4Bk
+- `episodios/003-roanoke/publicacao.md`, `qa.md`, `status.md`;
+  `biblioteca/publicados.csv`.
+
 ## 2026-10-23 — 003 Roanoke: render, QA e correção de marca
 
 **Entregue**

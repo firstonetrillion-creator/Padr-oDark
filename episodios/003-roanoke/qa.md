@@ -1,7 +1,7 @@
 # QA — 003-roanoke
 
 **Data:** 2026-10-23
-**Arquivo:** `final.mp4` (cópia de publicação: pendente)
+**Arquivo:** `final.mp4` (cópia de publicação: `003-roanoke_shorts_v1.mp4`)
 **Render:** standard, 1080×1920, 30 fps, segmentado 5×300 frames, 1 worker,
 low-memory
 **Duração:** 45,013 s · **Tamanho:** 3.557.345 bytes (3,56 MB)
@@ -54,17 +54,19 @@ low-memory
   `ARQUIVO NOTURNO`; o `index.html` foi corrigido para `DOSSIÊ 45` e o vídeo
   foi renderizado de novo. Os artefatos antigos ficaram preservados como
   `*_brand-antigo`
-- [ ] Capa `capa.png` — criar após aprovação
-- [ ] Cópia de publicação `003-roanoke_shorts_v1.mp4` — criar após aprovação
+- [x] Capa `capa.png` — frame em 4,0 s, 1080×1920
+- [x] Cópia de publicação `003-roanoke_shorts_v1.mp4` — idêntica ao `final.mp4`
 
 ## Publicação
 
-- [ ] Aprovação humana do `final.mp4` — **pendente**
-- [ ] Título, descrição e hashtags em `publicacao.md` — criar após aprovação
-- [ ] Publicar no YouTube Shorts
-- [ ] Registrar em `biblioteca/publicados.csv`
-- [ ] Medir retenção em 48 h
+- [x] Aprovação humana do `final.mp4` — 23/10/2026
+- [x] Título, descrição e hashtags em `publicacao.md`
+- [x] Publicar no YouTube Shorts — https://youtube.com/shorts/8ptxqKGe4Bk
+- [x] Registrar em `biblioteca/publicados.csv`
+- [ ] Medir retenção em 48 h — agendado para 2026-10-25
 
 ## Veredito
 
-**QA técnico e visual: PASS. Pronto para aprovação humana. Não publicado.**
+**QA técnico e visual: PASS. Publicado no YouTube Shorts em 23/10/2026.**
+Selo **AI** visível; metadados públicos conferidos via `yt-dlp` sem cookies.
+Retenção de 48 h pendente para **2026-10-25**.

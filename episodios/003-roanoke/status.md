@@ -1,8 +1,8 @@
 # Status — 003
 
 > Criado por `scripts/novo-episodio.ps1` em 2026-10-21 22:33 a partir de `templates/misterio-45`
-> (sha256 `0e0a2281`, commit `ac25c1e`). Atualizado em 23/10/2026: render,
-> normalização e QA concluídos; aprovação humana pendente. A marca foi
+> (sha256 `0e0a2281`, commit `ac25c1e`). Atualizado em 23/10/2026: publicado
+> no YouTube Shorts; retenção de 48 h agendada para 25/10/2026. A marca foi
 > corrigida para `DOSSIÊ 45` antes do render final.
 
 | Etapa | Estado | Artefato |
@@ -17,7 +17,7 @@
 | QA visual | **pronto** | `qa-final/` (14 frames: frame 1, CROATOAN, twist, fecho, fade); `qa-frames-brand-antigo/` preserva o QA anterior |
 | Render | **pronto** | `final_raw.mp4` 45,000 s; `final.mp4` 45,013 s |
 | QA | **PASS** | `qa.md` (técnico + visual) |
-| Publicação | pendente | aprovação humana; depois YouTube Shorts |
+| Publicação | **PUBLICADO** | YouTube Shorts — https://youtube.com/shorts/8ptxqKGe4Bk |
 
 ## Medições
 
@@ -52,9 +52,24 @@
   8 kHz +1 dB), compressor −18 dB 3:1, limitador 0,95, 0,26 s de respiro e
   pad para 45,00 s.
 
+## Publicação
+
+- **Data:** 23/10/2026
+- **Plataforma:** YouTube Shorts
+- **URL:** https://youtube.com/shorts/8ptxqKGe4Bk
+- **Visibilidade:** Público
+- **Título:** `Roanoke: a colônia que sumiu e deixou uma palavra` (49 caracteres)
+- **Capa:** `capa.png`, frame em 4,0 s, 1080×1920
+- **Arquivo:** `003-roanoke_shorts_v1.mp4`, idêntico ao `final.mp4`
+  (SHA-256 `D7C9B676…`)
+- **Aviso sintético:** AI use = **Yes**; selo **AI** visível na página pública
+- **Metadados públicos:** `availability: public`, `age_limit: 0`, `duration: 45`
+  (yt-dlp sem cookies)
+- **Registro:** `biblioteca/publicados.csv`
+
 ## Próximos passos
 
-1. **Aprovação humana** do `final.mp4` (assistir e ouvir).
-2. Se aprovado: criar `003-roanoke_shorts_v1.mp4`, `capa.png` e
-   `publicacao.md`; publicar no YouTube Shorts.
-3. Atualizar `biblioteca/publicados.csv` e medir retenção em 48 h.
+1. Medir retenção em **25/10/2026** (48 h): 3 s, 10 s, retenção média e
+   conclusão.
+2. Iniciar o **004 MV Joyita** (briefing, gancho, roteiro, voz, render e QA).
+3. Depois do 004, seguir para **005 Voo 19** e **006 Passo Dyatlov**.
