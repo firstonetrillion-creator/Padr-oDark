@@ -2,7 +2,25 @@
 
 > Linha do tempo do que foi **entregue**, com data, evidência e decisão.
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
-> Mais recente no topo. Última atualização: **2026-10-23**.
+> Mais recente no topo. Última atualização: **2026-10-24**.
+
+## 2026-10-24 — 004 MV Joyita: publicado
+
+**Entregue**
+- Publicado no YouTube Shorts: https://youtube.com/shorts/rlSArCY3bH0
+- Cópia de upload `004-mv-joyita_shorts_v1.mp4` conferida por SHA-256
+  (`406906CE…`, idêntico ao `final.mp4`).
+- Título `MV Joyita: o barco que não afundava` (35 caracteres); descrição com
+  fontes; 5 hashtags; capa `capa.png`.
+- Studio: **Público**, **não é para crianças**, **AI use = Yes**, sem
+  promoção paga. Copyright: nenhum problema.
+- `publicados.csv` atualizado; tag `ep-004-publicado`.
+
+**Decisão**
+- Aprovação humana registrada em 24/10/2026 (“aprovado”).
+
+**Evidência**
+- URL acima, `publicacao.md`, `qa.md` (QA PASS), `004-mv-joyita_shorts_v1.mp4`.
 
 ## 2026-10-23 — 004 MV Joyita: render e QA técnico
 

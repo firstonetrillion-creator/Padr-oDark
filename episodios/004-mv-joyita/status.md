@@ -15,7 +15,7 @@
 | QA visual | **concluido** | `qa-frames/` (14 frames) + `qa-final/` (14 frames do render) |
 | Render | **concluido** | `final_raw.mp4` 45,000 s, −21,64 LUFS |
 | QA | **PASS** | `qa.md` (`final.mp4` 45,013 s, −15,16 LUFS, TP −1,42) |
-| Publicacao | **aguardando aprovacao humana** | YouTube Shorts |
+| Publicacao | **publicado** em 24/10/2026 | https://youtube.com/shorts/rlSArCY3bH0 |
 
 ## Medicoes
 
@@ -26,9 +26,9 @@
 - Loudness: −21,64 LUFS cru -> **−15,16 LUFS** final (ganho +6,5 dB; TP −1,42 dBFS)
 - `final.mp4`: **45,013 s**, 3.652.954 bytes, SHA-256 `406906CE…`
 
-## Proximos passos
+## Publicado
 
-1. Escuta humana: “Joyita”, “Tokelau”, “Apia” (`voz.wav`, 2–12 s).
-2. Aprovacao humana explicita (“Aprovado — publicar”).
-3. Copia `004-mv-joyita_shorts_v1.mp4` + `publicacao.md` + `publicados.csv`.
-4. Publicar; marcar conteudo sintetico; conferir selo AI; tag `ep-004-publicado`.
+- URL: https://youtube.com/shorts/rlSArCY3bH0
+- Público, **AI use = Yes**, não é para crianças, sem promoção paga.
+- Cópia de upload `004-mv-joyita_shorts_v1.mp4` (SHA-256 `406906CE…`).
+- Retenção de 48 h: medir em **26/10/2026**.
