@@ -85,7 +85,7 @@ Não sobrepor texto: o frame já contém a chamada.
 | plataforma | `YouTube Shorts` |
 | url | **https://youtube.com/shorts/rlSArCY3bH0** |
 | visibilidade | **Público** |
-| selo_ai | **Sim** (AI use = Yes no upload) |
+| selo_ai | **Sim** — selo **IA** visível na página pública |
 | thumbnail | `capa.png` (frame em 4,0 s) |
 | views_48h | — (276 views na conferência de 24/10; medir em 2026-10-26) |
 | retencao_3s | — (medir em 2026-10-26) |

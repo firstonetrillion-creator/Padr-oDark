@@ -4,7 +4,7 @@
 > Depois de uma compactação, a versão atual deste arquivo é relida do disco e vira a baseline da sessão.
 > Memória longa continua em `MEMORIA.md`; aqui só o suficiente para retomar sem reler nada.
 
-**Atualizado:** 2026-10-23 · **Sessão anterior:** compactada
+**Atualizado:** 2026-10-24 · **Sessão anterior:** publicação do 004
 
 ## Onde estamos
 
@@ -26,25 +26,22 @@ Fase 2, **4/6 publicados** (001–004). Episódio atual: **005 — Voo 19**.
 (ganho +6,5 dB + limitador 0,85). SHA-256 `406906CE2F8AC652CCF33A828EF6E1E120CBD1A8EA9645ACAC5E8968BEA6EED7`.
 Capa `capa.png` em 4,0 s (“25 PESSOAS / NENHUM SINAL”). Título com lint **100/100** (35 chars).
 
-**Estado: publicado.** Aprovação humana registrada em 24/10/2026; vídeo no ar
-como Shorts público, com **AI use = Yes**.
+**Estado: publicado e verificado.** Aprovação humana em 24/10/2026; vídeo no ar
+como Shorts público. Conferido: `availability=public`, `age_limit=0`,
+`duration=45` (yt-dlp sem cookies) e selo **IA** visível na página pública.
+Métricas iniciais: 276 views na primeira hora.
 
-## Publicado (004)
+## Esperando (nada a fazer até as datas)
 
-- URL: https://youtube.com/shorts/rlSArCY3bH0
-- Retenção de 48 h: medir em **26/10/2026** → `biblioteca/publicados.csv` + `retencao.md`.
-- Próximo: abrir o **005 — Voo 19** com `scripts/novo-episodio.ps1`, validando as
-  fontes do Board of Inquiry (1945) e do Naval History and Heritage Command.
-
-## Fila
-
-- **2026-10-25:** retenção de 48 h do **003** → `biblioteca/publicados.csv` + `retencao.md`.
-- **2026-10-26:** retenção de 48 h do **004**.
-- **005** Voo 19 · **006** Passo Dyatlov (mesmo padrão de fontes do 003/004).
+- **2026-10-25** — retenção de 48 h do **003**: baixar o CSV no Studio e rodar
+  `retention.py`; atualizar `publicados.csv` e criar `retencao.md`.
+- **2026-10-26** — mesma coisa para o **004**.
+- Só depois disso decidir o 005: o alerta da cena 2 do 004 (cartão estático de
+  6,57 s) fica em aberto até existir curva de retenção.
 
 ## Bloqueios e regras vivas
 
-- **Não publicar sem “Aprovado — publicar”.** A frase “conclua e vamos aguardar” **não** é aprovação.
+- **Aprovação é explícita por vídeo.** “publique” conta; “conclua” ou “vamos aguardar” não.
 - Um render por vez; 1080×1920, 30 fps, H.264 + AAC.
 - v1 congelado até o Gate 2: sem fonte/efeito novo.
 - Alerta em `qa.md`: cena 2 é cartão estático de 6,57 s. Só dividir se a retenção do 003 pedir.

@@ -14,6 +14,9 @@
   fontes; 5 hashtags; capa `capa.png`.
 - Studio: **Público**, **não é para crianças**, **AI use = Yes**, sem
   promoção paga. Copyright: nenhum problema.
+- Vitrine conferida: `yt-dlp` sem cookies (`availability=public`,
+  `age_limit=0`, `duration=45`) e página pública com o selo **IA** visível
+  ao lado do título.
 - `publicados.csv` atualizado; tag `ep-004-publicado`.
 
 **Decisão**
