@@ -12,6 +12,11 @@
 - **1.066 views** e 21 likes em 24 h (~3× o total do 003 em 48 h).
 - **3 s = 90,9%** (PASS), **10 s = 43,4%** (**abaixo** da meta de 45%),
   fim **17,3%**.
+- Painel do Studio: ficaram **53,4%**, duração média **0:21**,
+  **porcentagem visualizada média 45,7%**, Shorts feed 98,9%.
+- **Contraste com o 003:** “ficaram para assistir” é maior (53,4% vs 52,6%),
+  mas a duração média caiu pela metade (0:40 → 0:21). O problema é o **miolo**,
+  não o gancho.
 - Quedas concentradas em **4,0–8,6 s**, dentro da cena 2 — o cartão estático de
   6,57 s com data/origem/destino/número, que estava marcado como alerta no
   `qa.md`.
@@ -38,6 +43,8 @@
   miniatura com CTR 0% (o feed de Shorts não conta como impressão).
 - **3 s = 92,7%** (meta ≥70) e **10 s = 68,5%** (meta ≥45): **PASS** nas duas.
   Fim da curva: **36,1%**.
+- Painel do Studio (mesmo dia, com retry): ficaram **52,6%**, duração média
+  **0:40**, **porcentagem visualizada média 87,0%**, Shorts feed 92,2%.
 - `retencao.md` criado; linha do 003 em `publicados.csv` com views, 3 s e 10 s.
 - Diagnóstico: **slide** de −32,4 p.p. entre 10 s e 44,5 s, não uma queda única.
   As maiores perdas (4,5–8,1 s) estão no trecho que entrega CROATOAN e o explica

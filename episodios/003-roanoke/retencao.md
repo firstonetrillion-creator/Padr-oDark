@@ -60,15 +60,20 @@ saída constante.
   entregar a explicação na cena 2 — a hipótese a testar em 26/10 é se isso
   sustenta a curva depois dos 10 s.
 
-## Pendente
+## Painel do Studio (25/10)
 
-- **Porcentagem visualizada média** do painel (o 002 registrou 87,0%): não é
-  derivável do CSV; precisa do número do cartão de retenção no Studio.
-- **Duração média** e **“ficaram para assistir”** do mesmo cartão.
+| Métrica | Valor |
+|---|---:|
+| Visualizações | **370** (48 h) |
+| Ficaram para assistir | **52,6%** acumulado — **53,0%** “desde publicado” |
+| Duração média | **0:40** de 0:46 |
+| **Porcentagem visualizada média** | **87,0%** |
+| Inscritos | +1 |
+| Origem | Shorts feed **92,2%**, outros recursos 5,9%, busca 2,0% |
+
+A porcentagem média é `0:40 ÷ 0:46`; a fórmula foi validada no 002, que também
+registrou duração média 0:40 e 87,0% no painel.
 
 ## Linha em `biblioteca/publicados.csv`
 
-`2026-10-23,003-roanoke,misterio,YouTube Shorts,370,92.7,n/d,n/d,n/d,n/d`
-
-> `conclusao` fica `n/d` para manter a mesma definição do 001 e do 002. O fim
-> da curva (**36,1%**) está na tabela acima.
+`2026-10-23,003-roanoke,misterio,YouTube Shorts,370,92.7,87.0,n/d,n/d,n/d`

@@ -32,6 +32,25 @@
 do 003 e quase o mesmo 3 s — mas perde **25 p.p.** a mais até os 10 s. Ou seja:
 o paradoxo “vazio… e ainda flutuava” trouxe gente; o que veio depois espantou.
 
+## Painel do Studio (25/10, ~26 h)
+
+| Métrica | 003 Roanoke | 004 MV Joyita |
+|---|---:|---:|
+| Views | 370 (48 h) | **1.141** (48 h) / 1.066 em 24 h |
+| Ficaram para assistir | 52,6% | **53,4%** |
+| Duração média | 0:40 de 0:46 | **0:21 de 0:46** |
+| **% média assistida** | 87,0% | **45,7%** |
+| Shorts feed | 92,2% | **98,9%** |
+
+**Isto muda a leitura do gancho.** “Ficaram para assistir” do 004 (**53,4%**) é
+*maior* que a do 003 (52,6%) e bem maior que a do 002 (48,3%). Ou seja: **não
+perdemos mais gente no início** — perdemos no **meio**. A duração média caiu de
+0:40 para **0:21**, metade do vídeo.
+
+Isso é coerente com a curva (slide até 17,3%) e aponta para o **miolo**, não
+para o gancho: o público que ficou não foi embora no clique seguinte, foi
+escorrendo enquanto o vídeo organizava o assunto.
+
 ## Onde perde — e a hipótese que se confirmou
 
 As quedas se concentram em **4,0–8,6 s**, dentro da **cena 2** — exatamente o
@@ -84,8 +103,7 @@ baixo mesmo com menos views, a causa é o formato/gancho e o problema é outro.
 ## Pendente (26/10)
 
 - Export de 48 h → `retencao.csv`; conferir se 10 s estabiliza acima ou abaixo
-  de 45%.
-- Números do painel: porcentagem visualizada média, duração média e “ficaram
-  para assistir”.
-- Só então preencher a linha do 004 em `biblioteca/publicados.csv` (hoje `n/d`,
-  porque a coluna é de 48 h).
+  de 45% e se a duração média se mexe.
+- Preencher a linha do 004 em `biblioteca/publicados.csv` (hoje `n/d`, porque a
+  coluna é de 48 h). Os números do painel já estão na tabela acima e servem de
+  conferência: `retencao_media = 45.7`.

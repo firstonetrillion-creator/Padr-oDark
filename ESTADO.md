@@ -31,21 +31,29 @@ como Shorts público. Conferido: `availability=public`, `age_limit=0`,
 `duration=45` (yt-dlp sem cookies) e selo **IA** visível na página pública.
 Métricas iniciais: 276 views na primeira hora.
 
+## Painel do Studio (obtido em 25/10, com retry)
+
+| Métrica | 003 Roanoke | 004 MV Joyita |
+|---|---:|---:|
+| Views | 370 (48 h) | 1.141 (48 h) / 1.066 em 24 h |
+| Ficaram para assistir | **52,6%** (53,0% “desde publicado”) | **53,4%** |
+| Duração média | **0:40** de 0:46 | **0:21** de 0:46 |
+| % média assistida | **87,0%** | **45,7%** |
+| Shorts feed | 92,2% | 98,9% |
+
+**Leitura:** o 004 não perdeu mais gente no gancho — “ficaram para assistir” é
+até **um pouco maior** que no 003. Perdeu **no meio**: metade da duração média.
+Isso reforça o slide e enfraquece a ideia de que o gancho piorou.
+
 ## Esperando (nada a fazer até as datas)
 
-- **003 medido (25/10):** 3 s **92,7%**, 10 s **68,5%**, fim **36,1%**; 370 views,
-  +1 inscrito. Registro em `episodios/003-roanoke/retencao.md` e em
-  `publicados.csv`. **Falta** a “porcentagem visualizada média” do painel
-  (o 002 registrou 87,0%).
-- **2026-10-26** — retenção de 48 h do **004**. Já medido em **24 h**: 3 s
-  **90,9%**, 10 s **43,4%** (abaixo da meta), fim **17,3%**, 1.066 views.
-  O colapso está na **cena 2** (cartão estático de 6,57 s com data/origem/
-  número): −5,4 p.p. em 7,2–7,7 s. Ver `episodios/004-mv-joyita/retencao.md`.
+- **2026-10-26** — retenção de 48 h do **004**: novo export (`Todos.csv`) só para
+  confirmar se 10 s estabiliza; o painel já foi lido.
 - Só depois disso decidir o 005. Regra nova: **nada de cartão parado de
   contexto depois do gancho**; contexto em ≤2 s ou colado a uma consequência.
-- Só depois disso decidir o 005. Leitura do 003: gancho melhorou (3 s e 10 s
-  acima do 002), **mas o fim caiu** (36,1% vs 42,2%): slide de −32,4 p.p. entre
-  10 s e 44,5 s. Hipótese: a explicação do CROATOAN entregue cedo demais.
+- Leitura do 003: gancho melhorou (3 s e 10 s acima do 002), **mas o fim caiu**
+  (36,1% vs 42,2%): slide de −32,4 p.p. entre 10 s e 44,5 s. Hipótese: a
+  explicação do CROATOAN entregue cedo demais.
 
 ## Bloqueios e regras vivas
 
@@ -54,6 +62,11 @@ Métricas iniciais: 276 views na primeira hora.
 - v1 congelado até o Gate 2: sem fonte/efeito novo.
 - Alerta em `qa.md`: cena 2 é cartão estático de 6,57 s. Só dividir se a retenção do 003 pedir.
 - `docs/PLANO.md` (correção da fonte 004 → Comissão NZ, Apia) commitado junto com o 004.
+- **Studio Análises:** abre em branco / “Oops” na primeira carga. Funciona assim: abrir
+  `.../video/<id>/analytics/tab-overview/period-default?hl=en&cb=<timestamp>`, esperar e
+  **recarregar até o card “Audience retention” aparecer** (1–3 tentativas). O que o card
+  entrega: “Stayed to watch”, “Average view duration” e views. **% média assistida =
+  duração média ÷ 46 s** (validado pelo 002: 0:40 → 87,0%).
 
 ## Compactação
 
