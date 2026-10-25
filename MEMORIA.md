@@ -18,7 +18,7 @@
 | Publicação | **publicado** (21/10/2026 e 23/10/2026) | 001: [Shorts](https://youtube.com/shorts/WKuNVjl3d5M); 002: [Shorts](https://youtube.com/shorts/n6dtveQguf4); 003: [Shorts](https://youtube.com/shorts/8ptxqKGe4Bk) |
 | Validação de nicho | **concluída (metadados)** | `logs/nicho-2026-10-21.json`, `docs/NICHO.md` |
 | Versionamento | **git iniciado (21/10/2026)** | commit `782df62`, tag `ep-001-publicado` |
-| 6 vídeos de validação | **3/6 publicados; 004–006 na fila** | piloto + 002 + 003 + 004–006 |
+| 6 vídeos de validação | **4/6 publicados; 005–006 na fila** | piloto + 002 + 003 + 004 |
 | Episódio 002 — Mary Celeste | **publicado** (21/10/2026) | `episodios/002-mary-celeste/`, [Shorts](https://youtube.com/shorts/n6dtveQguf4) |
 | Episódio 003 — Roanoke | **publicado** (23/10/2026) | `episodios/003-roanoke/`, [Shorts](https://youtube.com/shorts/8ptxqKGe4Bk) |
 | Canal | **Dossiê 45**: nome, avatar/banner, descrição no ar e 9 shorts antigos privados | [canal](https://youtube.com/@Dossie45), `docs/REBRANDING.md` |
@@ -115,11 +115,12 @@
 - Dados completos em `logs/nicho-2026-10-21.json` e `docs/NICHO.md`.
 
 ### 3.3 Produzir 6 vídeos
-- **6 vídeos de Mistério 45** (3/6 publicados; 003 publicado; faltam 004–006), no canal rebrandado.
+- **6 vídeos de Mistério 45** (4/6 publicados; 003 e 004 publicados; faltam 005–006), no canal rebrandado.
 - **003-roanoke**: briefing, gancho aprovado, roteiro (113 palavras, 13 cenas), voz, transcrição, composição v1, render e QA técnico **PASS** prontos. Marca corrigida para `DOSSIÊ 45`. **Publicado em 23/10/2026** em https://youtube.com/shorts/8ptxqKGe4Bk; selo **AI** visível; retenção em 25/10. Gancho: “117 pessoas sumiram. Nenhum corpo. Uma palavra.”
 - **004-mv-joyita**: briefing (Comissão de Inquérito NZ, Apia 1956), gancho (“O barco foi achado vazio. E ainda flutuava.”), roteiro **131 palavras / 13 cenas**, voz (`voz_raw` 44,117 s → `voz.wav` 45,000 s, −21,63 LUFS, TP −7,37), transcrição e composição remapeada; contrato **OK, 0 avisos**; cena 6 corrigida para 4 linhas.
-- **004 render e QA:** segmentado 5×300, 1 worker, **1350/1350 frames, 0 retries**, 3m16s; `final_raw.mp4` 45,000 s, −21,64 LUFS. Normalizado (+6,5 dB + limitador 0,85): `final.mp4` **45,013 s, 3.652.954 bytes, −15,16 LUFS, TP −1,42 dBFS**; `qa.ps1` **PASS**; `qa.md` escrito; capa `capa.png` em 4,0 s. **Aguardando** escuta (“Joyita”, “Tokelau”, “Apia”) e aprovação humana.
-- **Próximo:** renderizar o **004 MV Joyita** e seguir para **005 Voo 19**.
+- **004 render e QA:** segmentado 5×300, 1 worker, **1350/1350 frames, 0 retries**, 3m16s; `final_raw.mp4` 45,000 s, −21,64 LUFS. Normalizado (+6,5 dB + limitador 0,85): `final.mp4` **45,013 s, 3.652.954 bytes, −15,16 LUFS, TP −1,42 dBFS**; `qa.ps1` **PASS**; capa `capa.png` em 4,0 s.
+- **004-mv-joyita publicado em 24/10/2026:** https://youtube.com/shorts/rlSArCY3bH0 — público, `duration=45`, `age_limit=0`; cópia `004-mv-joyita_shorts_v1.mp4` idêntica ao `final.mp4`. Retenção de 48 h em **26/10/2026**.
+- **Próximo:** abrir o **005 Voo 19** (`scripts/novo-episodio.ps1`), validando as fontes do Board of Inquiry de 1945 e do Naval History and Heritage Command.
 - **004–006**: MV Joyita, Voo 19 e Passo Dyatlov; manter o v1 e validar as fontes antes de cada roteiro.
 - Manter o gate para os próximos: aprovação humana explícita e descrição do canal conferida antes de publicar.
 - Usar `templates/misterio-45/` e o fluxo de `MEMORIA.md` §6.

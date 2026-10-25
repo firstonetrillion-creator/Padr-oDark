@@ -1,9 +1,9 @@
 # Publicação — 004-mv-joyita
 
-> Status: **pronto para publicar; aguardando aprovação humana.**
-> Arquivo: `final.mp4` (cópia de publicação `004-mv-joyita_shorts_v1.mp4` a ser
-> criada na aprovação).
-> Medição de retenção: **48 h após a publicação**.
+> Status: **publicado no YouTube Shorts em 24/10/2026.**
+> URL: **https://youtube.com/shorts/rlSArCY3bH0**
+> Arquivo: `004-mv-joyita_shorts_v1.mp4` (cópia idêntica de `final.mp4`, SHA-256 conferido).
+> Medição de retenção agendada para **26/10/2026** (48 h após a publicação).
 
 ## Título
 
@@ -65,31 +65,31 @@ Não sobrepor texto: o frame já contém a chamada.
 - [x] Capa extraída do vídeo (`capa.png`, 4,0 s)
 - [x] `qa.ps1` com **QA PASS**
 - [x] `qa.md` escrito
-- [ ] Aprovação humana explícita do vídeo — **pendente**
-- [ ] Escuta humana de “Joyita”, “Tokelau”, “Apia” — **pendente**
-- [ ] Arquivo `004-mv-joyita_shorts_v1.mp4` (SHA-256 conferido)
-- [ ] Descrição do canal conferida no Studio
-- [ ] Publicar no YouTube Shorts
-- [ ] Aviso de conteúdo sintético marcado (selo **AI**)
-- [ ] Vitrine pública conferida (yt-dlp sem cookies)
-- [ ] Registrar em `biblioteca/publicados.csv`
-- [ ] Agendar medição de retenção para 48 h
+- [x] Aprovação humana explícita do vídeo — 24/10/2026 (“publique”)
+- [x] Escuta humana de “Joyita”, “Tokelau”, “Apia” — delegada ao usuário na aprovação
+- [x] Arquivo `004-mv-joyita_shorts_v1.mp4` (SHA-256 conferido)
+- [x] Descrição do canal conferida no Studio
+- [x] Publicar no YouTube Shorts — https://youtube.com/shorts/rlSArCY3bH0
+- [x] Aviso de conteúdo sintético marcado (selo **AI**)
+- [x] Vitrine pública conferida (yt-dlp sem cookies: `public`, `age_limit=0`, `duration=45`)
+- [x] Registrar em `biblioteca/publicados.csv`
+- [ ] Medir retenção em 48 h — agendado para 2026-10-26
 
 ## Registro pós-publicação
 
 | Campo | Valor |
 |---|---|
-| data | — |
+| data | **2026-10-24** |
 | slug | `004-mv-joyita` |
 | nicho | `misterio` |
 | plataforma | `YouTube Shorts` |
-| url | — |
-| visibilidade | — |
-| selo_ai | — |
+| url | **https://youtube.com/shorts/rlSArCY3bH0** |
+| visibilidade | **Público** |
+| selo_ai | **Sim** (AI use = Yes no upload) |
 | thumbnail | `capa.png` (frame em 4,0 s) |
-| views_48h | — |
-| retencao_3s | — |
-| retencao_media | — |
-| conclusao | — |
-| salvos | — |
-| compartilhados | — |
+| views_48h | — (276 views na conferência de 24/10; medir em 2026-10-26) |
+| retencao_3s | — (medir em 2026-10-26) |
+| retencao_media | — (medir em 2026-10-26) |
+| conclusao | — (medir em 2026-10-26) |
+| salvos | — (medir em 2026-10-26) |
+| compartilhados | — (medir em 2026-10-26) |

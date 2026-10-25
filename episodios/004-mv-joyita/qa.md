@@ -68,5 +68,7 @@ número de cenas) e re-renderizar — o render leva ~3 min.
 
 ## Veredito
 
-**QA técnico e visual: PASS.** Pronto para aprovação humana; **não publicar**
-sem “Aprovado — publicar”.
+**QA técnico e visual: PASS. Publicado no YouTube Shorts em 24/10/2026.**
+https://youtube.com/shorts/rlSArCY3bH0 — metadados públicos conferidos via
+`yt-dlp` sem cookies (`availability=public`, `age_limit=0`, `duration=45`).
+Retenção de 48 h pendente para **2026-10-26**.
