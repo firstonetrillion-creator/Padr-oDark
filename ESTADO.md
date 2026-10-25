@@ -15,16 +15,17 @@ Fase 2, **4/6 publicados** (001–004). Episódio atual: **005 — Voo 19**.
 | Etapa | Estado |
 |---|---|
 | Briefing | **pronto** — fontes primárias validadas (Board of Investigation 1945, 56 achados) |
-| Gancho | **pronto — aguardando aprovação humana** |
-| Roteiro → publicação | pendente |
+| Gancho | **aprovado** em 25/10/2026 |
+| Roteiro | **pronto** — `111` palavras, **12 cenas** (2,5 palavras/s) |
+| Voz → publicação | pendente |
 
-**Gancho proposto:** “Cinco aviões pediram socorro. Nenhum voltou. Nem o
-resgate.” Capa: `27 HOMENS / NENHUM CORPO` (~4,0 s). Cena 2 **não** é cartão de
-contexto (regra pós-004): “O rádio funcionava. Eles falaram por três horas. Não
-acharam oeste.”
+**Gancho:** “Cinco aviões pediram socorro. Nenhum voltou. Nem o resgate.”
+Capa: `27 HOMENS / NENHUM CORPO` (~39 s, cena 11).
+Cena 2 **não** é cartão de contexto (regra pós-004): “O rádio funcionava. Eles
+falavam com a base. Não sabiam onde estavam.”
 
-**Próximo comando (quando o gancho for aprovado):** escrever `roteiro.md`
-(110–125 palavras, 13 cenas) e `narracao.txt`.
+**Próximo comando:** gerar a voz (`narracao_tts.txt`, `length_scale` a calibrar;
+meta `voz_raw.wav` 43–44 s), depois transcrever e remapear os tempos reais.
 
 ## Episódio 004 — MV Joyita
 

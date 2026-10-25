@@ -1,7 +1,7 @@
 # Ganchos — 005
 
 > **Título de trabalho:** `Voo 19: cinco aviões sumiram sem deixar destroço`.
-> **Capa:** frame 2, ~4,0 s — `27 HOMENS / NENHUM CORPO`.
+> **Capa:** cena 11, ~39 s — `27 HOMENS / NENHUM CORPO`.
 > O título entrega o fato e a ausência de prova; o gancho entrega a **segunda
 > perda**; a capa entrega o **total de mortos**. Nenhuma peça repete a outra.
 
@@ -39,8 +39,10 @@
 - **Frame 1:** kicker vermelho **O ARQUIVO · VOO 19**; texto **CINCO AVIÕES /
   PEDIRAM SOCORRO. / NENHUM VOLTOU. / NEM O RESGATE.**
 - **Tempo no corte:** 0,00–3,75 s (provisório; ajustado pela voz).
-- **Capa:** frame 2, em ~4,0 s — **27 HOMENS / NENHUM CORPO**. Soma 14 + 13; a
+- **Capa:** cena 11, em ~39 s — **27 HOMENS / NENHUM CORPO**. Soma 14 + 13; a
   capa não repete título nem gancho, e entrega o custo que o gancho só insinua.
+  Escolhida ali, e não aos 4 s, porque é o único frame em que o número fecha a
+  conta que o vídeo inteiro vem montando.
 - **Marcação:** tudo documentado pelo Board of Investigation (1945). Não há
   lenda no frame 1 — o “Triângulo das Bermudas” não aparece no vídeo como causa.
 - **Ritmo:** “Nenhum voltou.” com pausa seca; “Nem o resgate.” mais baixo.

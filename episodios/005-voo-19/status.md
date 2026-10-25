@@ -6,8 +6,8 @@
 | Etapa | Estado | Artefato |
 |---|---|---|
 | Briefing | **pronto** | `briefing.md` (Board of Investigation 1945, achados 1–56; NHHC; NASFL; USNI) |
-| Gancho | **pronto — aguardando aprovação** | `gancho.md` (“Cinco aviões pediram socorro. Nenhum voltou. Nem o resgate.”) |
-| Roteiro | pendente | `roteiro.md` |
+| Gancho | **aprovado** em 25/10/2026 | `gancho.md` (“Cinco aviões pediram socorro. Nenhum voltou. Nem o resgate.”) |
+| Roteiro | **pronto (111 palavras, 12 cenas)** | `roteiro.md`, `narracao.txt`, `narracao_tts.txt` |
 | Narracao | pendente | `narracao.txt`, `voz_raw.wav`, `voz.wav` (45,00 s) |
 | Transcricao | pendente | `transcricao.json` |
 | Assets | nao usado | v1 tipografica (sem imagens) |
