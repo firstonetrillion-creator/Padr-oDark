@@ -62,6 +62,26 @@ Métricas iniciais: 276 views na primeira hora.
 até **um pouco maior** que no 003. Perdeu **no meio**: metade da duração média.
 Isso reforça o slide e enfraquece a ideia de que o gancho piorou.
 
+## Laboratório (fora da fila, não publica)
+
+`laboratorio/001-60s-fawcett/` — ensaio do **007**, com material barato.
+
+| Item | Estado |
+|---|---|
+| Conceito | **pronto** — 4 variáveis, regra do trilho, critério de sucesso |
+| Roteiro | **pronto** — `131` palavras, **16 cenas**, **60 s** (2,18 pal./s) |
+| Narração | `narracao.txt` + `narracao_tts.txt` (148 tokens: números por extenso) |
+| Voz → render | pendente |
+
+**Hipótese:** o que derruba o miolo não é a quantidade de texto, é o **estado
+parado**. Por isso a contagem de palavras do teste é **idêntica à do 004 (131)** —
+a diferença é tempo (60 s contra 45) e movimento (trilho de datas que anda).
+
+**Tema:** Percy Fawcett, Mato Grosso, 1925 — também testa **assunto nacional**.
+
+**Atenção:** 60 s = 1.800 frames, acima do limite de ~1.350 do Chrome; captura
+segmentada obrigatória. Este teste **não** altera o v1 congelado do 003–006.
+
 ## Esperando (nada a fazer até as datas)
 
 - **2026-10-26** — retenção de 48 h do **004**: novo export (`Todos.csv`) só para
