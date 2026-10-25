@@ -34,7 +34,7 @@
 - [x] Marca corrigida para `DOSSIÊ 45` e vídeo re-renderizado.
 - [x] Aprovação humana do `final.mp4` (23/10/2026).
 - [x] Publicação no YouTube Shorts — https://youtube.com/shorts/8ptxqKGe4Bk.
-- [ ] Retenção em 48 h — medir em **25/10/2026**.
+- [ ] Retenção em 48 h — **medida em 25/10/2026**: 3 s 92,7%, 10 s 68,5%, fim 36,1%; falta a porcentagem visualizada média do painel.
 
 ### Fila 003–006
 

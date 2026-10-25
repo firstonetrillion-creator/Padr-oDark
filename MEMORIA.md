@@ -104,7 +104,7 @@
 2. **002:** 234 views, 103 engaged, 1,2 h, 0:40, 48,3% ficaram, 87,0% de retenção média; **3 s = 91,6%** e **10 s = 61,8%**. CSV salvo em `episodios/002-mary-celeste/retencao.csv`.
 3. **001:** 31 views, 9 engaged, 0,0 h, 0:15, 24,3% ficaram, 33,3% de retenção média. O CSV veio vazio; **3 s/10 s não disponíveis**. A tabela de “últimas 48 h” (16 views/11 s/25,3%) é uma janela rolante.
 4. **Decisão:** manter o formato v1, ajustar o gancho do 003 e seguir a fila. O 002 passou as metas provisórias de 3 s/10 s; o 001 não.
-5. **003:** publicado em 23/10/2026; baixar o CSV e medir **3 s, 10 s, retenção média e conclusão em 25/10/2026**. Atualizar `publicados.csv` e criar `retencao.md`.
+5. **003:** publicado em 23/10/2026; medido em **25/10/2026**: **370 views**, 3 s **92,7%**, 10 s **68,5%**, fim **36,1%**; +1 inscrito. Fecha o Gate 1 e melhora as duas janelas em relação ao 002, mas o fim cai (42,2% → 36,1%). `retencao.md` criado; falta a “porcentagem visualizada média” do painel.
 
 ### 3.2 Validação de nicho — concluída (21/10/2026)
 - Coleta completa: 48 shorts de Mistério/Arquivo (14 canais) e 50 de Psicologia sombria (17 canais), canais de 100–500 mil inscritos.

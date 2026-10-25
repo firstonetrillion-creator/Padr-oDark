@@ -4,6 +4,29 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-24**.
 
+## 2026-10-25 — 003 Roanoke: retenção de 48 h
+
+**Entregue**
+- Export “Todos” do Studio (retenção absoluta) salvo em
+  `episodios/003-roanoke/retencao.csv`; `retention.py --duration 45` rodado.
+- **370 views**, **+1 inscrito**, 1,96 h de watch time; 41 impressões de
+  miniatura com CTR 0% (o feed de Shorts não conta como impressão).
+- **3 s = 92,7%** (meta ≥70) e **10 s = 68,5%** (meta ≥45): **PASS** nas duas.
+  Fim da curva: **36,1%**.
+- `retencao.md` criado; linha do 003 em `publicados.csv` com views, 3 s e 10 s.
+- Diagnóstico: **slide** de −32,4 p.p. entre 10 s e 44,5 s, não uma queda única.
+  As maiores perdas (4,5–8,1 s) estão no trecho que entrega CROATOAN e o explica
+  na mesma cena.
+
+**Decisão**
+- O ajuste de gancho do Gate 1 **funcionou**: 003 supera o 002 em 3 s e em 10 s.
+- A perda está no miolo/fim: reter a explicação para depois de uma consequência
+  e não gastar o fecho resumindo o que o vídeo já disse. Aplicar no 005.
+
+**Evidência**
+- `episodios/003-roanoke/retencao.csv`, `retencao.md`, `analytics/`
+  (views por dia e resumo de conteúdo), `biblioteca/publicados.csv`.
+
 ## 2026-10-24 — 004 MV Joyita: publicado
 
 **Entregue**

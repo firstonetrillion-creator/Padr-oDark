@@ -33,11 +33,15 @@ Métricas iniciais: 276 views na primeira hora.
 
 ## Esperando (nada a fazer até as datas)
 
-- **2026-10-25** — retenção de 48 h do **003**: baixar o CSV no Studio e rodar
-  `retention.py`; atualizar `publicados.csv` e criar `retencao.md`.
-- **2026-10-26** — mesma coisa para o **004**.
-- Só depois disso decidir o 005: o alerta da cena 2 do 004 (cartão estático de
-  6,57 s) fica em aberto até existir curva de retenção.
+- **003 medido (25/10):** 3 s **92,7%**, 10 s **68,5%**, fim **36,1%**; 370 views,
+  +1 inscrito. Registro em `episodios/003-roanoke/retencao.md` e em
+  `publicados.csv`. **Falta** a “porcentagem visualizada média” do painel
+  (o 002 registrou 87,0%).
+- **2026-10-26** — retenção de 48 h do **004**: mesmo export (`Todos.csv`) e
+  `retention.py`; comparar com o 003 no mesmo estágio (1.053 views em 24 h).
+- Só depois disso decidir o 005. Leitura do 003: gancho melhorou (3 s e 10 s
+  acima do 002), **mas o fim caiu** (36,1% vs 42,2%): slide de −32,4 p.p. entre
+  10 s e 44,5 s. Hipótese: a explicação do CROATOAN entregue cedo demais.
 
 ## Bloqueios e regras vivas
 
