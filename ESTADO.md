@@ -10,6 +10,22 @@
 
 Fase 2, **4/6 publicados** (001–004). Episódio atual: **005 — Voo 19**.
 
+## Episódio 005 — Voo 19
+
+| Etapa | Estado |
+|---|---|
+| Briefing | **pronto** — fontes primárias validadas (Board of Investigation 1945, 56 achados) |
+| Gancho | **pronto — aguardando aprovação humana** |
+| Roteiro → publicação | pendente |
+
+**Gancho proposto:** “Cinco aviões pediram socorro. Nenhum voltou. Nem o
+resgate.” Capa: `27 HOMENS / NENHUM CORPO` (~4,0 s). Cena 2 **não** é cartão de
+contexto (regra pós-004): “O rádio funcionava. Eles falaram por três horas. Não
+acharam oeste.”
+
+**Próximo comando (quando o gancho for aprovado):** escrever `roteiro.md`
+(110–125 palavras, 13 cenas) e `narracao.txt`.
+
 ## Episódio 004 — MV Joyita
 
 | Etapa | Estado |

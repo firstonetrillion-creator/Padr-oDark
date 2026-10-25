@@ -38,19 +38,35 @@
 
 ### Fila 003–006
 
-A fila foi confirmada após o Gate 1 (23/10). Alvo: **1 vídeo a cada 2–3 dias**, concluir os 4 até **04/11/2026**, mantendo aprovação humana antes de publicar.
+A fila foi confirmada após o Gate 1 (23/10). Alvo: **1 vídeo a cada 2–3 dias**,
+mantendo aprovação humana antes de publicar. Datas revisadas em **25/10/2026**
+com o ritmo real (o 003 saiu 1 dia antes e o 004, 3 dias antes do previsto).
 
-| Ordem | Janela-alvo | Tema | Fonte principal | Ângulo | Status |
+| Ordem | Janela real | Tema | Fonte principal | Ângulo | Status |
 |---|---|---|---|---|---|
-| 003 | 24–26/10 | Colônia de Roanoke (1590) | *The Roanoke Voyages, 1584–1590* (David Beers Quinn, Hakluyt Society); registros do Fort Raleigh/NPS | Cerca de 117 colonos desapareceram; “CROATOAN” é a pista documentada. O que os registros permitem concluir — e o que é lenda. | **publicado** em 23/10/2026; retenção em 25/10 |
-| 004 | 27-29/10 | MV Joyita (1955) | Comissão de Inquérito da Nova Zelândia em Apia (1956), relatório C. C. Marsack; Archives NZ IT1/23579122; David G. Wright, *Joyita: Solving the Mystery* | 25 pessoas desapareceram; o barco foi achado à deriva, meio submerso. O que o inquérito documenta e o que continua em aberto. | em produção; fontes validadas |
-| 005 | 30/10–01/11 | Voo 19 (1945) | Relatório do Board of Inquiry da Marinha dos EUA (1945); Naval History and Heritage Command | Cinco aviões e 14 homens sem destroço. O que o relatório diz — e o que a lenda do Triângulo das Bermudas acrescentou. | candidato; validar fontes |
-| 006 | 02–04/11 | Passo Dyatlov (1959) | Investigação soviética (1959); Gaume & Puzrin, *Communications Earth & Environment* (2021) | Nove caminhantes, uma barraca cortada por dentro e lesões graves. O que o inquérito registrou e o que a ciência propôs. | candidato; validar fontes |
+| 003 | **23/10** (feito) | Colônia de Roanoke (1590) | *The Roanoke Voyages, 1584–1590* (David Beers Quinn, Hakluyt Society); registros do Fort Raleigh/NPS | Cerca de 117 colonos desapareceram; “CROATOAN” é a pista documentada. O que os registros permitem concluir — e o que é lenda. | **publicado** em 23/10/2026; medido em 25/10 |
+| 004 | **24/10** (feito) | MV Joyita (1955) | Comissão de Inquérito da Nova Zelândia em Apia (1956), relatório C. C. Marsack; Archives NZ IT1/23579122; David G. Wright, *Joyita: Solving the Mystery* | 25 pessoas desapareceram; o barco foi achado à deriva, meio submerso. O que o inquérito documenta e o que continua em aberto. | **publicado** em 24/10/2026; 24 h medido, 48 h em 26/10 |
+| 005 | **26–28/10** | Voo 19 (1945) | Relatório do Board of Inquiry da Marinha dos EUA (1945); Naval History and Heritage Command | Cinco aviões e 14 homens sem destroço. O que o relatório diz — e o que a lenda do Triângulo das Bermudas acrescentou. | **em produção**; fontes a validar |
+| 006 | **29–31/10** | Passo Dyatlov (1959) | Investigação soviética (1959); Gaume & Puzrin, *Communications Earth & Environment* (2021) | Nove caminhantes, uma barraca cortada por dentro e lesões graves. O que o inquérito registrou e o que a ciência propôs. | candidato; validar fontes |
 
-### Gate 2 — após o 006
+### Gate 2 — 48 h após o 006 (≈ 01–02/11/2026)
 
-- [ ] Medir 48 h dos 6 vídeos e comparar com o gate da Fase 2: **retenção média > 40% em 3 vídeos**.
-- [ ] Decidir a Fase 3 com dados, não por impressão.
+**Critério decidível** (substitui “retenção média > 40% em 3 vídeos”, que não
+discrimina — ver nota abaixo):
+
+- **Principal:** **≥ 3 dos 6** vídeos com **% média assistida > 50%**
+  (duração média ÷ duração do painel; 003 = 0:40/0:46 = 87,0%).
+- **Guarda-corpo 1:** mediana de **10 s ≥ 50%**.
+- **Guarda-corpo 2:** mediana do **fim da curva ≥ 30%**.
+- **Regra de amostra:** vídeo sem curva de retenção **não entra** nem no
+  numerador nem no denominador (foi o caso do 001).
+- **Se falhar:** a Fase 3 não escala. O v2 visual vira teste de recuperação
+  (007) e a Psicologia sombria volta como fallback em canal novo.
+
+> **Por que 50% e não 40%:** com 002 (87,0%), 003 (87,0%) e 004 (45,7%), o piso
+> de 40% **já estaria cumprido hoje com 3 de 4 vídeos** — um gate que não pode
+> falhar não é gate. E o 004 mostra por que o número do painel sozinho engana:
+> média 45,7% com **fim de curva em 17,3%**. Daí os dois guarda-corpos.
 
 ## Melhorias visuais — backlog pós-validação
 
