@@ -105,6 +105,8 @@
 3. **001:** 31 views, 9 engaged, 0,0 h, 0:15, 24,3% ficaram, 33,3% de retenção média. O CSV veio vazio; **3 s/10 s não disponíveis**. A tabela de “últimas 48 h” (16 views/11 s/25,3%) é uma janela rolante.
 4. **Decisão:** manter o formato v1, ajustar o gancho do 003 e seguir a fila. O 002 passou as metas provisórias de 3 s/10 s; o 001 não.
 5. **003:** publicado em 23/10/2026; medido em **25/10/2026**: **370 views**, 3 s **92,7%**, 10 s **68,5%**, fim **36,1%**; +1 inscrito. Fecha o Gate 1 e melhora as duas janelas em relação ao 002, mas o fim cai (42,2% → 36,1%). `retencao.md` criado; falta a “porcentagem visualizada média” do painel.
+6. **004:** publicado em 24/10/2026; medido em **24 h** (25/10): **1.066 views**, 21 likes, 3 s **90,9%** (PASS), 10 s **43,4%** (**abaixo** da meta de 45%), fim **17,3%**. Quedas concentradas em 4,0–8,6 s, dentro do cartão estático de 6,57 s da cena 2 (3,03–9,60 s). Ressalva registrada: alcance 3× maior esfria a audiência (primeira amostra 123,3% contra 162,0% do 003), então a curva não isola só a composição. `retencao-24h.csv` + `retencao.md`; 48 h em 26/10.
+7. **Regra derivada (005/006):** nunca um cartão parado de contexto depois do gancho — data/origem/número em ≤2 s ou colados a uma consequência; um dado por cartão; fecho com consequência nova, não resumo.
 
 ### 3.2 Validação de nicho — concluída (21/10/2026)
 - Coleta completa: 48 shorts de Mistério/Arquivo (14 canais) e 50 de Psicologia sombria (17 canais), canais de 100–500 mil inscritos.

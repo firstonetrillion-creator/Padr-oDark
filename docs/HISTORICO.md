@@ -4,6 +4,31 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-24**.
 
+## 2026-10-25 — 004 MV Joyita: retenção de 24 h
+
+**Entregue**
+- Export de 24 h em `episodios/004-mv-joyita/retencao-24h.csv`;
+  `retention.py` rodado e `retencao.md` criado.
+- **1.066 views** e 21 likes em 24 h (~3× o total do 003 em 48 h).
+- **3 s = 90,9%** (PASS), **10 s = 43,4%** (**abaixo** da meta de 45%),
+  fim **17,3%**.
+- Quedas concentradas em **4,0–8,6 s**, dentro da cena 2 — o cartão estático de
+  6,57 s com data/origem/destino/número, que estava marcado como alerta no
+  `qa.md`.
+
+**Decisão**
+- O gancho de clique é forte (views altas, 3 s alto); a **entrega após o gancho**
+  é o gargalo.
+- Regra nova para 005/006: **nunca um cartão parado de contexto depois do
+  gancho**; contexto em ≤2 s ou colado a uma consequência; um dado por cartão;
+  fecho com consequência, não resumo.
+- 48 h do 004 serão medidas em 26/10; a linha em `publicados.csv` fica `n/d`
+  até lá (a coluna é de 48 h).
+
+**Evidência**
+- `retencao-24h.csv`, `retencao.md`, `qa.md` (alerta da cena 2),
+  `biblioteca/publicados.csv`.
+
 ## 2026-10-25 — 003 Roanoke: retenção de 48 h
 
 **Entregue**

@@ -4,7 +4,7 @@
 > Depois de uma compactação, a versão atual deste arquivo é relida do disco e vira a baseline da sessão.
 > Memória longa continua em `MEMORIA.md`; aqui só o suficiente para retomar sem reler nada.
 
-**Atualizado:** 2026-10-24 · **Sessão anterior:** publicação do 004
+**Atualizado:** 2026-10-25 · **Sessão anterior:** retenção de 24 h do 004
 
 ## Onde estamos
 
@@ -37,8 +37,12 @@ Métricas iniciais: 276 views na primeira hora.
   +1 inscrito. Registro em `episodios/003-roanoke/retencao.md` e em
   `publicados.csv`. **Falta** a “porcentagem visualizada média” do painel
   (o 002 registrou 87,0%).
-- **2026-10-26** — retenção de 48 h do **004**: mesmo export (`Todos.csv`) e
-  `retention.py`; comparar com o 003 no mesmo estágio (1.053 views em 24 h).
+- **2026-10-26** — retenção de 48 h do **004**. Já medido em **24 h**: 3 s
+  **90,9%**, 10 s **43,4%** (abaixo da meta), fim **17,3%**, 1.066 views.
+  O colapso está na **cena 2** (cartão estático de 6,57 s com data/origem/
+  número): −5,4 p.p. em 7,2–7,7 s. Ver `episodios/004-mv-joyita/retencao.md`.
+- Só depois disso decidir o 005. Regra nova: **nada de cartão parado de
+  contexto depois do gancho**; contexto em ≤2 s ou colado a uma consequência.
 - Só depois disso decidir o 005. Leitura do 003: gancho melhorou (3 s e 10 s
   acima do 002), **mas o fim caiu** (36,1% vs 42,2%): slide de −32,4 p.p. entre
   10 s e 44,5 s. Hipótese: a explicação do CROATOAN entregue cedo demais.
