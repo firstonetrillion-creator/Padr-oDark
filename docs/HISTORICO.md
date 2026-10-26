@@ -2,7 +2,54 @@
 
 > Linha do tempo do que foi **entregue**, com data, evidência e decisão.
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
-> Mais recente no topo. Última atualização: **2026-10-24**.
+> Mais recente no topo. Última atualização: **2026-10-26**.
+
+## 2026-10-26 — Canal relido com login: 48 h do 004 + público real
+
+**Entregue**
+- Painel do Studio relido com a conta autenticada: **004 com 1.200 views,
+  296 espectadores únicos, +1 inscrito, ficaram 54,0%, duração média 0:21,
+  % média assistida 45,7%, Shorts feed 98,9%**.
+- Canal nos últimos 28 dias: **2.444 views, 8,3 h de exibição, +3 inscritos**,
+  >999% contra o período anterior.
+- **Fontes de tráfego do 004:** Shorts feed 98,9% · outros recursos 0,5% ·
+  busca 0,4% · direto 0,1% · páginas de canal 0,1%. Os termos de busca são
+  ruído (“budismo ensinamentos” 20%, “virgínia fonseca” 20%): o vídeo não tem
+  demanda de busca.
+- **Público do 004:** **82,1% com 55+** (65+ 39,2%, 55–64 42,9%, 45–54 17,9%,
+  **zero abaixo de 45**), masculino 78,2%, celular 94,7% do tempo de exibição,
+  **Brasil só 49,2%** das views.
+- `biblioteca/publico.md` criado com o perfil e o que ele muda na produção.
+- `retencao.md` do 004 fechado; linha do 004 preenchida em
+  `biblioteca/publicados.csv`.
+
+**Descoberta**
+- **A duração média escorrega com o tempo.** O 002 estava em 0:40 / 87,0% em
+  25/10 e está em **0:35 / 76,1%** em 26/10; o 003 foi de 0:40 / 87,0% para
+  **0:39 / 84,8%**. “Ficaram para assistir” praticamente não muda. Motivo:
+  a média é global e cada view nova vem de um feed mais frio.
+
+**Decisão**
+- **Gate 2 passa a exigir janela fixa de 48 h** para “% média assistida”.
+  Comparar vídeos medidos em datas diferentes compara públicos diferentes.
+- Registrar a leitura de público também no 005: se 55+ a ~82% repetir em dois
+  vídeos, é o canal; se não, é o vídeo.
+- O teste de assunto nacional (LAB 001, Fawcett/Mato Grosso) ganha valor: com
+  metade da audiência fora do Brasil, é a primeira vez que o conteúdo tem
+  marcador de Brasil explícito.
+
+**Bloqueio registrado**
+- A aba **Content** do Analytics e a lista de vídeos do Studio **nunca carregam**
+  (“Oops, something went wrong” em 6 tentativas). O export `Todos.csv` de 48 h
+  não foi gerado; os valores de curva (3 s / 10 s / fim) continuam os de 24 h.
+  Contorno: puxar **vídeo a vídeo** por `.../video/<id>/analytics/tab-overview/`
+  e clicar as abas Reach/Audience no DOM.
+
+**Evidência**
+- `episodios/004-mv-joyita/retencao.md`, `biblioteca/publico.md`,
+  `biblioteca/publicados.csv`, `ESTADO.md`, `MEMORIA.md` §7.
+- IDs dos publicados: 001 `WKuNVjl3d5M`, 002 `n6dtveQguf4`, 003 `8ptxqKGe4Bk`,
+  004 `rlSArCY3bH0`.
 
 ## 2026-10-25 — 004 MV Joyita: retenção de 24 h
 

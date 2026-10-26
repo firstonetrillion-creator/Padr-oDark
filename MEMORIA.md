@@ -262,6 +262,9 @@ ffmpeg -i final_raw.mp4 -c:v copy `
 | Retenção de 45 s lida como 100% no fim | eixo em segundos (máx. 45) confundido com percentual | usar o `retention.py` patchado; `--axis seconds` se preciso |
 | Score de gancho estranho em PT-BR | `hookscore.py` é calibrado em inglês | não usar; consultar `docs/GANCHOS-21.md` |
 | Studio Análises em branco / “Oops, something went wrong” | o módulo de gráficos falha na primeira carga do navegador controlado | abrir `.../video/<id>/analytics/tab-overview/period-default?hl=en&cb=<timestamp>` e **recarregar até 3×** até o card “Audience retention” renderizar; se insistir, exportar o CSV no Chrome do usuário |
+| Aba **Content** do Analytics e a lista de vídeos do Studio nunca carregam | o widget de tabela falha em todas as tentativas (6× testado em 26/10) | não insistir: **puxar vídeo a vídeo** por `.../video/<id>/analytics/tab-overview/period-default?hl=en&cb=<ts>` (funciona em 1–2 tentativas). IDs em `docs/HISTORICO.md`; 001 `WKuNVjl3d5M`, 002 `n6dtveQguf4`, 003 `8ptxqKGe4Bk`, 004 `rlSArCY3bH0` |
+| Aba Reach/Audience não abre por URL | `tab-reach` e `tab-audience` são redirecionados para `tab-overview` | abrir o overview, achar os `TP-YT-PAPER-TAB` no DOM e chamar `.click()` em “Reach” / “Audience” |
+| `% média assistida` cai sozinha com o tempo | duração média é média global: views novas vêm de feed mais frio e assistem menos | **medir sempre em 48 h**. 002 caiu de 87,0% (25/10) para 76,1% (26/10); 003 de 87,0% para 84,8% |
 | Retenção média “não derivável” | o painel não mostra o número no CSV | `% média assistida = duração média ÷ 46 s` (002: 0:40 → 87,0%; 004: 0:21 → 45,7%) |
 
 ## 8. Decisões que não se reabrem

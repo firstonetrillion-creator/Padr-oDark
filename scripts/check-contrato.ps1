@@ -24,7 +24,10 @@ param(
   [Parameter(Position = 0)]
   [string]$Arquivo,
 
-  [switch]$SemAudio
+  [switch]$SemAudio,
+
+  # Duracao do video em segundos. O padrao continua 45: nada muda para 001-006.
+  [double]$Duracao = 45
 )
 
 $ErrorActionPreference = 'Stop'
@@ -165,10 +168,10 @@ if ($cenas.Count -eq 0) {
     if ([math]::Abs($ord[0].Inicio) -lt 0.001) { Pass 'primeira cena em 0' '' } else { Fail 'primeira cena em 0' ('comeca em ' + $ord[0].Inicio) }
 
     $fimTotal = $ord[$ord.Count - 1].Inicio + $ord[$ord.Count - 1].Duracao
-    if ($fimTotal -ge 44.9 -and $fimTotal -le 45.05) {
-      Pass 'cobertura ate 45 s' ([math]::Round($fimTotal, 2).ToString($inv) + ' s')
+    if ($fimTotal -ge ($Duracao - 0.1) -and $fimTotal -le ($Duracao + 0.05)) {
+      Pass 'cobertura ate o fim' ([math]::Round($fimTotal, 2).ToString($inv) + ' s de ' + $Duracao.ToString($inv))
     } else {
-      Fail 'cobertura ate 45 s' ('ultima cena termina em ' + [math]::Round($fimTotal, 2).ToString($inv) + ' s')
+      Fail 'cobertura ate o fim' ('ultima cena termina em ' + [math]::Round($fimTotal, 2).ToString($inv) + ' s; esperado ' + $Duracao.ToString($inv))
     }
   }
 
@@ -193,7 +196,7 @@ if (-not $audioVoz.Success) {
   $ini = To-Numero (Get-Atributo $t 'data-start')
   $vol = To-Numero (Get-Atributo $t 'data-volume')
   $src = Get-Atributo $t 'src'
-  if ($dur -ge 44.9 -and $dur -le 45.1) { Pass 'voz duracao' ($dur.ToString($inv) + ' s') } else { Fail 'voz duracao' ('esperado 45, veio ' + $dur) }
+  if ($dur -ge ($Duracao - 0.1) -and $dur -le ($Duracao + 0.1)) { Pass 'voz duracao' ($dur.ToString($inv) + ' s') } else { Fail 'voz duracao' ('esperado ' + $Duracao.ToString($inv) + ', veio ' + $dur) }
   if ($ini -eq 0) { Pass 'voz data-start' '0' } else { Fail 'voz data-start' ('esperado 0, veio ' + $ini) }
   if ($vol -eq 1) { Pass 'voz volume' '1' } else { Warn 'voz volume' ('esperado 1, veio ' + $vol) }
   if ($src) {
@@ -203,8 +206,8 @@ if (-not $audioVoz.Success) {
       if (-not $SemAudio) {
         $d = Get-DuracaoAudio $p
         if ($d -eq $null) { Warn 'voz.wav duracao' 'ffprobe indisponivel' }
-        elseif ($d -ge 44.9 -and $d -le 45.1) { Pass 'voz.wav duracao' ($d.ToString('0.00', $inv) + ' s') }
-        else { Fail 'voz.wav duracao' ('arquivo tem ' + $d.ToString('0.00', $inv) + ' s; o contrato pede 45,00') }
+        elseif ($d -ge ($Duracao - 0.1) -and $d -le ($Duracao + 0.1)) { Pass 'voz.wav duracao' ($d.ToString('0.00', $inv) + ' s') }
+        else { Fail 'voz.wav duracao' ('arquivo tem ' + $d.ToString('0.00', $inv) + ' s; o contrato pede ' + $Duracao.ToString('0.00', $inv)) }
       }
     } else { Fail 'voz.wav presente' ('nao existe em ' + $dir) }
   } else { Fail 'voz src' 'sem atributo src' }
@@ -217,7 +220,7 @@ if (-not $audioDrone.Success) {
   $dur = To-Numero (Get-Atributo $t 'data-duration')
   $vol = To-Numero (Get-Atributo $t 'data-volume')
   $src = Get-Atributo $t 'src'
-  if ($dur -ge 44.9 -and $dur -le 45.1) { Pass 'drone duracao' ($dur.ToString($inv) + ' s') } else { Fail 'drone duracao' ('esperado 45, veio ' + $dur) }
+  if ($dur -ge ($Duracao - 0.1) -and $dur -le ($Duracao + 0.1)) { Pass 'drone duracao' ($dur.ToString($inv) + ' s') } else { Fail 'drone duracao' ('esperado ' + $Duracao.ToString($inv) + ', veio ' + $dur) }
   if ($vol -ne $null -and $vol -le 0.25) { Pass 'drone volume' ($vol.ToString($inv)) } else { Warn 'drone volume' ('a voz deve dominar (template: 0,16); veio ' + $vol) }
   if ($src) {
     $p = Join-Path $dir $src
@@ -226,8 +229,8 @@ if (-not $audioDrone.Success) {
       if (-not $SemAudio) {
         $d = Get-DuracaoAudio $p
         if ($d -eq $null) { Warn 'drone.wav duracao' 'ffprobe indisponivel' }
-        elseif ($d -ge 44.9 -and $d -le 45.1) { Pass 'drone.wav duracao' ($d.ToString('0.00', $inv) + ' s') }
-        else { Fail 'drone.wav duracao' ('arquivo tem ' + $d.ToString('0.00', $inv) + ' s; o contrato pede 45,00') }
+        elseif ($d -ge ($Duracao - 0.1) -and $d -le ($Duracao + 0.1)) { Pass 'drone.wav duracao' ($d.ToString('0.00', $inv) + ' s') }
+        else { Fail 'drone.wav duracao' ('arquivo tem ' + $d.ToString('0.00', $inv) + ' s; o contrato pede ' + $Duracao.ToString('0.00', $inv)) }
       }
     } else { Fail 'drone.wav presente' ('nao existe em ' + $dir) }
   } else { Fail 'drone src' 'sem atributo src' }

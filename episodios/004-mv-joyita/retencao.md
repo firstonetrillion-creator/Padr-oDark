@@ -51,6 +51,31 @@ Isso é coerente com a curva (slide até 17,3%) e aponta para o **miolo**, não
 para o gancho: o público que ficou não foi embora no clique seguinte, foi
 escorrendo enquanto o vídeo organizava o assunto.
 
+## A descoberta que vale mais que o 004: a métrica escorrega
+
+Em 26/10 o mesmo painel, com login, mostrou **duração média menor nos vídeos
+antigos**:
+
+| Vídeo | Duração média em 25/10 | Duração média em 26/10 | % média assistida |
+|---|---:|---:|---:|
+| 002 Mary Celeste | 0:40 | **0:35** | 87,0% → **76,1%** |
+| 003 Roanoke | 0:40 | **0:39** | 87,0% → **84,8%** |
+| 004 MV Joyita | 0:21 | 0:21 | 45,7% → 45,7% |
+
+“Ficaram para assistir” quase não muda (002: 48,3% → 48,6%; 003: 52,6% →
+53,0%). **O que escorrega é a duração média.** O motivo é aritmético: cada view
+nova vem de um feed mais frio e assiste menos, então a média global cai com o
+tempo, mesmo sem nada piorar no vídeo.
+
+Consequência para o **Gate 2**, que lê “% média assistida > 50%”:
+
+> A régua tem de ter **janela fixa (48 h)**. Comparar o 005 medido em 48 h com o
+> 002 medido em 5 dias seria comparar públicos diferentes. E o 003 já está
+> **84,8%**, não 87,0% — o número de 25/10 era um retrato do momento, não um
+> atributo do vídeo.
+
+Isso **não reabre** a conclusão: 84,8% e 76,1% continuam muito acima de 45,7%.
+
 ## Onde perde — e a hipótese que se confirmou
 
 As quedas se concentram em **4,0–8,6 s**, dentro da **cena 2** — exatamente o
@@ -100,10 +125,55 @@ baixo mesmo com menos views, a causa é o formato/gancho e o problema é outro.
 3. **Um dado por cartão.** O 004 empilhou quatro na mesma cena.
 4. **Fecho com consequência nova**, não com resumo (lição do 003).
 
-## Pendente (26/10)
+## Fechamento em 48 h (lido em 26/10, com login)
 
-- Export de 48 h → `retencao.csv`; conferir se 10 s estabiliza acima ou abaixo
-  de 45% e se a duração média se mexe.
-- Preencher a linha do 004 em `biblioteca/publicados.csv` (hoje `n/d`, porque a
-  coluna é de 48 h). Os números do painel já estão na tabela acima e servem de
-  conferência: `retencao_media = 45.7`.
+| Métrica | 004 MV Joyita |
+|---|---:|
+| Views | **1.200** |
+| Espectadores únicos | **296** |
+| Inscritos | **+1** |
+| Ficaram para assistir | **54,0%** |
+| Duração média | **0:21** de 0:46 |
+| **% média assistida** | **45,7%** |
+| Shorts feed | **98,9%** |
+
+**A duração média não se mexeu** (0:21 em 24 h e em 48 h) e o “ficaram para
+assistir” subiu de 53,4% para **54,0%**. Confirma a leitura: o problema não é o
+gancho. O vídeo perde 45% da audiência que já ficou.
+
+> O export `Todos.csv` de 48 h **não foi gerado** — a aba Content do Studio
+> falhou em todas as tentativas (ver `MEMORIA.md` §7). Os valores de curva
+> (3 s, 10 s, fim) continuam os de 24 h, e são os que valem para o Gate 2.
+
+### Para onde foi o tráfego
+
+| Origem | Views |
+|---|---:|
+| Shorts feed | **98,9%** |
+| Outros recursos do YouTube | 0,5% |
+| Busca no YouTube | 0,4% |
+| Direto ou desconhecido | 0,1% |
+| Páginas de canal | 0,1% |
+
+Os 0,4% de busca são ruído puro: **“budismo ensinamentos” (20%)** e
+**“virgínia fonseca” (20%)** dos termos. Ninguém procurou o Joyita. O vídeo não
+tem demanda de busca — vive e morre no feed.
+
+### Quem assistiu
+
+Detalhe em `biblioteca/publico.md`. O essencial, que muda a estratégia:
+
+- **82,1% tem 55 anos ou mais** (65+ 39,2% · 55–64 42,9% · 45–54 17,9%) e
+  **0% abaixo de 45**. Masculino 78,2%.
+- **Celular 94,7%** do tempo de exibição.
+- **Brasil é só 49,2%** das views: metade da audiência é estrangeira, num vídeo
+  em português.
+- **296 pessoas** para 1.200 views — ~4 views por espectador.
+
+Não é o público que o formato imaginava. É o público que o formato **encontrou**.
+
+## Pendente
+
+- [ ] Export `Todos.csv` de 48 h, quando a aba Content voltar — só para os
+      valores de curva (10 s e fim), que são o que o Gate 2 lê.
+- [x] Linha do 004 em `biblioteca/publicados.csv` — preenchida em 26/10.
