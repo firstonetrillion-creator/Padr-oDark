@@ -17,15 +17,35 @@ Fase 2, **4/6 publicados** (001–004). Episódio atual: **005 — Voo 19**.
 | Briefing | **pronto** — fontes primárias validadas (Board of Investigation 1945, 56 achados) |
 | Gancho | **aprovado** em 25/10/2026 |
 | Roteiro | **pronto** — `111` palavras, **12 cenas** (2,5 palavras/s) |
-| Voz → publicação | pendente |
+| Voz | **pronta** — `voz_raw.wav` 43,839 s (ls 1.15) → `voz.wav` 45,000 s, −16,17 LUFS, TP −3,18 |
+| Remap | **pronto** — `transcricao.json` + `tempos_cenas.json` (12 cenas, máx 5,00 s) |
+| Composição | **pronta** — 12 cenas, contrato **OK, 1 aviso** (12 em vez de 13) |
+| QA visual | **concluído** — 12 frames do render + gancho medido (máx 772 px de 840) |
+| Render | **concluído** — `final_raw.mp4` 45,000 s, 5 segmentos, 0 retries, 3m11s |
+| QA / publicação | **QA PASS**; **aguardando aprovação humana** para publicar |
+
+**Números finais:** `final.mp4` **45,013 s · 3.344.787 bytes · −15,16 LUFS ·
+TP −2,18 dBFS** (ganho +1,05 dB — o `voz.wav` já estava em −16,17, ao contrário
+dos +6,5 dB do 004). SHA-256 `69696A09F4A9A41DF0C0D19103ABE4B3602EC1DB18A9F3753535F1F8F7C4DBBF`.
+Capa `capa.png` em 38,6 s ("27 HOMENS / NENHUM CORPO.").
 
 **Gancho:** “Cinco aviões pediram socorro. Nenhum voltou. Nem o resgate.”
 Capa: `27 HOMENS / NENHUM CORPO` (~39 s, cena 11).
 Cena 2 **não** é cartão de contexto (regra pós-004): “O rádio funcionava. Eles
 falavam com a base. Não sabiam onde estavam.”
 
-**Próximo comando:** gerar a voz (`narracao_tts.txt`, `length_scale` a calibrar;
-meta `voz_raw.wav` 43–44 s), depois transcrever e remapear os tempos reais.
+**Próximo comando:** aprovação humana do `final.mp4` (e escuta de “Avengers”,
+“Keys”, “Bahamas”, “amarar”). Depois: título/descrição/capa e publicar; então
+**LAB 001** (render 1.800 frames segmentado).
+
+**Armadilha nova:** `hyperframes snapshot` **não mostra a cena 1** — sai vazia em
+0,6 s, 2,0 s e 3,9 s (o mesmo acontece com o 004, cujo vídeo publicado tem o
+gancho normal). O `snapshot` serve para as cenas 2–12; a cena 1 só se confere em
+frame do mp4.
+
+**Armadilha 2:** frame de vídeo visto em escala reduzida **inventa fantasma** —
+texto serifado fino parece duplicado/espaçado. Medir com perfil de pixels
+(ffmpeg → gray → contagem por linha) antes de “corrigir” o que não está errado.
 
 ## Episódio 004 — MV Joyita
 

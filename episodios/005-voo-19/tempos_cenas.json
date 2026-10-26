@@ -1,0 +1,86 @@
+[
+  {
+    "cena": 1,
+    "inicio": 0.0,
+    "start": 0.0,
+    "duration": 4.07,
+    "fim": 4.07
+  },
+  {
+    "cena": 2,
+    "inicio": 4.12,
+    "start": 4.07,
+    "duration": 4.5,
+    "fim": 8.57
+  },
+  {
+    "cena": 3,
+    "inicio": 8.62,
+    "start": 8.57,
+    "duration": 5.0,
+    "fim": 13.57
+  },
+  {
+    "cena": 4,
+    "inicio": 13.62,
+    "start": 13.57,
+    "duration": 3.04,
+    "fim": 16.61
+  },
+  {
+    "cena": 5,
+    "inicio": 16.66,
+    "start": 16.61,
+    "duration": 3.52,
+    "fim": 20.13
+  },
+  {
+    "cena": 6,
+    "inicio": 20.18,
+    "start": 20.13,
+    "duration": 3.12,
+    "fim": 23.25
+  },
+  {
+    "cena": 7,
+    "inicio": 23.3,
+    "start": 23.25,
+    "duration": 3.04,
+    "fim": 26.29
+  },
+  {
+    "cena": 8,
+    "inicio": 26.34,
+    "start": 26.29,
+    "duration": 4.4,
+    "fim": 30.69
+  },
+  {
+    "cena": 9,
+    "inicio": 30.74,
+    "start": 30.69,
+    "duration": 2.38,
+    "fim": 33.07
+  },
+  {
+    "cena": 10,
+    "inicio": 33.12,
+    "start": 33.07,
+    "duration": 3.88,
+    "fim": 36.95
+  },
+  {
+    "cena": 11,
+    "inicio": 37.0,
+    "start": 36.95,
+    "duration": 3.22,
+    "fim": 40.17
+  },
+  {
+    "cena": 12,
+    "inicio": 40.22,
+    "start": 40.17,
+    "duration": 4.78,
+    "fim": 44.95
+  }
+]
