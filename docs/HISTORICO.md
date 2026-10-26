@@ -4,6 +4,50 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-26**.
 
+## 2026-10-26 — `scripts/scout.py`: medir canais que aceleram (descoberta é humana)
+
+**Entregue**
+- `scripts/scout.py` — perfila canais de Shorts e ranqueia por **aceleração**
+  (mediana das 5 mais recentes ÷ mediana das mais antigas), **breakout**
+  (maior ÷ mediana) e **views/inscrito**; `--diff` compara dois snapshots e
+  devolve **views/dia** dos mesmos shorts.
+- `biblioteca/canais-semente.txt` — 12 canais para começar (6 de `docs/NICHO.md`,
+  6 vistos na busca do nicho).
+- `logs/scout-2026-10-26.json` — primeiro snapshot.
+
+**Descoberta técnica (importante, evita retrabalho)**
+- **yt-dlp não serve para descobrir canal.** Testado com 2026.08.19:
+  `sp=EgIYAQ%3D%3D` (filtro Shorts) e `sp=…,CAI%3D` (ordenar por data) são
+  **ignorados**; `ytsearchdate` **não existe** nesta versão; `/hashtag/truecrime`
+  devolve 135 canais quase todos em inglês. Busca por relevância devolve 3
+  Shorts em 40 resultados.
+- O que funciona: `-J --flat-playlist` na aba **`/shorts`** de um canal. Vem
+  ordenada do mais novo para o mais antigo (posição = recência), com views
+  arredondadas e `channel_follower_count`. Não vem `duration` nem o total.
+- 1ª tentativa filtrou por duração e descartou tudo — `duration` é `None` nessa
+  aba. Só filtrar quando existir.
+
+**Achado da 1ª rodada (12 canais)**
+- Só **1** combina volume (mediana ≥5k) e aceleração (≥1,5×): Wakinho
+  (curiosidades, não arquivo).
+- Acelerando forte mas minúsculos: Arquivo Sem Rastros **7×** (mediana 44),
+  De Olho **4×** (170), Cofre dos Mistérios **2,5×** (111) — razão em volume
+  baixo é ruído.
+- Volume e parado/caindo: Penumbroo **0,09×** (877 → 201, colapso), Ossos
+  Perdidos 1,0×, Cafezinho 0,61×.
+- Só 3 canais passam de 0,5 views/inscrito: Penumbroo 4,57 (morrendo),
+  Pequeno Contexto 1,75, Crimes que Marcaram 0,99.
+
+**Decisão**
+- Fluxo invertido: **humano descobre, máquina mede.** A fonte de descoberta é o
+  próprio feed de Shorts do usuário, não um scraper.
+- Antes de escalar para o nicho, a 2ª rodada do scout (48–72 h, `--diff`) diz se
+  algum candidato tem velocidade real. Rank de uma leitura única não decide nada.
+
+**Evidência**
+- `scripts/scout.py`, `biblioteca/canais-semente.txt`,
+  `logs/scout-2026-10-26.json`, `MEMORIA.md` §7 (3 armadilhas novas).
+
 ## 2026-10-26 — Canal relido com login: 48 h do 004 + público real
 
 **Entregue**

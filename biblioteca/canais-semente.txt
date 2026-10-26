@@ -1,0 +1,29 @@
+# Canais-semente do scout — um por linha (URL, ID ou @handle).
+#
+# COMO PREENCHER: abra o YouTube no seu celular/conta, veja Shorts do nicho por
+# 5 minutos e cole aqui todo canal que aparecer com formato parecido com o nosso
+# (arquivo, mistério, tipográfico, faceless, 40-60 s). O algoritmo já está te
+# mostrando os concorrentes — é a melhor fonte de descoberta que existe, melhor
+# que qualquer busca automatizada.
+#
+# Depois:
+#   .venv\Scripts\python.exe scripts\scout.py
+# e de novo em 2-3 dias com:
+#   .venv\Scripts\python.exe scripts\scout.py --diff
+# A segunda rodada é a que mede velocidade de verdade.
+
+# --- validados em docs/NICHO.md (21/10) ---
+https://www.youtube.com/channel/UCsBWGik2luJR-Jm9E8kOL4A   # Crimes que Marcaram
+https://www.youtube.com/channel/UCvqCKVwE10fsalGZLqyXcrw   # Penumbroo
+https://www.youtube.com/channel/UCoLCb7sD6czC1F0b8yQwSUw   # De Olho - Caminhos do Medo
+https://www.youtube.com/channel/UCLsXVgS7uCFMGY-JmJXLFdQ   # Pequeno Contexto
+https://www.youtube.com/channel/UCNiLwMl5bio29sIS1PPVNAw   # TechTerror
+https://www.youtube.com/channel/UC8QFLXQ10uznkJ9bq0FpCOQ   # Wakinho
+
+# --- vistos na busca do nicho (26/10), ainda não validados ---
+https://www.youtube.com/channel/UCFIh3TfEMxz8oiuX4qPQ2tQ   # Cofre dos Mistérios
+https://www.youtube.com/channel/UCMarwbCbVZcog2FsjQJH-sw   # Ossos Perdidos
+https://www.youtube.com/channel/UCE8KaCWYvgl4Cub27hld5Dg   # Arquivo Sem Rastros
+https://www.youtube.com/channel/UCNnxlFKW8rYITb730ZcpF_g   # Mistérios Resolvidos
+https://www.youtube.com/channel/UCKO6vLA-E1xaXZrYbX75bZA   # DR. MISTERIO
+https://www.youtube.com/channel/UCGSqXIg-uUSNqpzdawHfxpg   # Cafezinho Investigativo

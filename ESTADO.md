@@ -72,6 +72,24 @@ Isso reforça o slide e enfraquece a ideia de que o gancho piorou.
    78,2% masculino, 94,7% celular, e o **Brasil é só 49,2%** das views. Detalhe
    em `biblioteca/publico.md`.
 
+## Scout de canais (novo em 26/10)
+
+`scripts/scout.py` + `biblioteca/canais-semente.txt` — mede canais de Shorts que
+estão **acelerando agora**. Fluxo invertido de propósito: **yt-dlp não descobre
+canal** (não respeita filtro de busca), então o humano traz os canais e o script
+mede. Segunda rodada com `--diff` dá views/dia real.
+
+**Achado da 1ª rodada (12 canais do nicho):** só **1** tem volume (≥5k de
+mediana) *e* aceleração (≥1,5×) — Wakinho, que é curiosidades, não arquivo.
+Os que aceleram forte (Arquivo Sem Rastros 7×, De Olho 4×, Cofre dos Mistérios
+2,5×) têm mediana de **44 a 297 views**: razão sem significância. Os que têm
+volume estão parados ou caindo (Penumbroo **0,09×**, colapsando; Ossos Perdidos
+1,0×). Só 3 passam de 0,5 views/inscrito.
+
+**Leitura:** neste nicho, na amostra atual, **não há máquina de breakout para
+copiar**. Ou o nicho é raso, ou os vencedores estão num nicho adjacente
+(true crime / documentário), ou as sementes estão erradas.
+
 ## Laboratório (fora da fila, não publica)
 
 `laboratorio/001-60s-fawcett/` — ensaio do **007**, com material barato.
