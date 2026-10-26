@@ -90,6 +90,11 @@ volume estão parados ou caindo (Penumbroo **0,09×**, colapsando; Ossos Perdido
 copiar**. Ou o nicho é raso, ou os vencedores estão num nicho adjacente
 (true crime / documentário), ou as sementes estão erradas.
 
+Levantamento completo, com o raciocínio e os limites: **`docs/ESCALA.md`**.
+Decisão registrada em `docs/DECISOES.md` e `docs/PLANO.md`. Ordem acordada em
+26/10: **documentar → 005 → LAB 001 → gerador → A/B**. Nada de escalar o formato
+antes do Gate 2.
+
 ## Laboratório (fora da fila, não publica)
 
 `laboratorio/001-60s-fawcett/` — ensaio do **007**, com material barato.

@@ -224,3 +224,13 @@ Captura cada chamada de ferramenta via hooks, grava em SQLite+FTS5, comprime com
 
 
 
+
+### Modelagem de canais e escala - decidido em 2026-10-26
+
+- Levantamento em `docs/ESCALA.md`; ferramenta em `scripts/scout.py`.
+- **Modelar copia o pacote visível, não a retenção.** Duração, frame 0, texto por cartão, tema e série são copiáveis; curva de retenção, ritmo de revelação e desenho sonoro não são. A coluna invisível é onde o canal perde.
+- **Views não são a régua.** O 004 teve 3x as views do 003 e metade da retenção. Proxy externo de retenção: views por inscrito, breakout e aceleração.
+- **Descoberta de canal é humana, medição é da máquina.** yt-dlp não respeita filtro de busca, `ytsearchdate` não existe na versão instalada e hashtag é ruído global.
+- **O gargalo é vazão, não ideia.** 2 dias por vídeo; 20-30 curvas exigiriam ~2 meses. A resposta é um gerador (`roteiro.json` -> `index.html`), não mais referência.
+- **Nada de escalar o formato antes do Gate 2.**
+- **Gate 2 passa a usar janela fixa de 48 h** para "% média assistida", porque a duração média escorrega com o tempo.

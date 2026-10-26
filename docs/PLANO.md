@@ -60,6 +60,10 @@ discrimina — ver nota abaixo):
 - **Guarda-corpo 2:** mediana do **fim da curva ≥ 30%**.
 - **Regra de amostra:** vídeo sem curva de retenção **não entra** nem no
   numerador nem no denominador (foi o caso do 001).
+- **Janela fixa:** “% média assistida” é lida **48 h após a publicação**, e só.
+  A duração média cai com o tempo (002: 87,0% em 25/10 → **76,1%** em 26/10;
+  003: 87,0% → **84,8%**), porque cada view nova vem de feed mais frio. Medir em
+  datas diferentes compara públicos diferentes.
 - **Se falhar:** a Fase 3 não escala. O v2 visual vira teste de recuperação
   (007) e a Psicologia sombria volta como fallback em canal novo.
 
@@ -68,7 +72,31 @@ discrimina — ver nota abaixo):
 > falhar não é gate. E o 004 mostra por que o número do painel sozinho engana:
 > média 45,7% com **fim de curva em 17,3%**. Daí os dois guarda-corpos.
 
-## Melhorias visuais — backlog pós-validação
+## Escala e aceleração — decisão de 26/10/2026
+
+Levantamento completo em **`docs/ESCALA.md`**. Resumo:
+
+- **Modelar canais que crescem copia o pacote visível** (duração, frame 0, texto
+  por cartão, tema, série, título) e **não copia** curva de retenção, ritmo de
+  revelação nem desenho sonoro — que é justamente onde o canal perde.
+- **Views não são o modelo.** O 004 teve 3× as views do 003 e metade da
+  retenção. O único proxy externo de retenção é o algoritmo insistindo
+  (views/inscrito, breakout, aceleração).
+- **1ª rodada do `scripts/scout.py` (12 canais):** nenhum combina volume e
+  aceleração no nicho de arquivo. Quem acelera tem mediana de 44–297 views
+  (ruído); quem tem volume está parado ou caindo (Penumbroo 0,09×).
+- **O gargalo não é ideia, é vazão:** 4 vídeos em 6 dias ≈ 2 dias por vídeo;
+  sinal estatístico exige 20–30 curvas ≈ 2 meses na cadência atual.
+- **O que multiplica por 10:** episódio vira dado (`roteiro.json`) e um gerador
+  emite `index.html` + tempos. Um vídeo vira ~2 h, e o A/B passa de 1 teste
+  caro para 5 variantes na mesma semana.
+
+**Ordem acordada:** documentar → **005** → LAB 001 → gerador → A/B.
+**Não** escalar o formato antes do Gate 2.
+
+---
+
+## Melhorias visuais - backlog pós-validação
 
 **Status: não iniciar agora.** A prioridade é validar os 6 vídeos e a retenção. O formato v1 (type-only) fica **congelado no 003–006** para não contaminar a comparação. O v2 entra depois do Gate 2, em um vídeo de teste (007) ou numa nova temporada.
 
