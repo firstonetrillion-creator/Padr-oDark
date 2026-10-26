@@ -127,8 +127,8 @@ antes do Gate 2.
 | Voz | **pronta** — `voz_raw.wav` 59,999 s; `voz.wav` 60,000 s, −16,04 LUFS, TP −3,21 |
 | Drone | **pronto** — gerado por lavfi (110/165 Hz + ruído), 60,000 s, −19,74 LUFS |
 | Composição | **pronta** — 18 cenas (s8 e s10 divididas), contrato **OK, 1 aviso** |
-| QA visual | **pendente** — métricas de texto medidas; falta frame |
-| Render | **pendente** |
+| QA visual | **concluído nas métricas** — 18 frames; **3 cenas corrigidas** (s5 96→90, s8a 104→98, s1 90→88); pior linha agora 827 px |
+| Render | **rodando** (1.800 frames, 6 segmentos) |
 
 **Voz gerada por cena** (`build_voz.py`): 16 blocos sintetizados separados e
 concatenados com silêncio ponderado → **46,76 s de fala + 13,24 s de silêncio
@@ -139,7 +139,19 @@ mix, inaudível). O bed do laboratório foi feito em −19,7 para ficar ~20 dB s
 voz — ou seja, o 001–004 são praticamente voz seca.
 
 **Armadilha nova:** `tremolo` exige `f ≥ 0.1`. E `-Duracao` foi adicionado a
-`check-contrato.ps1` (padrão 45, nada muda para 001–006).
+`check-contrato.ps1` **e a `qa.ps1`** (padrão 45, nada muda para 001–006; o
+laboratório usa `-Duracao 60`).
+
+**Armadilha 3 (26/10):** três cenas do laboratório **estouravam os 840 px** no
+frame real (s5 882 px até x=1004, s8a 878 até 999, s1 840) — as métricas antigas
+de texto não tinham pego porque mediam a caixa, não a tinta. Medir sempre
+`ffmpeg → gray → bbox por linha` no PNG do frame, não `getBoundingClientRect`.
+
+**Armadilha 4 (26/10):** `fromTo` com `yoyo: true` **termina no valor de partida**.
+O “pisca” do marcador do trilho foi escrito assim e deixou o marcador a **15% de
+opacidade** no vídeo todo — o 1º render do LAB 001 mediu (33,10,9) onde devia
+estar (178,58,46). Corrigido para `to(...)`; agora o marcador anda visível
+(x=285 em 20 s, x=550 em 40 s). Detalhe em `docs/ARQUITETURA.md` §9.
 
 **Hipótese:** o que derruba o miolo não é a quantidade de texto, é o **estado
 parado**. Por isso a contagem de palavras do teste é **idêntica à do 004 (131)** —

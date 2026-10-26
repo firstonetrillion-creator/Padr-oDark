@@ -60,12 +60,12 @@
   .tk5 { left: 100%; transform: translateX(-100%); }
   .tk5::before { left: 100%; }
   .mk {
-    position: absolute; top: -7px; left: 0; width: 2px; height: 15px;
+    position: absolute; top: -7px; left: 0; width: 3px; height: 15px;
     background: #B23A2E; z-index: 6;
   }
   .mk::after {
-    content: ""; position: absolute; left: -3px; bottom: -6px;
-    width: 8px; height: 8px; border-radius: 50%; background: #B23A2E;
+    content: ""; position: absolute; left: -4px; bottom: -7px;
+    width: 10px; height: 10px; border-radius: 50%; background: #B23A2E;
   }
 
   .foot {
@@ -92,14 +92,14 @@
     font-family: Inter, Arial, sans-serif; font-size: 27px; line-height: 1.45;
     letter-spacing: 4px; color: #6B6B70; max-width: 820px;
   }
-  .s1  h1 { font-size: 90px; }
+  .s1  h1 { font-size: 88px; }
   .s2  h1 { font-size: 98px; }
   .s3  h1 { font-size: 124px; }
   .s4  h1 { font-size: 104px; }
-  .s5  h1 { font-size: 96px; }
+  .s5  h1 { font-size: 90px; }
   .s6  h1 { font-size: 112px; }
   .s7  h1 { font-size: 132px; }
-  .s8a h1 { font-size: 104px; }
+  .s8a h1 { font-size: 98px; }
   .s8b h1 { font-size: 92px; }
   .s9  h1 { font-size: 120px; }
   .s10a h1 { font-size: 168px; }
@@ -285,7 +285,9 @@
     });
 
     // pisca do marcador no gancho: ainda nao esta fixado em nada
-    tl.fromTo(mk, { opacity: 0.15 }, { opacity: 1, duration: 0.28, repeat: 1, yoyo: true, ease: "none" }, 0.15);
+    // (to + yoyo volta para 1; fromTo+yoyo terminaria em 0,15 e apagaria o
+    //  marcador pelo resto do video — foi o que aconteceu no 1o render)
+    tl.to(mk, { opacity: 0.15, duration: 0.28, repeat: 1, yoyo: true, ease: "none" }, 0.15);
 
     // fade de entrada e de saida
     tl.set("#fade", { opacity: 1 }, 0);

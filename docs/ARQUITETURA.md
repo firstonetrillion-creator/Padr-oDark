@@ -128,11 +128,11 @@ if (seek !== null) { tl.time(t, false); /* visibility das cenas */ }
 
 ## 5. Contrato de QA
 
-`scripts/qa.ps1 <arquivo>` verifica:
+`scripts/qa.ps1 <arquivo> [-Duracao 45]` verifica:
 
 | Check | Critério |
 |---|---|
-| Duração | 44–46 s |
+| Duração | nominal ±1 s (`-Duracao`; padrão 45 → 44–46; LAB 001 usa `-Duracao 60`) |
 | Vídeo | 1080×1920, H.264 |
 | FPS | 30/1 |
 | Áudio | AAC, 48 kHz, 2 canais |
@@ -187,6 +187,20 @@ O `hyperframes lint` emite avisos, não erros:
 - `nested_structure_needs_subcomposition`: cada `<section>` tem `<h1>` dentro. Aceito; subcomposições seriam overkill para este formato.
 
 Não “corrigir” esses avisos sem medir o custo: o render atual leva ~3m18s e passou no QA.
+
+### Armadilhas de GSAP (medidas em 26/10/2026)
+
+- **`fromTo` + `yoyo` + `repeat` termina no valor de partida.** Um “pisca”
+  escrito como `fromTo(mk, {opacity: .15}, {opacity: 1, repeat: 1, yoyo: true})`
+  termina em **0,15** — e o elemento fica quase invisível pelo resto do vídeo.
+  No LAB 001 isso apagou o marcador do trilho, que era a variável do teste.
+  Escrever o pisca como `to(mk, {opacity: .15, yoyo: true, repeat: 1})`, que
+  parte de 1 e volta para 1.
+- **O último tween de uma propriedade manda.** Se um tween posterior não
+  menciona `opacity`, o valor fica no que o anterior deixou — inclusive quando
+  isso é um bug. Conferir o valor final em frame, não só o meio.
+- **`hyperframes snapshot` sai vazio na cena 1** (0–4 s). O gancho só se confere
+  em frame do `final.mp4`.
 
 ## 10. Quando atualizar este arquivo
 

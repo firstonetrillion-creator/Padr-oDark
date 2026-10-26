@@ -98,11 +98,12 @@ QA técnico automático do arquivo final:
 
 ```powershell
 .\scripts\qa.ps1 episodios\<slug>\final.mp4
+.\scripts\qa.ps1 laboratorio\001-60s-fawcett\final.mp4 -Duracao 60
 ```
 
 Confere:
 
-- duração 44–46 s;
+- duração nominal ±1 s (`-Duracao`, padrão 45);
 - 1080×1920, H.264;
 - 30/1 fps;
 - AAC 48 kHz estéreo;

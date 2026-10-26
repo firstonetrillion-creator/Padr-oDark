@@ -6,7 +6,11 @@
 #>
 param(
   [Parameter(Mandatory = $true)]
-  [string]$File
+  [string]$File,
+
+  # Duracao nominal do video em segundos. O padrao continua 45: nada muda
+  # para 001-006. O LAB 001 (60 s) usa -Duracao 60.
+  [double]$Duracao = 45
 )
 
 $ErrorActionPreference = "Stop"
@@ -30,7 +34,9 @@ function Check($label, $ok, $detail) {
 
 Write-Host "== $File"
 Write-Host ("duracao: {0:N2}s" -f $dur)
-Check "duracao"  ($dur -ge 44.0 -and $dur -le 46.0) ("{0:N2}s (esperado 44-46)" -f $dur)
+$alvoMin = $Duracao - 1.0
+$alvoMax = $Duracao + 1.0
+Check "duracao"  ($dur -ge $alvoMin -and $dur -le $alvoMax) ("{0:N2}s (esperado {1}-{2})" -f $dur, $alvoMin, $alvoMax)
 Check "video"    ($video -and $video.width -eq 1080 -and $video.height -eq 1920) ("{0}x{1} {2}" -f $video.width, $video.height, $video.codec_name)
 Check "fps"      ($video -and $video.r_frame_rate -eq "30/1") $video.r_frame_rate
 Check "audio"    ($audio -and $audio.sample_rate -eq "48000" -and $audio.channels -eq 2) ("{0} {1}Hz {2}ch" -f $audio.codec_name, $audio.sample_rate, $audio.channels)
