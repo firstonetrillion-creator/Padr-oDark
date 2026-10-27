@@ -2,7 +2,7 @@
 
 > **Leia este arquivo primeiro.** Ele é a memória de retomada do projeto.
 > Depois: `AGENTS.md` (regras) → `docs/PLANO.md` (fases) → `docs/HISTORICO.md` (o que já foi entregue).
-> Última atualização: **2026-10-23**. Se você é uma sessão nova, não refaça o que está marcado como entregue.
+> Última atualização: **2026-10-26**. Se você é uma sessão nova, não refaça o que está marcado como entregue.
 
 ## 1. Onde estamos
 
@@ -18,7 +18,7 @@
 | Publicação | **publicado** (21/10/2026 e 23/10/2026) | 001: [Shorts](https://youtube.com/shorts/WKuNVjl3d5M); 002: [Shorts](https://youtube.com/shorts/n6dtveQguf4); 003: [Shorts](https://youtube.com/shorts/8ptxqKGe4Bk) |
 | Validação de nicho | **concluída (metadados)** | `logs/nicho-2026-10-21.json`, `docs/NICHO.md` |
 | Versionamento | **git iniciado (21/10/2026)** | commit `782df62`, tag `ep-001-publicado` |
-| 6 vídeos de validação | **4/6 publicados; 005–006 na fila** | piloto + 002 + 003 + 004 |
+| 6 vídeos de validação | **4/6 publicados; 005 pronto e aprovado** | 001–004 no ar; 005 aguardando upload |
 | Episódio 002 — Mary Celeste | **publicado** (21/10/2026) | `episodios/002-mary-celeste/`, [Shorts](https://youtube.com/shorts/n6dtveQguf4) |
 | Episódio 003 — Roanoke | **publicado** (23/10/2026) | `episodios/003-roanoke/`, [Shorts](https://youtube.com/shorts/8ptxqKGe4Bk) |
 | Canal | **Dossiê 45**: nome, avatar/banner, descrição no ar e 9 shorts antigos privados | [canal](https://youtube.com/@Dossie45), `docs/REBRANDING.md` |
@@ -42,6 +42,8 @@
 - `scripts/qa.ps1`: QA automático (duração, resolução, fps, áudio, loudness, preto inesperado).
 - `scripts/check-contrato.ps1`: 29 invariantes da composição antes do render (resolução, cenas, áudio com duração real via ffprobe, `autoAlpha`, timeline montada).
 - `scripts/novo-episodio.ps1`: cria episódio a partir do template e carimba `.template-version` (sha256 + commit).
+- `scripts/gerar-episodio.py`: escreve o `index.html` a partir do `roteiro.json` (textos, tempos de `tempos_cenas.json`, fonte por cena, GSAP). Teste de aceitação: reproduz o 005 escrito à mão.
+- `scripts/medir-texto.ps1`: mede a **tinta** do texto no frame (`snapshot` → PNG → `ffmpeg gray` → bbox por linha) e sugere `fonte_px`; `-Aplicar` grava no `roteiro.json`. Fecha o ciclo que custou 3 correções manuais no LAB 001.
 - `scripts/nicho.py`: coleta metadados de Shorts por nicho (views/inscrito, engajamento); não baixa vídeo.
 - `tools/youtube-agent-skill/`: vendor MIT com retenção 3 s/10 s, `hooks.json` e lint de título PT-BR; testes em `scripts/test_youtube_agent.py`.
 
@@ -83,6 +85,20 @@
 - Metadados públicos via `yt-dlp` sem cookies: `availability=public`, `age_limit=0`, `duration=45`.
 - Retenção de 48 h agendada para **25/10/2026**. Registro em `biblioteca/publicados.csv`.
 
+### Episódio 004 — MV Joyita (publicado, 24/10/2026)
+- 131 palavras / 13 cenas; `voz_raw` 44,117 s (`length_scale` 0,90) → `voz.wav` 45,000 s, −21,63 LUFS.
+- Render segmentado 5×300, 0 retries; normalizado **+6,5 dB**: `final.mp4` **45,013 s, 3.652.954 bytes, −15,16 LUFS, TP −1,42**; `qa.ps1` **PASS**.
+- **Publicado:** https://youtube.com/shorts/rlSArCY3bH0 — capa em 4,0 s (“25 PESSOAS / NENHUM SINAL”).
+- Retenção 48 h: **1.200 views**, 3 s 90,9%, 10 s 43,4%, fim 17,3%, **% média 45,7%** — o miolo caiu, não o gancho. Detalhe em `episodios/004-mv-joyita/retencao.md`.
+
+### Episódio 005 — Voo 19 (produzido e aprovado, 26/10/2026)
+- 111 palavras / 12 cenas (2,5 pal./s), nenhuma cena acima de 5,00 s; cena 2 sobe a aposta em vez de ser cartão de contexto.
+- `voz_raw` 43,839 s (`length_scale` 1,15) → `voz.wav` 45,000 s, −16,17 LUFS; remap por `remapear.py` (107/113 tokens).
+- Composição **gerada** por `scripts/gerar-episodio.py` a partir de `roteiro.json` — primeiro episódio sem HTML escrito à mão.
+- Render segmentado 5×300, 0 retries, 3m11s; `final.mp4` **45,013 s, 3.344.787 bytes, −15,16 LUFS, TP −2,18** (ganho +1,05 dB); `qa.ps1` **PASS**.
+- Texto medido no frame: pior linha **772 px de 840**; capa `capa.png` em 38,6 s (“27 HOMENS / NENHUM CORPO”).
+- Aprovado em 26/10/2026 (“Aprovado, mas só depois do LAB 001”); **upload a cargo do usuário**; pacote em `episodios/005-voo-19/publicacao.md`.
+
 ### Template
 - `templates/misterio-45/index.html` — composição validada, 13 cenas, áudio `voz`/`drone`, QA por `?t=`.
 - `templates/misterio-45/beat-sheet.md` — 13 beats, tempos e orçamento de palavras.
@@ -123,7 +139,7 @@
 - **004-mv-joyita**: briefing (Comissão de Inquérito NZ, Apia 1956), gancho (“O barco foi achado vazio. E ainda flutuava.”), roteiro **131 palavras / 13 cenas**, voz (`voz_raw` 44,117 s → `voz.wav` 45,000 s, −21,63 LUFS, TP −7,37), transcrição e composição remapeada; contrato **OK, 0 avisos**; cena 6 corrigida para 4 linhas.
 - **004 render e QA:** segmentado 5×300, 1 worker, **1350/1350 frames, 0 retries**, 3m16s; `final_raw.mp4` 45,000 s, −21,64 LUFS. Normalizado (+6,5 dB + limitador 0,85): `final.mp4` **45,013 s, 3.652.954 bytes, −15,16 LUFS, TP −1,42 dBFS**; `qa.ps1` **PASS**; capa `capa.png` em 4,0 s.
 - **004-mv-joyita publicado em 24/10/2026:** https://youtube.com/shorts/rlSArCY3bH0 — público, `duration=45`, `age_limit=0`; cópia `004-mv-joyita_shorts_v1.mp4` idêntica ao `final.mp4`. Retenção de 48 h em **26/10/2026**.
-- **Próximo:** abrir o **005 Voo 19** (`scripts/novo-episodio.ps1`), validando as fontes do Board of Inquiry de 1945 e do Naval History and Heritage Command.
+- **Próximo:** abrir o **006 Passo Dyatlov** já com o gerador — escrever `roteiro.json`, gerar, medir a tinta e só então a voz.
 - **004–006**: MV Joyita, Voo 19 e Passo Dyatlov; manter o v1 e validar as fontes antes de cada roteiro.
 - Manter o gate para os próximos: aprovação humana explícita e descrição do canal conferida antes de publicar.
 - Usar `templates/misterio-45/` e o fluxo de `MEMORIA.md` §6.

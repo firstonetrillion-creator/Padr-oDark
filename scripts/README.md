@@ -12,6 +12,9 @@
 | `bench.ps1` | validar a máquina (G0) | `bench/index.html` | `bench/bench-45.mp4`, `logs/bench.json` |
 | `tts.py` | gerar narração | `narracao.txt` | `voz_raw.wav` |
 | `transcribe.py` | obter tempos das cenas | `voz.wav` | `transcricao.json` |
+| `remapear.py` | casar cena ↔ tempo da voz | `narracao.txt` + `transcricao.json` | `tempos_cenas.json` |
+| `gerar-episodio.py` | escrever a composição | `roteiro.json` (+ `tempos_cenas.json`) | `index.html` |
+| `medir-texto.ps1` | antes do render | `index.html` (+ mp4, se houver) | tabela de tinta por cena + fonte sugerida |
 | `qa.ps1` | antes de publicar | `final.mp4` | `QA PASS`/`QA FAIL` |
 | `check-contrato.ps1` | antes do QA visual e do render | `episodios/<slug>/index.html` | `PASS`/`FAIL` dos invariantes |
 | `novo-episodio.ps1` | início de um episódio | `NNN-slug` (+ título) | pasta do episódio + `status.md` + carimbo |
@@ -91,6 +94,84 @@ Transcreve um WAV/MP4 com faster-whisper e grava JSON com `segments` e `words` (
 - `vad_filter=True` remove silêncio.
 - O texto serve para **tempos**, não para legendas: nomes próprios saem errados.
 - O JSON é a fonte dos `data-start`/`data-duration` das cenas.
+
+## gerar-episodio.py
+
+Escreve o `index.html` a partir do `roteiro.json`. É o que substitui copiar o
+template e editar 13 `<section>` à mão (a tarefa que mais errava tempo de cena e
+fonte).
+
+```powershell
+.\.venv\Scripts\python.exe scripts\gerar-episodio.py episodios\005-voo-19
+.\.venv\Scripts\python.exe scripts\gerar-episodio.py episodios\005-voo-19 --narracao
+.\.venv\Scripts\python.exe scripts\gerar-episodio.py episodios\005-voo-19 --check
+```
+
+`roteiro.json` — o roteiro como dado, uma entrada por cena:
+
+```json
+{
+  "slug": "005-voo-19",
+  "composition_id": "ep005",
+  "duracao": 45,
+  "marca": "DOSSIÊ 45",
+  "dossie": "005",
+  "rodape": "FONTE · BOARD OF INVESTIGATION, 1945",
+  "audio": { "voz": 1.0, "drone": 0.16 },
+  "cenas": [
+    { "id": "s1", "kicker": "O ARQUIVO · VOO 19",
+      "titulo": ["CINCO AVIÕES", "PEDIRAM SOCORRO."], "acento": true,
+      "fonte_px": 82, "fala": "Cinco aviões pediram socorro." }
+  ]
+}
+```
+
+- `titulo` vira `<h1>` com `<br>` entre as linhas: **a quebra é decidida no
+  roteiro**, não pelo navegador.
+- `pequeno` (opcional) vira `<span class="small">`; `kicker` (opcional) a
+  etiqueta vermelha; `acento: true` desenha o traço.
+- `fonte_px` é medida, não adivinhada. Sem ela o script chuta por
+  `840 / (0,59 × caracteres)` — serve para o primeiro render não nascer grotesco.
+- Sem `tempos_cenas.json` o script **não escreve nada** (só a tabela): tempo
+  provisório não vai para render. Rode voz + `remapear.py` antes.
+- `--narracao` reescreve `narracao.txt` com as falas, uma por parágrafo.
+
+Validação embutida: ids únicos, cena com título, no máximo 5 linhas de texto,
+cena acima de 6 s e cena curta demais viram aviso na tabela.
+
+**Teste de aceitação:** gerado a partir do `roteiro.json` do 005, o HTML sai
+idêntico ao escrito à mão naquele episódio — as únicas diferenças são o
+comentário, o `<title>` e o `const DUR` no lugar do número repetido.
+
+## medir-texto.ps1
+
+Mede a **tinta** do texto no frame, cena por cena, e diz se estoura os 840 px.
+
+```powershell
+.\scripts\medir-texto.ps1 episodios\005-voo-19
+.\scripts\medir-texto.ps1 laboratorio\001-60s-fawcett -Aplicar
+```
+
+Por que existe: `getBoundingClientRect` mede a caixa, não a tinta. Três cenas do
+LAB 001 passavam na caixa e saíam do quadro no render (s5 ia até x=1004, 44 px
+fora). O caminho é `hyperframes snapshot` → PNG → `ffmpeg` (gray/rawvideo) →
+bbox por linha.
+
+- Captura cada cena em **60% da duração** (texto já entrou, antes do fade).
+- **Cena 1:** o `snapshot` sai vazia nela; se houver `final.mp4` na pasta, a
+  cena 1 é medida dele e sai marcada `(mp4)`. Sem mp4, sai `NAO MEDIDO` — nunca
+  “ok”.
+- Conta **linhas de verdade** por altura do bloco (≥ metade da fonte), porque o
+  acento de uma maiúscula (`RÁDIO`) é um bloco separado e inflava a contagem.
+  `linhas 2/2` = duas linhas medidas para duas previstas; `3/2` acusa quebra
+  não planejada.
+- `-Aplicar` grava a fonte nova no `roteiro.json` (`fonte_px`) e manda rodar o
+  gerador de novo. Só **reduz** fonte: crescer muda a quebra de linha.
+- Os `.raw` (2 MB por frame) são apagados no fim; sobram os PNGs em `qa-medida/`
+  (ignorado pelo git).
+
+Fidelidade conferida: o mesmo frame medido no `snapshot` e no `mp4` dá o mesmo
+número (717 px em 6,3 s do 005).
 
 ## qa.ps1
 

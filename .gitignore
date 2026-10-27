@@ -17,6 +17,8 @@ gsap.min.js
 episodios/*/renders/
 episodios/*/qa-frames/
 episodios/*/qa-final/
+episodios/*/qa-medida/
+laboratorio/*/qa-medida/
 episodios/*/*-brand-antigo/
 bench/frame_*.png
 

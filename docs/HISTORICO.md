@@ -4,6 +4,40 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-26**.
 
+## 2026-10-26 — Gerador de episódio: o HTML deixa de ser escrito à mão
+
+**Entregue**
+- `scripts/gerar-episodio.py` — `roteiro.json` + `tempos_cenas.json` → `index.html`
+  completo (CSS por cena, `<section>` com `data-start`/`data-duration`, timeline
+  GSAP, áudio, `__timelines`, seek `?t=`). Valida ids, linhas por cena, cena acima
+  de 6 s e cena curta demais; sem `tempos_cenas.json` **não escreve nada**.
+- `episodios/005-voo-19/roteiro.json` — o 005 virou dado. Teste de aceitação:
+  gerado dele, o HTML sai idêntico ao escrito à mão (só mudam comentário,
+  `<title>` e o `const DUR`); `check-contrato.ps1` continua **OK, 1 aviso**.
+- `scripts/medir-texto.ps1` — mede a tinta por linha no frame
+  (`hyperframes snapshot` → PNG → `ffmpeg gray/rawvideo` → bbox), reporta cena,
+  pior linha, `x0-x1`, linhas medidas/previstas e fonte sugerida; `-Aplicar`
+  grava `fonte_px` no `roteiro.json`.
+- `episodios/005-voo-19/publicacao.md` — título (46 chars, lint 98/100),
+  descrição com fontes, hashtags, capa e checklist.
+- `episodios/005-voo-19/005-voo-19_shorts_v1.mp4` — cópia de publicação
+  conferida por SHA-256 (`69696A09…7C4DBBF`).
+
+**Decisão**
+- **`roteiro.json` é a fonte de verdade da composição** a partir do 005; o
+  `index.html` é artefato gerado e não se edita à mão.
+- **Fonte se mede, não se estima**: `getBoundingClientRect` mede a caixa, a tinta
+  é maior. No LAB 001 três cenas passavam na caixa e estouravam o quadro.
+- O 005 é de autoria do usuário no upload; o agente entrega o pacote pronto.
+
+**Evidência**
+- `scripts/gerar-episodio.py --check episodios/005-voo-19` e o diff contra o
+  `index.html` de 26/10 (17 linhas: comentário, título, `1`×`1.0`, `44.3`×`44.30`).
+- `medir-texto.ps1 episodios/005-voo-19`: 12 cenas, pior **772 px** (cena 1,
+  medida no `final.mp4` porque o `snapshot` sai vazio nela), nenhuma acima de 810.
+- `medir-texto.ps1 laboratorio/001-60s-fawcett` reproduz a medição manual de 26/10
+  (s5 825, s8a 826, s13 807) e a cena 1 em 787 px vinda do mp4.
+
 ## 2026-10-26 — `scripts/scout.py`: medir canais que aceleram (descoberta é humana)
 
 **Entregue**

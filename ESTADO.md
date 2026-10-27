@@ -22,7 +22,11 @@ Fase 2, **4/6 publicados** (001–004). Episódio atual: **005 — Voo 19**.
 | Composição | **pronta** — 12 cenas, contrato **OK, 1 aviso** (12 em vez de 13) |
 | QA visual | **concluído** — 12 frames do render + gancho medido (máx 772 px de 840) |
 | Render | **concluído** — `final_raw.mp4` 45,000 s, 5 segmentos, 0 retries, 3m11s |
-| QA / publicação | **QA PASS**; **aguardando aprovação humana** para publicar |
+| QA / publicação | **QA PASS** · **aprovado** em 26/10 · **upload a cargo do usuário** |
+
+**Pacote de publicação:** `publicacao.md` (título 46 chars, lint **98/100**;
+descrição com fontes; hashtags; capa em 38,6 s) e cópia
+`005-voo-19_shorts_v1.mp4` (SHA-256 igual ao `final.mp4`).
 
 **Números finais:** `final.mp4` **45,013 s · 3.344.787 bytes · −15,16 LUFS ·
 TP −2,18 dBFS** (ganho +1,05 dB — o `voz.wav` já estava em −16,17, ao contrário
@@ -34,9 +38,25 @@ Capa: `27 HOMENS / NENHUM CORPO` (~39 s, cena 11).
 Cena 2 **não** é cartão de contexto (regra pós-004): “O rádio funcionava. Eles
 falavam com a base. Não sabiam onde estavam.”
 
-**Próximo comando:** aprovação humana do `final.mp4` (e escuta de “Avengers”,
-“Keys”, “Bahamas”, “amarar”). Depois: título/descrição/capa e publicar; então
-**LAB 001** (render 1.800 frames segmentado).
+**Próximo comando:** abrir o **006 Passo Dyatlov** com o gerador (`roteiro.json` →
+`gerar-episodio.py` → `medir-texto.ps1` → voz). Depois de o usuário publicar o
+005: ler a retenção de 48 h e registrar em `biblioteca/publicados.csv`.
+
+## Gerador (novo em 26/10)
+
+`scripts/gerar-episodio.py` escreve o `index.html` a partir de `roteiro.json`
+(+ `tempos_cenas.json` do `remapear.py`). O 005 é o teste de aceitação: gerado do
+JSON, o HTML sai idêntico ao escrito à mão.
+
+`scripts/medir-texto.ps1` mede a **tinta** no frame (snapshot → PNG → bbox por
+linha) e corrige `fonte_px` com `-Aplicar`. Ciclo padrão antes de cada render:
+
+```
+gerar-episodio.py  →  medir-texto.ps1  →  (-Aplicar)  →  gerar-episodio.py  →  render
+```
+
+**Regra nova:** o `index.html` gerado não se edita à mão — a próxima geração
+apaga. Mudou texto, fonte ou tempo? Muda o `roteiro.json` e gera de novo.
 
 **Armadilha nova:** `hyperframes snapshot` **não mostra a cena 1** — sai vazia em
 0,6 s, 2,0 s e 3,9 s (o mesmo acontece com o 004, cujo vídeo publicado tem o
@@ -127,8 +147,15 @@ antes do Gate 2.
 | Voz | **pronta** — `voz_raw.wav` 59,999 s; `voz.wav` 60,000 s, −16,04 LUFS, TP −3,21 |
 | Drone | **pronto** — gerado por lavfi (110/165 Hz + ruído), 60,000 s, −19,74 LUFS |
 | Composição | **pronta** — 18 cenas (s8 e s10 divididas), contrato **OK, 1 aviso** |
-| QA visual | **concluído nas métricas** — 18 frames; **3 cenas corrigidas** (s5 96→90, s8a 104→98, s1 90→88); pior linha agora 827 px |
-| Render | **rodando** (1.800 frames, 6 segmentos) |
+| QA visual | **concluído** — 18 frames do render; **3 cenas corrigidas** (s5 96→90, s8a 104→98, s1 90→88); pior linha **826 px** |
+| Render | **concluído** — 1.800 frames, 6 segmentos, 0 retries, 4m03s |
+| QA | **QA PASS** (`qa.ps1 -Duracao 60`) · `qa.md` escrito · capa em 2,0 s |
+
+**Números finais:** `final.mp4` **60,010 s · 4.652.077 bytes · −15,16 LUFS ·
+TP −1,93 · LRA 3,70** (ganho +0,9 dB). SHA-256
+`71A48162BDF327DB68EC4E2C10B50DFFA69DC64256C1B5BDE1BA2147606F6739`.
+Marcador do trilho conferido no render: x=122 / 110 / 330 / 540 / 124 / 958
+em 3 / 12 / 24 / 36 / 48 / 57 s.
 
 **Voz gerada por cena** (`build_voz.py`): 16 blocos sintetizados separados e
 concatenados com silêncio ponderado → **46,76 s de fala + 13,24 s de silêncio

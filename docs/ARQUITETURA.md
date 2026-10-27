@@ -150,6 +150,9 @@ O fade final para preto é intencional e ignorado. O QA **não** substitui a rev
 | `scripts/bench.ps1` | benchmark G0 de 45 s | `bench/index.html` → `bench/bench-45.mp4` + `logs/bench.json` |
 | `scripts/tts.py` | wrapper do Piper para caminhos acentuados | `narracao.txt` → `voz_raw.wav` |
 | `scripts/transcribe.py` | transcrição com timestamps por palavra | `voz.wav` → `transcricao.json` |
+| `scripts/remapear.py` | alinha narração × ASR e fixa o tempo de cada cena | `narracao.txt` + `transcricao.json` → `tempos_cenas.json` |
+| `scripts/gerar-episodio.py` | escreve a composição a partir do roteiro | `roteiro.json` (+ `tempos_cenas.json`) → `index.html` |
+| `scripts/medir-texto.ps1` | mede a tinta do texto no frame e sugere fonte | `index.html` (+ mp4) → tabela por cena + `fonte_px` |
 | `scripts/qa.ps1` | QA técnico automático | `final.mp4` → `QA PASS/FAIL` |
 | `scripts/check-contrato.ps1` | valida os invariantes da composição antes do render | `index.html` → `PASS/FAIL` (exit 1 em falha) |
 | `scripts/novo-episodio.ps1` | cria episódio a partir do template, com carimbo de origem | `NNN-slug` → `episodios/<slug>/` + `.template-version` |
@@ -166,6 +169,39 @@ O fade final para preto é intencional e ignorado. O QA **não** substitui a rev
 - Cada episódio guarda `.template-version` (sha256 do `index.html` do template + commit). Se o template mudar, comparar o hash antes de propagar para episódios já fechados.
 - Se um contrato mudar (ex.: nova forma de esconder cena), mudar primeiro no template e depois propagar para episódios ativos.
 - O template **não inclui** `voz.wav`/`drone.wav`; cada episódio gera os seus.
+
+### Fonte de verdade: `roteiro.json`
+
+Do 005 em diante, o `index.html` é **gerado**, não editado à mão. A fonte é
+`episodios/<slug>/roteiro.json`:
+
+| Campo | Vai para |
+|---|---|
+| `titulo[]` | `<h1>` com `<br>` entre as linhas (quebra decidida no roteiro) |
+| `pequeno[]` | `<span class="small">` |
+| `kicker` | etiqueta vermelha acima do título |
+| `acento` | traço de 280 px sob o texto |
+| `fonte_px` | regra `.<id> h1 { font-size }` |
+| `fala` | `narracao.txt` (`--narracao`) e o tempo de cena |
+| `start`/`duration` | vêm de `tempos_cenas.json`, nunca do JSON do roteiro |
+
+Regenerar é barato e idempotente: `gerar-episodio.py` reescreve o HTML inteiro.
+Nunca editar o `index.html` gerado à mão — a próxima geração apaga a mudança.
+
+O HTML escrito à mão do 005 é o teste de aceitação: gerado do `roteiro.json`, ele
+sai idêntico (fora comentário, `<title>` e `const DUR`).
+
+### Fonte do tamanho de fonte: `medir-texto.ps1`
+
+`fonte_px` não se estima no CSS, mede-se no frame. O ciclo é:
+
+```
+gerar-episodio.py -> medir-texto.ps1 -> (-Aplicar) -> gerar-episodio.py -> render
+```
+
+`getBoundingClientRect` mede a caixa do texto; a tinta é maior por causa das
+hastes e do kerning. No LAB 001, três cenas passavam na caixa e estouravam o
+quadro no render. A medição oficial é `ffmpeg → gray → bbox por linha` no PNG.
 
 ## 8. O que o código já entregou
 

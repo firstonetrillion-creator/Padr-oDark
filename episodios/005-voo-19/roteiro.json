@@ -1,0 +1,101 @@
+{
+  "slug": "005-voo-19",
+  "composition_id": "ep005",
+  "duracao": 45,
+  "marca": "DOSSIÊ 45",
+  "dossie": "005",
+  "rodape": "FONTE · BOARD OF INVESTIGATION, 1945",
+  "audio": { "voz": 1.0, "drone": 0.16 },
+  "cenas": [
+    {
+      "id": "s1",
+      "kicker": "O ARQUIVO · VOO 19",
+      "titulo": ["CINCO AVIÕES", "PEDIRAM SOCORRO.", "NENHUM VOLTOU.", "NEM O RESGATE."],
+      "acento": true,
+      "fonte_px": 82,
+      "fala": "Cinco aviões pediram socorro. Nenhum voltou. Nem o resgate."
+    },
+    {
+      "id": "s2",
+      "titulo": ["O RÁDIO", "FUNCIONAVA."],
+      "pequeno": ["ELES FALAVAM COM A BASE.", "NÃO SABIAM ONDE ESTAVAM."],
+      "fonte_px": 112,
+      "fala": "O rádio funcionava. Eles falavam com a base. Não sabiam onde estavam."
+    },
+    {
+      "id": "s3",
+      "kicker": "5 DE DEZEMBRO DE 1945",
+      "titulo": ["CINCO", "AVENGERS"],
+      "pequeno": ["DECOLAM DA FLÓRIDA."],
+      "fonte_px": 130,
+      "fala": "5 de dezembro de 1945. Cinco Avengers decolam da Flórida."
+    },
+    {
+      "id": "s4",
+      "kicker": "O ERRO",
+      "titulo": ["KEYS.", "NÃO.", "BAHAMAS."],
+      "fonte_px": 118,
+      "fala": "Ele acha que está nos Keys. Está nas Bahamas."
+    },
+    {
+      "id": "s5",
+      "kicker": "A ORDEM DA BASE",
+      "titulo": ["VOAR", "PARA OESTE."],
+      "pequeno": ["ELE OBEDECE TARDE DEMAIS."],
+      "fonte_px": 108,
+      "fala": "A base manda voar para oeste. Ele obedece tarde demais."
+    },
+    {
+      "id": "s6",
+      "titulo": ["18H20"],
+      "pequeno": ["VAMOS TER", "QUE AMARAR."],
+      "fonte_px": 190,
+      "letter_spacing": -4,
+      "fala": "Às 18h20, ele avisa: vamos ter que amarar."
+    },
+    {
+      "id": "s7",
+      "titulo": ["10 GALÕES."],
+      "pequeno": ["TODOS DESCEM", "JUNTOS."],
+      "fonte_px": 120,
+      "fala": "Dez galões. Todos descem juntos."
+    },
+    {
+      "id": "s8",
+      "titulo": ["19H27"],
+      "pequeno": ["UM AVIÃO DE RESGATE", "COM 13 HOMENS."],
+      "fonte_px": 190,
+      "letter_spacing": -4,
+      "fala": "Às 19h27, decola um avião de resgate com treze homens."
+    },
+    {
+      "id": "s9",
+      "titulo": ["ELE CHAMA", "A BASE", "UMA VEZ."],
+      "pequeno": ["E NUNCA MAIS."],
+      "fonte_px": 116,
+      "fala": "Ele chama a base uma vez. E nunca mais."
+    },
+    {
+      "id": "s10",
+      "kicker": "21H15 · UM PETROLEIRO VÊ",
+      "titulo": ["30 METROS", "DE CHAMAS."],
+      "fonte_px": 104,
+      "fala": "Às 21h15, um petroleiro vê trinta metros de chamas."
+    },
+    {
+      "id": "s11",
+      "kicker": "CINCO DIAS DE BUSCA",
+      "titulo": ["27 HOMENS", "NENHUM CORPO."],
+      "pequeno": ["NENHUM DESTROÇO."],
+      "fonte_px": 92,
+      "fala": "Cinco dias de busca. Vinte e sete homens. Nenhum corpo. Nenhum destroço."
+    },
+    {
+      "id": "s12",
+      "titulo": ["O INQUÉRITO", "CULPOU", "A NAVEGAÇÃO."],
+      "pequeno": ["DEPOIS: CAUSA DESCONHECIDA."],
+      "fonte_px": 96,
+      "fala": "O inquérito culpou a navegação. Depois: causa desconhecida."
+    }
+  ]
+}
