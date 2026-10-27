@@ -44,6 +44,7 @@ Cada etapa tem uma skill em `.opencode/skills/<id>/SKILL.md` e um artefato em `e
 | `.opencode/skills/` | instruções operacionais (briefing, gancho, roteiro, voz, render, qa, publicacao, retencao) |
 | `templates/misterio-45/` | composição validada + beat sheet + README |
 | `biblioteca/` | ganchos, fontes, métricas |
+| `canais/` | método de expansão: um canal por modelo (`README.md`, `registro.csv`, `_template/`, `dossie45/`) |
 | `episodios/` | um diretório por vídeo |
 | `models/vozes/` | Piper |
 | `scripts/` | instalação, verificação, voz, transcrição, QA, benchmark |

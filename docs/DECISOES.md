@@ -234,3 +234,14 @@ Captura cada chamada de ferramenta via hooks, grava em SQLite+FTS5, comprime com
 - **O gargalo é vazão, não ideia.** 2 dias por vídeo; 20-30 curvas exigiriam ~2 meses. A resposta é um gerador (`roteiro.json` -> `index.html`), não mais referência.
 - **Nada de escalar o formato antes do Gate 2.**
 - **Gate 2 passa a usar janela fixa de 48 h** para "% média assistida", porque a duração média escorrega com o tempo.
+
+### Canais de teste - método decidido em 2026-10-27
+
+- **Método completo em `canais/README.md`.** Registro em `canais/registro.csv`, um diretório por canal em `canais/<slug>/` gerado de `canais/_template/`. `canais/dossie45/` é o exemplo preenchido (o único canal com histórico).
+- **Um canal = um modelo; um canal = uma variável.** Modelo é a combinação de cinco escolhas (nicho, formato, voz, cadência, visual). Ao abrir o canal 2, **uma** muda e as outras quatro ficam iguais ao Dossiê 45 — duas mudanças ao mesmo tempo não dão leitura.
+- **Hipótese e critério de morte escritos na `ficha.md` antes do vídeo 1.** No dia da leitura não se decide com o número na mão; decide-se com a regra escrita antes.
+- **N = 8 vídeos antes de decidir** (escalar / ajustar / matar), porque com 3 a mediana é o valor do meio e qualquer oscilação muda a conclusão. O Dossiê 45 é exceção: 6 é a amostra do Gate 2.
+- **Custo de decisão por canal: ~16 h** (8 vídeos × ~2 h). Máximo **2 canais ativos** nesta máquina: 1 produzindo, 1 medindo. Um render por vez continua inviolável.
+- **Canal novo não é campo de teste do Dossiê 45.** O v1 dos 6 episódios fica congelado até o Gate 2; o teste de v2 (imagem de arquivo, som audível, 60 s) vira canal novo, não um sétimo vídeo.
+- **Episódios de canal novo ficam em `canais/<slug>/episodios/`.** Os scripts são path-based e funcionam sem alteração; `novo-episodio.ps1` grava sempre em `episodios/` (pendência: dar um `-Destino`).
+- **Candidatos, ainda não escolhidos:** A = mesmo formato + nicho adjacente (true crime PT-BR); B = mesmo nicho + 60 s; C = mesmo nicho + desenho sonoro audível. Escolher um é decisão do usuário e vai para este arquivo.

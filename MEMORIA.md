@@ -2,7 +2,7 @@
 
 > **Leia este arquivo primeiro.** Ele é a memória de retomada do projeto.
 > Depois: `AGENTS.md` (regras) → `docs/PLANO.md` (fases) → `docs/HISTORICO.md` (o que já foi entregue).
-> Última atualização: **2026-10-26**. Se você é uma sessão nova, não refaça o que está marcado como entregue.
+> Última atualização: **2026-10-27**. Se você é uma sessão nova, não refaça o que está marcado como entregue.
 
 ## 1. Onde estamos
 
@@ -25,6 +25,7 @@
 | Ferramentas de análise | **adotadas seletivamente** | `tools/youtube-agent-skill/`, `docs/GANCHOS-21.md` |
 | `codebase-memory-mcp` | **não instalado** (adiado) | decisão em `docs/DECISOES.md` |
 | Memória de sessão | **`ESTADO.md` como `instructions`** | `opencode.jsonc`, `docs/HISTORICO.md` 2026-10-23 |
+| Canais de teste | **método criado (27/10)** — um canal por modelo, uma variável | `canais/README.md`, `canais/dossie45/` |
 
 ## 2. O que já foi entregue
 
@@ -223,6 +224,8 @@
 | `scripts/` | instalação, voz, transcrição, QA, benchmark, testes |
 | `tools/youtube-agent-skill/` | vendor MIT: retenção, hooks e lint de título |
 | `biblioteca/publicados.csv` | registro de publicação e métricas |
+| `canais/` | método de expansão: `README.md`, `registro.csv`, `_template/`, `dossie45/` |
+| `docs/ESCALA.md` | por que o gargalo é vazão, não ideia |
 
 ## 6. Comandos canônicos
 
@@ -327,6 +330,8 @@ ffmpeg -i final_raw.mp4 -c:v copy `
 - Um canal = um nicho; não misturar Mistério/Arquivo com Psicologia sombria.
 - Mistério/Arquivo é a âncora da Fase 2; o Cod Mind Million foi rebrandado para **Dossiê 45** (handle `@Dossie45`, avatar/banner no ar). Nome público, descrição de `identidade/descricao-canal.txt` e deslistagem dos 9 shorts antigos concluídos. Psicologia fica como fallback em canal novo, não no mesmo canal.
 - `youtube-agent-skill` é adotado **seletivamente** (retenção, hooks como checklist, lint de título). `yt-viral` e `yt-audit` ficam para depois dos 6 vídeos; `hookscore.py` não é usado em PT-BR.
+- **Um canal = um modelo = uma variável** (`canais/README.md`). Canal novo muda **uma** das cinco dimensões (nicho, formato, voz, cadência, visual) e mantém as outras quatro; hipótese e critério de morte escritos na `ficha.md` **antes do vídeo 1**; **N = 8** vídeos antes de decidir escalar/ajustar/matar (~16 h por canal); máx. **2 canais ativos** (1 produzindo, 1 medindo). A série de 6 do Dossiê 45 **não** é campo de teste — o v2 vira canal novo.
+- Cada canal mede na **mesma janela fixa de 48 h** e registra em `canais/<slug>/metricas.csv`; o Dossiê 45 mantém também `biblioteca/publicados.csv`.
 
 ## 9. Protocolo de memória
 

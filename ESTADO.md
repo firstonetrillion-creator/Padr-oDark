@@ -4,7 +4,7 @@
 > Depois de uma compactação, a versão atual deste arquivo é relida do disco e vira a baseline da sessão.
 > Memória longa continua em `MEMORIA.md`; aqui só o suficiente para retomar sem reler nada.
 
-**Atualizado:** 2026-10-27 · **Sessão anterior:** 006 publicado; **6 de 6 no ar**
+**Atualizado:** 2026-10-27 · **Sessão anterior:** 006 publicado; **6 de 6 no ar** · método de canais criado
 
 ## Onde estamos
 
@@ -61,8 +61,10 @@ silêncio calculado — o tempo é a soma dos blocos. Novo script:
 
 **Próximo comando:** em **29/10**, ler a retenção de 48 h de **005 e 006** no
 Studio (vídeo a vídeo, `.../analytics/tab-overview/period-default?hl=en&cb=<ts>`,
-recarregando até o card aparecer), preencher `biblioteca/publicados.csv` e fechar
-o **Gate 2** — basta **um** dos dois passar de 50% de % média assistida.
+recarregando até o card aparecer), preencher `biblioteca/publicados.csv` **e**
+`canais/dossie45/metricas.csv` e fechar o **Gate 2** — basta **um** dos dois
+passar de 50% de % média assistida. Antes disso **não se abre canal novo**: a
+escolha do modelo (A/B/C) é do usuário, não do agente.
 
 ## Episódio 005 — Voo 19
 
@@ -246,6 +248,34 @@ a diferença é tempo (60 s contra 45) e movimento (trilho de datas que anda).
 
 **Atenção:** 60 s = 1.800 frames, acima do limite de ~1.350 do Chrome; captura
 segmentada obrigatória. Este teste **não** altera o v1 congelado do 003–006.
+
+## Expansão — canais de teste (novo em 27/10)
+
+Método criado para abrir **outros canais no YouTube testando outros modelos**.
+Está em `canais/README.md`; o estado de cada canal fica em `canais/<slug>/`.
+
+**As três regras:** um canal = **um modelo** (nicho + formato + voz + cadência +
+visual); ao abrir o canal 2 muda **uma** dimensão e as outras quatro ficam iguais
+ao Dossiê 45; **hipótese e critério de morte escritos na `ficha.md` antes do
+vídeo 1**.
+
+| Item | Onde |
+|---|---|
+| Método, protocolo de medição, critério de decisão | `canais/README.md` |
+| Registro (uma linha por canal) | `canais/registro.csv` |
+| Exemplo preenchido — o único canal com histórico | `canais/dossie45/{ficha.md,metricas.csv,decisoes.md}` |
+| Canal novo | copiar `canais/_template/` para `canais/<slug>/` |
+| Episódios de canal novo | `canais/<slug>/episodios/` (scripts são path-based; `novo-episodio.ps1` só grava em `episodios/`) |
+
+**Decisão:** **N = 8** vídeos antes de decidir **escalar** (mediana de `% média`
+≥ 50% **e** 10 s ≥ 50%) / **ajustar** (uma das duas) / **matar** (mediana < 40%
+e views < 30% da referência). Custo ~16 h por canal; máx. **2 canais ativos**
+nesta máquina. O teste de v2 (imagem de arquivo, som audível, 60 s) vira **canal
+novo**, não um sétimo vídeo do Dossiê 45.
+
+**Candidatos, não escolhidos:** A = mesmo formato + nicho adjacente (true crime
+PT-BR); B = mesmo nicho + 60 s; C = mesmo nicho + som audível. Escolher um é
+decisão do usuário e vai para `docs/DECISOES.md`.
 
 ## Esperando (nada a fazer até as datas)
 

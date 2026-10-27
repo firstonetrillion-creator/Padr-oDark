@@ -2,7 +2,34 @@
 
 > Linha do tempo do que foi **entregue**, com data, evidência e decisão.
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
-> Mais recente no topo. Última atualização: **2026-10-26**.
+> Mais recente no topo. Última atualização: **2026-10-27**.
+
+## 2026-10-27 — método de canais: um canal por modelo, um modelo por canal
+
+**Entregue**
+- `canais/README.md` — o método: por que canal separado, as três regras (um
+  modelo, uma variável, hipótese escrita antes), as cinco dimensões que compõem
+  um modelo, protocolo de medição, critério de decisão, custo e checklist.
+- `canais/registro.csv` — uma linha por canal (hoje só `dossie45`).
+- `canais/_template/` — `ficha.md`, `metricas.csv` e `decisoes.md` em branco.
+- `canais/dossie45/` — exemplo preenchido com o histórico real: `ficha.md`
+  (tese, 5 dimensões, Gate 2), `metricas.csv` (6 vídeos com 3 s / 10 s / fim /
+  % média) e `decisoes.md` (4 decisões datadas + o Gate 2 pendente).
+
+**Decisão**
+- **Um canal = um modelo = uma variável.** Ao abrir o canal 2, uma das cinco
+  dimensões muda e as outras quatro ficam iguais ao Dossiê 45.
+- **Hipótese e critério de morte antes do vídeo 1**, na `ficha.md`.
+- **N = 8 vídeos antes de decidir** escalar / ajustar / matar (~16 h por canal).
+- O teste de v2 (imagem, som, 60 s) vira **canal novo**, não um sétimo vídeo do
+  Dossiê 45 — a série de 6 é a única referência limpa que existe.
+- Registrado em `docs/DECISOES.md` (seção 2026-10-27) e em `AGENTS.md`
+  (`canais/` no mapa de arquivos).
+
+**Pendente**
+- Candidatos A/B/C ainda **não escolhidos** (nicho adjacente, 60 s, som audível).
+- `novo-episodio.ps1` não aceita destino: criar em `episodios/` e mover.
+- Gate 2 em **29/10** — 005 e 006.
 
 ## 2026-10-27 — 006 Passo Dyatlov publicado: 6 de 6 no ar, Fase 2 fechada
 
