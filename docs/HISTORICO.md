@@ -23,7 +23,8 @@
 
 **Pendente**
 - Retenção de 48 h do 005 (29/10) e selo **AI** na página pública.
-- 006 pronto, com QA PASS, **sem aprovação** — nada sobe sem o “publique”.
+- 006 **aprovado em 27/10** (“Aprovar e subir o 006 hoje”); upload a cargo do
+  usuário. As 48 h dele fecham o Gate 2.
 
 ## 2026-10-26 — 006 Passo Dyatlov: voz cena por cena e o ASR sai do caminho
 

@@ -15,7 +15,7 @@
 | QA visual | **concluido** | 14 frames; pior tinta **806 px** de 840; 6 cenas com fonte corrigida antes do render |
 | Render | **concluido** | `final_raw.mp4` 45,000 s, 1350 frames, 5 segmentos, 0 retries, 3m09,9s |
 | QA | **QA PASS** | `qa.md` escrito |
-| Publicacao | **pronta, aguardando aprovacao** | `publicacao.md` (titulo 48 chars, lint 98/100), `capa.png` em 32,6 s, `006-passo-dyatlov_shorts_v1.mp4` |
+| Publicação | **aprovada em 27/10** — aguardando o upload do usuário | `publicacao.md` (48 chars, lint 98/100), `capa.png` em 32,6 s, `006-passo-dyatlov_shorts_v1.mp4` SHA-verificado |
 
 ## Medicoes
 

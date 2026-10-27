@@ -120,7 +120,9 @@
 - Capa em 32,6 s (“DOIS TÓRAX AFUNDADOS. / UM CRÂNIO RACHADO. / SEM FERIDA NA
   PELE.”); título `Passo Dyatlov: a avalanche chegou 9 horas depois` (48 chars,
   lint 98/100). Pacote em `episodios/006-passo-dyatlov/publicacao.md`.
-- **Aguardando aprovação humana**; nada publicado.
+- **Aprovado em 27/10/2026** (“Aprovar e subir o 006 hoje”); upload a cargo do
+  usuário. Escuta de “Dyatlov”, “Kholat Saykhl” e “Thibeaux-Brignolles” ficou
+  delegada a ele.
 
 ### Template
 - `templates/misterio-45/index.html` — composição validada, 13 cenas, áudio `voz`/`drone`, QA por `?t=`.

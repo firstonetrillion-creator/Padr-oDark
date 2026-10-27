@@ -1,7 +1,8 @@
 # Publicação — 006-passo-dyatlov
 
-> Status: **produzido e com QA PASS**, aguardando aprovação humana. Nada vai ao
-> ar antes do "publique" explícito do usuário.
+> Status: **aprovado em 27/10/2026** — “Aprovar e subir o 006 hoje”.
+> Pacote completo, `qa.ps1` **PASS**, `qa.md` assinado. Falta o upload.
+> Retenção de 48 h a medir 48 h após o upload.
 
 ## Título
 
@@ -89,7 +90,7 @@ contém a chamada.
 - [x] `qa.ps1` com **QA PASS**
 - [x] `qa.md` escrito
 - [ ] Escuta humana de “Dyatlov”, “Kholat Saykhl”, “Thibeaux-Brignolles”
-- [ ] Aprovação humana explícita do vídeo
+- [x] Aprovação humana explícita do vídeo — **27/10/2026** (“Aprovar e subir o 006 hoje”)
 - [x] Arquivo `006-passo-dyatlov_shorts_v1.mp4` (SHA-256 conferido: `B2AA85F3…0033A6`)
 - [ ] Publicar no YouTube Shorts
 - [ ] Aviso de conteúdo sintético marcado (selo **AI**)

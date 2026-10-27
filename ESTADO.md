@@ -25,7 +25,7 @@ produzido e com **QA PASS**, **aguardando aprovação humana** (nada sobe sem o
 | QA visual | **concluído** — 14 frames do render; pior tinta **806 px** de 840; 6 cenas com fonte corrigida antes do render |
 | Render | **concluído** — `final_raw.mp4` 45,000 s, 1.350 frames, **5 segmentos**, 0 retries, 3m09,9s |
 | QA | **QA PASS** — `qa.md` escrito |
-| Publicação | **pacote pronto** — `publicacao.md` (48 chars, lint 98/100), `capa.png` em 32,6 s, cópia de upload SHA-verificada |
+| Publicação | **aprovada em 27/10** — aguardando upload do usuário; conferência por `yt-dlp` e 48 h depois |
 
 **Números finais:** `final.mp4` **45,013 s · 3.859.117 bytes · −15,19 LUFS ·
 TP −1,30 dBFS** (ganho **+7,0 dB** sobre −22,17). SHA-256
@@ -59,8 +59,10 @@ silêncio calculado — o tempo é a soma dos blocos. Novo script:
 `scripts/montar-voz.py` (documentado em `scripts/README.md` e
 `docs/ARQUITETURA.md` §3.2 e §6).
 
-**Próximo comando:** aprovação humana do 006 (e escuta de “Dyatlov”, “Kholat
-Saykhl”, “Thibeaux-Brignolles”). Sem o “publique”, nada sobe.
+**Próximo comando:** depois do upload do 006 pelo usuário, conferir a vitrine
+pública com `yt-dlp` sem cookies (`duration=45`, `age_limit=0`, aparece na aba
+Shorts), registrar em `biblioteca/publicados.csv` e medir as 48 h — que fecham o
+**Gate 2** (falta 1 dos 3 vídeos com % média > 50%).
 
 ## Episódio 005 — Voo 19
 
