@@ -1,8 +1,9 @@
 # Publicação — 005-voo-19
 
-> Status: **aprovado em 26/10/2026**, com a condição “só depois do LAB 001”.
-> O LAB 001 foi renderizado e passou no QA em 26/10 — **condição cumprida**.
-> Falta o upload no Studio.
+> Status: **publicado em 27/10/2026** — https://youtube.com/shorts/wlPEoYErlZQ
+> Aprovado em 26/10/2026 com a condição “só depois do LAB 001”, cumprida no
+> mesmo dia (LAB 001 renderizado e QA PASS). Upload feito pelo usuário.
+> **Retenção de 48 h deve ser lida em 29/10/2026.**
 
 ## Título
 
@@ -72,26 +73,27 @@ Não sobrepor texto: o frame já contém a chamada.
 - [x] Aprovação humana explícita do vídeo — 26/10/2026 (“Aprovado, mas só depois do LAB 001”)
 - [x] Condição da aprovação cumprida — LAB 001 renderizado e QA PASS em 26/10
 - [ ] Escuta humana de “Avengers”, “Keys”, “Bahamas”, “amarar” — delegada ao usuário na aprovação
-- [ ] Arquivo `005-voo-19_shorts_v1.mp4` (SHA-256 conferido)
-- [ ] Publicar no YouTube Shorts
+- [x] Arquivo `005-voo-19_shorts_v1.mp4` (SHA-256 conferido)
+- [x] Publicar no YouTube Shorts — **27/10/2026**, upload do usuário
 - [ ] Aviso de conteúdo sintético marcado (selo **AI**)
-- [ ] Vitrine pública conferida (`yt-dlp` sem cookies: `public`, `age_limit=0`, `duration=45`)
+- [x] Vitrine pública conferida (`yt-dlp` sem cookies: `duration=45`, `age_limit=0`; aparece na aba Shorts do canal)
 - [ ] Registrar em `biblioteca/publicados.csv`
-- [ ] Medir retenção em 48 h
+- [ ] Medir retenção em 48 h — **29/10/2026**
 
 ## Registro pós-publicação
 
 | Campo | Valor |
 |---|---|
-| data | — |
+| data | **2026-10-27** |
 | slug | `005-voo-19` |
 | nicho | `misterio` |
 | plataforma | `YouTube Shorts` |
-| url | — |
-| visibilidade | — |
-| selo_ai | — |
+| url | https://youtube.com/shorts/wlPEoYErlZQ |
+| visibilidade | público (aparece na aba Shorts do canal) |
+| selo_ai | **a conferir na página** |
 | thumbnail | `capa.png` (frame em 38,6 s) |
-| views_48h | — |
+| views_48h | **pendente — ler em 29/10** |
+| views_1h | 216 (snapshot de 27/10, com 5 likes) |
 | retencao_3s | — |
 | retencao_media | — |
 | conclusao | — |

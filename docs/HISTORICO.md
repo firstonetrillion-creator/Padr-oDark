@@ -4,6 +4,27 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-26**.
 
+## 2026-10-27 — 005 Voo 19 publicado: 5 de 6 no ar
+
+**Entregue**
+- `episodios/005-voo-19/` publicado pelo usuário em **27/10/2026**:
+  https://youtube.com/shorts/wlPEoYErlZQ (`wlPEoYErlZQ`). Conferido sem cookies
+  por `yt-dlp`: `duration=45`, `age_limit=0`, 216 views e 5 likes no snapshot do
+  dia, aparecendo na aba Shorts do canal.
+- `biblioteca/publicados.csv` com a linha do 005 (campos de 48 h vazios até
+  **29/10**, para não registrar snapshot como se fosse janela fechada).
+- `episodios/005-voo-19/publicacao.md` com o registro pós-publicação preenchido.
+
+**Decisão**
+- O 005 é o primeiro vídeo **inteiramente gerado** (`roteiro.json` →
+  `gerar-episodio.py`) e o primeiro com **12 cenas / nenhuma acima de 5 s**.
+  A leitura de 48 h em 29/10 é o teste da regra “sem cartão parado de contexto
+  depois do gancho”.
+
+**Pendente**
+- Retenção de 48 h do 005 (29/10) e selo **AI** na página pública.
+- 006 pronto, com QA PASS, **sem aprovação** — nada sobe sem o “publique”.
+
 ## 2026-10-26 — 006 Passo Dyatlov: voz cena por cena e o ASR sai do caminho
 
 **Entregue**

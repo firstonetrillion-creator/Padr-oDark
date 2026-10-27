@@ -15,10 +15,10 @@
 | Piloto `001-faroleiros` | **aprovado** | `episodios/001-faroleiros/final.mp4`, `qa.md` |
 | Template `misterio-45` | pronto | `templates/misterio-45/` |
 | Documentação de retomada | pronta | este arquivo + `docs/ARQUITETURA.md` + `docs/HISTORICO.md` |
-| Publicação | **publicado** (21/10/2026 e 23/10/2026) | 001: [Shorts](https://youtube.com/shorts/WKuNVjl3d5M); 002: [Shorts](https://youtube.com/shorts/n6dtveQguf4); 003: [Shorts](https://youtube.com/shorts/8ptxqKGe4Bk) |
+| Publicação | **5 publicados** (21/10, 21/10, 23/10, 24/10 e 27/10) | 001: [Shorts](https://youtube.com/shorts/WKuNVjl3d5M); 002: [Shorts](https://youtube.com/shorts/n6dtveQguf4); 003: [Shorts](https://youtube.com/shorts/8ptxqKGe4Bk); 004: [Shorts](https://youtube.com/shorts/rlSArCY3bH0); 005: [Shorts](https://youtube.com/shorts/wlPEoYErlZQ) |
 | Validação de nicho | **concluída (metadados)** | `logs/nicho-2026-10-21.json`, `docs/NICHO.md` |
 | Versionamento | **git iniciado (21/10/2026)** | commit `782df62`, tag `ep-001-publicado` |
-| 6 vídeos de validação | **4/6 publicados; 005 aprovado (upload do usuário); 006 produzido** | 001–004 no ar; 005 e 006 prontos |
+| 6 vídeos de validação | **5/6 publicados; 006 pronto e sem aprovação** | 001–005 no ar; 006 aguardando o “publique” |
 | Episódio 002 — Mary Celeste | **publicado** (21/10/2026) | `episodios/002-mary-celeste/`, [Shorts](https://youtube.com/shorts/n6dtveQguf4) |
 | Episódio 003 — Roanoke | **publicado** (23/10/2026) | `episodios/003-roanoke/`, [Shorts](https://youtube.com/shorts/8ptxqKGe4Bk) |
 | Canal | **Dossiê 45**: nome, avatar/banner, descrição no ar e 9 shorts antigos privados | [canal](https://youtube.com/@Dossie45), `docs/REBRANDING.md` |
@@ -92,13 +92,16 @@
 - **Publicado:** https://youtube.com/shorts/rlSArCY3bH0 — capa em 4,0 s (“25 PESSOAS / NENHUM SINAL”).
 - Retenção 48 h: **1.200 views**, 3 s 90,9%, 10 s 43,4%, fim 17,3%, **% média 45,7%** — o miolo caiu, não o gancho. Detalhe em `episodios/004-mv-joyita/retencao.md`.
 
-### Episódio 005 — Voo 19 (produzido e aprovado, 26/10/2026)
+### Episódio 005 — Voo 19 (publicado, 27/10/2026)
 - 111 palavras / 12 cenas (2,5 pal./s), nenhuma cena acima de 5,00 s; cena 2 sobe a aposta em vez de ser cartão de contexto.
 - `voz_raw` 43,839 s (`length_scale` 1,15) → `voz.wav` 45,000 s, −16,17 LUFS; remap por `remapear.py` (107/113 tokens).
 - Composição **gerada** por `scripts/gerar-episodio.py` a partir de `roteiro.json` — primeiro episódio sem HTML escrito à mão.
 - Render segmentado 5×300, 0 retries, 3m11s; `final.mp4` **45,013 s, 3.344.787 bytes, −15,16 LUFS, TP −2,18** (ganho +1,05 dB); `qa.ps1` **PASS**.
 - Texto medido no frame: pior linha **772 px de 840**; capa `capa.png` em 38,6 s (“27 HOMENS / NENHUM CORPO”).
-- Aprovado em 26/10/2026 (“Aprovado, mas só depois do LAB 001”); **upload a cargo do usuário**; pacote em `episodios/005-voo-19/publicacao.md`.
+- Aprovado em 26/10/2026 (“Aprovado, mas só depois do LAB 001”); **publicado em
+  27/10/2026**: https://youtube.com/shorts/wlPEoYErlZQ (`wlPEoYErlZQ`).
+  216 views e 5 likes no snapshot do dia 27; `duration=45` e `age_limit=0`
+  conferidos por `yt-dlp` sem cookies. **48 h vencem em 29/10.**
 
 ### Episódio 006 — Passo Dyatlov (produzido, QA PASS, 26/10/2026)
 - 114 palavras / **14 cenas** (2,5 pal./s), máx **4,17 s**. A cena 2 sobe a

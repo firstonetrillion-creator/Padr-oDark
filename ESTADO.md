@@ -4,12 +4,13 @@
 > Depois de uma compactação, a versão atual deste arquivo é relida do disco e vira a baseline da sessão.
 > Memória longa continua em `MEMORIA.md`; aqui só o suficiente para retomar sem reler nada.
 
-**Atualizado:** 2026-10-26 · **Sessão anterior:** 006 renderizado, QA PASS, pacote de publicação pronto
+**Atualizado:** 2026-10-27 · **Sessão anterior:** 006 renderizado e QA PASS; 005 publicado pelo usuário
 
 ## Onde estamos
 
-Fase 2, **4/6 publicados** (001–004). **005 aprovado**, upload a cargo do usuário.
-Episódio atual: **006 — Passo Dyatlov** — produzido, **aguardando aprovação humana**.
+Fase 2, **5/6 publicados** (001–005). Episódio atual: **006 — Passo Dyatlov**,
+produzido e com **QA PASS**, **aguardando aprovação humana** (nada sobe sem o
+“publique”).
 
 ## Episódio 006 — Passo Dyatlov
 
@@ -73,7 +74,12 @@ Saykhl”, “Thibeaux-Brignolles”). Sem o “publique”, nada sobe.
 | Composição | **pronta** — 12 cenas, contrato **OK, 1 aviso** (12 em vez de 13) |
 | QA visual | **concluído** — 12 frames do render + gancho medido (máx 772 px de 840) |
 | Render | **concluído** — `final_raw.mp4` 45,000 s, 5 segmentos, 0 retries, 3m11s |
-| QA / publicação | **QA PASS** · **aprovado** em 26/10 · **upload a cargo do usuário** |
+| QA / publicação | **QA PASS** · **aprovado** em 26/10 · **PUBLICADO em 27/10** |
+
+**No ar:** https://youtube.com/shorts/wlPEoYErlZQ · `wlPEoYErlZQ` ·
+216 views e 5 likes no snapshot de 27/10 · `duration=45`, `age_limit=0` conferidos
+por `yt-dlp` sem cookies · **retenção de 48 h vence em 29/10**. Selo **AI** na
+página pública: a conferir.
 
 **Pacote de publicação:** `publicacao.md` (título 46 chars, lint **98/100**;
 descrição com fontes; hashtags; capa em 38,6 s) e cópia
@@ -89,9 +95,8 @@ Capa: `27 HOMENS / NENHUM CORPO` (~39 s, cena 11).
 Cena 2 **não** é cartão de contexto (regra pós-004): “O rádio funcionava. Eles
 falavam com a base. Não sabiam onde estavam.”
 
-**Próximo comando:** abrir o **006 Passo Dyatlov** com o gerador (`roteiro.json` →
-`gerar-episodio.py` → `medir-texto.ps1` → voz). Depois de o usuário publicar o
-005: ler a retenção de 48 h e registrar em `biblioteca/publicados.csv`.
+**Próximo comando:** nada a produzir até decidir. O 006 está pronto e **sem
+aprovação**; a retenção do 005 vence em **29/10**.
 
 ## Gerador (novo em 26/10)
 
@@ -242,11 +247,13 @@ segmentada obrigatória. Este teste **não** altera o v1 congelado do 003–006.
 
 ## Esperando (nada a fazer até as datas)
 
+- **2026-10-29** — retenção de 48 h do **005** (`wlPEoYErlZQ`). É a primeira
+  medição de um vídeo feito **inteiro pelo gerador** e com **12 cenas**; se o
+  miolo do 005 subir em relação aos 45,7% do 004, a regra “sem cartão parado de
+  contexto” se confirma.
 - ~~**2026-10-26** — retenção de 48 h do **004**~~ **feito**: painel relido com
   login em 26/10. Falta só o `Todos.csv` de curva (aba Content do Studio não
   carrega). Ver `episodios/004-mv-joyita/retencao.md`.
-- Só depois disso decidir o 005. Regra nova: **nada de cartão parado de
-  contexto depois do gancho**; contexto em ≤2 s ou colado a uma consequência.
 - Leitura do 003: gancho melhorou (3 s e 10 s acima do 002), **mas o fim caiu**
   (36,1% vs 42,2%): slide de −32,4 p.p. entre 10 s e 44,5 s. Hipótese: a
   explicação do CROATOAN entregue cedo demais.
