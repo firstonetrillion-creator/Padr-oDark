@@ -4,6 +4,27 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-26**.
 
+## 2026-10-27 — 006 Passo Dyatlov publicado: 6 de 6 no ar, Fase 2 fechada
+
+**Entregue**
+- `episodios/006-passo-dyatlov/` publicado pelo usuário em **27/10/2026**:
+  https://youtube.com/shorts/K_sgJjNHg84 (`K_sgJjNHg84`). Conferido sem cookies
+  por `yt-dlp`: `duration=45`, `age_limit=0`, `upload=20261027`, canal
+  `Dossiê 45`.
+- `biblioteca/publicados.csv` com as linhas de 005 e 006 (campos de 48 h vazios
+  até **29/10**).
+
+**Decisão**
+- Os dois últimos vídeos subiram no mesmo dia: as janelas de 48 h fecham juntas
+  em 29/10 e o **Gate 2** fica decidível de uma vez — falta **um** vídeo acima de
+  50% de % média assistida (002 e 003 já estão em 87,0%; 004 ficou em 45,7%).
+- Escuta de “Dyatlov”, “Kholat Saykhl” e “Thibeaux-Brignolles” ficou delegada ao
+  usuário, que aprovou e publicou no mesmo dia.
+
+**Pendente**
+- Retenção de 48 h de 005 e 006 (29/10) e selo **AI** nas duas páginas.
+- Depois do gate: A/B do 007 com uma variável e o LAB 001 no canal descartável.
+
 ## 2026-10-27 — 005 Voo 19 publicado: 5 de 6 no ar
 
 **Entregue**

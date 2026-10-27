@@ -4,13 +4,13 @@
 > Depois de uma compactação, a versão atual deste arquivo é relida do disco e vira a baseline da sessão.
 > Memória longa continua em `MEMORIA.md`; aqui só o suficiente para retomar sem reler nada.
 
-**Atualizado:** 2026-10-27 · **Sessão anterior:** 006 renderizado e QA PASS; 005 publicado pelo usuário
+**Atualizado:** 2026-10-27 · **Sessão anterior:** 006 publicado; **6 de 6 no ar**
 
 ## Onde estamos
 
-Fase 2, **5/6 publicados** (001–005). Episódio atual: **006 — Passo Dyatlov**,
-produzido e com **QA PASS**, **aguardando aprovação humana** (nada sobe sem o
-“publique”).
+Fase 2 **concluída: 6/6 publicados** (001–006). Os dois últimos subiram no mesmo
+dia (005 e 006, 27/10), então as duas janelas de 48 h fecham juntas em **29/10** —
+é quando o **Gate 2** fica decidível. Nada novo em produção até lá.
 
 ## Episódio 006 — Passo Dyatlov
 
@@ -25,7 +25,7 @@ produzido e com **QA PASS**, **aguardando aprovação humana** (nada sobe sem o
 | QA visual | **concluído** — 14 frames do render; pior tinta **806 px** de 840; 6 cenas com fonte corrigida antes do render |
 | Render | **concluído** — `final_raw.mp4` 45,000 s, 1.350 frames, **5 segmentos**, 0 retries, 3m09,9s |
 | QA | **QA PASS** — `qa.md` escrito |
-| Publicação | **aprovada em 27/10** — aguardando upload do usuário; conferência por `yt-dlp` e 48 h depois |
+| Publicação | **PUBLICADO em 27/10** — https://youtube.com/shorts/K_sgJjNHg84 (`K_sgJjNHg84`); `duration=45` e `age_limit=0` conferidos |
 
 **Números finais:** `final.mp4` **45,013 s · 3.859.117 bytes · −15,19 LUFS ·
 TP −1,30 dBFS** (ganho **+7,0 dB** sobre −22,17). SHA-256
@@ -59,10 +59,10 @@ silêncio calculado — o tempo é a soma dos blocos. Novo script:
 `scripts/montar-voz.py` (documentado em `scripts/README.md` e
 `docs/ARQUITETURA.md` §3.2 e §6).
 
-**Próximo comando:** depois do upload do 006 pelo usuário, conferir a vitrine
-pública com `yt-dlp` sem cookies (`duration=45`, `age_limit=0`, aparece na aba
-Shorts), registrar em `biblioteca/publicados.csv` e medir as 48 h — que fecham o
-**Gate 2** (falta 1 dos 3 vídeos com % média > 50%).
+**Próximo comando:** em **29/10**, ler a retenção de 48 h de **005 e 006** no
+Studio (vídeo a vídeo, `.../analytics/tab-overview/period-default?hl=en&cb=<ts>`,
+recarregando até o card aparecer), preencher `biblioteca/publicados.csv` e fechar
+o **Gate 2** — basta **um** dos dois passar de 50% de % média assistida.
 
 ## Episódio 005 — Voo 19
 
@@ -249,10 +249,13 @@ segmentada obrigatória. Este teste **não** altera o v1 congelado do 003–006.
 
 ## Esperando (nada a fazer até as datas)
 
-- **2026-10-29** — retenção de 48 h do **005** (`wlPEoYErlZQ`). É a primeira
-  medição de um vídeo feito **inteiro pelo gerador** e com **12 cenas**; se o
-  miolo do 005 subir em relação aos 45,7% do 004, a regra “sem cartão parado de
-  contexto” se confirma.
+- **2026-10-29** — retenção de 48 h de **005** (`wlPEoYErlZQ`) e **006**
+  (`K_sgJjNHg84`), as duas no mesmo dia. Uma delas fechando
+  acima de 50% de % média assistida fecha o **Gate 2**.
+  - **005** é o primeiro vídeo inteiramente gerado por JSON, 12 cenas, nenhuma
+    acima de 5 s: testa a regra “sem cartão parado depois do gancho”.
+  - **006** tem 14 cenas, voz por cena e o mesmo v1 visual: testa se o problema
+    do miolo era só o cartão estático ou algo mais.
 - ~~**2026-10-26** — retenção de 48 h do **004**~~ **feito**: painel relido com
   login em 26/10. Falta só o `Todos.csv` de curva (aba Content do Studio não
   carrega). Ver `episodios/004-mv-joyita/retencao.md`.

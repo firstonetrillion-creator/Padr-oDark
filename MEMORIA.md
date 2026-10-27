@@ -15,10 +15,10 @@
 | Piloto `001-faroleiros` | **aprovado** | `episodios/001-faroleiros/final.mp4`, `qa.md` |
 | Template `misterio-45` | pronto | `templates/misterio-45/` |
 | Documentação de retomada | pronta | este arquivo + `docs/ARQUITETURA.md` + `docs/HISTORICO.md` |
-| Publicação | **5 publicados** (21/10, 21/10, 23/10, 24/10 e 27/10) | 001: [Shorts](https://youtube.com/shorts/WKuNVjl3d5M); 002: [Shorts](https://youtube.com/shorts/n6dtveQguf4); 003: [Shorts](https://youtube.com/shorts/8ptxqKGe4Bk); 004: [Shorts](https://youtube.com/shorts/rlSArCY3bH0); 005: [Shorts](https://youtube.com/shorts/wlPEoYErlZQ) |
+| Publicação | **6 publicados** (21/10, 21/10, 23/10, 24/10, 27/10 e 27/10) | 001: [Shorts](https://youtube.com/shorts/WKuNVjl3d5M); 002: [Shorts](https://youtube.com/shorts/n6dtveQguf4); 003: [Shorts](https://youtube.com/shorts/8ptxqKGe4Bk); 004: [Shorts](https://youtube.com/shorts/rlSArCY3bH0); 005: [Shorts](https://youtube.com/shorts/wlPEoYErlZQ); 006: [Shorts](https://youtube.com/shorts/K_sgJjNHg84) |
 | Validação de nicho | **concluída (metadados)** | `logs/nicho-2026-10-21.json`, `docs/NICHO.md` |
 | Versionamento | **git iniciado (21/10/2026)** | commit `782df62`, tag `ep-001-publicado` |
-| 6 vídeos de validação | **5/6 publicados; 006 pronto e sem aprovação** | 001–005 no ar; 006 aguardando o “publique” |
+| 6 vídeos de validação | **6/6 publicados — Fase 2 concluída** | 001–006 no ar; Gate 2 decidível em 29/10 |
 | Episódio 002 — Mary Celeste | **publicado** (21/10/2026) | `episodios/002-mary-celeste/`, [Shorts](https://youtube.com/shorts/n6dtveQguf4) |
 | Episódio 003 — Roanoke | **publicado** (23/10/2026) | `episodios/003-roanoke/`, [Shorts](https://youtube.com/shorts/8ptxqKGe4Bk) |
 | Canal | **Dossiê 45**: nome, avatar/banner, descrição no ar e 9 shorts antigos privados | [canal](https://youtube.com/@Dossie45), `docs/REBRANDING.md` |
@@ -103,7 +103,7 @@
   216 views e 5 likes no snapshot do dia 27; `duration=45` e `age_limit=0`
   conferidos por `yt-dlp` sem cookies. **48 h vencem em 29/10.**
 
-### Episódio 006 — Passo Dyatlov (produzido, QA PASS, 26/10/2026)
+### Episódio 006 — Passo Dyatlov (publicado, 27/10/2026)
 - 114 palavras / **14 cenas** (2,5 pal./s), máx **4,17 s**. A cena 2 sobe a
   aposta (barraca cortada por dentro, botas no lugar); data e lugar entram
   colados a “nove esquiadores experientes”.
@@ -120,9 +120,9 @@
 - Capa em 32,6 s (“DOIS TÓRAX AFUNDADOS. / UM CRÂNIO RACHADO. / SEM FERIDA NA
   PELE.”); título `Passo Dyatlov: a avalanche chegou 9 horas depois` (48 chars,
   lint 98/100). Pacote em `episodios/006-passo-dyatlov/publicacao.md`.
-- **Aprovado em 27/10/2026** (“Aprovar e subir o 006 hoje”); upload a cargo do
-  usuário. Escuta de “Dyatlov”, “Kholat Saykhl” e “Thibeaux-Brignolles” ficou
-  delegada a ele.
+- **Publicado em 27/10/2026**: https://youtube.com/shorts/K_sgJjNHg84
+  (`K_sgJjNHg84`), upload do usuário. `duration=45`, `age_limit=0`, canal
+  `Dossiê 45` conferidos por `yt-dlp` sem cookies. **48 h em 29/10.**
 
 ### Template
 - `templates/misterio-45/index.html` — composição validada, 13 cenas, áudio `voz`/`drone`, QA por `?t=`.

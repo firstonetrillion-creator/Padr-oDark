@@ -1,8 +1,8 @@
 # Publicação — 006-passo-dyatlov
 
-> Status: **aprovado em 27/10/2026** — “Aprovar e subir o 006 hoje”.
-> Pacote completo, `qa.ps1` **PASS**, `qa.md` assinado. Falta o upload.
-> Retenção de 48 h a medir 48 h após o upload.
+> Status: **publicado em 27/10/2026** — https://youtube.com/shorts/K_sgJjNHg84
+> Aprovado em 27/10 (“Aprovar e subir o 006 hoje”); upload feito pelo usuário.
+> **Retenção de 48 h deve ser lida em 29/10/2026.**
 
 ## Título
 
@@ -92,25 +92,25 @@ contém a chamada.
 - [ ] Escuta humana de “Dyatlov”, “Kholat Saykhl”, “Thibeaux-Brignolles”
 - [x] Aprovação humana explícita do vídeo — **27/10/2026** (“Aprovar e subir o 006 hoje”)
 - [x] Arquivo `006-passo-dyatlov_shorts_v1.mp4` (SHA-256 conferido: `B2AA85F3…0033A6`)
-- [ ] Publicar no YouTube Shorts
+- [x] Publicar no YouTube Shorts — **27/10/2026**, upload do usuário
 - [ ] Aviso de conteúdo sintético marcado (selo **AI**)
-- [ ] Vitrine pública conferida (`yt-dlp` sem cookies: `public`, `age_limit=0`, `duration=45`)
-- [ ] Registrar em `biblioteca/publicados.csv`
-- [ ] Medir retenção em 48 h
+- [x] Vitrine pública conferida (`yt-dlp` sem cookies: `duration=45`, `age_limit=0`, `upload=20261027`, canal `Dossiê 45`)
+- [x] Registrar em `biblioteca/publicados.csv`
+- [ ] Medir retenção em 48 h — **29/10/2026**
 
 ## Registro pós-publicação
 
 | Campo | Valor |
 |---|---|
-| data | — |
+| data | **2026-10-27** |
 | slug | `006-passo-dyatlov` |
 | nicho | `misterio` |
 | plataforma | `YouTube Shorts` |
-| url | — |
-| visibilidade | — |
-| selo_ai | — |
-| thumbnail | `capa.png` |
-| views_48h | — |
+| url | https://youtube.com/shorts/K_sgJjNHg84 |
+| visibilidade | público (aparece na aba Shorts do canal) |
+| selo_ai | **a conferir na página** |
+| thumbnail | `capa.png` (frame em 32,6 s) |
+| views_48h | **pendente — ler em 29/10** |
 | retencao_3s | — |
 | retencao_media | — |
 | conclusao | — |
