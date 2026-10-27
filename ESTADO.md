@@ -274,8 +274,9 @@ nesta máquina. O teste de v2 (imagem de arquivo, som audível, 60 s) vira **can
 novo**, não um sétimo vídeo do Dossiê 45.
 
 **Candidatos, não escolhidos:** A = mesmo formato + nicho adjacente (true crime
-PT-BR); B = mesmo nicho + 60 s; C = mesmo nicho + som audível. Escolher um é
-decisão do usuário e vai para `docs/DECISOES.md`.
+PT-BR); B = mesmo nicho + 60 s; C = mesmo nicho + som audível. **Decisão adiada
+pelo usuário em 27/10 para depois do Gate 2** — o resultado de 005/006 muda qual
+variável vale testar.
 
 ## Esperando (nada a fazer até as datas)
 

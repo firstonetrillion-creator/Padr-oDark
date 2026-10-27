@@ -27,7 +27,8 @@
   (`canais/` no mapa de arquivos).
 
 **Pendente**
-- Candidatos A/B/C ainda **não escolhidos** (nicho adjacente, 60 s, som audível).
+- Candidatos A/B/C **não escolhidos** — decisão adiada em 27/10 para depois do
+  Gate 2 (o resultado de 005/006 muda qual variável vale testar).
 - `novo-episodio.ps1` não aceita destino: criar em `episodios/` e mover.
 - Gate 2 em **29/10** — 005 e 006.
 
