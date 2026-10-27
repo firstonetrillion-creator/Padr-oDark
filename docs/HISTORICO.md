@@ -4,6 +4,44 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-26**.
 
+## 2026-10-26 — 006 Passo Dyatlov: voz cena por cena e o ASR sai do caminho
+
+**Entregue**
+- `episodios/006-passo-dyatlov/` — briefing, gancho, roteiro (114 palavras,
+  **14 cenas**), `roteiro.json`, composição gerada, 14 frames de QA visual,
+  render, `qa.md` e `publicacao.md`.
+- `scripts/montar-voz.py` — sintetiza **um parágrafo por cena**, corta o silêncio
+  das pontas, distribui o silêncio restante por pesos e escreve
+  `tempos_cenas.json` no contrato do `gerar-episodio.py`. Aborta com o
+  `--length-scale` sugerido quando a fala não cabe.
+- `final.mp4` — **45,013 s · 3.859.117 bytes · −15,19 LUFS · TP −1,30 dBFS**
+  (ganho **+7,0 dB** sobre −22,17); `qa.ps1` **PASS**; SHA-256
+  `B2AA85F3A308E155FAA953BF395BF1CC2E03A3FB66F3DC64CD1D9119F10033A6`.
+- `capa.png` em 32,6 s; cópia de upload `006-passo-dyatlov_shorts_v1.mp4`
+  (SHA idêntico).
+
+**Decisão**
+- **Quando o ASR falha, o tempo não se estima: sintetiza-se por cena.** O
+  `faster-whisper` errou 28% dos tokens do 006 (“cortam um degrau” → “Cota o
+  mundo legal”, “Dyatlov” → “Diato”; testado também com `medium`) e o
+  `remapear.py` pôs a cena 4 **1,4 s** fora — a tabela dele mostrava o texto
+  certo com o tempo errado. O contrato de tempo ganhou dois caminhos em
+  `docs/ARQUITETURA.md` §3.
+- **14 cenas em vez de 13** quando o veredito não cabe em 5 s: no take único a
+  última cena ficava **6,44 s** no ar. Foi dividida em 1959 e 2020.
+- O drone continua a 0,16 (inaudível) para o Gate 2 comparar a mesma coisa; som
+  audível fica para o A/B do 007.
+
+**Evidência**
+- `medição de tinta`: 14 cenas, pior **806 px de 840**; antes do render o
+  `medir-texto.ps1` corrigiu 6 cenas — com 152 px a cena 4 quebrava “UM DEGRAU”
+  em duas linhas no frame (a caixa cabia, a tinta não).
+- `qa.ps1 episodios/006-passo-dyatlov/final.mp4`: duração, resolução, fps,
+  áudio, loudness e preto — **PASS**.
+- Checagem de fantasma por banda de tinta no frame de 5,9 s: 3 linhas de título +
+  linha pequena + cabeçalho/rodapé. O “texto duplicado” que se vê em escala
+  reduzida é artefato de visualização.
+
 ## 2026-10-26 — Gerador de episódio: o HTML deixa de ser escrito à mão
 
 **Entregue**

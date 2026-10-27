@@ -1,0 +1,191 @@
+{
+  "slug": "006-passo-dyatlov",
+  "composition_id": "ep006",
+  "titulo_pagina": "Passo Dyatlov: a avalanche chegou nove horas depois",
+  "duracao": 45,
+  "marca": "DOSSIÊ 45",
+  "dossie": "006",
+  "rodape": "FONTE · GAUME & PUZRIN, 2021 · PROCESSO CRIMINAL 1959",
+  "audio": {
+    "voz": 1.0,
+    "drone": 0.16
+  },
+  "cenas": [
+    {
+      "id": "s1",
+      "kicker": "O ARQUIVO · PASSO DYATLOV",
+      "titulo": [
+        "NOVE DORMIAM.",
+        "A NEVE",
+        "ESPEROU",
+        "NOVE HORAS."
+      ],
+      "acento": true,
+      "fonte_px": 106,
+      "fala": "Eles cortaram a encosta para dormir. A neve esperou nove horas."
+    },
+    {
+      "id": "s2",
+      "titulo": [
+        "A BARRACA",
+        "FOI CORTADA",
+        "POR DENTRO."
+      ],
+      "pequeno": [
+        "AS BOTAS FICARAM."
+      ],
+      "fonte_px": 124,
+      "fala": "A barraca foi cortada por dentro. As botas ficaram."
+    },
+    {
+      "id": "s3",
+      "kicker": "KHOLAT SAYKHL · 1º DE FEVEREIRO DE 1959",
+      "titulo": [
+        "NOVE",
+        "ESQUIADORES",
+        "EXPERIENTES."
+      ],
+      "pequeno": [
+        "O LÍDER, IGOR DYATLOV, TINHA 23 ANOS."
+      ],
+      "fonte_px": 114,
+      "fala": "Nove esquiadores experientes. O líder, Igor Dyatlov."
+    },
+    {
+      "id": "s4",
+      "kicker": "O CORTE NA ENCOSTA",
+      "titulo": [
+        "UM DEGRAU",
+        "NA NEVE."
+      ],
+      "pequeno": [
+        "23 GRAUS DE INCLINAÇÃO."
+      ],
+      "fonte_px": 136,
+      "fala": "Para a barraca caber, cortam um degrau."
+    },
+    {
+      "id": "s5",
+      "titulo": [
+        "ELES DORMEM."
+      ],
+      "pequeno": [
+        "O VENTO EMPILHA NEVE",
+        "SOBRE O CORTE."
+      ],
+      "fonte_px": 114,
+      "fala": "Dormem. O vento empilha neve sobre o corte."
+    },
+    {
+      "id": "s6",
+      "titulo": [
+        "9 HORAS",
+        "DEPOIS."
+      ],
+      "pequeno": [
+        "A PLACA DE NEVE DESCE."
+      ],
+      "fonte_px": 182,
+      "fala": "Nove horas depois, a placa de neve desce."
+    },
+    {
+      "id": "s7",
+      "titulo": [
+        "A SAÍDA",
+        "SOTERRADA."
+      ],
+      "pequeno": [
+        "CORTAM A LONA.",
+        "CORREM SEM CASACO."
+      ],
+      "fonte_px": 132,
+      "fala": "A saída soterrada. Cortam a lona e correm sem casaco."
+    },
+    {
+      "id": "s8",
+      "kicker": "ABAIXO DE −25 GRAUS",
+      "titulo": [
+        "DOIS CHEGAM",
+        "AO CEDRO."
+      ],
+      "pequeno": [
+        "ACENDEM FOGO.",
+        "MORREM DE FRIO."
+      ],
+      "fonte_px": 118,
+      "fala": "Dois chegam ao cedro. Acendem fogo. Morrem de frio."
+    },
+    {
+      "id": "s9",
+      "titulo": [
+        "TRÊS TENTAM",
+        "VOLTAR."
+      ],
+      "pequeno": [
+        "CAEM NO CAMINHO."
+      ],
+      "fonte_px": 122,
+      "fala": "Três tentam voltar. Caem no caminho."
+    },
+    {
+      "id": "s10",
+      "kicker": "4 DE MAIO DE 1959",
+      "titulo": [
+        "OS ÚLTIMOS",
+        "QUATRO",
+        "SOB 4 METROS",
+        "DE NEVE."
+      ],
+      "fonte_px": 114,
+      "fala": "Em maio, acham os últimos quatro sob 4 metros de neve."
+    },
+    {
+      "id": "s11",
+      "titulo": [
+        "DOIS TÓRAX",
+        "AFUNDADOS.",
+        "UM CRÂNIO",
+        "RACHADO."
+      ],
+      "pequeno": [
+        "SEM FERIDA NA PELE."
+      ],
+      "fonte_px": 130,
+      "fala": "Dois tórax afundados. Um crânio rachado. Sem ferida na pele."
+    },
+    {
+      "id": "s12",
+      "kicker": "2021 · DOIS FÍSICOS REFAZEM A CONTA",
+      "titulo": [
+        "9,5 A 13,5",
+        "HORAS"
+      ],
+      "pequeno": [
+        "DEPOIS DO CORTE NA ENCOSTA."
+      ],
+      "fonte_px": 138,
+      "fala": "Dois físicos refazem a conta: de 9,5 a 13,5 horas."
+    },
+    {
+      "id": "s13",
+      "titulo": [
+        "1959:",
+        "FORÇA NATURAL."
+      ],
+      "fonte_px": 96,
+      "fala": "1959: força natural."
+    },
+    {
+      "id": "s14",
+      "titulo": [
+        "2020:",
+        "AVALANCHE."
+      ],
+      "pequeno": [
+        "CAUSA OFICIAL."
+      ],
+      "fonte_px": 132,
+      "fala": "2020: a Rússia diz avalanche."
+    }
+  ]
+}

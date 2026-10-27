@@ -103,7 +103,11 @@ if (seek !== null) { tl.time(t, false); /* visibility das cenas */ }
 - Serve para screenshot de QA **sem renderizar**.
 - Não afeta o render normal (sem query string).
 
-## 3. Contrato de tempo (transcrição → cena)
+## 3. Contrato de tempo (fala → cena)
+
+Há dois caminhos, e a diferença é **onde o tempo nasce**.
+
+### 3.1 Take único + ASR (001–005)
 
 1. `transcricao.json` traz `segments[].start/end` e `words[].start/end`.
 2. Para cada frase, definir a cena correspondente.
@@ -112,6 +116,32 @@ if (seek !== null) { tl.time(t, false); /* visibility das cenas */ }
 5. A última cena cobre até 45,00 s.
 6. Frases longas (> 4 s) podem ser divididas na pausa natural; foi o caso de “Não havia ninguém” + “A porta estava fechada” (s5 e s5b).
 7. Sempre conferir o frame do meio de cada cena com `?t=`.
+
+**Limite do método:** o tempo é **inferido** por reconhecimento de fala. Se o ASR
+erra a palavra, ele erra a fronteira. No 006, “cortam um degrau” saiu como “Cota
+o mundo legal” (28% dos tokens errados) e a cena 4 ficou **1,4 s** fora. A tabela
+do `remapear.py` não avisa — ela mostra o texto certo com o tempo errado.
+
+### 3.2 Cena por cena + concatenação (006 em diante, quando o ASR falha)
+
+`scripts/montar-voz.py` sintetiza cada parágrafo de `narracao_tts.txt` separado,
+corta o silêncio das pontas, e concatena com silêncio calculado. O tempo passa a
+ser **exato por construção**:
+
+| Passo | Regra |
+|---|---|
+| Bloco | um parágrafo = uma cena; a contagem tem de bater com `roteiro.json` |
+| Silêncio | `duração − fala − inicio − fim`, dividido entre as fronteiras por `--pesos` |
+| `start` | `fala − 0,05` (cena 1 em 0; a cena entra antes da fala) |
+| `duration` | próxima `fala` − `start` − 0,05; última fecha a duração |
+| Respiro inicial | `--inicio` (0,6 s padrão) fica **dentro** do `voz_raw.wav` |
+
+Consequência prática: o FFmpeg **não** leva `adelay` — o atraso já está no áudio.
+Se a fala não couber, o script aborta e imprime o `--length-scale` a usar.
+
+Trade-off: a prosódia reinicia a cada bloco. Para cartões de 2–5 s é respiro;
+para raciocínio contínuo, o take único soa melhor.
+
 
 ## 4. Contrato de render
 
@@ -149,6 +179,7 @@ O fade final para preto é intencional e ignorado. O QA **não** substitui a rev
 | `scripts/verify.ps1` | imprime versões e presença de voz/espeak/disco | — → stdout |
 | `scripts/bench.ps1` | benchmark G0 de 45 s | `bench/index.html` → `bench/bench-45.mp4` + `logs/bench.json` |
 | `scripts/tts.py` | wrapper do Piper para caminhos acentuados | `narracao.txt` → `voz_raw.wav` |
+| `scripts/montar-voz.py` | voz cena por cena + tempos exatos (sem ASR) | `narracao_tts.txt` + `roteiro.json` → `voz_raw.wav` + `tempos_cenas.json` |
 | `scripts/transcribe.py` | transcrição com timestamps por palavra | `voz.wav` → `transcricao.json` |
 | `scripts/remapear.py` | alinha narração × ASR e fixa o tempo de cada cena | `narracao.txt` + `transcricao.json` → `tempos_cenas.json` |
 | `scripts/gerar-episodio.py` | escreve a composição a partir do roteiro | `roteiro.json` (+ `tempos_cenas.json`) → `index.html` |

@@ -4,11 +4,62 @@
 > Depois de uma compactação, a versão atual deste arquivo é relida do disco e vira a baseline da sessão.
 > Memória longa continua em `MEMORIA.md`; aqui só o suficiente para retomar sem reler nada.
 
-**Atualizado:** 2026-10-26 · **Sessão anterior:** análise do canal com login (público + 48 h do 004)
+**Atualizado:** 2026-10-26 · **Sessão anterior:** 006 renderizado, QA PASS, pacote de publicação pronto
 
 ## Onde estamos
 
-Fase 2, **4/6 publicados** (001–004). Episódio atual: **005 — Voo 19**.
+Fase 2, **4/6 publicados** (001–004). **005 aprovado**, upload a cargo do usuário.
+Episódio atual: **006 — Passo Dyatlov** — produzido, **aguardando aprovação humana**.
+
+## Episódio 006 — Passo Dyatlov
+
+| Etapa | Estado |
+|---|---|
+| Briefing | **pronto** — Gaume & Puzrin 2021; processo 2-236 (1959); ICRF 2015–2019; PGR 2020 |
+| Gancho | **pronto** — “Eles cortaram a encosta para dormir. A neve esperou nove horas.” |
+| Roteiro | **pronto** — `114` palavras, **14 cenas**, máx **4,17 s**, 2,5 pal./s |
+| Voz | **pronta** — **cena por cena** (`montar-voz.py`), ls 1.10: 40,814 s de fala + 4,186 s de silêncio → `voz_raw.wav` **45,000 s**; `voz.wav` −22,15 LUFS, TP −8,12 |
+| Tempos | **exatos por construção** (`tempos_cenas.json` do `montar-voz.py`), sem ASR |
+| Composição | **pronta** — 14 cenas geradas do `roteiro.json`; contrato **OK, 1 aviso** (14 em vez de 13) |
+| QA visual | **concluído** — 14 frames do render; pior tinta **806 px** de 840; 6 cenas com fonte corrigida antes do render |
+| Render | **concluído** — `final_raw.mp4` 45,000 s, 1.350 frames, **5 segmentos**, 0 retries, 3m09,9s |
+| QA | **QA PASS** — `qa.md` escrito |
+| Publicação | **pacote pronto** — `publicacao.md` (48 chars, lint 98/100), `capa.png` em 32,6 s, cópia de upload SHA-verificada |
+
+**Números finais:** `final.mp4` **45,013 s · 3.859.117 bytes · −15,19 LUFS ·
+TP −1,30 dBFS** (ganho **+7,0 dB** sobre −22,17). SHA-256
+`B2AA85F3A308E155FAA953BF395BF1CC2E03A3FB66F3DC64CD1D9119F10033A6`.
+Capa em 32,6 s (“DOIS TÓRAX AFUNDADOS. / UM CRÂNIO RACHADO. / SEM FERIDA NA
+PELE.”). Título: `Passo Dyatlov: a avalanche chegou 9 horas depois`.
+
+**Números novos:** o `final_raw.mp4` já saiu em **−22,17 LUFS**, quase igual ao
+`voz.wav` (−22,15) — o drone a 0,16 é inaudível como projetado. O ganho foi
+**+7,0 dB**, o maior até agora (004 +6,5; 005 +1,05).
+
+**Achado do QA:** o `medir-texto.ps1` pegou uma quebra **invisível na
+estimativa** — com `fonte_px` 152 a cena 4 partia “UM DEGRAU” em duas linhas no
+frame. Seis cenas desceram de fonte antes do render (s4 152→136, s7 138→132,
+s8 124→118, s9 124→122, s11 138→130, s13 98→96).
+
+**Falso alarme registrado:** o frame de 5,9 s **parece** ter texto duplicado
+quando visto em escala reduzida. A medição por banda de tinta dá exatamente 3
+linhas + a linha pequena, 834 px de largura total (incluindo rodapé). Não há
+fantasma.
+
+**Por que 14 cenas:** no take único a última cena ficava **6,44 s** no ar
+(a voz só termina às 44 s e o remap fecha a cena no fim do vídeo). O veredito
+virou dois cartões — **1959 · FORÇA NATURAL** e **2020 · AVALANCHE** — e cada um
+cabe em ~3 s.
+
+**O que mudou no método:** o ASR do faster-whisper errou 28% dos tokens
+(“cortam um degrau” virou “Cota o mundo legal”) e o `remapear.py` derrapou
+**1,4 s** na cena 4. A voz passou a ser sintetizada por cena e concatenada com
+silêncio calculado — o tempo é a soma dos blocos. Novo script:
+`scripts/montar-voz.py` (documentado em `scripts/README.md` e
+`docs/ARQUITETURA.md` §3.2 e §6).
+
+**Próximo comando:** aprovação humana do 006 (e escuta de “Dyatlov”, “Kholat
+Saykhl”, “Thibeaux-Brignolles”). Sem o “publique”, nada sobe.
 
 ## Episódio 005 — Voo 19
 

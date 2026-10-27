@@ -10,7 +10,8 @@
 | `install-brain.ps1` | máquina nova / reinstalação | rede | binários em `C:\Users\valentim\Tools` |
 | `verify.ps1` | antes de produzir | — | versões no terminal |
 | `bench.ps1` | validar a máquina (G0) | `bench/index.html` | `bench/bench-45.mp4`, `logs/bench.json` |
-| `tts.py` | gerar narração | `narracao.txt` | `voz_raw.wav` |
+| `tts.py` | gerar narração (take único) | `narracao.txt` | `voz_raw.wav` |
+| `montar-voz.py` | gerar narração **cena por cena** (sem ASR) | `narracao_tts.txt` + `roteiro.json` | `voz_raw.wav` + `tempos_cenas.json` |
 | `transcribe.py` | obter tempos das cenas | `voz.wav` | `transcricao.json` |
 | `remapear.py` | casar cena ↔ tempo da voz | `narracao.txt` + `transcricao.json` | `tempos_cenas.json` |
 | `gerar-episodio.py` | escrever a composição | `roteiro.json` (+ `tempos_cenas.json`) | `index.html` |
@@ -79,6 +80,38 @@ Wrapper do Piper para caminhos com acento. O `piper.exe` falha porque o espeak-n
 - `--length-scale` maior = fala mais lenta (1.28 no piloto).
 - Saída crua; o processamento para 45,00 s é feito depois (ver skill `voz`).
 - **Nunca** chamar `piper.exe` direto em caminho acentuado.
+
+## montar-voz.py
+
+Sintetiza a narração **cena por cena** e escreve os tempos exatos. É o caminho
+alternativo ao take único (`tts.py` → `transcribe.py` → `remapear.py`).
+
+```powershell
+.\.venv\Scripts\python.exe scripts\montar-voz.py episodios\006-passo-dyatlov --length-scale 1.10
+.\.venv\Scripts\python.exe scripts\montar-voz.py laboratorio\001-60s-fawcett --duracao 60 --fim 1.5
+```
+
+Por que existe: o fluxo de take único **depende do ASR** para descobrir onde cada
+cena começa. Quando o Piper sai com prosódia incomum, o faster-whisper erra
+palavras e o alinhamento derrapa. No 006, 28% dos tokens saíram errados
+(“cortam um degrau” → “Cota o mundo legal”) e o `remapear.py` pôs a cena 4
+**1,4 s** fora. Aqui cada parágrafo de `narracao_tts.txt` é sintetizado separado:
+o tempo deixa de ser estimado, é a **soma dos blocos**.
+
+- Cada parágrafo de `narracao_tts.txt` = uma cena. Se `roteiro.json` existir, as
+  contagens têm de bater, senão o script aborta.
+- O silêncio que sobra (duração − fala − `--inicio` − `--fim`) é dividido entre
+  as fronteiras por `--pesos` (`1.2,0.8,...`, 1,0 = média).
+- `--inicio` (padrão 0,6 s) fica **dentro** do `voz_raw.wav` — por isso o
+  processamento em FFmpeg **não** leva `adelay`.
+- Sai `voz_raw.wav` (já com a duração total) + `tempos_cenas.json` no contrato do
+  `gerar-episodio.py` (`start`/`duration`, cena 1 em 0, última fechando a
+  duração).
+- Se a fala não couber, o script **não escreve** e sugere o `--length-scale`
+  exato a usar.
+- Trade-off: a prosódia é por cena (cada bloco começa do zero). Para frases de
+  2–5 s isso é respiro; para parágrafos longos de raciocínio contínuo, prefira o
+  take único.
 
 ## transcribe.py
 

@@ -18,7 +18,7 @@
 | Publicação | **publicado** (21/10/2026 e 23/10/2026) | 001: [Shorts](https://youtube.com/shorts/WKuNVjl3d5M); 002: [Shorts](https://youtube.com/shorts/n6dtveQguf4); 003: [Shorts](https://youtube.com/shorts/8ptxqKGe4Bk) |
 | Validação de nicho | **concluída (metadados)** | `logs/nicho-2026-10-21.json`, `docs/NICHO.md` |
 | Versionamento | **git iniciado (21/10/2026)** | commit `782df62`, tag `ep-001-publicado` |
-| 6 vídeos de validação | **4/6 publicados; 005 pronto e aprovado** | 001–004 no ar; 005 aguardando upload |
+| 6 vídeos de validação | **4/6 publicados; 005 aprovado (upload do usuário); 006 produzido** | 001–004 no ar; 005 e 006 prontos |
 | Episódio 002 — Mary Celeste | **publicado** (21/10/2026) | `episodios/002-mary-celeste/`, [Shorts](https://youtube.com/shorts/n6dtveQguf4) |
 | Episódio 003 — Roanoke | **publicado** (23/10/2026) | `episodios/003-roanoke/`, [Shorts](https://youtube.com/shorts/8ptxqKGe4Bk) |
 | Canal | **Dossiê 45**: nome, avatar/banner, descrição no ar e 9 shorts antigos privados | [canal](https://youtube.com/@Dossie45), `docs/REBRANDING.md` |
@@ -43,6 +43,7 @@
 - `scripts/check-contrato.ps1`: 29 invariantes da composição antes do render (resolução, cenas, áudio com duração real via ffprobe, `autoAlpha`, timeline montada).
 - `scripts/novo-episodio.ps1`: cria episódio a partir do template e carimba `.template-version` (sha256 + commit).
 - `scripts/gerar-episodio.py`: escreve o `index.html` a partir do `roteiro.json` (textos, tempos de `tempos_cenas.json`, fonte por cena, GSAP). Teste de aceitação: reproduz o 005 escrito à mão.
+- `scripts/montar-voz.py`: sintetiza a narração **cena por cena** e escreve `tempos_cenas.json` + `voz_raw.wav` já na duração final. Substitui o caminho take único + ASR quando o `faster-whisper` erra o texto (foi o caso do 006); o tempo passa a ser soma de blocos, não inferência.
 - `scripts/medir-texto.ps1`: mede a **tinta** do texto no frame (`snapshot` → PNG → `ffmpeg gray` → bbox por linha) e sugere `fonte_px`; `-Aplicar` grava no `roteiro.json`. Fecha o ciclo que custou 3 correções manuais no LAB 001.
 - `scripts/nicho.py`: coleta metadados de Shorts por nicho (views/inscrito, engajamento); não baixa vídeo.
 - `tools/youtube-agent-skill/`: vendor MIT com retenção 3 s/10 s, `hooks.json` e lint de título PT-BR; testes em `scripts/test_youtube_agent.py`.
@@ -98,6 +99,25 @@
 - Render segmentado 5×300, 0 retries, 3m11s; `final.mp4` **45,013 s, 3.344.787 bytes, −15,16 LUFS, TP −2,18** (ganho +1,05 dB); `qa.ps1` **PASS**.
 - Texto medido no frame: pior linha **772 px de 840**; capa `capa.png` em 38,6 s (“27 HOMENS / NENHUM CORPO”).
 - Aprovado em 26/10/2026 (“Aprovado, mas só depois do LAB 001”); **upload a cargo do usuário**; pacote em `episodios/005-voo-19/publicacao.md`.
+
+### Episódio 006 — Passo Dyatlov (produzido, QA PASS, 26/10/2026)
+- 114 palavras / **14 cenas** (2,5 pal./s), máx **4,17 s**. A cena 2 sobe a
+  aposta (barraca cortada por dentro, botas no lugar); data e lugar entram
+  colados a “nove esquiadores experientes”.
+- **Voz por cena** (`scripts/montar-voz.py`, `length_scale` 1,10): 40,814 s de
+  fala + 4,186 s de silêncio → `voz_raw.wav` **45,000 s**; `voz.wav` −22,15 LUFS,
+  TP −8,12. Motivo: o ASR errou 28% dos tokens e o remap derrapou 1,4 s.
+- 14 cenas porque no take único o veredito ficava **6,44 s** no ar; virou dois
+  cartões (1959 · força natural / 2020 · avalanche).
+- `medir-texto.ps1` corrigiu **6 cenas** antes do render; com 152 px a cena 4
+  quebrava “UM DEGRAU” em duas linhas. Pior tinta final: **806 px de 840**.
+- Render segmentado 5×300, 0 retries, 3m09,9s; `final.mp4` **45,013 s,
+  3.859.117 bytes, −15,19 LUFS, TP −1,30** (ganho **+7,0 dB**); `qa.ps1`
+  **PASS**; SHA-256 `B2AA85F3…0033A6`.
+- Capa em 32,6 s (“DOIS TÓRAX AFUNDADOS. / UM CRÂNIO RACHADO. / SEM FERIDA NA
+  PELE.”); título `Passo Dyatlov: a avalanche chegou 9 horas depois` (48 chars,
+  lint 98/100). Pacote em `episodios/006-passo-dyatlov/publicacao.md`.
+- **Aguardando aprovação humana**; nada publicado.
 
 ### Template
 - `templates/misterio-45/index.html` — composição validada, 13 cenas, áudio `voz`/`drone`, QA por `?t=`.
@@ -284,6 +304,9 @@ ffmpeg -i final_raw.mp4 -c:v copy `
 | Descoberta automática de canal não funciona | **yt-dlp não respeita os filtros de busca do YouTube** (testado em 26/10 com 2026.08.19): `sp=EgIYAQ%3D%3D` (Shorts) e `sp=…,CAI%3D` (ordenar por data) são ignorados; `ytsearchdate` **não existe** nesta versão; `/hashtag/<tag>` devolve público global (`truecrime` → 135 canais quase todos em inglês) | inverter o fluxo: **humano descobre, máquina mede**. Canais em `biblioteca/canais-semente.txt`, medidos por `scripts/scout.py` |
 | Aba `/shorts` não entrega `duration`, `playlist_count` nem data | limitação do modo flat | filtrar duração só quando existir; **posição na lista = recência** (a aba vem do mais novo para o mais antigo); views vêm arredondadas, então usar só razões |
 | Retenção média “não derivável” | o painel não mostra o número no CSV | `% média assistida = duração média ÷ 46 s` (002: 0:40 → 87,0%; 004: 0:21 → 45,7%) |
+| ASR erra e o `remapear.py` mostra o texto certo com **tempo errado** | o alinhamento depende da transcrição: palavra errada = fronteira errada (006: “cortam um degrau” → “Cota o mundo legal”, 28% dos tokens, cena 4 **1,4 s** fora; testado com `medium`, erra igual) | sintetizar **cena por cena** com `scripts/montar-voz.py`: o tempo vira soma de blocos. Se usar take único, conferir a taxa de alinhamento antes de confiar na tabela |
+| `medir-texto.ps1` mostra mais linhas que o roteiro (ex.: `5/4` na cena 1) | o kicker entra como bloco de tinta, como qualquer outra linha | conferir no frame: 4 linhas de título + kicker; não é quebra |
+| Frame do `final.mp4` parece ter texto duplicado | a imagem foi **exibida em escala reduzida**; serifa fina ganha fantasma | medir bandas de tinta (`ffmpeg → gray → max por linha`). No 006 a checagem deu exatamente 3 linhas + linha pequena |
 
 ## 8. Decisões que não se reabrem
 

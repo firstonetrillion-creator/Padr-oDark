@@ -1,0 +1,212 @@
+{
+  "language": "pt",
+  "duration": 12.202125,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 5.58,
+      "text": "Ara barraca KB, quadro um degal, o vento impira neve sob o corte, dois chegam ao cedo, dois",
+      "words": [
+        {
+          "start": 0.0,
+          "end": 0.22,
+          "word": "Ara"
+        },
+        {
+          "start": 0.22,
+          "end": 0.6,
+          "word": "barraca"
+        },
+        {
+          "start": 0.6,
+          "end": 1.06,
+          "word": "KB,"
+        },
+        {
+          "start": 1.26,
+          "end": 1.46,
+          "word": "quadro"
+        },
+        {
+          "start": 1.46,
+          "end": 1.58,
+          "word": "um"
+        },
+        {
+          "start": 1.58,
+          "end": 2.04,
+          "word": "degal,"
+        },
+        {
+          "start": 2.24,
+          "end": 2.36,
+          "word": "o"
+        },
+        {
+          "start": 2.36,
+          "end": 2.6,
+          "word": "vento"
+        },
+        {
+          "start": 2.6,
+          "end": 2.84,
+          "word": "impira"
+        },
+        {
+          "start": 2.84,
+          "end": 3.1,
+          "word": "neve"
+        },
+        {
+          "start": 3.1,
+          "end": 3.24,
+          "word": "sob"
+        },
+        {
+          "start": 3.24,
+          "end": 3.4,
+          "word": "o"
+        },
+        {
+          "start": 3.4,
+          "end": 4.0,
+          "word": "corte,"
+        },
+        {
+          "start": 4.1,
+          "end": 4.2,
+          "word": "dois"
+        },
+        {
+          "start": 4.2,
+          "end": 4.52,
+          "word": "chegam"
+        },
+        {
+          "start": 4.52,
+          "end": 4.78,
+          "word": "ao"
+        },
+        {
+          "start": 4.78,
+          "end": 5.1,
+          "word": "cedo,"
+        },
+        {
+          "start": 5.4,
+          "end": 5.58,
+          "word": "dois"
+        }
+      ]
+    },
+    {
+      "start": 5.58,
+      "end": 10.78,
+      "text": "toras afundados, um crânio rachado, dois físicos refazem a conta, de nove e meia",
+      "words": [
+        {
+          "start": 5.58,
+          "end": 5.86,
+          "word": "toras"
+        },
+        {
+          "start": 5.86,
+          "end": 6.66,
+          "word": "afundados,"
+        },
+        {
+          "start": 6.94,
+          "end": 7.08,
+          "word": "um"
+        },
+        {
+          "start": 7.08,
+          "end": 7.28,
+          "word": "crânio"
+        },
+        {
+          "start": 7.28,
+          "end": 7.9,
+          "word": "rachado,"
+        },
+        {
+          "start": 8.14,
+          "end": 8.34,
+          "word": "dois"
+        },
+        {
+          "start": 8.34,
+          "end": 8.8,
+          "word": "físicos"
+        },
+        {
+          "start": 8.8,
+          "end": 9.34,
+          "word": "refazem"
+        },
+        {
+          "start": 9.34,
+          "end": 9.54,
+          "word": "a"
+        },
+        {
+          "start": 9.54,
+          "end": 9.8,
+          "word": "conta,"
+        },
+        {
+          "start": 10.06,
+          "end": 10.2,
+          "word": "de"
+        },
+        {
+          "start": 10.2,
+          "end": 10.44,
+          "word": "nove"
+        },
+        {
+          "start": 10.44,
+          "end": 10.58,
+          "word": "e"
+        },
+        {
+          "start": 10.58,
+          "end": 10.78,
+          "word": "meia"
+        }
+      ]
+    },
+    {
+      "start": 10.78,
+      "end": 11.96,
+      "text": "a treze e meia horas.",
+      "words": [
+        {
+          "start": 10.78,
+          "end": 10.96,
+          "word": "a"
+        },
+        {
+          "start": 10.96,
+          "end": 11.24,
+          "word": "treze"
+        },
+        {
+          "start": 11.24,
+          "end": 11.36,
+          "word": "e"
+        },
+        {
+          "start": 11.36,
+          "end": 11.62,
+          "word": "meia"
+        },
+        {
+          "start": 11.62,
+          "end": 11.96,
+          "word": "horas."
+        }
+      ]
+    }
+  ]
+}
