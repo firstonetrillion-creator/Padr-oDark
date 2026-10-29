@@ -42,8 +42,18 @@
 - **Próxima leitura:** 29/10/2026 — **Gate 2** (≥3 dos 6 com `% média` > 50%;
   hoje **2 de 3** medidos).
 
-## 2026-10-29 — _(pendente)_ Gate 2
+## 2026-10-29 — Gate 2 fechado: **passa**, com 3 de 6 acima de 50%
 
-- **Número a preencher:** 005 `wlPEoYErlZQ` e 006 `K_sgJjNHg84`, 48 h.
-- **Decisão:** uma linha aqui, com o resultado e o que ela libera (escalar
-  cadência / ajustar uma variável / encerrar o formato).
+- **Número:** 005 **54,3%** (`% média`, 0:25 de 0:46) e 006 **50,0%** (0:23 de
+  0:46, no limite do arredondamento). Com 002 (87,0%) e 003 (87,0%), são **3 de
+  6** acima de 50% — o critério era ≥3.
+- **O que muda:** o v1 **não** é mais congelado por falta de leitura. Libera a
+  decisão sobre o canal 2 e o A/B de v2 — mas cada mudança continua sendo **uma
+  variável** e em **canal separado**.
+- **O que fica igual:** formato 45 s, tipográfico, Piper, 1080×1920/30 fps, a
+  regra “sem cartão parado depois do gancho”.
+- **Achado que sobrevive:** o 005 (12 cenas) **dobrou** a duração média do 004
+  (0:25 contra 0:21) com **menos** views; o 006 (14 cenas) ficou no limite e caiu
+  no gancho (ficaram 38,2% contra 46,5%). O miolo foi resolvido; o próximo
+  ajuste é o **primeiro segundo**.
+- **Próxima leitura:** primeiro vídeo do canal novo (8 vídeos até decidir).

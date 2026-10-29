@@ -245,3 +245,12 @@ Captura cada chamada de ferramenta via hooks, grava em SQLite+FTS5, comprime com
 - **Canal novo não é campo de teste do Dossiê 45.** O v1 dos 6 episódios fica congelado até o Gate 2; o teste de v2 (imagem de arquivo, som audível, 60 s) vira canal novo, não um sétimo vídeo.
 - **Episódios de canal novo ficam em `canais/<slug>/episodios/`.** Os scripts são path-based e funcionam sem alteração; `novo-episodio.ps1` grava sempre em `episodios/` (pendência: dar um `-Destino`).
 - **Candidatos, ainda não escolhidos:** A = mesmo formato + nicho adjacente (true crime PT-BR); B = mesmo nicho + 60 s; C = mesmo nicho + desenho sonoro audível. **Escolha adiada em 27/10 para depois do Gate 2** (decisão do usuário): o número de 005/006 diz se o formato já está resolvido ou se o problema é o miolo, e isso muda qual variável vale testar.
+
+### Gate 2 — fechado em 2026-10-29
+
+- **Resultado: PASSA.** `% média assistida` em 48 h: 002 **87,0%**, 003 **87,0%**, 005 **54,3%** → **3 de 6** acima de 50%. O critério era ≥3 de 6. 004 45,7%, 006 **50,0%** (limite do arredondamento), 001 33,3% (fora da amostra).
+- **O que fica decidido:** o formato de 45 s tipográfico **não está descartado** — mas também não está otimizado: 005 (12 cenas, gerado do JSON) fez **54,3%** com 224 views, e 006 (14 cenas) ficou em 50,0% com 79 views e **38,2%** de “ficaram para assistir”.
+- **Regra que sobrevive:** o que derrubava o miolo era o **estado parado**, não a quantidade de texto — o 005 dobrou a duração média do 004 (0:25 contra 0:21) com menos views.
+- **Próximo alvo declarado:** o **primeiro segundo**. O 006 abria com contexto (“Eles cortaram a encosta para dormir”) e perdeu no gancho; o 005 abria com ação (“Cinco aviões pediram socorro”).
+- **O gate não autoriza** mudar duas variáveis no Dossiê 45: mudança de visual/fonte/imagem continua indo para **canal separado**, uma por vez.
+- **Limite de medição registrado:** 3 s / 10 s da curva não são legíveis no painel controlado (hover sintético não funciona). Só views, “Stayed to watch” e duração média entram no registro; o resto fica vazio, nunca estimado.

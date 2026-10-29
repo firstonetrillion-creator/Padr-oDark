@@ -2,7 +2,81 @@
 
 > Linha do tempo do que foi **entregue**, com data, evidência e decisão.
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
-> Mais recente no topo. Última atualização: **2026-10-27**.
+> Mais recente no topo. Última atualização: **2026-10-29**.
+
+## 2026-10-29 — Gate 2 fechado: **passa**, 3 de 6 acima de 50%
+
+**Entregue**
+- Retenção de 48 h de **005** e **006** lida no Studio (vídeo a vídeo, login,
+  1 recarregamento por página).
+  - **005 Voo 19:** 224 views, +2 inscritos, ficaram **46,5%**, duração média
+    **0:25** de 0:46 → **54,3%**.
+  - **006 Passo Dyatlov:** 79 views, 0 inscritos, ficaram **38,2%**, duração
+    média **0:23** de 0:46 → **50,0%** (no limite do arredondamento).
+- `episodios/005-voo-19/retencao.md` (+ `retencao-48h.png`) e
+  `episodios/006-passo-dyatlov/retencao.md`.
+- `biblioteca/publicados.csv` e `canais/dossie45/metricas.csv` com os dois
+  vídeos completos.
+
+**Decisão**
+- **Gate 2 PASSA:** 002 87,0%, 003 87,0%, 005 54,3% → **3 de 6** acima de 50%
+  (o critério era ≥3). O 001 fica fora (33,3%, anterior à disciplina de gancho).
+- O **v1 deixa de ser congelado pelo gate**; mudança de visual/fonte/imagem
+  continua entrando como **uma variável em canal separado**.
+- **Achado:** o 005 (12 cenas, gerado do JSON) **dobrou** a duração média do 004
+  (0:25 contra 0:21) com **menos** views → o miolo caía por **estado parado**,
+  não por excesso de texto. O 006 (14 cenas) ficou no limite e **perdeu no
+  gancho** (38,2%) → o próximo ajuste é o **primeiro segundo**.
+
+**Pendente**
+- Aprovar ou não o `sombra-direta` 001 (QA PASS, cópia pronta) — depende de conta
+  Google separada.
+- Escolher o modelo do canal 2 (A/B/C), adiado de propósito para depois do gate.
+- 3 s / 10 s da curva continuam **não lidos**: o painel não expõe os pontos em
+  texto e o *hover* sintético não funciona (registrado em `MEMORIA.md` §7).
+
+## 2026-10-27 — aceleração: cronômetro por etapa e layout como configuração
+
+**Entregue**
+- `scripts/tempo.ps1` — cronômetro por etapa: duas chamadas com o mesmo
+  episódio+etapa (abre/fecha), uma linha por execução em `logs/tempo.csv`
+  (`data, episodio, etapa, inicio, fim, minutos, nota`), estado do cronômetro
+  aberto em `logs/tempo.aberto.json`. `-Relatorio` agrega por etapa (total,
+  execuções, média, % do total) e por episódio. Recusa marcar outra etapa com
+  cronômetro aberto; `-Forcar` fecha a anterior.
+- `docs/LAYOUTS.md` — especificação do v2 visual: contrato novo do
+  `roteiro.json` (campo `tipo`, retrocompatível — **sem `tipo` a cena é
+  `texto`**), os oito layouts com técnica e custo, manifesto de assets com
+  `sha256`, política de imagem, o que muda em cada script e plano de adoção
+  (LAB 002 → template → canal 2).
+- `docs/ARQUITETURA.md` §6 (linha do `tempo.ps1`) e §7 (ponteiro para o v2);
+  `scripts/README.md` com a seção do script.
+
+**Decisão**
+- **Acelerar não é trocar de motor.** Render de 45 s leva ~3m10s e o vídeo
+  completo ~2 h: o render é ~3% do custo. 16 vídeos (2 canais × 8) dão ~1 h de
+  render contra ~32 h de trabalho. O gargalo é pesquisa, decisão e espera de
+  aprovação — não o Chrome.
+- **Layout vira dado, não CSS por canal.** Abrir canal novo passa a ser
+  configuração + roteiros; o motor é um só e o v1 continua válido sem alteração.
+- **Imagem por IA fica fora de produção.** O tier grátis de `build.nvidia.com` é
+  governado pelo *NVIDIA API Trial Terms* e o FLUX.1-dev está marcado como
+  *non-commercial*; 40 RPM não é o limite, a licença é. Serve para teste de
+  estilo, com crédito de “imagem ilustrativa”.
+
+**Evidência**
+- `tempo.ps1` testado em CSV temporário: abre/fecha (`roteiro`, `voz`), nota
+  gravada, relatório por etapa e por episódio, recusa de conflito e `-Forcar`
+  fechando a execução anterior.
+- Números usados na decisão: render 45 s **3m09,9s** (006) e 60 s **4m03s**
+  (LAB 001); `docs/PLANO.md` registra **~2 h por vídeo** com o gerador.
+
+**Pendente**
+- Sem medição retroativa: `docs/HISTORICO.md` só tem granularidade de dia, então
+  a base de tempo começa no **007** (ou no LAB 002).
+- Gate 2 em **29/10** — nada de visual novo antes disso.
+- Três decisões abertas de `docs/LAYOUTS.md` §9 (imagem de arquivo × IA × só
+  CSS/SVG; som junto ou separado; regra 7 para footage).
 
 ## 2026-10-27 — método de canais: um canal por modelo, um modelo por canal
 

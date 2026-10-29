@@ -4,13 +4,24 @@
 > Depois de uma compactação, a versão atual deste arquivo é relida do disco e vira a baseline da sessão.
 > Memória longa continua em `MEMORIA.md`; aqui só o suficiente para retomar sem reler nada.
 
-**Atualizado:** 2026-10-27 · **Sessão anterior:** 006 publicado; **6 de 6 no ar** · método de canais criado
+**Atualizado:** 2026-10-29 · **Gate 2 fechado: PASSA (3 de 6 > 50%)** · 6 de 6 no ar · método de canais criado · **canal `sombra-direta` com 001 pronto, aguardando aprovação**
 
 ## Onde estamos
 
-Fase 2 **concluída: 6/6 publicados** (001–006). Os dois últimos subiram no mesmo
-dia (005 e 006, 27/10), então as duas janelas de 48 h fecham juntas em **29/10** —
-é quando o **Gate 2** fica decidível. Nada novo em produção até lá.
+**Gate 2 fechado em 29/10/2026 — PASSA.** Com 005 em **54,3%** e 006 em **50,0%**
+(no limite), o canal fecha **3 de 6** acima de 50% de `% média assistida`
+(002 87,0%; 003 87,0%; 005 54,3%), e o critério era ≥3. Os 6 vídeos da Fase 2
+estão no ar e medidos.
+
+**O que o gate libera:** decidir o modelo do canal 2 e o A/B de v2 — cada um
+como **uma variável em canal separado**. **O que ele não faz:** autorizar mudar
+duas coisas no Dossiê 45, que segue com o v1 e com a regra “sem cartão parado
+depois do gancho”.
+
+**Achado que sobrevive ao gate:** o 005 (12 cenas) **dobrou** a duração média do
+004 (0:25 contra 0:21) com **menos views** (224 contra 1.200); o 006 (14 cenas)
+ficou no limite e **caiu no gancho** (ficaram 38,2% contra 46,5%). O miolo foi
+resolvido — o próximo ajuste é o **primeiro segundo**.
 
 ## Episódio 006 — Passo Dyatlov
 
@@ -59,12 +70,10 @@ silêncio calculado — o tempo é a soma dos blocos. Novo script:
 `scripts/montar-voz.py` (documentado em `scripts/README.md` e
 `docs/ARQUITETURA.md` §3.2 e §6).
 
-**Próximo comando:** em **29/10**, ler a retenção de 48 h de **005 e 006** no
-Studio (vídeo a vídeo, `.../analytics/tab-overview/period-default?hl=en&cb=<ts>`,
-recarregando até o card aparecer), preencher `biblioteca/publicados.csv` **e**
-`canais/dossie45/metricas.csv` e fechar o **Gate 2** — basta **um** dos dois
-passar de 50% de % média assistida. Antes disso **não se abre canal novo**: a
-escolha do modelo (A/B/C) é do usuário, não do agente.
+**Próximo comando:** ~~em 29/10, ler a retenção de 48 h de 005 e 006~~ **feito
+em 29/10**: 005 **54,3%**, 006 **50,0%**. Registros preenchidos
+(`biblioteca/publicados.csv`, `canais/dossie45/metricas.csv`) e **Gate 2 fechado
+com 3 de 6**. Ver `episodios/006-passo-dyatlov/retencao.md`.
 
 ## Episódio 005 — Voo 19
 
@@ -278,15 +287,82 @@ PT-BR); B = mesmo nicho + 60 s; C = mesmo nicho + som audível. **Decisão adiad
 pelo usuário em 27/10 para depois do Gate 2** — o resultado de 005/006 muda qual
 variável vale testar.
 
+## Novo canal — `sombra-direta` (ativo, episódio 001 pronto)
+
+Criado em 27/10/2026 como canal de teste fora da fila do Dossiê 45. Episódio 001
+produzido e com QA PASS, aguardando aprovação humana para publicação.
+
+| Item | Valor |
+|---|---|
+| Nome | Sombra Direta |
+| Slug | `sombra-direta` |
+| Nicho | psicologia sombria / manipulação mental / estoicismo vs Maquiavel |
+| Template | `templates/sombra-cinema/` (CSS+GSAP, sem WebGL) |
+| Episódio 001 | `canais/sombra-direta/episodios/001-mente-em-jogo/` |
+| Estado | `ativo` |
+| Vídeos produzidos | 1 |
+| Bloqueio | **3 variáveis mudam vs Dossiê 45** (nicho, visual, áudio) — método permite 1; teste livre sem leitura comparativa controlada |
+
+### Episódio 001 — Mente em Jogo (concluído)
+
+**Gancho:** "Você é manipulado agora. E não sente nada." (fórmula 4 — Consequência)  
+**Tema:** estoicismo vs Maquiavel / manipulação mental  
+**Tom:** sombrio, seco, sem adjetivos vazios  
+**Duração:** 45,01 s, 11 cenas, ~101 palavras  
+**Visual:** CSS + GSAP apenas (sem WebGL/Three.js), fundo animado, texto fade+scale, glitch por CSS no twist  
+**Áudio:** voz em 1,0 + bed sonoro audível + 3 pulsos de impacto  
+
+| Etapa | Estado |
+|---|---|
+| Briefing / gancho / roteiro | prontos |
+| narracao_tts.txt | pronto (11 parágrafos, 1 por cena) |
+| Voz | pronta (Piper, ls 1.20, cena por cena, 45.000 s) |
+| Bed + impacto | prontos (FFmpeg lavfi) |
+| index.html | pronto (template sombra-cinema) |
+| Contrato | OK (3 avisos aceitáveis) |
+| Render | concluído — final_raw.mp4 45,0 s, 1350 frames, 5 segmentos, 0 retries |
+| Áudio normalizado | concluído — +7,0 dB, limiter 0,85 |
+| QA | **QA PASS** — −14,6 LUFS, 1080×1920, 30 fps, AAC 48 kHz |
+| Capa | pronta — `capa.png` em 2,5 s |
+| Cópia de publicação | pronta — `001-mente-em-jogo_shorts_v1.mp4` |
+| publicacao.md | pronto |
+| qa.md | assinado |
+| SHA-256 | `F1466221164822E5696D0FE5B8B2112AC3E6055F61B7CD0E25B1D3D7B43ABB5E` |
+| Aprovação humana | **pendente** |
+| Publicação | **pendente** (conta Google separada do Dossiê 45) |
+| Retenção 48 h | **pendente** — registrar em `canais/sombra-direta/metricas.csv` |
+
+**Atenção:** nada disso entra no Dossiê 45. v1 do 45 fica congelado até o Gate 2
+(29/10). Publicação de `sombra-direta` só em conta Google separada e com
+aprovação humana explícita.
+
+## Aceleração (novo em 27/10)
+
+O render é **~3% do custo** (45 s = 3m10s; vídeo completo = ~2 h). 16 vídeos, que
+são 2 canais × 8, dão **~1 h de render contra ~32 h de trabalho**. O gargalo é
+pesquisa, decisão e espera de aprovação — não a máquina.
+
+| Item | Estado |
+|---|---|
+| `scripts/tempo.ps1` | **pronto** — abre/fecha por etapa, grava `logs/tempo.csv`, `-Relatorio` agrega por etapa e por episódio. Sem base retroativa: começa no 007 |
+| `docs/LAYOUTS.md` | **especificação pronta** — 8 tipos de cena, contrato retrocompatível (`sem tipo = texto`), manifesto de assets, política de imagem, plano LAB 002 |
+| IA (`build.nvidia.com`) | **fora de produção** — tier é *trial* e FLUX.1-dev é *non-commercial*; 40 RPM não é o limite, a licença é. Serve para teste de estilo |
+| Decisões abertas | imagem de arquivo × IA × só CSS/SVG; som junto ou separado; regra 7 para footage |
+
+**Nada implementado no visual:** os layouts entram no template **depois** do
+Gate 2, via LAB 002 (20–30 s, 3 layouts), nunca direto num episódio.
+
 ## Esperando (nada a fazer até as datas)
 
-- **2026-10-29** — retenção de 48 h de **005** (`wlPEoYErlZQ`) e **006**
-  (`K_sgJjNHg84`), as duas no mesmo dia. Uma delas fechando
-  acima de 50% de % média assistida fecha o **Gate 2**.
-  - **005** é o primeiro vídeo inteiramente gerado por JSON, 12 cenas, nenhuma
-    acima de 5 s: testa a regra “sem cartão parado depois do gancho”.
-  - **006** tem 14 cenas, voz por cena e o mesmo v1 visual: testa se o problema
-    do miolo era só o cartão estático ou algo mais.
+- ~~**2026-10-29** — retenção de 48 h de **005** e **006**~~ **feito** (29/10):
+  **005 54,3%** (224 views, ficaram 46,5%, 0:25 de 0:46) e **006 50,0%**
+  (79 views, ficaram 38,2%, 0:23 de 0:46 — no limite do arredondamento).
+  **Gate 2 PASSA com 3 de 6.** Evidência em `episodios/005-voo-19/retencao.md`
+  e `episodios/006-passo-dyatlov/retencao.md`.
+  - **005** era o teste da regra “sem cartão parado depois do gancho”: **passou**,
+    e dobrou a duração média do 004 com menos views.
+  - **006** testava se 14 cenas resolviam o miolo: ficou no limite e **perdeu no
+    gancho** (38,2%). O miolo não é mais o problema; o primeiro segundo é.
 - ~~**2026-10-26** — retenção de 48 h do **004**~~ **feito**: painel relido com
   login em 26/10. Falta só o `Todos.csv` de curva (aba Content do Studio não
   carrega). Ver `episodios/004-mv-joyita/retencao.md`.
@@ -294,11 +370,22 @@ variável vale testar.
   (36,1% vs 42,2%): slide de −32,4 p.p. entre 10 s e 44,5 s. Hipótese: a
   explicação do CROATOAN entregue cedo demais.
 
+**Próximo comando (o que decidir agora):** o gate está fechado, então a fila é
+**decisão**, não produção. Em ordem:
+1. **Aprovar ou não** o `sombra-direta` 001 (`QA PASS`, cópia pronta) — precisa de
+   conta Google separada, que ainda não existe.
+2. **Escolher o modelo do canal 2** (A/B/C, adiado de propósito para depois do
+   gate). Com 005 acima de 50% e 006 no limite por gancho, a leitura favorece
+   testar **gancho/visual** antes de nicho.
+3. Só depois: LAB 002 (layouts) e o A/B de v2.
+
 ## Bloqueios e regras vivas
 
 - **Aprovação é explícita por vídeo.** “publique” conta; “conclua” ou “vamos aguardar” não.
 - Um render por vez; 1080×1920, 30 fps, H.264 + AAC.
-- v1 congelado até o Gate 2: sem fonte/efeito novo.
+- **v1 não está mais congelado pelo Gate 2** (fechado em 29/10), mas continua
+  sendo a referência: mudança de fonte/efeito/imagem entra como **uma variável**
+  em **canal separado**, nunca direto no Dossiê 45.
 - Alerta em `qa.md`: cena 2 é cartão estático de 6,57 s. Só dividir se a retenção do 003 pedir.
 - `docs/PLANO.md` (correção da fonte 004 → Comissão NZ, Apia) commitado junto com o 004.
 - **Gate 2 usa janela fixa de 48 h** para “% média assistida”. A duração média
