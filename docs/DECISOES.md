@@ -254,3 +254,10 @@ Captura cada chamada de ferramenta via hooks, grava em SQLite+FTS5, comprime com
 - **Próximo alvo declarado:** o **primeiro segundo**. O 006 abria com contexto (“Eles cortaram a encosta para dormir”) e perdeu no gancho; o 005 abria com ação (“Cinco aviões pediram socorro”).
 - **O gate não autoriza** mudar duas variáveis no Dossiê 45: mudança de visual/fonte/imagem continua indo para **canal separado**, uma por vez.
 - **Limite de medição registrado:** 3 s / 10 s da curva não são legíveis no painel controlado (hover sintético não funciona). Só views, “Stayed to watch” e duração média entram no registro; o resto fica vazio, nunca estimado.
+
+### Canal único — decidido em 2026-10-29
+
+- **O estúdio opera um canal só: o Dossiê 45.** `sombra-direta` (001 com QA PASS, nunca publicado) e `mente-obscura` (ficha + roteiro, sem render) ficam **pausados** — arquivo em disco, não apagados, sem linha removida do `registro.csv`.
+- **Motivo:** a decisão de escala do usuário em 29/10 é **produzir conteúdo**, não abrir canal. Com um canal, o custo por vídeo cai (não há ficha, identidade e medição paralelas) e a leitura fica numa série só.
+- **Consequência metodológica:** o teste de v2 (imagem, som, 60 s) **não** tem mais para onde ir. Ou entra como **uma variável na própria série** (com o risco de contaminar a comparação), ou espera um segundo canal. Enquanto isso, a série continua no v1.
+- **O que isso não muda:** aprovação humana por vídeo, janela fixa de 48 h, um render por vez, `% média` como régua.
