@@ -261,3 +261,14 @@ Captura cada chamada de ferramenta via hooks, grava em SQLite+FTS5, comprime com
 - **Motivo:** a decisão de escala do usuário em 29/10 é **produzir conteúdo**, não abrir canal. Com um canal, o custo por vídeo cai (não há ficha, identidade e medição paralelas) e a leitura fica numa série só.
 - **Consequência metodológica:** o teste de v2 (imagem, som, 60 s) **não** tem mais para onde ir. Ou entra como **uma variável na própria série** (com o risco de contaminar a comparação), ou espera um segundo canal. Enquanto isso, a série continua no v1.
 - **O que isso não muda:** aprovação humana por vídeo, janela fixa de 48 h, um render por vez, `% média` como régua.
+
+### Lote 007–011 — aprovado em 2026-10-29
+
+- **A variável do lote é o gancho** (o primeiro segundo), porque o Gate 2 isolou exatamente isso: 005 abriu com ação e fez **46,5%** de “ficaram para assistir”; 006 abriu com contexto e fez **38,2%**, com o mesmo visual e a mesma voz.
+- **Fixo:** 45 s, **12 cartões**, nenhum acima de 5 s, 1 ideia por cartão, sem cartão de contexto depois do gancho, v1 tipográfico, Piper `pt_BR-faber-medium`, 1080×1920/30 fps, ~−15 LUFS.
+- **Hipótese:** mediana de “ficaram” **≥ 46,5%** e de `% média` **> 54,3%** nos 5 vídeos.
+- **Critério:** as duas medianas passando → adotar a regra e escalar para os 30 shorts da Fase 3; só uma → a próxima variável é **ritmo/visual** (LAB 002); nenhuma → reavaliar o formato.
+- **Cadência fixa:** 1/dia, 19h de Brasília, seg–sex. **Horário é constante, não variável** — com 5 vídeos não se isola horário de dia da semana e de gancho. Não há dado de horário no projeto; Shorts feed foi 92,2% (003) e 98,9% (004) das views.
+- **Temas aprovados:** Somerton (1948), Max Headroom (1987), Máscaras de chumbo (1966), Carroll A. Deering (1921), SS Baychimo (1931–1969). Reservas: Hinterkaifeck, Mulher de Isdal, Yuba County Five, Voynich.
+- **Aprovar o lote é aprovar os temas**, não a publicação: a aprovação continua **por vídeo**, explícita.
+- **Custo:** ~10 h (≈6 h de briefing/fonte) + 5 renders de ~3 min, um por vez.

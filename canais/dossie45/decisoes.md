@@ -57,3 +57,16 @@
   no gancho (ficaram 38,2% contra 46,5%). O miolo foi resolvido; o próximo
   ajuste é o **primeiro segundo**.
 - **Próxima leitura:** primeiro vídeo do canal novo (8 vídeos até decidir).
+
+## 2026-10-29 — lote 007–011: o gancho é a variável, e o canal fica só este
+
+- **Número:** 005 com **46,5%** de “ficaram para assistir” e **54,3%** de
+  `% média`; 006 com **38,2%** e 50,0% — mesma voz, mesmo visual, mesma janela.
+  A diferença é o **primeiro segundo**: ação contra contexto.
+- **O que muda:** o lote inteiro abre com ação/consequência, nunca contexto. 12
+  cartões, ≤5 s, v1 intacto.
+- **O que fica igual:** tudo o mais. O canal segue sendo um só (o Dossiê 45);
+  `sombra-direta` e `mente-obscura` ficam pausados.
+- **Cadência:** 1/dia, 19h de Brasília, seg–sex — **fixa durante o lote**.
+- **Próxima leitura:** 48 h após o 011 (mediana de “ficaram” e de `% média`).
+

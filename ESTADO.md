@@ -4,7 +4,7 @@
 > Depois de uma compactação, a versão atual deste arquivo é relida do disco e vira a baseline da sessão.
 > Memória longa continua em `MEMORIA.md`; aqui só o suficiente para retomar sem reler nada.
 
-**Atualizado:** 2026-10-29 · **Gate 2 fechado: PASSA (3 de 6 > 50%)** · 6 de 6 no ar · método de canais criado · **canal `sombra-direta` com 001 pronto, aguardando aprovação**
+**Atualizado:** 2026-10-29 · **Gate 2 PASSA (3 de 6)** · **lote 007–011 aprovado (temas), nada produzido** · canal único · `sombra-direta` pausado
 
 ## Onde estamos
 
@@ -22,6 +22,29 @@ depois do gancho”.
 004 (0:25 contra 0:21) com **menos views** (224 contra 1.200); o 006 (14 cenas)
 ficou no limite e **caiu no gancho** (ficaram 38,2% contra 46,5%). O miolo foi
 resolvido — o próximo ajuste é o **primeiro segundo**.
+
+## Fila imediata — lote 007–011 (temas **aprovados** em 29/10)
+
+Plano completo em `docs/PLANO.md` §“Fase 3 — lote 007–011”. **Nada produzido
+ainda.** Canal único: Dossiê 45 (`sombra-direta` e `mente-obscura` pausados).
+
+**A variável do lote é o gancho:** o primeiro segundo abre com ação/consequência,
+nunca com contexto. Tudo o mais fica igual ao 005 (45 s, **12 cartões**, ≤5 s,
+v1, Piper, 1080×1920/30 fps). **Hipótese:** mediana de “ficaram” ≥ 46,5% e de
+`% média` > 54,3%. **Cadência fixa:** 1/dia, 19h de Brasília, seg–sex.
+
+| # | Slug | Tema | Gancho |
+|---|---|---|---|
+| 007 | `007-homem-de-somerton` | Homem de Somerton (1948) | “Um homem morto na praia. Um código costurado na roupa.” |
+| 008 | `008-max-headroom` | Invasão Max Headroom (1987) | “Dois canais de TV foram invadidos ao vivo. Ninguém foi preso.” |
+| 009 | `009-mascaras-de-chumbo` | Máscaras de chumbo (1966) | “Dois homens mortos no morro. Máscaras de chumbo. Nenhuma marca.” |
+| 010 | `010-carroll-a-deering` | Carroll A. Deering (1921) | “O navio apareceu vazio. E a comida ainda estava na mesa.” |
+| 011 | `011-ss-baychimo` | SS Baychimo (1931–1969) | “Abandonaram o navio no gelo. Ele navegou 38 anos sozinho.” |
+
+**Próximo comando:** começar pelo **007** — `briefing.md` com fontes numeradas,
+depois gancho e `roteiro.json`. Comando:
+`.\scripts\novo-episodio.ps1 007-homem-de-somerton "Somerton: o homem sem nome por 74 anos"`.
+Aprovar os temas **não** autoriza publicar: aprovação é por vídeo.
 
 ## Episódio 006 — Passo Dyatlov
 

@@ -72,6 +72,103 @@ discrimina — ver nota abaixo):
 > falhar não é gate. E o 004 mostra por que o número do painel sozinho engana:
 > média 45,7% com **fim de curva em 17,3%**. Daí os dois guarda-corpos.
 
+## Fase 3 — lote 007–011 (aprovado em 2026-10-29)
+
+**Estado: aprovado pelo usuário em 29/10/2026. Nada produzido ainda.** É a fila
+imediata do canal único (Dossiê 45).
+
+### O que o lote testa
+
+O Gate 2 mostrou onde está o furo: **o primeiro segundo**, não o miolo.
+
+| Vídeo | Cartões | Ficaram para assistir | `% média` |
+|---|---:|---:|---:|
+| 005 (12 cartões, ≤5 s, gerado do JSON) | 12 | **46,5%** | **54,3%** |
+| 006 (14 cartões, mesmo visual) | 14 | **38,2%** | 50,0% |
+
+O 005 abre com ação (“Cinco aviões pediram socorro”); o 006 abre com contexto
+(“Eles cortaram a encosta para dormir”) e perde 8,3 p.p. de “ficaram”.
+
+- **A variável única do lote é o gancho:** o primeiro segundo abre com **ação ou
+  consequência**, nunca com contexto, data ou apresentação.
+- **Fica igual ao 005:** 45 s, **12 cartões**, nenhum acima de 5 s, 1 ideia por
+  cartão, sem cartão de contexto depois do gancho, fecho com consequência nova,
+  v1 tipográfico, Piper `pt_BR-faber-medium`, 1080×1920 · 30 fps · H.264 + AAC,
+  ~−15 LUFS, 2,5 pal./s.
+- **Hipótese:** mediana de “ficaram para assistir” **≥ 46,5%** e mediana de
+  `% média` **> 54,3%** nos 5 vídeos.
+- **Critério de decisão (depois do 011, 48 h):**
+  - **Adotar a regra** e escalar para os 30 shorts da Fase 3, se as duas medianas
+    passarem.
+  - **Se só uma passar:** o gancho não é a alavanca sozinho — a próxima variável
+    é **ritmo/visual**, e aí sim o LAB 002 (layouts) entra.
+  - **Se nenhuma passar:** o problema não é gancho nem miolo; reavaliar formato
+    (45 s é curto?) antes de produzir mais.
+
+### Cadência e horário (constantes, não variáveis)
+
+- **1 vídeo por dia, 19h de Brasília, segunda a sexta.** Slot **fixo** durante o
+  lote: com 5 vídeos não se testa horário (confunde com dia da semana e com o
+  próprio gancho). Fixar é remover ruído, não otimizar.
+- Não temos dado de horário. O que se sabe: Shorts feed foi **92,2%** das views
+  do 003 e **98,9%** do 004 — o feed não respeita horário. No 005 o search já
+  pesou **28,6%**, e aí horário pesa.
+- **Upload é do usuário** (agendamento manual no Studio). Automação de publicação
+  continua fora até depois do gate 3.
+
+### Os 5 temas aprovados
+
+Cada um precisa de `briefing.md` com **fontes numeradas** antes do roteiro.
+Gancho = o que aparece no primeiro segundo.
+
+| # | Slug sugerido | Tema | Gancho (1º segundo) | Fontes primárias |
+|---|---|---|---|---|
+| **007** | `007-homem-de-somerton` | Homem de Somerton (Adelaide, 1948) | “Um homem morto na praia. Um código costurado na roupa.” | Inquérito da polícia da Austrália do Sul (1949); identificação por genealogia genética — Univ. de Adelaide (2022) |
+| **008** | `008-max-headroom` | Invasão Max Headroom (Chicago, 1987) | “Dois canais de TV foram invadidos ao vivo. Ninguém foi preso.” | Registros da FCC; transmissões da WGN-TV e WTTW (22/11/1987) |
+| **009** | `009-mascaras-de-chumbo` | Máscaras de chumbo (Morro do Vintém, 1966) | “Dois homens mortos no morro. Máscaras de chumbo. Nenhuma marca.” | Inquérito da polícia do Rio; laudos do IML; imprensa de 1966 — **assunto nacional** |
+| **010** | `010-carroll-a-deering` | Carroll A. Deering (1921) | “O navio apareceu vazio. E a comida ainda estava na mesa.” | Inquérito do Departamento de Comércio dos EUA (1922); Guarda Costeira |
+| **011** | `011-ss-baychimo` | SS Baychimo (1931–1969) | “Abandonaram o navio no gelo. Ele navegou 38 anos sozinho.” | Registros da Hudson's Bay Company; relatos de avistamento 1931–1969 |
+
+**Reservas aprovadas como troca:** Hinterkaifeck (1922), Mulher de Isdal (1970),
+Yuba County Five (1978), Voynich (Yale, MS 408).
+
+**Títulos sugeridos** (≤60 caracteres, sujeitos ao lint `title.py` antes de publicar):
+
+| # | Título | Chars |
+|---|---|---:|
+| 007 | `Somerton: o homem sem nome por 74 anos` | 38 |
+| 008 | `Max Headroom: a TV invadida que ninguém explicou` | 48 |
+| 009 | `Máscaras de chumbo: dois mortos sem uma marca` | 45 |
+| 010 | `Carroll Deering: o navio que voltou sem ninguém` | 47 |
+| 011 | `Baychimo: o navio que navegou 38 anos sozinho` | 45 |
+
+**Cuidados de fonte, declarados antes do roteiro:**
+- **Deering:** é ligado ao Triângulo das Bermudas por literatura posterior; o
+  inquérito de 1922 **não** sustenta isso. Se a lenda entrar, entra marcada.
+- **Máscaras de chumbo:** o bilhete (“16:30… engolir cápsula… aguardar sinal”) é
+  documento do inquérito; a **interpretação** (contato, OVNI, seita) não é.
+- **Max Headroom:** o mais recente da série; se o canal ficar só em casos antigos,
+  trocar por Hinterkaifeck.
+- **Somerton:** a identificação de 2022 é resultado de pesquisa, não laudo
+  oficial — dizer “identificado por genealogia genética”, não “caso resolvido”.
+
+### Custo e ordem de execução
+
+| Item | Valor |
+|---|---|
+| Episódio completo (com o gerador) | ~2 h |
+| Lote de 5 | **~10 h** (≈6 h só de briefing/fonte) |
+| Render | 5 × ~3 min, **um por vez** |
+| Ciclo por vídeo | briefing → gancho → `roteiro.json` → `gerar-episodio.py` → `medir-texto.ps1` → voz (`montar-voz.py`) → contrato → render → `qa.ps1` → **aprovação humana** → upload → 48 h |
+
+```powershell
+# próximo comando, por episódio
+.\scripts\novo-episodio.ps1 007-homem-de-somerton "Somerton: o homem sem nome por 74 anos"
+```
+
+**Regra que não muda:** aprovação humana **por vídeo**, explícita. Aprovar o lote
+(29/10) é aprovar os temas, não autorizar publicação.
+
 ## Escala e aceleração — decisão de 26/10/2026
 
 Levantamento completo em **`docs/ESCALA.md`**. Resumo:

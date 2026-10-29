@@ -4,6 +4,33 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-29**.
 
+## 2026-10-29 — lote 007–011 aprovado: o gancho é a variável
+
+**Entregue**
+- `docs/PLANO.md` §“Fase 3 — lote 007–011”: variável, hipótese, cadência fixa,
+  os 5 temas com fontes primárias, cuidados de fonte, custo e ordem de execução.
+- `ESTADO.md` e `MEMORIA.md` §3.6 com a fila imediata; `canais/registro.csv` com
+  `dossie45` como canal único e os outros dois `pausado`.
+
+**Decisão**
+- **Canal único:** Dossiê 45. `sombra-direta` (001 com QA PASS, nunca publicado) e
+  `mente-obscura` ficam pausados — arquivo em disco, nada apagado.
+- **O lote testa uma variável: o primeiro segundo** (ação/consequência, nunca
+  contexto). Fixo: 45 s, 12 cartões, ≤5 s, v1, Piper, 1080×1920/30 fps.
+- **Hipótese:** mediana de “ficaram para assistir” ≥ 46,5% e de `% média` >
+  54,3% (os dois números do 005, que acertou o gancho).
+- **Cadência fixa:** 1/dia, 19h de Brasília, seg–sex. Horário entra como
+  **constante**, não como variável — com 5 vídeos não se isola horário.
+- **Temas aprovados pelo usuário em 29/10:** 007 Somerton · 008 Max Headroom ·
+  009 Máscaras de chumbo (nacional) · 010 Carroll A. Deering · 011 SS Baychimo.
+  Reservas: Hinterkaifeck, Mulher de Isdal, Yuba County Five, Voynich.
+- **Aprovar temas não é aprovar publicar:** aprovação continua por vídeo.
+
+**Pendente**
+- Produzir 007–011 (~10 h; ≈6 h só de briefing/fonte). Nada foi iniciado.
+- 3 s / 10 s seguem não legíveis no painel; a métrica de gancho do lote é
+  “ficaram para assistir”, que o painel entrega em texto.
+
 ## 2026-10-29 — Gate 2 fechado: **passa**, 3 de 6 acima de 50%
 
 **Entregue**

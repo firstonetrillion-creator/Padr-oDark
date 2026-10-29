@@ -187,7 +187,25 @@
 - `codebase-memory-mcp` pode ser instalado e o projeto indexado, **fora de uma janela de render** (RAM de 8 GB).
 - OpenMontage continua fora até o gate 3 (ver `docs/PLANO.md`).
 
-### 3.6 Melhorias visuais v2 — backlog (não iniciar)
+### 3.6 Lote 007–011 — aprovado em 29/10/2026 (nada produzido)
+
+- **Canal único** (decisão de 29/10): Dossiê 45. `sombra-direta` (001 com QA PASS,
+  nunca publicado) e `mente-obscura` ficam **pausados**, arquivo em disco.
+- **O lote testa uma variável: o gancho** — primeiro segundo com ação/consequência,
+  nunca contexto. Fixo: 45 s, **12 cartões**, ≤5 s, v1, Piper, 1080×1920/30 fps.
+- **Hipótese:** mediana de “ficaram para assistir” ≥ **46,5%** (005) e de
+  `% média` > **54,3%** (005). Se só uma passar → próxima variável é ritmo/visual
+  (LAB 002); se nenhuma → reavaliar formato.
+- **Cadência fixa:** 1/dia, 19h de Brasília, seg–sex. Horário é **constante**, não
+  variável: com 5 vídeos não se isola horário de dia da semana e de gancho.
+- **Temas aprovados:** 007 Somerton (1948) · 008 Max Headroom (1987) · 009 Máscaras
+  de chumbo (1966, nacional) · 010 Carroll A. Deering (1921) · 011 SS Baychimo
+  (1931–1969). Reservas: Hinterkaifeck, Mulher de Isdal, Yuba County Five, Voynich.
+- **Custo:** ~10 h (≈6 h de briefing/fonte) + 5 renders de ~3 min, um por vez.
+  Plano completo, fontes e cuidados: `docs/PLANO.md` §“Fase 3 — lote 007–011”.
+- **Aprovar temas ≠ aprovar publicar:** aprovação continua por vídeo, explícita.
+
+### 3.7 Melhorias visuais v2 — backlog (não iniciar)
 - Registro em `docs/PLANO.md` §Melhorias visuais — backlog pós-validação.
 - Só depois dos 6 vídeos e do Gate 2; **003–006 ficam no v1** para não contaminar a comparação.
 - ReelMimic, WebGL/Three.js e afins ficam fora do MVP; reavaliar depois do gate 3.
