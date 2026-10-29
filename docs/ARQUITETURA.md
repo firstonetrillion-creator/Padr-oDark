@@ -186,6 +186,7 @@ O fade final para preto é intencional e ignorado. O QA **não** substitui a rev
 | `scripts/medir-texto.ps1` | mede a tinta do texto no frame e sugere fonte | `index.html` (+ mp4) → tabela por cena + `fonte_px` |
 | `scripts/qa.ps1` | QA técnico automático | `final.mp4` → `QA PASS/FAIL` |
 | `scripts/check-contrato.ps1` | valida os invariantes da composição antes do render | `index.html` → `PASS/FAIL` (exit 1 em falha) |
+| `scripts/tempo.ps1` | cronometra cada etapa da produção (duas chamadas: abre/fecha) | `-Episodio -Etapa` → linha em `logs/tempo.csv`; `-Relatorio` → tabela por etapa |
 | `scripts/novo-episodio.ps1` | cria episódio a partir do template, com carimbo de origem | `NNN-slug` → `episodios/<slug>/` + `.template-version` |
 | `tools/youtube-agent-skill/yt-retention/retention.py` | lê o CSV de retenção do Studio e reporta 3 s, 10 s, 30 s (legado), quedas e slide | `retencao.csv` + `--duration` → texto ou JSON |
 | `tools/youtube-agent-skill/yt-package/title.py` | lint de título + thumbnail em PT-BR | `--title`/`--thumb` ou arquivo → issues + score heurístico |
@@ -233,6 +234,19 @@ gerar-episodio.py -> medir-texto.ps1 -> (-Aplicar) -> gerar-episodio.py -> rende
 `getBoundingClientRect` mede a caixa do texto; a tinta é maior por causa das
 hastes e do kerning. No LAB 001, três cenas passavam na caixa e estouravam o
 quadro no render. A medição oficial é `ffmpeg → gray → bbox por linha` no PNG.
+
+### v2: layout como configuração (especificado, **não implementado**)
+
+O v1 só sabe fazer cartão de texto. Para um canal novo não custar um rebuild
+visual, o v2 transforma estrutura de cena em **dado**: cada cena do
+`roteiro.json` ganha `tipo` (`texto`, `capa`, `numero`, `cronologia`,
+`documento`, `mapa`, `prova`, `fecho`) e o gerador passa a ter um renderizador
+por tipo. **Sem `tipo`, a cena é `texto`** — os episódios 001–006 continuam
+válidos sem alteração.
+
+Especificação completa, manifesto de assets, política de imagem e plano de
+adoção: **`docs/LAYOUTS.md`**. Nada disso entra antes do Gate 2.
+
 
 ## 8. O que o código já entregou
 

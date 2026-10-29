@@ -1,0 +1,301 @@
+<!doctype html>
+<!--
+  TEMPLATE SOMBRA CINEMA
+  Efeitos visuais reforçados via CSS + GSAP apenas. Sem WebGL/Three.js/shaders.
+  Substitua textos, tempos e áudio de cada episódio. Não publique sem trocar.
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Sombra Direta — episódio</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #050507; overflow: hidden; }
+  #stage {
+    position: relative;
+    width: 1080px;
+    height: 1920px;
+    background: #050507;
+    font-family: "Times New Roman", Georgia, serif;
+    color: #E8E6E1;
+  }
+
+  /* --- fundo animado --- */
+  .bg {
+    position: absolute;
+    inset: -120px;
+    background:
+      radial-gradient(900px 700px at 30% 20%, rgba(140,30,40,0.10), transparent 60%),
+      radial-gradient(1100px 900px at 70% 85%, rgba(20,30,60,0.12), transparent 64%),
+      linear-gradient(150deg, #0a0a0e 0%, #050507 50%, #020204 100%);
+    transform: scale(1.04);
+    transform-origin: center;
+  }
+  .pulse {
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(232,230,225,0.06);
+    opacity: 0.6;
+  }
+
+  /* --- vignette e marca --- */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 500px 150px rgba(0,0,0,0.92);
+    z-index: 4;
+  }
+  .mark {
+    position: absolute;
+    top: 104px;
+    left: 112px;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 20px;
+    letter-spacing: 10px;
+    color: #6B6B70;
+    z-index: 5;
+    text-transform: uppercase;
+  }
+  .dossier {
+    position: absolute;
+    top: 104px;
+    right: 112px;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 20px;
+    letter-spacing: 8px;
+    color: #4A4A50;
+    z-index: 5;
+    text-transform: uppercase;
+  }
+  .foot {
+    position: absolute;
+    bottom: 180px;
+    left: 112px;
+    right: 112px;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 18px;
+    letter-spacing: 4px;
+    color: #3E3E44;
+    z-index: 5;
+    text-align: center;
+  }
+
+  /* --- cenas --- */
+  .scene {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 112px;
+    z-index: 2;
+    text-align: center;
+  }
+  .scene h1 {
+    margin: 0;
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -1px;
+    text-wrap: balance;
+    opacity: 0;
+  }
+  .kicker {
+    font-family: Inter, Arial, sans-serif;
+    font-size: 22px;
+    letter-spacing: 8px;
+    color: #9A3434;
+    margin-bottom: 26px;
+    opacity: 0;
+    text-transform: uppercase;
+  }
+  .small {
+    display: block;
+    margin-top: 30px;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 26px;
+    line-height: 1.4;
+    letter-spacing: 3px;
+    color: #6B6B70;
+    opacity: 0;
+  }
+  .accent {
+    width: 240px;
+    height: 2px;
+    margin-top: 36px;
+    background: linear-gradient(90deg, transparent, #9A3434, transparent);
+    transform-origin: left center;
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  /* tamanhos de fonte por cena (ajustar com medir-texto.ps1) */
+  .c1 h1 { font-size: 126px; }
+  .c2 h1 { font-size: 134px; }
+  .c3 h1 { font-size: 118px; }
+  .c4 h1 { font-size: 142px; }
+  .c5 h1 { font-size: 110px; }
+  .c6 h1 { font-size: 126px; }
+  .c7 h1 { font-size: 142px; }
+  .c8 h1 { font-size: 118px; }
+  .c9 h1 { font-size: 134px; }
+  .c10 h1 { font-size: 120px; }
+  .c11 h1 { font-size: 152px; }
+  .c12 h1 { font-size: 100px; }
+  .c13 h1 { font-size: 160px; }
+  .c14 h1 { font-size: 110px; }
+  .c15 h1 { font-size: 140px; }
+  .c16 h1 { font-size: 170px; }
+
+  /* --- fade final --- */
+  #fade {
+    position: absolute;
+    inset: 0;
+    background: #000;
+    opacity: 0;
+    z-index: 20;
+    pointer-events: none;
+  }
+
+  /* --- glitch sério por CSS (apenas em classes com .glitch) --- */
+  .glitch h1::before,
+  .glitch h1::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #050507;
+  }
+  .glitch h1::before { color: #ff3c3c; z-index: -1; animation: glitch-1 2.5s infinite linear alternate-reverse; }
+  .glitch h1::after  { color: #00ffff; z-index: -2; animation: glitch-2 3s infinite linear alternate-reverse; }
+  @keyframes glitch-1 { 0% { transform: translate(0); } 20% { transform: translate(-2px,2px); } 40% { transform: translate(2px,-2px); } 60% { transform: translate(-2px,-2px); } 80% { transform: translate(2px,2px); } 100% { transform: translate(0); } }
+  @keyframes glitch-2 { 0% { transform: translate(0); } 25% { transform: translate(3px,-1px); } 50% { transform: translate(-3px,1px); } 75% { transform: translate(1px,3px); } 100% { transform: translate(0); } }
+
+  /* --- áudio --- */
+  /* <audio id="voz">, <audio id="bed">, <audio id="impacto"> copiados por episódio. Não remova os ids. */
+
+</style>
+</head>
+<body>
+<div id="stage" data-composition-id="sombra001" data-start="0" data-width="1080" data-height="1920" data-fps="30">
+  <div class="bg"></div>
+  <div class="pulse"></div>
+  <div class="vignette"></div>
+  <div class="mark">SOMBRA DIRETA</div>
+  <div class="dossier">001</div>
+
+  <!-- cenas preenchidas por episódio -->
+  <section class="scene c1 clip" id="s1" data-start="0" data-duration="4" data-track-index="1">
+    <div class="kicker">A MENTE · MANIPULAÇÃO</div>
+    <h1>VOCÊ É MANIPULADO.<br>NÃO SENTE NADA.</h1>
+    <div class="accent"></div>
+  </section>
+
+  <section class="scene c2 clip" id="s2" data-start="4.05" data-duration="3.6" data-track-index="1">
+    <h1>DOIS MIL ANOS.<br>DUAS MENTES.<br>UMA TE USA.</h1>
+  </section>
+
+  <section class="scene c3 clip" id="s3" data-start="7.7" data-duration="3.4" data-track-index="1">
+    <h1>O ESTÓICO<br>DOMINA A SI MESMO.</h1>
+    <span class="small">O RESTO É INDIFERENTE.</span>
+  </section>
+
+  <section class="scene c4 clip" id="s4" data-start="11.15" data-duration="3.4" data-track-index="1">
+    <h1>MAQUIAVEL<br>DOMINA OS OUTROS.</h1>
+    <span class="small">A VIRTUDE É MÁSCARA.</span>
+  </section>
+
+  <section class="scene c5 clip" id="s5" data-start="14.6" data-duration="3.2" data-track-index="1">
+    <h1>VOCÊ USA<br>UM DOS DOIS.</h1>
+    <span class="small">TODOS OS DIAS.</span>
+  </section>
+
+  <section class="scene c6 clip" id="s6" data-start="17.85" data-duration="3.4" data-track-index="1">
+    <h1>SEM NOMEAR<br>QUAL.</h1>
+  </section>
+
+  <section class="scene c7 clip glitch" id="s7" data-start="21.3" data-duration="3.6" data-track-index="1" data-text="O PERIGO NÃO É SER MANIPULADO">
+    <h1>O PERIGO<br>NÃO É<br>SER MANIPULADO.</h1>
+  </section>
+
+  <section class="scene c8 clip" id="s8" data-start="24.95" data-duration="3.4" data-track-index="1">
+    <h1>É ACREDITAR<br>QUE ESCOLHE<br>SOZINHO.</h1>
+  </section>
+
+  <section class="scene c9 clip" id="s9" data-start="28.4" data-duration="3.4" data-track-index="1">
+    <h1>QUEM COMANDA<br>A SUA CABEÇA?</h1>
+  </section>
+
+  <section class="scene c10 clip" id="s10" data-start="31.85" data-duration="3.2" data-track-index="1">
+    <h1>VOCÊ,</h1>
+  </section>
+
+  <section class="scene c11 clip" id="s11" data-start="35.1" data-duration="3.2" data-track-index="1">
+    <h1>OU QUEM LEU<br>O PRÍNCIPE?</h1>
+    <div class="accent"></div>
+  </section>
+
+  <div class="foot">FONTE · ZENÃO DE CÍTIO · MAQUIAVEL, O PRÍNCIPE (1513/1532) · PAULHUS & WILLIAMS (2002)</div>
+  <div id="fade"></div>
+
+  <audio id="voz" data-start="0" data-duration="45" data-track-index="0" data-volume="1" src="voz.wav"></audio>
+  <audio id="bed" data-start="0" data-duration="45" data-track-index="2" data-volume="0.35" src="bed.wav"></audio>
+  <audio id="impacto" data-start="0" data-duration="45" data-track-index="3" data-volume="0.9" src="impacto.wav"></audio>
+
+  <script src="gsap.min.js"></script>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.to({}, { duration: 45 }, 0);
+    tl.to(".bg", { scale: 1.12, duration: 45, ease: "none" }, 0);
+
+    const scenes = [
+      ["s1", 0.30],
+      ["s2", 4.10],
+      ["s3", 7.75],
+      ["s4", 11.20],
+      ["s5", 14.65],
+      ["s6", 17.90],
+      ["s7", 21.35],
+      ["s8", 25.00],
+      ["s9", 28.45],
+      ["s10", 31.90],
+      ["s11", 35.15]
+    ];
+
+    scenes.forEach(([id, t]) => {
+      const root = document.getElementById(id);
+      const start = parseFloat(root.dataset.start || "0");
+      const dur = parseFloat(root.dataset.duration || "45");
+      tl.set(root, { autoAlpha: 0 }, 0);
+      tl.set(root, { autoAlpha: 1 }, start);
+      tl.set(root, { autoAlpha: 0 }, start + dur);
+
+      const h1 = root.querySelector("h1");
+      const kicker = root.querySelector(".kicker");
+      const small = root.querySelector(".small");
+      const accent = root.querySelector(".accent");
+
+      tl.from(h1, { opacity: 0, scale: 0.85, y: 24, duration: 0.6, ease: "power2.out" }, t);
+      if (kicker) tl.from(kicker, { opacity: 0, y: 14, duration: 0.4, ease: "power1.out" }, t + 0.05);
+      if (small) tl.from(small, { opacity: 0, y: 14, duration: 0.45, ease: "power1.out" }, t + 0.18);
+      if (accent) tl.from(accent, { scaleX: 0, duration: 0.5, ease: "power2.out" }, t + 0.12);
+    });
+
+    tl.to("#fade", { opacity: 1, duration: 0.8, ease: "power1.in" }, 44.2);
+    window.__timelines = window.__timelines || {};
+    window.__timelines.sombra001 = tl;
+
+    // QA: congelar um frame via ?t=segundo (não afeta o render)
+    const seek = new URLSearchParams(location.search).get("t");
+    if (seek !== null) {
+      const t = Math.max(0, Math.min(45, parseFloat(seek) || 0));
+      tl.time(t, false);
+      document.querySelectorAll(".clip").forEach((el) => {
+        const start = parseFloat(el.dataset.start || "0");
+        const dur = parseFloat(el.dataset.duration || "0");
+        el.style.visibility = (t >= start && t < start + dur) ? "visible" : "hidden";
+      });
+    }
+  </script>
+</div>
+</body>
+</html>

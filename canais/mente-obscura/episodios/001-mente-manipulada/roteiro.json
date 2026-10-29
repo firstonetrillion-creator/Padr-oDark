@@ -1,0 +1,108 @@
+{
+  "slug": "001-mente-manipulada",
+  "composition_id": "ep-mente-obscura-001",
+  "titulo_pagina": "Mente Manipulada: estoicismo vs Maquiavel",
+  "duracao": 45,
+  "marca": "MENTE OBSCURA",
+  "dossie": "001",
+  "rodape": "FONTE · ZENÃO DE CÍTIO (c. 300 a.C.) · MAQUIAVEL, O PRÍNCIPE (1513/1532) · PAULHUS & WILLIAMS (2002)",
+  "audio": {
+    "voz": 1.0,
+    "drone": 0.30
+  },
+  "cenas": [
+    {
+      "id": "s1",
+      "kicker": "A MENTE · MANIPULAÇÃO",
+      "titulo": ["VOCÊ É MANIPULADO.", "NÃO SENTE NADA."],
+      "acento": true,
+      "fonte_px": 126,
+      "fala": "Você é manipulado agora. E não sente nada."
+    },
+    {
+      "id": "s2",
+      "kicker": "A MENTE · MANIPULAÇÃO",
+      "titulo": ["ESTOICISMO", "ENSINA", "A", "SE", "DOMINAR"],
+      "fonte_px": 134,
+      "fala": "Há mais de dois mil anos, o estoicismo ensina a dominar a si mesmo."
+    },
+    {
+      "id": "s3",
+      "titulo": ["MAQUIAVEL", "VIROU", "A", "MENTE", "EM", "INSTRUMENTO", "DE", "PODER"],
+      "fonte_px": 134,
+      "fala": "Séculos depois, Maquiavel virou essa mesma mente em instrumento de poder."
+    },
+    {
+      "id": "s4",
+      "titulo": ["O ESTÓICO", "CONTROLA", "APENAS", "O PRÓPRIO JULGAMENTO."],
+      "fonte_px": 118,
+      "fala": "Primeiro: o estoico controla apenas o próprio julgamento."
+    },
+    {
+      "id": "s5",
+      "titulo": ["O RESTO É", "INDIFERENTE."],
+      "fonte_px": 142,
+      "fala": "Tudo o resto é indiferente."
+    },
+    {
+      "id": "s6",
+      "titulo": ["O MAQUIAVELISTA", "CONTROLA", "O QUE", "OS OUTROS VEEM."],
+      "fonte_px": 118,
+      "fala": "Segundo: o maquiavelista controla o que os outros veem dele."
+    },
+    {
+      "id": "s7",
+      "titulo": ["A VIRTUDE É", "MÁSCARA."],
+      "fonte_px": 142,
+      "fala": "A virtude é máscara."
+    },
+    {
+      "id": "s8",
+      "titulo": ["VOCÊ USA", "UM DOS DOIS.", "TODOS OS DIAS."],
+      "fonte_px": 126,
+      "fala": "Terceiro: você usa um dos dois todos os dias."
+    },
+    {
+      "id": "s9",
+      "titulo": ["SEM NOMEAR", "QUAL."],
+      "fonte_px": 152,
+      "fala": "Sem nomear qual."
+    },
+    {
+      "id": "s10",
+      "titulo": ["O PERIGO", "NÃO É", "SER MANIPULADO."],
+      "fonte_px": 126,
+      "fala": "O perigo não é ser manipulado."
+    },
+    {
+      "id": "s11",
+      "titulo": ["É ACREDITAR", "QUE ESCOLHE", "SOZINHO."],
+      "fonte_px": 126,
+      "fala": "É acreditar que escolhe sozinho."
+    },
+    {
+      "id": "s12",
+      "titulo": ["QUEM COMANDA", "A SUA CABEÇA?"],
+      "fonte_px": 134,
+      "fala": "Quem comanda a sua cabeça:"
+    },
+    {
+      "id": "s13",
+      "titulo": ["VOCÊ,"],
+      "fonte_px": 160,
+      "fala": "você,"
+    },
+    {
+      "id": "s14",
+      "titulo": ["OU QUEM LEU"],
+      "fonte_px": 142,
+      "fala": "ou quem leu"
+    },
+    {
+      "id": "s15",
+      "titulo": ["O PRÍNCIPE?"],
+      "fonte_px": 160,
+      "fala": "o Príncipe?"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "slug": "001-mente-em-jogo",
+  "composition_id": "sombra001",
+  "titulo_pagina": "Mente em Jogo: estoicismo vs Maquiavel",
+  "duracao": 45,
+  "marca": "SOMBRA DIRETA",
+  "dossie": "001",
+  "rodape": "FONTE · ZENÃO DE CÍTIO (c. 300 a.C.) · MAQUIAVEL, O PRÍNCIPE (1513/1532) · PAULHUS & WILLIAMS (2002)",
+  "audio": {
+    "voz": 1.0,
+    "bed": 0.35,
+    "impacto": 0.9
+  },
+  "cenas": [
+    {
+      "id": "s1",
+      "kicker": "A MENTE · MANIPULAÇÃO",
+      "titulo": ["VOCÊ É MANIPULADO.", "NÃO SENTE NADA."],
+      "acento": true,
+      "fonte_px": 126,
+      "fala": "Você é manipulado agora. E não sente nada."
+    },
+    {
+      "id": "s2",
+      "titulo": ["DOIS MIL ANOS.", "DUAS MENTES.", "UMA TE USA."],
+      "fonte_px": 134,
+      "fala": "Há mais de dois mil anos, duas maneiras de usar a mente. Uma delas te usa."
+    },
+    {
+      "id": "s3",
+      "titulo": ["O ESTÓICO", "DOMINA A SI MESMO."],
+      "pequeno": ["O RESTO É INDIFERENTE."],
+      "fonte_px": 118,
+      "fala": "Primeiro: o estoico domina a si mesmo. Tudo o resto é indiferente."
+    },
+    {
+      "id": "s4",
+      "titulo": ["MAQUIAVEL", "DOMINA OS OUTROS."],
+      "pequeno": ["A VIRTUDE É MÁSCARA."],
+      "fonte_px": 142,
+      "fala": "Segundo: Maquiavel domina os outros. A virtude é máscara."
+    },
+    {
+      "id": "s5",
+      "titulo": ["VOCÊ USA", "UM DOS DOIS.", "TODOS OS DIAS."],
+      "fonte_px": 110,
+      "fala": "Terceiro: você usa um dos dois todos os dias."
+    },
+    {
+      "id": "s6",
+      "titulo": ["SEM NOMEAR", "QUAL."],
+      "fonte_px": 126,
+      "fala": "Sem nomear qual."
+    },
+    {
+      "id": "s7",
+      "titulo": ["O PERIGO", "NÃO É", "SER MANIPULADO."],
+      "fonte_px": 142,
+      "fala": "O perigo não é ser manipulado."
+    },
+    {
+      "id": "s8",
+      "titulo": ["É ACREDITAR", "QUE ESCOLHE", "SOZINHO."],
+      "fonte_px": 120,
+      "fala": "É acreditar que escolhe sozinho."
+    },
+    {
+      "id": "s9",
+      "titulo": ["QUEM COMANDA", "A SUA CABEÇA?"],
+      "fonte_px": 152,
+      "fala": "Quem comanda a sua cabeça:"
+    },
+    {
+      "id": "s10",
+      "titulo": ["VOCÊ,"],
+      "fonte_px": 160,
+      "fala": "você,"
+    },
+    {
+      "id": "s11",
+      "titulo": ["OU QUEM LEU", "O PRÍNCIPE?"],
+      "fonte_px": 110,
+      "fala": "ou quem leu o Príncipe?"
+    }
+  ]
+}

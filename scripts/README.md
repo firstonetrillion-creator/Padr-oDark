@@ -19,10 +19,45 @@
 | `qa.ps1` | antes de publicar | `final.mp4` | `QA PASS`/`QA FAIL` |
 | `check-contrato.ps1` | antes do QA visual e do render | `episodios/<slug>/index.html` | `PASS`/`FAIL` dos invariantes |
 | `novo-episodio.ps1` | início de um episódio | `NNN-slug` (+ título) | pasta do episódio + `status.md` + carimbo |
+| `tempo.ps1` | a cada etapa da produção | `-Episodio -Etapa` | linha em `logs/tempo.csv`; `-Relatorio` agrega |
 | `nicho.py` | validar nicho | buscas + canais | `logs/nicho-<data>.json`, seção em `docs/NICHO.md` |
 | `tools/.../retention.py` | 48 h após publicar | `retencao.csv` + duração | 3 s, 10 s, quedas, slide |
 | `tools/.../title.py` | antes de publicar | título (+ thumbnail) | issues + score heurístico |
 | `test_youtube_agent.py` | após mexer nesses helpers | — | 9 testes |
+
+## tempo.ps1
+
+Cronômetro manual por etapa. **Duas chamadas com o mesmo episódio e etapa**: a
+primeira abre, a segunda fecha e grava a execução em `logs/tempo.csv`.
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\tempo.ps1 `
+  -Episodio 007-foo -Etapa roteiro
+
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\tempo.ps1 `
+  -Episodio 007-foo -Etapa roteiro          # fecha, com a duração
+
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\tempo.ps1 -Relatorio
+```
+
+- Etapas canônicas: `briefing`, `gancho`, `roteiro`, `shotlist`, `voz`, `tempos`,
+  `composicao`, `qa-visual`, `render`, `qa`, `publicacao`, `retencao`,
+  `laboratorio`, `doc`, `outro`. Fora da lista passa com aviso — serve para não
+  travar o trabalho por causa de um nome.
+- `-Nota "..."` grava a observação junto da execução (ex.: `ls 1.10`, `3 variantes`).
+- Só um cronômetro aberto por vez. Tentar marcar outra etapa sem fechar **recusa**;
+  `-Forcar` fecha a anterior e abre a nova.
+- `-Relatorio` mostra minutos por etapa (total, nº de execuções, média, % do
+  total) e, sem `-Episodio`, também por episódio.
+- `-Arquivo` aponta para outro CSV (usado nos testes).
+- Estado do cronômetro aberto fica em `logs/tempo.aberto.json` — se ele existir e
+  você não lembrar por quê, o relatório mostra desde quando.
+
+Para que existe: em 27/10/2026 o `docs/HISTORICO.md` só tinha granularidade de
+**dia**, então não dava para saber se o custo de um vídeo (~2 h) estava na
+pesquisa, no roteiro, no QA visual ou na espera de aprovação. Sem esse dado,
+otimizar é chute. O CSV começa a valer no próximo episódio; nos seis primeiros
+não há medição retroativa honesta.
 
 ## install-brain.ps1
 
