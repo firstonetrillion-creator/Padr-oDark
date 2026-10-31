@@ -2,7 +2,48 @@
 
 > Linha do tempo do que foi **entregue**, com data, evidência e decisão.
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
-> Mais recente no topo. Última atualização: **2026-10-29**.
+> Mais recente no topo. Última atualização: **2026-10-31**.
+
+## 2026-10-31 — 007 Homem de Somerton: produzido, QA PASS, aguarda aprovação
+
+**Entregue**
+- `episodios/007-homem-de-somerton/` completo: `briefing.md` (fontes numeradas),
+  `gancho.md`, `roteiro.json` (108 palavras, 12 cenas), `voz.wav` (cena por cena),
+  `index.html` gerado, `final_raw.mp4`, `final.mp4`, `capa.png`, `qa.md`,
+  `publicacao.md`, `status.md`.
+- `final.mp4`: **45,013 s · 3.377.639 bytes · −15,0 LUFS · TP −5,9 · LRA 3,2**;
+  `qa.ps1` **PASS**; contrato **OK, 1 aviso**; SHA-256
+  `DE13EECD7C89DB3B2F5BB233CBA6F16C6F916E4B123AD4FE7DE2A4F01F462B6B`.
+- Título `Somerton: o homem sem nome por 74 anos` (38 chars, lint **100/100**);
+  capa em 17,7 s (“O PAPEL DIZIA: ACABADO. / PERSIA, TAMÁM SHUD.”).
+- `ESTADO.md` e `MEMORIA.md` atualizados (a versão de 29/10 dizia “nada
+  produzido”, mas o 007 já estava em produção desde 29/10 17:45).
+
+**Feito hoje (correções e fechamento)**
+- `qa.ps1` executado → **PASS**; contrato re-rodado → **OK, 1 aviso**.
+- **Áudio reprocessado:** o cru saiu em −10,6 LUFS (voz pré-normalizada com
+  +5 dB **antes** do render, ao contrário de 004–006); o passo de 29/10 reduziu
+  o volume sem registrar o filtro. Reprocessado com cadeia explícita
+  `volume=-4.4dB,alimiter=limit=0.85:level=disabled` → −15,0 LUFS.
+- **Frames de QA re-extraídos:** `frame_s1.png` e `frame_fecho.png` eram o
+  **mesmo arquivo** (SHA-256 `5CEB3375…` — a extração de 29/10 falhou). Novos
+  `qa-final/qa-frame-01..07.png` extraídos do mp4 e conferidos; antigos
+  preservados em `qa-final/antigos-extracao-falhou/`.
+
+**Decisão**
+- **Não publicado:** “conclua” não é aprovação. Falta escuta humana dos nomes e
+  aprovação explícita. 31/10 é sábado; próxima janela da cadência (seg–sex):
+  **segunda 02/11 às 19h** — publicar no sábado seria decisão explícita do
+  usuário.
+- Cena 3 em 5,029 s (29 ms acima do teto do lote) mantida — o aviso do contrato
+  foi aceito; re-sintetizar mudaria a duração total. Regra para os próximos:
+  separar data de lugar quando a fala passar de 5 s.
+- Capa é a cena 5, não o fecho: as candidatas do fecho dividiam “nome” e
+  “74 anos” com o título — as três peças (título/gancho/capa) não podem repetir.
+
+**Armadilha registrada**
+- `final_raw.mp4` em −10,6 LUFS: medir o cru **antes** de escolher o sinal do
+  pós e registrar o comando de normalização no `status.md`/`qa.md`.
 
 ## 2026-10-29 — lote 007–011 aprovado: o gancho é a variável
 

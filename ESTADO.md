@@ -4,7 +4,7 @@
 > Depois de uma compactação, a versão atual deste arquivo é relida do disco e vira a baseline da sessão.
 > Memória longa continua em `MEMORIA.md`; aqui só o suficiente para retomar sem reler nada.
 
-**Atualizado:** 2026-10-29 · **Gate 2 PASSA (3 de 6)** · **lote 007–011 aprovado (temas), nada produzido** · canal único · `sombra-direta` pausado
+**Atualizado:** 2026-10-31 · **Gate 2 PASSA (3 de 6)** · **007 Somerton: QA PASS, aguardando aprovação humana** · canal único · `sombra-direta` pausado
 
 ## Onde estamos
 
@@ -25,26 +25,55 @@ resolvido — o próximo ajuste é o **primeiro segundo**.
 
 ## Fila imediata — lote 007–011 (temas **aprovados** em 29/10)
 
-Plano completo em `docs/PLANO.md` §“Fase 3 — lote 007–011”. **Nada produzido
-ainda.** Canal único: Dossiê 45 (`sombra-direta` e `mente-obscura` pausados).
+Plano completo em `docs/PLANO.md` §“Fase 3 — lote 007–011”. **007 concluído em
+31/10 (QA PASS, publicação pronta, aguardando aprovação); 008–011 nada
+produzido.** Canal único: Dossiê 45 (`sombra-direta` e `mente-obscura` pausados).
 
 **A variável do lote é o gancho:** o primeiro segundo abre com ação/consequência,
 nunca com contexto. Tudo o mais fica igual ao 005 (45 s, **12 cartões**, ≤5 s,
 v1, Piper, 1080×1920/30 fps). **Hipótese:** mediana de “ficaram” ≥ 46,5% e de
 `% média` > 54,3%. **Cadência fixa:** 1/dia, 19h de Brasília, seg–sex.
 
-| # | Slug | Tema | Gancho |
-|---|---|---|---|
-| 007 | `007-homem-de-somerton` | Homem de Somerton (1948) | “Um homem morto na praia. Um código costurado na roupa.” |
-| 008 | `008-max-headroom` | Invasão Max Headroom (1987) | “Dois canais de TV foram invadidos ao vivo. Ninguém foi preso.” |
-| 009 | `009-mascaras-de-chumbo` | Máscaras de chumbo (1966) | “Dois homens mortos no morro. Máscaras de chumbo. Nenhuma marca.” |
-| 010 | `010-carroll-a-deering` | Carroll A. Deering (1921) | “O navio apareceu vazio. E a comida ainda estava na mesa.” |
-| 011 | `011-ss-baychimo` | SS Baychimo (1931–1969) | “Abandonaram o navio no gelo. Ele navegou 38 anos sozinho.” |
+| # | Slug | Tema | Gancho | Estado |
+|---|---|---|---|---|
+| 007 | `007-homem-de-somerton` | Homem de Somerton (1948) | “Um homem morto na praia. Um código costurado na roupa.” | **QA PASS 31/10 — publicação pronta, aguardando aprovação** |
+| 008 | `008-max-headroom` | Invasão Max Headroom (1987) | “Dois canais de TV foram invadidos ao vivo. Ninguém foi preso.” | nada produzido |
+| 009 | `009-mascaras-de-chumbo` | Máscaras de chumbo (1966) | “Dois homens mortos no morro. Máscaras de chumbo. Nenhuma marca.” | nada produzido |
+| 010 | `010-carroll-a-deering` | Carroll A. Deering (1921) | “O navio apareceu vazio. E a comida ainda estava na mesa.” | nada produzido |
+| 011 | `011-ss-baychimo` | SS Baychimo (1931–1969) | “Abandonaram o navio no gelo. Ele navegou 38 anos sozinho.” | nada produzido |
 
-**Próximo comando:** começar pelo **007** — `briefing.md` com fontes numeradas,
-depois gancho e `roteiro.json`. Comando:
-`.\scripts\novo-episodio.ps1 007-homem-de-somerton "Somerton: o homem sem nome por 74 anos"`.
-Aprovar os temas **não** autoriza publicar: aprovação é por vídeo.
+**Próximo comando:** o **007 está pronto para publicar** — falta escuta humana
+dos nomes e **aprovação explícita** (“publique” conta; “conclua” não). Publicado
+o 007, começar o **008** com `briefing.md` (fontes numeradas), gancho e
+`roteiro.json`. Cadência: 1/dia, 19h, seg–sex.
+
+## Episódio 007 — Homem de Somerton
+
+| Etapa | Estado |
+|---|---|
+| Briefing | **pronto** — Wikipédia PT “Caso Taman Shud”; Guardian 27/07/2022 e 31/07/2022; ABC 01/12/2018 |
+| Gancho | **aprovado no lote** — “Um homem morto na praia. Um código costurado na roupa.” (fórmula 10 + dado da 1) |
+| Roteiro | **pronto** — `roteiro.json`, 108 palavras, **12 cenas**, máx **5,029 s** (cena 3, 29 ms acima do teto — registrado) |
+| Voz | **pronta** — cena por cena (`montar-voz.py`): 35,768 s de fala + 9,232 s de silêncio (20,5%) → `voz_raw.wav` 45,000 s; `voz.wav` +5 dB, limitador 0,85 **antes** do render |
+| Composição | **pronta** — 12 cenas geradas do `roteiro.json`; contrato **OK, 1 aviso** (re-rodado em 31/10) |
+| QA visual | **concluído** — 7 frames do `final.mp4`; sem overflow; pior tinta **800 px** de 840 (s9) |
+| Render | **concluído** — `final_raw.mp4` 45,000 s, **1.350 frames**, 29/10 17:58 |
+| Áudio final | **reprocessado em 31/10** — cru −10,6 LUFS (voz pré-normalizada) → `volume=-4.4dB` + limitador 0,85 → **−15,0 LUFS**, TP −5,9, LRA 3,2 |
+| QA | **QA PASS** — `qa.md` assinado em 31/10 |
+| Capa | **pronta** — `capa.png` em 17,7 s (“O PAPEL DIZIA: ACABADO. / PERSIA, TAMÁM SHUD.”) |
+| publicacao.md | **pronto** — título `Somerton: o homem sem nome por 74 anos` (38 chars, lint **100/100**); SHA-256 `DE13EECD…462B6B` |
+| Aprovação humana | **pendente** — escuta dos nomes + aprovação explícita |
+| Publicação | **pendente** — 31/10 é sábado; próxima janela da cadência: **segunda 02/11 às 19h** (publicar no sábado é decisão explícita do usuário) |
+
+**Correção feita em 31/10:** `frame_s1.png` e `frame_fecho.png` eram o **mesmo
+arquivo** (SHA-256 idêntico — a extração de 29/10 falhou). Re-extraídos do
+`final.mp4` como `qa-final/qa-frame-01..07.png`; antigos preservados em
+`qa-final/antigos-extracao-falhou/`.
+
+**Armadilha nova:** o `final_raw.mp4` saiu em **−10,6 LUFS** porque a voz foi
+pré-normalizada com +5 dB **antes** do render (em 004–006 o ganho era no pós).
+O passo de normalização de 29/10 reduziu o volume sem registrar o filtro. Regra:
+medir o cru **antes** de escolher o sinal do pós, e registrar o comando.
 
 ## Episódio 006 — Passo Dyatlov
 
@@ -377,6 +406,10 @@ Gate 2, via LAB 002 (20–30 s, 3 layouts), nunca direto num episódio.
 
 ## Esperando (nada a fazer até as datas)
 
+- **007** — escutar os nomes (Somerton, Adelaide, Tamám Shud, Omar Caiame,
+  Glenelg), obter **aprovação explícita** e publicar. 31/10 é sábado; próxima
+  janela da cadência (seg–sex): **segunda 02/11 às 19h**. Retenção 48 h: **D+2
+  da data de publicação**.
 - ~~**2026-10-29** — retenção de 48 h de **005** e **006**~~ **feito** (29/10):
   **005 54,3%** (224 views, ficaram 46,5%, 0:25 de 0:46) e **006 50,0%**
   (79 views, ficaram 38,2%, 0:23 de 0:46 — no limite do arredondamento).

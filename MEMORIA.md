@@ -20,6 +20,7 @@
 | Versionamento | **git iniciado (21/10/2026)** | commit `782df62`, tag `ep-001-publicado` |
 | 6 vídeos de validação | **6/6 publicados — Fase 2 concluída** | 001–006 no ar |
 | **Gate 2 (48 h)** | **PASSA em 29/10/2026 — 3 de 6 > 50%** | 002 87,0% · 003 87,0% · 005 **54,3%** · 004 45,7% · 006 **50,0%** (limite) · 001 33,3% (fora) |
+| Episódio 007 — Homem de Somerton | **produzido (31/10) — QA PASS, publicação pronta, aguardando aprovação** | `episodios/007-homem-de-somerton/` |
 | Episódio 002 — Mary Celeste | **publicado** (21/10/2026) | `episodios/002-mary-celeste/`, [Shorts](https://youtube.com/shorts/n6dtveQguf4) |
 | Episódio 003 — Roanoke | **publicado** (23/10/2026) | `episodios/003-roanoke/`, [Shorts](https://youtube.com/shorts/8ptxqKGe4Bk) |
 | Canal | **Dossiê 45**: nome, avatar/banner, descrição no ar e 9 shorts antigos privados | [canal](https://youtube.com/@Dossie45), `docs/REBRANDING.md` |
@@ -126,6 +127,28 @@
   (`K_sgJjNHg84`), upload do usuário. `duration=45`, `age_limit=0`, canal
   `Dossiê 45` conferidos por `yt-dlp` sem cookies. **48 h em 29/10.**
 
+### Episódio 007 — Homem de Somerton (produzido 31/10/2026, não publicado)
+- **Variável do lote 007–011 (o gancho):** “Um homem morto na praia. Um código
+  costurado na roupa.” — ação/consequência no primeiro segundo, sem contexto.
+  Cena 2 sobe a aposta (sem etiqueta, sem documento, sem nome), regra pós-004.
+- 108 palavras / **12 cenas**; máx 5,029 s (cena 3 — 29 ms acima do teto de 5 s,
+  o **1 aviso** do contrato; separar data de lugar nos próximos).
+- **Voz por cena** (`montar-voz.py`): 35,768 s de fala + 9,232 s de silêncio
+  (20,5%) → `voz.wav` 45,000 s, **+5 dB + limitador 0,85 antes do render**.
+- Render em 29/10 (17:58): `final_raw.mp4` 45,000 s, 1.350 frames, **−10,6
+  LUFS** — porque a voz já vinha pré-normalizada (em 004–006 o ganho era no pós).
+- **31/10:** áudio reprocessado com cadeia registrada (`volume=-4.4dB` +
+  limitador 0,85) → `final.mp4` **45,013 s, 3.377.639 bytes, −15,0 LUFS, TP
+  −5,9**; `qa.ps1` **PASS**; SHA-256 `DE13EECD…462B6B`.
+- QA visual: 7 frames do mp4 conferidos (`qa-final/qa-frame-01..07.png`; os
+  `frame_s1.png`/`frame_fecho.png` originais eram o **mesmo arquivo** — extração
+  falhou; antigos preservados em `qa-final/antigos-extracao-falhou/`). Pior
+  tinta 800 px de 840.
+- Capa em 17,7 s (“O PAPEL DIZIA: ACABADO. / PERSIA, TAMÁM SHUD.”); título
+  `Somerton: o homem sem nome por 74 anos` (38 chars, lint **100/100**);
+  pacote em `publicacao.md`.
+- **Aguarda aprovação humana explícita** para publicar. Retenção 48 h: D+2.
+
 ### Template
 - `templates/misterio-45/index.html` — composição validada, 13 cenas, áudio `voz`/`drone`, QA por `?t=`.
 - `templates/misterio-45/beat-sheet.md` — 13 beats, tempos e orçamento de palavras.
@@ -187,7 +210,10 @@
 - `codebase-memory-mcp` pode ser instalado e o projeto indexado, **fora de uma janela de render** (RAM de 8 GB).
 - OpenMontage continua fora até o gate 3 (ver `docs/PLANO.md`).
 
-### 3.6 Lote 007–011 — aprovado em 29/10/2026 (nada produzido)
+### 3.6 Lote 007–011 — aprovado em 29/10/2026 (007 concluído em 31/10)
+
+- **007 concluído:** QA PASS, `publicacao.md` pronto, **aguardando aprovação
+  humana explícita** para publicar. 008–011 nada produzido.
 
 - **Canal único** (decisão de 29/10): Dossiê 45. `sombra-direta` (001 com QA PASS,
   nunca publicado) e `mente-obscura` ficam **pausados**, arquivo em disco.
@@ -337,6 +363,8 @@ ffmpeg -i final_raw.mp4 -c:v copy `
 | ASR erra e o `remapear.py` mostra o texto certo com **tempo errado** | o alinhamento depende da transcrição: palavra errada = fronteira errada (006: “cortam um degrau” → “Cota o mundo legal”, 28% dos tokens, cena 4 **1,4 s** fora; testado com `medium`, erra igual) | sintetizar **cena por cena** com `scripts/montar-voz.py`: o tempo vira soma de blocos. Se usar take único, conferir a taxa de alinhamento antes de confiar na tabela |
 | `medir-texto.ps1` mostra mais linhas que o roteiro (ex.: `5/4` na cena 1) | o kicker entra como bloco de tinta, como qualquer outra linha | conferir no frame: 4 linhas de título + kicker; não é quebra |
 | Frame do `final.mp4` parece ter texto duplicado | a imagem foi **exibida em escala reduzida**; serifa fina ganha fantasma | medir bandas de tinta (`ffmpeg → gray → max por linha`). No 006 a checagem deu exatamente 3 linhas + linha pequena |
+| `frame_s1.png` e `frame_fecho.png` com o **mesmo SHA-256** (007) | a extração de frames falhou e gravou o mesmo PNG duas vezes | **conferir o hash dos frames de QA** antes de olhar a imagem; re-extrair do `final.mp4` com `select='eq(n,X)'` e `−vsync 0` |
+| `final_raw.mp4` sai em **−10,6 LUFS** (007) em vez de ~−22 | a voz foi **pré-normalizada (+5 dB) antes do render** (em 004–006 o ganho era no pós); o pós-render da sessão anterior reduziu o volume sem registrar o filtro | **medir o cru antes** de escolher o sinal do pós e gravar o comando exato (`volume=XdB,alimiter=…`) no `status.md`/`qa.md`; no 007 ficou `volume=-4.4dB` → −15,0 LUFS |
 
 ## 8. Decisões que não se reabrem
 

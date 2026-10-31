@@ -1,0 +1,171 @@
+{
+  "slug": "007-homem-de-somerton",
+  "composition_id": "ep007",
+  "titulo_pagina": "Somerton: o homem sem nome por 74 anos",
+  "duracao": 45,
+  "marca": "DOSSIÊ 45",
+  "dossie": "007",
+  "rodape": "FONTE · WIKIPÉDIA PT · GUARDIAN, 2022 · ABC, 2018",
+  "audio": {
+    "voz": 1.0,
+    "drone": 0.16
+  },
+  "cenas": [
+    {
+      "id": "s1",
+      "kicker": "O ARQUIVO · HOMEM DE SOMERTON",
+      "titulo": [
+        "UM HOMEM MORTO",
+        "NA PRAIA.",
+        "UM CÓDIGO",
+        "NA ROUPA."
+      ],
+      "acento": true,
+      "fonte_px": 96,
+      "fala": "Um homem morto na praia. Um código costurado na roupa."
+    },
+    {
+      "id": "s2",
+      "titulo": [
+        "O CORPO",
+        "NÃO TINHA",
+        "ETIQUETA."
+      ],
+      "pequeno": [
+        "NEM DOCUMENTO.",
+        "NEM NOME."
+      ],
+      "fonte_px": 124,
+      "fala": "O corpo não tinha etiqueta. Nem documento. Nem nome."
+    },
+    {
+      "id": "s3",
+      "kicker": "SOMERTON PARK · ADELAIDE",
+      "titulo": [
+        "1º DE",
+        "DEZEMBRO",
+        "DE 1948."
+      ],
+      "fonte_px": 130,
+      "fala": "Somerton Park, Adelaide. Primeiro de dezembro de 1948."
+    },
+    {
+      "id": "s4",
+      "titulo": [
+        "CIGARRO",
+        "ATRÁS DA",
+        "ORELHA."
+      ],
+      "pequeno": [
+        "BILHETE DE ÔNIBUS",
+        "NO BOLSO."
+      ],
+      "fonte_px": 118,
+      "fala": "Cigarro atrás da orelha. Bilhete de ônibus no bolso."
+    },
+    {
+      "id": "s5",
+      "titulo": [
+        "O PAPEL",
+        "DIZIA:",
+        "ACABADO."
+      ],
+      "pequeno": [
+        "PERSIA, TAMÁM SHUD."
+      ],
+      "fonte_px": 120,
+      "fala": "O papel dizia acabado. Persia, tamám shud."
+    },
+    {
+      "id": "s6",
+      "titulo": [
+        "DO LIVRO",
+        "DE OMAR",
+        "CAIAME."
+      ],
+      "pequeno": [
+        "ÚLTIMA PÁGINA",
+        "ARRANCADA."
+      ],
+      "fonte_px": 116,
+      "fala": "Do livro de Omar Caiame. Última página arrancada."
+    },
+    {
+      "id": "s7",
+      "titulo": [
+        "NA CONTRACAPA,",
+        "UM CÓDIGO."
+      ],
+      "pequeno": [
+        "CINCO LINHAS",
+        "DE LETRAS."
+      ],
+      "fonte_px": 100,
+      "fala": "Na contracapa, um código. Cinco linhas de letras."
+    },
+    {
+      "id": "s8",
+      "titulo": [
+        "UM NÚMERO",
+        "DE TELEFONE."
+      ],
+      "pequeno": [
+        "JO THOMSON, A",
+        "800 METROS."
+      ],
+      "fonte_px": 122,
+      "fala": "Um número de telefone. Jo Thomson, a 800 metros."
+    },
+    {
+      "id": "s9",
+      "titulo": [
+        "NUNCA FOI",
+        "IDENTIFICADO."
+      ],
+      "pequeno": [
+        "SETENTA E QUATRO",
+        "ANOS."
+      ],
+      "fonte_px": 112,
+      "fala": "Nunca foi identificado. Setenta e quatro anos."
+    },
+    {
+      "id": "s10",
+      "kicker": "2022 · O DNA FALA",
+      "titulo": [
+        "CARL WEBB."
+      ],
+      "pequeno": [
+        "ENGENHEIRO DE",
+        "MELBOURNE."
+      ],
+      "fonte_px": 115,
+      "fala": "2022. O DNA diz Carl Webb. Engenheiro de Melbourne."
+    },
+    {
+      "id": "s11",
+      "titulo": [
+        "MAS NÃO DIZ",
+        "COMO MORREU."
+      ],
+      "pequeno": [
+        "NEM O QUE O",
+        "CÓDIGO QUER."
+      ],
+      "fonte_px": 104,
+      "fala": "Mas não diz como morreu. Nem o que o código quer."
+    },
+    {
+      "id": "s12",
+      "titulo": [
+        "SOMERTON."
+      ],
+      "pequeno": [
+        "UM NOME.",
+        "SEM RESPOSTAS."
+      ],
+      "fonte_px": 130,
+      "fala": "Somerton. Um nome. Sem respostas."
+    }
+  ]
+}
