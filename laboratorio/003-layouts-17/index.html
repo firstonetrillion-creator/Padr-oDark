@@ -1,0 +1,1338 @@
+<!doctype html>
+<!-- 003-layouts-17 | template misterio-45 + layouts v2 | 17 cenas | gerado por scripts/gerar-episodio.py -->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>LAB 003 — biblioteca de layouts</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #0A0A0B; }
+  #stage {
+    position: relative;
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    background: #0A0A0B;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #E8E6E1;
+  }
+  .bg {
+    position: absolute;
+    inset: -90px;
+    background:
+      radial-gradient(900px 700px at 28% 18%, rgba(178,58,46,0.13), transparent 62%),
+      radial-gradient(1200px 900px at 72% 82%, rgba(60,70,90,0.18), transparent 66%),
+      linear-gradient(160deg, #101014 0%, #0A0A0B 55%, #07070A 100%);
+    transform: scale(1.06);
+  }
+  .vignette {
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 430px 130px rgba(0,0,0,0.88);
+  }
+  .frame {
+    position: absolute;
+    inset: 64px;
+    border: 1px solid rgba(232,230,225,0.10);
+  }
+  .mark {
+    position: absolute;
+    top: 112px;
+    left: 120px;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 21px;
+    letter-spacing: 8px;
+    color: #6B6B70;
+    z-index: 5;
+  }
+  .dossier {
+    position: absolute;
+    top: 112px;
+    right: 120px;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 21px;
+    letter-spacing: 6px;
+    color: #4A4A50;
+    z-index: 5;
+  }
+  .foot {
+    position: absolute;
+    bottom: 190px;
+    left: 120px;
+    right: 120px;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 19px;
+    letter-spacing: 4px;
+    color: #45454C;
+    z-index: 5;
+  }
+  .scene {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 120px;
+    z-index: 2;
+  }
+  .scene h1 {
+    margin: 0;
+    font-weight: 400;
+    line-height: 0.99;
+    letter-spacing: -2px;
+    text-wrap: balance;
+  }
+  .kicker {
+    font-family: Inter, Arial, sans-serif;
+    font-size: 24px;
+    letter-spacing: 7px;
+    color: #B23A2E;
+    margin-bottom: 30px;
+  }
+  .small {
+    display: block;
+    margin-top: 34px;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 28px;
+    line-height: 1.45;
+    letter-spacing: 4px;
+    color: #6B6B70;
+  }
+  .accent {
+    width: 280px;
+    height: 2px;
+    margin-top: 40px;
+    background: #B23A2E;
+    transform-origin: left center;
+  }
+  #fade {
+    position: absolute;
+    inset: 0;
+    background: #000;
+    opacity: 0;
+    z-index: 20;
+    pointer-events: none;
+  }
+  .s01 h1 { font-size: 160px; }
+  .s02 h1 { font-size: 178px; }
+  .s02.layout-couch-wall h1 { font-size: 164px; }
+  .s03 h1 { font-size: 158px; }
+  .s03.layout-ui-world h1 { font-size: 120px; }
+  .s04 h1 { font-size: 126px; }
+  .s05 h1 { font-size: 118px; }
+  .s05.layout-digital-zoom h1 { font-size: 101px; }
+  .s06 h1 { font-size: 190px; }
+  .s06.layout-phone-mockup h1 { font-size: 105px; }
+  .s07 h1 { font-size: 190px; }
+  .s08 h1 { font-size: 120px; }
+  .s09 h1 { font-size: 132px; }
+  .s10 h1 { font-size: 132px; }
+  .s10.layout-chart-grow h1 { font-size: 125px; }
+  .s11 h1 { font-size: 130px; }
+  .s12 h1 { font-size: 142px; }
+  .s13 h1 { font-size: 150px; }
+  .s14 h1 { font-size: 150px; }
+  .s15 h1 { font-size: 150px; }
+  .s15.layout-vertigo h1 { font-size: 129px; }
+  .s16 h1 { font-size: 142px; }
+  .s16.layout-cover-story h1 { font-size: 114px; }
+  .s17 h1 { font-size: 158px; }
+  .s17.layout-glass-type h1 { font-size: 145px; }
+
+  /* ---------- templates/layouts/layouts.css ---------- */
+/* ============================================================
+   layouts.css — biblioteca visual v2 (v1 + 17 estilos)
+   Contrato: docs/ARQUITETURA.md §2/§3   Spec: docs/LAYOUTS.md §10
+   Regras de maquina (Intel HD 620):
+     - so transform/opacity animados em area cheia;
+     - sem backdrop-filter, sem blur animado, sem feTurbulence;
+     - sem WebGL/Three.js (regra 3 do AGENTS.md).
+   O texto continua sendo o elemento medido por medir-texto.ps1:
+   todo layout mantem um <h1> com font-size explicito por cena.
+   ============================================================ */
+
+#stage {
+  --accent: #B23A2E;
+  --ink: #E8E6E1;
+  --dim: #6B6B70;
+  --line: rgba(232, 230, 225, 0.14);
+  --card: #131317;
+}
+
+.scene.layout { padding: 0; }
+
+.scene.layout .core {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: 0 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ly-decor {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ------------------------------------------------------------
+   1. ORBIT — anel de pontos girando em volta do titulo
+   ------------------------------------------------------------ */
+.layout-orbit .ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 820px;
+  height: 820px;
+  margin: -410px 0 0 -410px;
+  z-index: 1;
+}
+.layout-orbit .ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(232, 230, 225, 0.09);
+}
+.layout-orbit .ring i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2px;
+  height: 410px;
+  background: linear-gradient(to bottom, rgba(178, 58, 46, 0.55), rgba(232, 230, 225, 0.12) 70%, transparent 88%);
+  transform-origin: 50% 0;
+}
+.layout-orbit .orb {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 -12px;
+  border-radius: 50%;
+  border: 2px solid rgba(232, 230, 225, 0.55);
+  background: #0A0A0B;
+  box-shadow: 0 0 0 8px rgba(10, 10, 11, 0.75);
+}
+.layout-orbit .orb.hot {
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 0 10px rgba(178, 58, 46, 0.14), 0 0 0 2px rgba(10, 10, 11, 0.9);
+}
+.layout-orbit .orb em {
+  position: absolute;
+  left: 34px;
+  top: -8px;
+  font-family: Inter, Arial, sans-serif;
+  font-style: normal;
+  font-size: 24px;
+  letter-spacing: 3px;
+  color: var(--dim);
+  white-space: nowrap;
+}
+.layout-orbit .core { z-index: 3; }
+
+/* ------------------------------------------------------------
+   2. COUCH WALL — parede de cartoes em perspectiva
+   ------------------------------------------------------------ */
+.layout-couch-wall .wall {
+  position: absolute;
+  inset: -180px -140px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 26px;
+  transform: perspective(1500px) rotateX(13deg) rotateY(-9deg) scale(1.1);
+  z-index: 1;
+}
+.layout-couch-wall .wall span {
+  border-radius: 8px;
+  border: 1px solid rgba(232, 230, 225, 0.1);
+  background: linear-gradient(150deg, #26262f, #16161c);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.layout-couch-wall .wall span:nth-child(4n) {
+  background-image: linear-gradient(150deg, #3a2420, #1a1413);
+}
+.layout-couch-wall .wall span:nth-child(7n) {
+  background-image: linear-gradient(150deg, #1c2833, #111820);
+}
+.layout-couch-wall .scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(62% 52% at 50% 50%, rgba(10, 10, 11, 0.94), rgba(10, 10, 11, 0.66) 58%, rgba(10, 10, 11, 0.92));
+}
+.layout-couch-wall .core { z-index: 3; }
+
+/* ------------------------------------------------------------
+   3. UI WORLD — janela de navegador em volta do texto
+   ------------------------------------------------------------ */
+.layout-ui-world .win {
+  position: absolute;
+  left: 84px;
+  right: 84px;
+  top: 300px;
+  bottom: 320px;
+  z-index: 2;
+  border-radius: 18px;
+  border: 1px solid rgba(232, 230, 225, 0.16);
+  background: rgba(14, 14, 18, 0.9);
+  overflow: hidden;
+}
+.layout-ui-world .bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 22px;
+  border-bottom: 1px solid rgba(232, 230, 225, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+}
+.layout-ui-world .bar b {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #3a3a41;
+}
+.layout-ui-world .url {
+  flex: 1;
+  height: 28px;
+  margin-left: 10px;
+  padding: 0 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  font-family: Inter, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 28px;
+  letter-spacing: 2px;
+  color: #7d7d86;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.layout-ui-world .body {
+  position: absolute;
+  inset: 62px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.layout-ui-world .core { padding: 0 46px; z-index: 3; }
+
+/* ------------------------------------------------------------
+   4. FRAME BREAK — moldura que o titulo atravessa
+   ------------------------------------------------------------ */
+.layout-frame-break .fb-frame {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 720px;
+  height: 720px;
+  margin: -360px 0 0 -360px;
+  border: 1px solid rgba(232, 230, 225, 0.22);
+  z-index: 1;
+}
+.layout-frame-break .fb-frame::before,
+.layout-frame-break .fb-frame::after {
+  content: "";
+  position: absolute;
+  background: var(--accent);
+}
+.layout-frame-break .fb-frame::before { left: -1px; top: -1px; width: 96px; height: 3px; }
+.layout-frame-break .fb-frame::after  { right: -1px; bottom: -1px; width: 96px; height: 3px; }
+.layout-frame-break .fb-mask {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 260px;
+  margin-top: -130px;
+  background: #0A0A0B;
+  z-index: 2;
+  opacity: 0.82;
+}
+.layout-frame-break .core { z-index: 3; }
+
+/* ------------------------------------------------------------
+   5. DIGITAL ZOOM — aproximacao em degraus
+   ------------------------------------------------------------ */
+.layout-digital-zoom .core { transform-origin: 50% 48%; }
+
+/* ------------------------------------------------------------
+   6. PHONE MOCKUP — celular em CSS
+   ------------------------------------------------------------ */
+.layout-phone-mockup .phone {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 660px;
+  height: 1240px;
+  margin: -620px 0 0 -330px;
+  padding: 24px;
+  border-radius: 64px;
+  border: 2px solid rgba(232, 230, 225, 0.2);
+  background: linear-gradient(180deg, #15151a, #0b0b0e);
+  box-shadow: 0 40px 110px rgba(0, 0, 0, 0.75);
+  z-index: 2;
+}
+.layout-phone-mockup .screen {
+  position: absolute;
+  inset: 24px;
+  border-radius: 46px;
+  overflow: hidden;
+  background:
+    radial-gradient(420px 320px at 30% 12%, rgba(178, 58, 46, 0.16), transparent 62%),
+    linear-gradient(170deg, #101014, #07070a);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.layout-phone-mockup .notch {
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  width: 168px;
+  height: 32px;
+  margin-left: -84px;
+  border-radius: 16px;
+  background: #06060a;
+  z-index: 4;
+}
+.layout-phone-mockup .home {
+  position: absolute;
+  left: 50%;
+  bottom: 34px;
+  width: 220px;
+  height: 7px;
+  margin-left: -110px;
+  border-radius: 4px;
+  background: rgba(232, 230, 225, 0.2);
+  z-index: 4;
+}
+.layout-phone-mockup .core { padding: 0 34px; z-index: 3; }
+.layout-phone-mockup .core .kicker { font-size: 20px; letter-spacing: 4px; margin-bottom: 20px; }
+.layout-phone-mockup .core .small { font-size: 22px; letter-spacing: 2px; margin-top: 24px; }
+.layout-phone-mockup .core .accent { width: 180px; margin-top: 26px; }
+
+/* ------------------------------------------------------------
+   7. CHECKLIST — evidencias marcadas uma a uma
+   ------------------------------------------------------------ */
+.layout-checklist .core { justify-content: flex-start; }
+.layout-checklist .list {
+  position: relative;
+  z-index: 3;
+  margin: 40px 0 0;
+  padding: 0 120px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.layout-checklist .item {
+  display: flex;
+  align-items: flex-start;
+  gap: 26px;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 38px;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  color: #C6C4BF;
+}
+.layout-checklist .box {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  margin-top: 4px;
+  border: 2px solid rgba(232, 230, 225, 0.3);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.layout-checklist .box svg { width: 30px; height: 30px; display: block; }
+.layout-checklist .box path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 34;
+  stroke-dashoffset: 34;
+}
+
+/* ------------------------------------------------------------
+   8. HEADLINE WALL — parede de manchetes ao fundo
+   ------------------------------------------------------------ */
+.layout-headline-wall .wall {
+  position: absolute;
+  inset: -80px -40px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  opacity: 0.9;
+}
+.layout-headline-wall .wall span {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 92px;
+  line-height: 1.02;
+  letter-spacing: -2px;
+  color: rgba(232, 230, 225, 0.26);
+  white-space: nowrap;
+}
+.layout-headline-wall .wall span:nth-child(even) { color: rgba(178, 58, 46, 0.42); }
+.layout-headline-wall .scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(56% 42% at 50% 50%, rgba(10, 10, 11, 0.94), rgba(10, 10, 11, 0.52) 64%, rgba(10, 10, 11, 0.88));
+}
+.layout-headline-wall .core { z-index: 3; }
+
+/* ------------------------------------------------------------
+   9. ZOOM THROUGH — o titulo cresce e atravessa o corte
+   ------------------------------------------------------------ */
+.layout-zoom-through .core { transform-origin: 50% 50%; }
+
+/* ------------------------------------------------------------
+  10. CHART GROW — barras que crescem
+   ------------------------------------------------------------ */
+.layout-chart-grow .core { justify-content: flex-start; }
+.layout-chart-grow .chart {
+  position: relative;
+  z-index: 3;
+  margin: 46px 0 0;
+  padding: 0 120px;
+  display: flex;
+  align-items: flex-end;
+  gap: 22px;
+  height: 460px;
+}
+.layout-chart-grow .bar {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
+}
+.layout-chart-grow .bar u {
+  text-decoration: none;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 34px;
+  letter-spacing: 1px;
+  color: var(--ink);
+}
+.layout-chart-grow .bar b {
+  display: block;
+  width: 100%;
+  min-height: 8px;
+  border-radius: 3px 3px 0 0;
+  background: linear-gradient(180deg, #C4483A, #6b211a);
+  transform-origin: 50% 100%;
+}
+.layout-chart-grow .bar.hot b { background: linear-gradient(180deg, #E8E6E1, #9a9892); }
+.layout-chart-grow .bar i {
+  font-style: normal;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: var(--dim);
+  text-align: center;
+}
+
+/* ------------------------------------------------------------
+  11. PULL BACK — recuo do detalhe para o contexto
+   ------------------------------------------------------------ */
+.layout-pull-back .core { transform-origin: 50% 46%; }
+
+/* ------------------------------------------------------------
+  12. GREEN SCREEN — silhueta em painel (sem footage)
+   ------------------------------------------------------------ */
+.layout-green-screen .key {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 780px;
+  height: 1180px;
+  margin-left: -390px;
+  z-index: 1;
+  background:
+    radial-gradient(46% 32% at 50% 20%, rgba(40, 80, 64, 0.45), rgba(9, 16, 14, 0.94) 76%);
+  clip-path: polygon(
+    50% 3%, 60% 7%, 65% 17%, 64% 27%, 60% 34%,
+    78% 44%, 90% 58%, 97% 100%, 3% 100%, 10% 58%, 22% 44%, 40% 34%,
+    36% 27%, 35% 17%, 40% 7%
+  );
+  background-size: cover;
+  background-position: center top;
+}
+.layout-green-screen .key.asset {
+  clip-path: polygon(0% 6%, 100% 0%, 100% 100%, 0% 100%);
+  background-size: cover;
+  opacity: 0.5;
+}
+.layout-green-screen .keyline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 340px;
+  z-index: 2;
+  background: linear-gradient(to top, #0A0A0B 22%, rgba(10, 10, 11, 0) 100%);
+}
+.layout-green-screen .core { z-index: 3; }
+
+/* ------------------------------------------------------------
+  13. PAPER CUT — camadas de papel com parallax
+   ------------------------------------------------------------ */
+.layout-paper-cut .layer {
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  z-index: 1;
+  background: #16161b;
+}
+.layout-paper-cut .layer.l1 {
+  bottom: -60px;
+  height: 620px;
+  background: #101014;
+  clip-path: polygon(0 26%, 7% 14%, 15% 24%, 24% 10%, 33% 22%, 41% 12%, 52% 24%, 61% 11%, 70% 23%, 79% 13%, 88% 24%, 95% 15%, 100% 26%, 100% 100%, 0 100%);
+}
+.layout-paper-cut .layer.l2 {
+  bottom: 120px;
+  height: 520px;
+  background: #1a1a20;
+  clip-path: polygon(0 30%, 9% 18%, 18% 30%, 27% 16%, 38% 28%, 47% 17%, 58% 30%, 68% 18%, 78% 29%, 88% 17%, 100% 30%, 100% 100%, 0 100%);
+}
+.layout-paper-cut .layer.l3 {
+  top: -40px;
+  height: 380px;
+  background: #131318;
+  clip-path: polygon(0 0, 100% 0, 100% 72%, 92% 84%, 82% 72%, 71% 86%, 61% 73%, 50% 87%, 39% 73%, 28% 86%, 18% 72%, 8% 85%, 0 72%);
+}
+.layout-paper-cut .core { z-index: 3; }
+
+/* ------------------------------------------------------------
+  14. DOODLE BOIL — traco desenhado a mao, fervendo
+   ------------------------------------------------------------ */
+.layout-doodle-boil .boil {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+.layout-doodle-boil .boil svg {
+  position: absolute;
+  left: 70px;
+  width: 780px;
+  height: 300px;
+  margin-top: -150px;
+  overflow: visible;
+}
+.layout-doodle-boil .boil path {
+  fill: none;
+  stroke: rgba(178, 58, 46, 0.85);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 2400;
+  stroke-dashoffset: 2400;
+}
+.layout-doodle-boil .core { z-index: 3; }
+
+/* ------------------------------------------------------------
+  15. VERTIGO — o quadro empurra, o fundo recua
+   ------------------------------------------------------------ */
+.layout-vertigo .core { transform-origin: 50% 50%; }
+.layout-vertigo .ly-decor {
+  background: repeating-conic-gradient(from 0deg at 50% 50%, rgba(232, 230, 225, 0.02) 0deg 2deg, transparent 2deg 15deg);
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------
+  16. COVER STORY — capa de revista
+   ------------------------------------------------------------ */
+.layout-cover-story .cover {
+  position: absolute;
+  left: 110px;
+  right: 110px;
+  top: 240px;
+  bottom: 320px;
+  z-index: 2;
+  padding: 40px 38px 34px;
+  border: 1px solid rgba(232, 230, 225, 0.2);
+  background: linear-gradient(165deg, #17171d, #0b0b0f 72%);
+  display: flex;
+  flex-direction: column;
+}
+.layout-cover-story .masthead {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 58px;
+  letter-spacing: 12px;
+  line-height: 1;
+  color: var(--ink);
+  padding-bottom: 14px;
+}
+.layout-cover-story .rule {
+  height: 3px;
+  background: var(--accent);
+  transform-origin: left center;
+}
+.layout-cover-story .issue {
+  margin-top: 12px;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 19px;
+  letter-spacing: 5px;
+  color: var(--dim);
+}
+.layout-cover-story .cover .core {
+  flex: 1;
+  padding: 0;
+  justify-content: center;
+}
+.layout-cover-story .barcode {
+  position: absolute;
+  right: 38px;
+  bottom: 34px;
+  width: 128px;
+  height: 46px;
+  background: repeating-linear-gradient(90deg, rgba(232, 230, 225, 0.55) 0 3px, transparent 3px 7px);
+  transform-origin: left center;
+}
+.layout-cover-story .call {
+  position: absolute;
+  left: 38px;
+  bottom: 34px;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 20px;
+  letter-spacing: 3px;
+  color: var(--accent);
+}
+
+/* ------------------------------------------------------------
+  17. GLASS TYPE — painel de vidro (gradiente estatico)
+   ------------------------------------------------------------ */
+.layout-glass-type .pane {
+  position: absolute;
+  left: 96px;
+  right: 96px;
+  top: 50%;
+  height: 700px;
+  margin-top: -350px;
+  z-index: 2;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.02) 52%, rgba(255, 255, 255, 0.08));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.38),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    0 30px 80px rgba(0, 0, 0, 0.5);
+}
+.layout-glass-type .pane::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  background: radial-gradient(120% 70% at 18% 0%, rgba(255, 255, 255, 0.16), transparent 58%);
+}
+.layout-glass-type .core { z-index: 3; padding: 0 150px; }
+.layout-glass-type h1 { text-shadow: 0 1px 0 rgba(255, 255, 255, 0.22), 0 18px 40px rgba(0, 0, 0, 0.55); }
+</style>
+</head>
+<body>
+<div id="stage" data-composition-id="lab003" data-start="0" data-width="1080" data-height="1920" data-fps="30">
+  <div class="bg"></div>
+  <div class="vignette"></div>
+  <div class="frame"></div>
+  <div class="mark">DOSSIÊ 45</div>
+  <div class="dossier">LAB 003</div>
+
+  <section class="scene s01 clip layout layout-orbit" id="s01" data-start="0.000" data-duration="2.924" data-track-index="1" data-cena="1" data-layout="orbit">
+    <div class="ly-decor">
+      <div class="ring">
+      <i style="transform: rotate(0deg)"></i>
+      <i style="transform: rotate(90deg)"></i>
+      <i style="transform: rotate(180deg)"></i>
+      <i style="transform: rotate(270deg)"></i>
+      <span class="orb hot" style="transform: rotate(0deg) translateY(-410px)"></span>
+      <span class="orb" style="transform: rotate(90deg) translateY(-410px)"></span>
+      <span class="orb" style="transform: rotate(180deg) translateY(-410px)"></span>
+      <span class="orb" style="transform: rotate(270deg) translateY(-410px)"></span>
+      </div>
+    </div>
+    <div class="core">
+    <div class="kicker">ORBIT</div>
+    <h1>A ÓRBITA<br>DO CASO</h1>
+    <span class="small">TUDO GIRA EM VOLTA</span>
+    </div>
+  </section>
+
+  <section class="scene s02 clip layout layout-couch-wall" id="s02" data-start="2.924" data-duration="2.564" data-track-index="1" data-cena="2" data-layout="couch-wall">
+    <div class="wall">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="scrim"></div>
+    <div class="core">
+    <div class="kicker">COUCH WALL</div>
+    <h1>O ACERVO<br>INTEIRO</h1>
+    <span class="small">UMA IMAGEM IMPORTA</span>
+    </div>
+  </section>
+
+  <section class="scene s03 clip layout layout-ui-world" id="s03" data-start="5.488" data-duration="2.855" data-track-index="1" data-cena="3" data-layout="ui-world">
+    <div class="win">
+      <div class="bar"><b></b><b></b><b></b><div class="url">arquivo.gov/1948/caso</div></div>
+      <div class="body">
+        <div class="core">
+    <div class="kicker">UI WORLD</div>
+    <h1>O ARQUIVO<br>ABERTO</h1>
+    <span class="small">O SISTEMA NÃO MENTE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene s04 clip layout layout-frame-break" id="s04" data-start="8.343" data-duration="2.449" data-track-index="1" data-cena="4" data-layout="frame-break">
+    <div class="fb-frame"></div>
+    <div class="fb-mask"></div>
+    <div class="core">
+    <div class="kicker">FRAME BREAK</div>
+    <h1>NÃO CABE<br>NO QUADRO</h1>
+    <span class="small">O TEXTO ATRAVESSA</span>
+    </div>
+  </section>
+
+  <section class="scene s05 clip layout layout-digital-zoom" id="s05" data-start="10.792" data-duration="2.494" data-track-index="1" data-cena="5" data-layout="digital-zoom">
+    <div class="core">
+    <div class="kicker">DIGITAL ZOOM</div>
+    <h1>APROXIMA<br>EM DEGRAUS</h1>
+    <span class="small">COMO FITA VHS</span>
+    </div>
+  </section>
+
+  <section class="scene s06 clip layout layout-phone-mockup" id="s06" data-start="13.286" data-duration="2.521" data-track-index="1" data-cena="6" data-layout="phone-mockup">
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="screen">
+        <div class="core">
+    <div class="kicker">PHONE MOCKUP</div>
+    <h1>NA SUA<br>MÃO</h1>
+    <span class="small">A TELA É O ARQUIVO</span>
+        </div>
+      </div>
+      <div class="home"></div>
+    </div>
+  </section>
+
+  <section class="scene s07 clip layout layout-checklist" id="s07" data-start="15.807" data-duration="2.574" data-track-index="1" data-cena="7" data-layout="checklist">
+    <div class="core">
+    <div class="kicker">CHECKLIST</div>
+    <h1>O QUE<br>FALTAVA</h1>
+    </div>
+    <ul class="list">
+      <li class="item"><span class="box"><svg viewBox="0 0 24 24"><path d="M4 12.5 L9.5 18 L20 6"/></svg></span><span class="txt">SEM DOCUMENTO</span></li>
+      <li class="item"><span class="box"><svg viewBox="0 0 24 24"><path d="M4 12.5 L9.5 18 L20 6"/></svg></span><span class="txt">SEM ETIQUETA</span></li>
+      <li class="item"><span class="box"><svg viewBox="0 0 24 24"><path d="M4 12.5 L9.5 18 L20 6"/></svg></span><span class="txt">SEM NOME</span></li>
+    </ul>
+  </section>
+
+  <section class="scene s08 clip layout layout-headline-wall" id="s08" data-start="18.381" data-duration="2.944" data-track-index="1" data-cena="8" data-layout="headline-wall">
+    <div class="wall">
+      <span>HOMEM MORTO NA PRAIA</span>
+      <span>CÓDIGO NA ROUPA</span>
+      <span>CASO SEM NOME</span>
+      <span>POLÍCIA SEM PISTA</span>
+      <span>74 ANOS DEPOIS</span>
+      <span>O PAPEL AMARELOU</span>
+    </div>
+    <div class="scrim"></div>
+    <div class="core">
+    <div class="kicker">HEADLINE WALL</div>
+    <h1>TODO MUNDO<br>NOTICIOU</h1>
+    </div>
+  </section>
+
+  <section class="scene s09 clip layout layout-zoom-through" id="s09" data-start="21.325" data-duration="2.408" data-track-index="1" data-cena="9" data-layout="zoom-through">
+    <div class="core">
+    <div class="kicker">ZOOM-THROUGH CUT</div>
+    <h1>ATRAVESSA<br>A PALAVRA</h1>
+    <span class="small">O CORTE É O ZOOM</span>
+    </div>
+  </section>
+
+  <section class="scene s10 clip layout layout-chart-grow" id="s10" data-start="23.733" data-duration="2.141" data-track-index="1" data-cena="10" data-layout="chart-grow">
+    <div class="core">
+    <div class="kicker">CHART GROW</div>
+    <h1>AS HORAS<br>NÃO BATEM</h1>
+    <span class="small">TRÊS VERSÕES</span>
+    </div>
+    <div class="chart">
+      <div class="bar"><u data-valor="9">0</u><b style="height: 24%"></b><i>1959</i></div>
+      <div class="bar"><u data-valor="14">0</u><b style="height: 37%"></b><i>2015</i></div>
+      <div class="bar hot"><u data-valor="38">0</u><b style="height: 100%"></b><i>2020</i></div>
+    </div>
+  </section>
+
+  <section class="scene s11 clip layout layout-pull-back" id="s11" data-start="25.874" data-duration="2.517" data-track-index="1" data-cena="11" data-layout="pull-back">
+    <div class="core">
+    <div class="kicker">PULL-BACK REVEAL</div>
+    <h1>O DETALHE<br>E O TODO</h1>
+    <span class="small">PRIMEIRO FECHADO</span>
+    </div>
+  </section>
+
+  <section class="scene s12 clip layout layout-green-screen" id="s12" data-start="28.391" data-duration="2.540" data-track-index="1" data-cena="12" data-layout="green-screen">
+    <div class="key"></div>
+    <div class="keyline"></div>
+    <div class="core">
+    <div class="kicker">GREEN SCREEN</div>
+    <h1>A SILHUETA<br>NA FRENTE</h1>
+    <span class="small">SEM FOOTAGE</span>
+    </div>
+  </section>
+
+  <section class="scene s13 clip layout layout-paper-cut" id="s13" data-start="30.931" data-duration="2.742" data-track-index="1" data-cena="13" data-layout="paper-cut">
+    <div class="layer l1"></div>
+    <div class="layer l2"></div>
+    <div class="layer l3"></div>
+    <div class="core">
+    <div class="kicker">PAPER CUT</div>
+    <h1>CAMADAS<br>DE PAPEL</h1>
+    <span class="small">PROFUNDIDADE FÍSICA</span>
+    </div>
+  </section>
+
+  <section class="scene s14 clip layout layout-doodle-boil" id="s14" data-start="33.673" data-duration="2.372" data-track-index="1" data-cena="14" data-layout="doodle-boil">
+    <div class="boil">
+      <svg viewBox="0 0 888 300" preserveAspectRatio="none"><path d="M 70 152 C 150 46, 430 26, 700 66 C 846 88, 862 196, 640 240 C 424 284, 118 268, 74 196 C 58 168, 58 160, 70 152"/></svg>
+      <svg viewBox="0 0 888 300" preserveAspectRatio="none"><path d="M 74 148 C 158 52, 420 30, 704 62 C 840 80, 856 200, 636 236 C 420 278, 122 274, 70 192 C 56 166, 60 156, 74 148"/></svg>
+      <svg viewBox="0 0 888 300" preserveAspectRatio="none"><path d="M 66 156 C 146 42, 436 22, 696 70 C 852 94, 866 190, 646 244 C 428 290, 114 262, 78 200 C 60 172, 54 162, 66 156"/></svg>
+    </div>
+    <div class="core">
+    <div class="kicker">DOODLE BOIL</div>
+    <h1>A MÃO<br>INSTÁVEL</h1>
+    <span class="small">TRAÇO QUE FERVE</span>
+    </div>
+  </section>
+
+  <section class="scene s15 clip layout layout-vertigo" id="s15" data-start="36.045" data-duration="2.555" data-track-index="1" data-cena="15" data-layout="vertigo">
+    <div class="ly-decor"></div>
+    <div class="core">
+    <div class="kicker">VERTIGO</div>
+    <h1>O QUADRO<br>EMPURRA</h1>
+    <span class="small">E O FUNDO RECUA</span>
+    </div>
+  </section>
+
+  <section class="scene s16 clip layout layout-cover-story" id="s16" data-start="38.600" data-duration="3.016" data-track-index="1" data-cena="16" data-layout="cover-story">
+    <div class="cover">
+      <div class="masthead">ARQUIVO</div>
+      <div class="rule"></div>
+      <div class="issue">Nº 45 · OUTUBRO</div>
+      <div class="core">
+    <div class="kicker">COVER STORY</div>
+    <h1>CAPA<br>DE REVISTA</h1>
+      </div>
+      <div class="call">O HOMEM SEM NOME</div>
+      <div class="barcode"></div>
+    </div>
+  </section>
+
+  <section class="scene s17 clip layout layout-glass-type" id="s17" data-start="41.616" data-duration="3.384" data-track-index="1" data-cena="17" data-layout="glass-type">
+    <div class="pane"></div>
+    <div class="core">
+    <div class="kicker">GLASS TYPE</div>
+    <h1>PAINEL<br>FRIO</h1>
+    <span class="small">VIDRO SEM BLUR</span>
+    </div>
+  </section>
+
+  <div class="foot">LABORATÓRIO 003 — BIBLIOTECA DE LAYOUTS · 17 ESTILOS</div>
+  <div id="fade"></div>
+
+  <!-- Áudio: voz.wav e drone.wav (45 s) nesta pasta. Não remova os ids. -->
+  <audio id="voz" data-start="0" data-duration="45" data-track-index="0" data-volume="1.0" src="voz.wav"></audio>
+  <audio id="drone" data-start="0" data-duration="45" data-track-index="2" data-volume="0.16" src="drone.wav"></audio>
+
+  <script src="gsap.min.js"></script>
+  <script>
+/* ============================================================
+   layouts.js — animacao por layout (GSAP, sem plugin pago)
+   Contrato: docs/ARQUITETURA.md §2/§3   Spec: docs/LAYOUTS.md §10
+
+   Cada funcao recebe (root, tl, t, dur, start):
+     root  = <section> da cena
+     tl    = timeline mestre (paused, montada pelo gerador)
+     t     = inicio da entrada do texto (start + entrada_offset)
+     dur   = duracao da cena em segundos
+     start = inicio da cena (para efeitos de fim de cena)
+
+   Regras:
+     - o gerador so inclui este arquivo se houver cena com `tipo`;
+     - `texto` reproduz o v1 exatamente (base);
+     - so transform/opacity animados; nada de filtro em area cheia;
+     - todo layout chama base() ou define a entrada do texto por conta propria.
+   ============================================================ */
+(function () {
+  "use strict";
+
+  var q = function (root, sel) { return root.querySelector(sel); };
+  var qa = function (root, sel) { return Array.prototype.slice.call(root.querySelectorAll(sel)); };
+
+  /* ---------- v1: entrada padrao do texto ---------- */
+  function base(root, tl, t) {
+    var h1 = q(root, "h1");
+    if (h1) tl.from(h1, { opacity: 0, y: 36, duration: 0.55, ease: "power2.out" }, t);
+    var accent = q(root, ".accent");
+    if (accent) tl.from(accent, { scaleX: 0, duration: 0.5, ease: "power2.out" }, t + 0.10);
+    var small = q(root, ".small");
+    if (small) tl.from(small, { opacity: 0, y: 14, duration: 0.45, ease: "power2.out" }, t + 0.18);
+    var kicker = q(root, ".kicker");
+    if (kicker) tl.from(kicker, { opacity: 0, duration: 0.4, ease: "power1.out" }, t + 0.05);
+  }
+
+  var L = {};
+  L.texto = base;
+
+  /* ---------- 1. ORBIT ---------- */
+  L.orbit = function (root, tl, t, dur) {
+    base(root, tl, t);
+    var ring = q(root, ".ring");
+    var orbs = qa(root, ".orb");
+    var decor = q(root, ".ly-decor");
+    if (decor) tl.from(decor, { opacity: 0, duration: 0.6, ease: "power1.out" }, t);
+    if (ring) {
+      tl.from(ring, { rotation: -26, duration: 1.0, ease: "power2.out" }, t);
+      tl.to(ring, { rotation: 62, duration: Math.max(0.6, dur - 0.4), ease: "none" }, t + 0.4);
+    }
+    orbs.forEach(function (o, i) {
+      tl.from(o, { scale: 0, duration: 0.5, ease: "back.out(2.2)" }, t + 0.1 + i * 0.08);
+    });
+  };
+
+  /* ---------- 2. COUCH WALL ---------- */
+  L["couch-wall"] = function (root, tl, t, dur) {
+    base(root, tl, t);
+    var wall = q(root, ".wall");
+    var cards = qa(root, ".wall span");
+    if (wall) tl.fromTo(wall, { y: 40 }, { y: -40, duration: Math.max(1, dur), ease: "none" }, t);
+    cards.forEach(function (c, i) {
+      tl.from(c, { opacity: 0, scale: 0.94, duration: 0.5, ease: "power2.out" }, t + i * 0.035);
+    });
+    var scrim = q(root, ".scrim");
+    if (scrim) tl.from(scrim, { opacity: 0, duration: 0.7, ease: "power1.out" }, t);
+  };
+
+  /* ---------- 3. UI WORLD ---------- */
+  L["ui-world"] = function (root, tl, t, dur) {
+    var win = q(root, ".win");
+    var body = q(root, ".body");
+    if (win) {
+      tl.from(win, { opacity: 0, scale: 0.95, y: 26, duration: 0.7, ease: "power3.out" }, t);
+      tl.from(q(root, ".bar"), { opacity: 0, duration: 0.4 }, t + 0.15);
+    }
+    base(root, tl, t + 0.22);
+    if (body) tl.from(body, { opacity: 0.4, duration: 0.6 }, t + 0.22);
+    var url = q(root, ".url");
+    if (url) tl.from(url, { opacity: 0, duration: 0.4 }, t + 0.35);
+    if (win) tl.to(win, { scale: 1.02, duration: Math.max(0.5, dur - 1), ease: "none" }, t + 0.8);
+  };
+
+  /* ---------- 4. FRAME BREAK ---------- */
+  L["frame-break"] = function (root, tl, t, dur) {
+    var f = q(root, ".fb-frame");
+    if (f) {
+      tl.from(f, { scaleX: 0, duration: 0.45, ease: "power2.out" }, t);
+      tl.from(f, { scaleY: 0, duration: 0.45, ease: "power2.out" }, t + 0.22);
+    }
+    var mask = q(root, ".fb-mask");
+    if (mask) tl.from(mask, { opacity: 0, duration: 0.5 }, t + 0.4);
+    var h1 = q(root, "h1");
+    if (h1) {
+      tl.from(h1, { opacity: 0, scale: 0.86, duration: 0.6, ease: "back.out(1.6)" }, t + 0.4);
+      tl.to(h1, { scale: 1.06, duration: Math.max(0.5, dur - 1), ease: "none" }, t + 1.0);
+    }
+    var kicker = q(root, ".kicker");
+    if (kicker) tl.from(kicker, { opacity: 0, duration: 0.4 }, t + 0.3);
+    var small = q(root, ".small");
+    if (small) tl.from(small, { opacity: 0, y: 14, duration: 0.45, ease: "power2.out" }, t + 0.62);
+    var accent = q(root, ".accent");
+    if (accent) tl.from(accent, { scaleX: 0, duration: 0.5, ease: "power2.out" }, t + 0.5);
+  };
+
+  /* ---------- 5. DIGITAL ZOOM ---------- */
+  L["digital-zoom"] = function (root, tl, t, dur) {
+    base(root, tl, t);
+    var core = q(root, ".core");
+    if (core) tl.fromTo(core, { scale: 1 }, { scale: 1.12, duration: Math.max(0.8, dur * 0.8), ease: "steps(6)" }, t + 0.15);
+  };
+
+  /* ---------- 6. PHONE MOCKUP ---------- */
+  L["phone-mockup"] = function (root, tl, t, dur) {
+    var phone = q(root, ".phone");
+    if (phone) {
+      tl.from(phone, { opacity: 0, y: 70, rotation: -3, duration: 0.85, ease: "power3.out" }, t);
+      tl.to(phone, { y: -18, duration: Math.max(0.6, dur - 0.9), ease: "none" }, t + 0.85);
+    }
+    base(root, tl, t + 0.28);
+  };
+
+  /* ---------- 7. CHECKLIST ---------- */
+  L["checklist"] = function (root, tl, t, dur) {
+    var h1 = q(root, "h1");
+    if (h1) tl.from(h1, { opacity: 0, y: 30, duration: 0.5, ease: "power2.out" }, t);
+    var kicker = q(root, ".kicker");
+    if (kicker) tl.from(kicker, { opacity: 0, duration: 0.4 }, t + 0.05);
+    var small = q(root, ".small");
+    if (small) tl.from(small, { opacity: 0, y: 12, duration: 0.4 }, t + 0.12);
+    qa(root, ".item").forEach(function (it, i) {
+      var at = t + 0.26 + i * 0.22;
+      tl.from(it, { opacity: 0, x: -34, duration: 0.42, ease: "power2.out" }, at);
+      var path = q(it, "path");
+      if (path) tl.to(path, { strokeDashoffset: 0, duration: 0.3, ease: "power1.inOut" }, at + 0.2);
+    });
+  };
+
+  /* ---------- 8. HEADLINE WALL ---------- */
+  L["headline-wall"] = function (root, tl, t, dur) {
+    var rows = qa(root, ".wall span");
+    rows.forEach(function (r, i) {
+      var dir = i % 2 === 0 ? 1 : -1;
+      tl.from(r, { opacity: 0, duration: 0.5, ease: "power1.out" }, t + i * 0.05);
+      tl.fromTo(r, { x: -70 * dir }, { x: 70 * dir, duration: Math.max(1, dur), ease: "none" }, t);
+    });
+    var scrim = q(root, ".scrim");
+    if (scrim) tl.from(scrim, { opacity: 0, duration: 0.7 }, t);
+    base(root, tl, t + 0.1);
+  };
+
+  /* ---------- 9. ZOOM THROUGH ---------- */
+  L["zoom-through"] = function (root, tl, t, dur, start) {
+    base(root, tl, t);
+    var core = q(root, ".core");
+    if (core) {
+      var fim = Math.max(t + 0.6, start + dur - 0.45);
+      tl.to(core, { scale: 5.2, opacity: 0, duration: 0.45, ease: "power3.in" }, fim);
+    }
+  };
+
+  /* ---------- 10. CHART GROW ---------- */
+  L["chart-grow"] = function (root, tl, t, dur) {
+    var h1 = q(root, "h1");
+    if (h1) tl.from(h1, { opacity: 0, y: 28, duration: 0.5, ease: "power2.out" }, t);
+    var kicker = q(root, ".kicker");
+    if (kicker) tl.from(kicker, { opacity: 0, duration: 0.4 }, t + 0.05);
+    var small = q(root, ".small");
+    if (small) tl.from(small, { opacity: 0, y: 12, duration: 0.4 }, t + 0.1);
+    qa(root, ".bar").forEach(function (bar, i) {
+      var at = t + 0.3 + i * 0.14;
+      var b = q(bar, "b");
+      if (b) tl.from(b, { scaleY: 0, duration: 0.62, ease: "power2.out" }, at);
+      var u = q(bar, "u");
+      var alvo = u ? parseInt(u.getAttribute("data-valor") || "0", 10) : 0;
+      if (u) {
+        var cont = { v: 0 };
+        tl.to(cont, {
+          v: alvo, duration: 0.7, ease: "power1.out", snap: { v: 1 },
+          onUpdate: function () { u.textContent = String(cont.v); }
+        }, at);
+        tl.set(u, { textContent: String(alvo) }, at + 0.72);
+      }
+      var i2 = q(bar, "i");
+      if (i2) tl.from(i2, { opacity: 0, duration: 0.35 }, at + 0.1);
+    });
+  };
+
+  /* ---------- 11. PULL BACK ---------- */
+  L["pull-back"] = function (root, tl, t, dur) {
+    var core = q(root, ".core");
+    if (core) {
+      tl.from(core, { scale: 1.55, y: -30, duration: 1.0, ease: "power3.out" }, t);
+      tl.to(core, { scale: 1.0, y: 0, duration: Math.max(0.4, dur - 1.1), ease: "none" }, t + 1.0);
+    }
+    var h1 = q(root, "h1");
+    if (h1) tl.from(h1, { opacity: 0, duration: 0.45, ease: "power2.out" }, t);
+    var kicker = q(root, ".kicker");
+    if (kicker) tl.from(kicker, { opacity: 0, duration: 0.4 }, t + 0.2);
+    var small = q(root, ".small");
+    if (small) tl.from(small, { opacity: 0, y: 16, duration: 0.5, ease: "power2.out" }, t + 0.75);
+    var accent = q(root, ".accent");
+    if (accent) tl.from(accent, { scaleX: 0, duration: 0.5, ease: "power2.out" }, t + 0.85);
+  };
+
+  /* ---------- 12. GREEN SCREEN ---------- */
+  L["green-screen"] = function (root, tl, t, dur) {
+    var key = q(root, ".key");
+    if (key) {
+      tl.from(key, { opacity: 0, y: 60, duration: 0.8, ease: "power2.out" }, t);
+      tl.to(key, { scale: 1.04, duration: Math.max(0.6, dur - 0.8), ease: "none" }, t + 0.8);
+    }
+    var line = q(root, ".keyline");
+    if (line) tl.from(line, { opacity: 0, duration: 0.6 }, t + 0.3);
+    base(root, tl, t + 0.2);
+  };
+
+  /* ---------- 13. PAPER CUT ---------- */
+  L["paper-cut"] = function (root, tl, t, dur) {
+    var layers = qa(root, ".layer");
+    layers.forEach(function (l, i) {
+      var dir = i % 2 === 0 ? 1 : -1;
+      var amp = 26 + i * 16;
+      tl.from(l, { opacity: 0, duration: 0.5, ease: "power1.out" }, t + i * 0.08);
+      tl.fromTo(l, { x: -amp * dir }, { x: amp * dir, duration: Math.max(1, dur), ease: "none" }, t);
+    });
+    base(root, tl, t + 0.12);
+  };
+
+  /* ---------- 14. DOODLE BOIL ---------- */
+  L["doodle-boil"] = function (root, tl, t, dur) {
+    base(root, tl, t);
+    var svgs = qa(root, ".boil svg");
+    if (!svgs.length) return;
+    var paths = svgs.map(function (s) { return q(s, "path"); });
+    svgs.forEach(function (s, i) { tl.set(s, { autoAlpha: i === 0 ? 1 : 0 }, 0); });
+    paths.forEach(function (p) {
+      if (p) tl.to(p, { strokeDashoffset: 0, duration: 0.55, ease: "power1.inOut" }, t + 0.35);
+    });
+    var passo = 0.1;
+    var quadros = Math.max(1, Math.floor((dur - 1.0) / passo));
+    for (var k = 0; k < quadros; k++) {
+      var at = t + 0.95 + k * passo;
+      tl.set(svgs, { autoAlpha: 0 }, at);
+      tl.set(svgs[k % svgs.length], { autoAlpha: 1 }, at);
+    }
+  };
+
+  /* ---------- 15. VERTIGO ---------- */
+  L.vertigo = function (root, tl, t, dur) {
+    base(root, tl, t);
+    var core = q(root, ".core");
+    var decor = q(root, ".ly-decor");
+    if (core) tl.fromTo(core, { scale: 1.0, rotation: 0 }, { scale: 1.2, rotation: -1.2, duration: Math.max(1, dur), ease: "none" }, t);
+    if (decor) {
+      tl.from(decor, { opacity: 0, duration: 0.6 }, t);
+      tl.fromTo(decor, { scale: 1.16, rotation: 2 }, { scale: 1.0, rotation: 0, duration: Math.max(1, dur), ease: "none" }, t);
+    }
+  };
+
+  /* ---------- 16. COVER STORY ---------- */
+  L["cover-story"] = function (root, tl, t, dur) {
+    var cover = q(root, ".cover");
+    if (cover) {
+      tl.from(cover, { opacity: 0, y: 44, duration: 0.75, ease: "power3.out" }, t);
+      tl.to(cover, { y: -14, duration: Math.max(0.6, dur - 0.8), ease: "none" }, t + 0.75);
+    }
+    var mast = q(root, ".masthead");
+    if (mast) tl.from(mast, { opacity: 0, y: 18, duration: 0.5, ease: "power2.out" }, t + 0.2);
+    var rule = q(root, ".rule");
+    if (rule) tl.from(rule, { scaleX: 0, duration: 0.5, ease: "power2.out" }, t + 0.45);
+    var issue = q(root, ".issue");
+    if (issue) tl.from(issue, { opacity: 0, duration: 0.4 }, t + 0.55);
+    var bar = q(root, ".barcode");
+    if (bar) tl.from(bar, { scaleX: 0, duration: 0.45, ease: "power2.out" }, t + 0.6);
+    var call = q(root, ".call");
+    if (call) tl.from(call, { opacity: 0, duration: 0.4 }, t + 0.7);
+    base(root, tl, t + 0.3);
+  };
+
+  /* ---------- 17. GLASS TYPE ---------- */
+  L["glass-type"] = function (root, tl, t, dur) {
+    var pane = q(root, ".pane");
+    if (pane) {
+      tl.from(pane, { opacity: 0, scale: 0.965, duration: 0.7, ease: "power2.out" }, t);
+      tl.to(pane, { y: -12, duration: Math.max(0.6, dur - 0.8), ease: "none" }, t + 0.8);
+    }
+    base(root, tl, t + 0.18);
+  };
+
+  window.__layouts = L;
+})();
+  </script>
+  <script>
+    const DUR = 45;
+    const tl = gsap.timeline({ paused: true });
+    tl.to({}, { duration: DUR }, 0);
+    tl.fromTo(".bg", { scale: 1.06 }, { scale: 1.14, duration: DUR, ease: "none" }, 0);
+
+    const scenes = [
+      ["s01", 0.00],
+      ["s02", 2.97],
+      ["s03", 5.54],
+      ["s04", 8.39],
+      ["s05", 10.84],
+      ["s06", 13.34],
+      ["s07", 15.86],
+      ["s08", 18.43],
+      ["s09", 21.38],
+      ["s10", 23.78],
+      ["s11", 25.92],
+      ["s12", 28.44],
+      ["s13", 30.98],
+      ["s14", 33.72],
+      ["s15", 36.09],
+      ["s16", 38.65],
+      ["s17", 41.67]
+    ];
+
+    scenes.forEach(([id, t]) => {
+      const root = document.getElementById(id);
+      const start = parseFloat(root.dataset.start || "0");
+      const dur = parseFloat(root.dataset.duration || String(DUR));
+      tl.set(root, { autoAlpha: 0 }, 0);
+      tl.set(root, { autoAlpha: 1 }, start);
+      tl.set(root, { autoAlpha: 0 }, start + dur);
+      const lay = root.dataset.layout || "texto";
+      const fn = (window.__layouts && window.__layouts[lay]) || window.__layouts.texto;
+      fn(root, tl, t, dur, start);
+    });
+
+    tl.to("#fade", { opacity: 1, duration: 0.7, ease: "power1.in" }, 44.30);
+    window.__timelines = window.__timelines || {};
+    window.__timelines.lab003 = tl;
+
+    // QA: congelar um frame via ?t=12.5 (não afeta o render)
+    const seek = new URLSearchParams(location.search).get("t");
+    if (seek !== null) {
+      const t = Math.max(0, Math.min(DUR, parseFloat(seek) || 0));
+      tl.time(t, false);
+      document.querySelectorAll(".clip").forEach((el) => {
+        const start = parseFloat(el.dataset.start || "0");
+        const dur = parseFloat(el.dataset.duration || "0");
+        el.style.visibility = (t >= start && t < start + dur) ? "visible" : "hidden";
+      });
+    }
+  </script>
+</div>
+</body>
+</html>

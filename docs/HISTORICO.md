@@ -4,6 +4,43 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-10-31**.
 
+## 2026-10-31 — 17 estilos de cena: biblioteca de layouts + LAB 003 (QA PASS)
+
+**Entregue**
+- `templates/layouts/` — 17 estilos de cena em CSS+GSAP, com `registro.json` como
+  fonte de verdade: `orbit`, `couch-wall`, `ui-world`, `frame-break`,
+  `digital-zoom`, `phone-mockup`, `checklist`, `headline-wall`, `zoom-through`,
+  `chart-grow`, `pull-back`, `green-screen`, `paper-cut`, `doodle-boil`,
+  `vertigo`, `cover-story`, `glass-type`. Asset é **opcional** em todos: sem
+  foto, cada estilo tem stand-in em CSS/SVG.
+- `gerar-episodio.py` aceita `"tipo"` por cena, inlina a biblioteca no
+  `index.html` e **valida** o roteiro (tipo desconhecido, `itens`/`valores`
+  faltando, asset sem crédito/licença, `zoom-through` como última cena).
+- `check-contrato.ps1` §2b: confere `data-layout`, `window.__layouts` inlinado,
+  classe `layout-<tipo>` e existência do arquivo de asset.
+- `laboratorio/003-layouts-17/` — 17 cenas, 45,077 s, **QA PASS**: 3m06,1s de
+  render (5 segmentos, 0 retries, 1352 frames), −15,0 LUFS, TP −2,5, LRA 3,6.
+  SHA-256 `59D282C2…5E9AF7`. `qa.md` com a tinta por cena e dois contact sheets.
+- `docs/LAYOUTS.md` §10 (os 17, as 4 famílias, regras de máquina) e
+  `docs/ARQUITETURA.md` §2.2.1 (contrato de layout) atualizados.
+
+**Decisão**
+- Os 17 são **4 famílias sobre o cartão do v1** (câmera, moldura, widget,
+  tipografia), não 17 layouts paralelos — reaproveitam `kicker`/`titulo`/
+  `pequeno` e o mesmo contrato de tempo.
+- **Sem `tipo`, a saída continua byte-idêntica ao v1**: o 007 foi regerado e o
+  `index.html` manteve o SHA-256. A biblioteca é aditiva.
+- Nada entra em episódio antes da **aprovação humana** do LAB 003.
+
+**Achados**
+- `hyperframes snapshot` não mostra a cena 1: a órbita saiu invisível no
+  primeiro render e só o frame do mp4 mostrou — decoro reforçado (anel, orbes,
+  raios) e render refeito.
+- `alimiter=limit=0.85` limita **amostra**, não inter-sample: o `voz.wav` mede
+  pico −1,41 dBFS e **true peak +0,2 dBFS**. Medir TP, não pico de amostra.
+- 17 cenas animadas custam o mesmo que 12–14: o render é limitado pela duração
+  (1352 frames), não pelo número de cenas.
+
 ## 2026-10-31 — 007 Homem de Somerton: produzido, QA PASS, aguarda aprovação
 
 **Entregue**

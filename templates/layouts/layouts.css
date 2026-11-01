@@ -1,0 +1,617 @@
+/* ============================================================
+   layouts.css — biblioteca visual v2 (v1 + 17 estilos)
+   Contrato: docs/ARQUITETURA.md §2/§3   Spec: docs/LAYOUTS.md §10
+   Regras de maquina (Intel HD 620):
+     - so transform/opacity animados em area cheia;
+     - sem backdrop-filter, sem blur animado, sem feTurbulence;
+     - sem WebGL/Three.js (regra 3 do AGENTS.md).
+   O texto continua sendo o elemento medido por medir-texto.ps1:
+   todo layout mantem um <h1> com font-size explicito por cena.
+   ============================================================ */
+
+#stage {
+  --accent: #B23A2E;
+  --ink: #E8E6E1;
+  --dim: #6B6B70;
+  --line: rgba(232, 230, 225, 0.14);
+  --card: #131317;
+}
+
+.scene.layout { padding: 0; }
+
+.scene.layout .core {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: 0 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ly-decor {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ------------------------------------------------------------
+   1. ORBIT — anel de pontos girando em volta do titulo
+   ------------------------------------------------------------ */
+.layout-orbit .ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 820px;
+  height: 820px;
+  margin: -410px 0 0 -410px;
+  z-index: 1;
+}
+.layout-orbit .ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(232, 230, 225, 0.09);
+}
+.layout-orbit .ring i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2px;
+  height: 410px;
+  background: linear-gradient(to bottom, rgba(178, 58, 46, 0.55), rgba(232, 230, 225, 0.12) 70%, transparent 88%);
+  transform-origin: 50% 0;
+}
+.layout-orbit .orb {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 -12px;
+  border-radius: 50%;
+  border: 2px solid rgba(232, 230, 225, 0.55);
+  background: #0A0A0B;
+  box-shadow: 0 0 0 8px rgba(10, 10, 11, 0.75);
+}
+.layout-orbit .orb.hot {
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 0 10px rgba(178, 58, 46, 0.14), 0 0 0 2px rgba(10, 10, 11, 0.9);
+}
+.layout-orbit .orb em {
+  position: absolute;
+  left: 34px;
+  top: -8px;
+  font-family: Inter, Arial, sans-serif;
+  font-style: normal;
+  font-size: 24px;
+  letter-spacing: 3px;
+  color: var(--dim);
+  white-space: nowrap;
+}
+.layout-orbit .core { z-index: 3; }
+
+/* ------------------------------------------------------------
+   2. COUCH WALL — parede de cartoes em perspectiva
+   ------------------------------------------------------------ */
+.layout-couch-wall .wall {
+  position: absolute;
+  inset: -180px -140px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 26px;
+  transform: perspective(1500px) rotateX(13deg) rotateY(-9deg) scale(1.1);
+  z-index: 1;
+}
+.layout-couch-wall .wall span {
+  border-radius: 8px;
+  border: 1px solid rgba(232, 230, 225, 0.1);
+  background: linear-gradient(150deg, #26262f, #16161c);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.layout-couch-wall .wall span:nth-child(4n) {
+  background-image: linear-gradient(150deg, #3a2420, #1a1413);
+}
+.layout-couch-wall .wall span:nth-child(7n) {
+  background-image: linear-gradient(150deg, #1c2833, #111820);
+}
+.layout-couch-wall .scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(62% 52% at 50% 50%, rgba(10, 10, 11, 0.94), rgba(10, 10, 11, 0.66) 58%, rgba(10, 10, 11, 0.92));
+}
+.layout-couch-wall .core { z-index: 3; }
+
+/* ------------------------------------------------------------
+   3. UI WORLD — janela de navegador em volta do texto
+   ------------------------------------------------------------ */
+.layout-ui-world .win {
+  position: absolute;
+  left: 84px;
+  right: 84px;
+  top: 300px;
+  bottom: 320px;
+  z-index: 2;
+  border-radius: 18px;
+  border: 1px solid rgba(232, 230, 225, 0.16);
+  background: rgba(14, 14, 18, 0.9);
+  overflow: hidden;
+}
+.layout-ui-world .bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 22px;
+  border-bottom: 1px solid rgba(232, 230, 225, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+}
+.layout-ui-world .bar b {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #3a3a41;
+}
+.layout-ui-world .url {
+  flex: 1;
+  height: 28px;
+  margin-left: 10px;
+  padding: 0 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  font-family: Inter, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 28px;
+  letter-spacing: 2px;
+  color: #7d7d86;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.layout-ui-world .body {
+  position: absolute;
+  inset: 62px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.layout-ui-world .core { padding: 0 46px; z-index: 3; }
+
+/* ------------------------------------------------------------
+   4. FRAME BREAK — moldura que o titulo atravessa
+   ------------------------------------------------------------ */
+.layout-frame-break .fb-frame {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 720px;
+  height: 720px;
+  margin: -360px 0 0 -360px;
+  border: 1px solid rgba(232, 230, 225, 0.22);
+  z-index: 1;
+}
+.layout-frame-break .fb-frame::before,
+.layout-frame-break .fb-frame::after {
+  content: "";
+  position: absolute;
+  background: var(--accent);
+}
+.layout-frame-break .fb-frame::before { left: -1px; top: -1px; width: 96px; height: 3px; }
+.layout-frame-break .fb-frame::after  { right: -1px; bottom: -1px; width: 96px; height: 3px; }
+.layout-frame-break .fb-mask {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 260px;
+  margin-top: -130px;
+  background: #0A0A0B;
+  z-index: 2;
+  opacity: 0.82;
+}
+.layout-frame-break .core { z-index: 3; }
+
+/* ------------------------------------------------------------
+   5. DIGITAL ZOOM — aproximacao em degraus
+   ------------------------------------------------------------ */
+.layout-digital-zoom .core { transform-origin: 50% 48%; }
+
+/* ------------------------------------------------------------
+   6. PHONE MOCKUP — celular em CSS
+   ------------------------------------------------------------ */
+.layout-phone-mockup .phone {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 660px;
+  height: 1240px;
+  margin: -620px 0 0 -330px;
+  padding: 24px;
+  border-radius: 64px;
+  border: 2px solid rgba(232, 230, 225, 0.2);
+  background: linear-gradient(180deg, #15151a, #0b0b0e);
+  box-shadow: 0 40px 110px rgba(0, 0, 0, 0.75);
+  z-index: 2;
+}
+.layout-phone-mockup .screen {
+  position: absolute;
+  inset: 24px;
+  border-radius: 46px;
+  overflow: hidden;
+  background:
+    radial-gradient(420px 320px at 30% 12%, rgba(178, 58, 46, 0.16), transparent 62%),
+    linear-gradient(170deg, #101014, #07070a);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.layout-phone-mockup .notch {
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  width: 168px;
+  height: 32px;
+  margin-left: -84px;
+  border-radius: 16px;
+  background: #06060a;
+  z-index: 4;
+}
+.layout-phone-mockup .home {
+  position: absolute;
+  left: 50%;
+  bottom: 34px;
+  width: 220px;
+  height: 7px;
+  margin-left: -110px;
+  border-radius: 4px;
+  background: rgba(232, 230, 225, 0.2);
+  z-index: 4;
+}
+.layout-phone-mockup .core { padding: 0 34px; z-index: 3; }
+.layout-phone-mockup .core .kicker { font-size: 20px; letter-spacing: 4px; margin-bottom: 20px; }
+.layout-phone-mockup .core .small { font-size: 22px; letter-spacing: 2px; margin-top: 24px; }
+.layout-phone-mockup .core .accent { width: 180px; margin-top: 26px; }
+
+/* ------------------------------------------------------------
+   7. CHECKLIST — evidencias marcadas uma a uma
+   ------------------------------------------------------------ */
+.layout-checklist .core { justify-content: flex-start; }
+.layout-checklist .list {
+  position: relative;
+  z-index: 3;
+  margin: 40px 0 0;
+  padding: 0 120px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.layout-checklist .item {
+  display: flex;
+  align-items: flex-start;
+  gap: 26px;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 38px;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  color: #C6C4BF;
+}
+.layout-checklist .box {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  margin-top: 4px;
+  border: 2px solid rgba(232, 230, 225, 0.3);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.layout-checklist .box svg { width: 30px; height: 30px; display: block; }
+.layout-checklist .box path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 34;
+  stroke-dashoffset: 34;
+}
+
+/* ------------------------------------------------------------
+   8. HEADLINE WALL — parede de manchetes ao fundo
+   ------------------------------------------------------------ */
+.layout-headline-wall .wall {
+  position: absolute;
+  inset: -80px -40px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  opacity: 0.9;
+}
+.layout-headline-wall .wall span {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 92px;
+  line-height: 1.02;
+  letter-spacing: -2px;
+  color: rgba(232, 230, 225, 0.26);
+  white-space: nowrap;
+}
+.layout-headline-wall .wall span:nth-child(even) { color: rgba(178, 58, 46, 0.42); }
+.layout-headline-wall .scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(56% 42% at 50% 50%, rgba(10, 10, 11, 0.94), rgba(10, 10, 11, 0.52) 64%, rgba(10, 10, 11, 0.88));
+}
+.layout-headline-wall .core { z-index: 3; }
+
+/* ------------------------------------------------------------
+   9. ZOOM THROUGH — o titulo cresce e atravessa o corte
+   ------------------------------------------------------------ */
+.layout-zoom-through .core { transform-origin: 50% 50%; }
+
+/* ------------------------------------------------------------
+  10. CHART GROW — barras que crescem
+   ------------------------------------------------------------ */
+.layout-chart-grow .core { justify-content: flex-start; }
+.layout-chart-grow .chart {
+  position: relative;
+  z-index: 3;
+  margin: 46px 0 0;
+  padding: 0 120px;
+  display: flex;
+  align-items: flex-end;
+  gap: 22px;
+  height: 460px;
+}
+.layout-chart-grow .bar {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
+}
+.layout-chart-grow .bar u {
+  text-decoration: none;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 34px;
+  letter-spacing: 1px;
+  color: var(--ink);
+}
+.layout-chart-grow .bar b {
+  display: block;
+  width: 100%;
+  min-height: 8px;
+  border-radius: 3px 3px 0 0;
+  background: linear-gradient(180deg, #C4483A, #6b211a);
+  transform-origin: 50% 100%;
+}
+.layout-chart-grow .bar.hot b { background: linear-gradient(180deg, #E8E6E1, #9a9892); }
+.layout-chart-grow .bar i {
+  font-style: normal;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: var(--dim);
+  text-align: center;
+}
+
+/* ------------------------------------------------------------
+  11. PULL BACK — recuo do detalhe para o contexto
+   ------------------------------------------------------------ */
+.layout-pull-back .core { transform-origin: 50% 46%; }
+
+/* ------------------------------------------------------------
+  12. GREEN SCREEN — silhueta em painel (sem footage)
+   ------------------------------------------------------------ */
+.layout-green-screen .key {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 780px;
+  height: 1180px;
+  margin-left: -390px;
+  z-index: 1;
+  background:
+    radial-gradient(46% 32% at 50% 20%, rgba(40, 80, 64, 0.45), rgba(9, 16, 14, 0.94) 76%);
+  clip-path: polygon(
+    50% 3%, 60% 7%, 65% 17%, 64% 27%, 60% 34%,
+    78% 44%, 90% 58%, 97% 100%, 3% 100%, 10% 58%, 22% 44%, 40% 34%,
+    36% 27%, 35% 17%, 40% 7%
+  );
+  background-size: cover;
+  background-position: center top;
+}
+.layout-green-screen .key.asset {
+  clip-path: polygon(0% 6%, 100% 0%, 100% 100%, 0% 100%);
+  background-size: cover;
+  opacity: 0.5;
+}
+.layout-green-screen .keyline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 340px;
+  z-index: 2;
+  background: linear-gradient(to top, #0A0A0B 22%, rgba(10, 10, 11, 0) 100%);
+}
+.layout-green-screen .core { z-index: 3; }
+
+/* ------------------------------------------------------------
+  13. PAPER CUT — camadas de papel com parallax
+   ------------------------------------------------------------ */
+.layout-paper-cut .layer {
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  z-index: 1;
+  background: #16161b;
+}
+.layout-paper-cut .layer.l1 {
+  bottom: -60px;
+  height: 620px;
+  background: #101014;
+  clip-path: polygon(0 26%, 7% 14%, 15% 24%, 24% 10%, 33% 22%, 41% 12%, 52% 24%, 61% 11%, 70% 23%, 79% 13%, 88% 24%, 95% 15%, 100% 26%, 100% 100%, 0 100%);
+}
+.layout-paper-cut .layer.l2 {
+  bottom: 120px;
+  height: 520px;
+  background: #1a1a20;
+  clip-path: polygon(0 30%, 9% 18%, 18% 30%, 27% 16%, 38% 28%, 47% 17%, 58% 30%, 68% 18%, 78% 29%, 88% 17%, 100% 30%, 100% 100%, 0 100%);
+}
+.layout-paper-cut .layer.l3 {
+  top: -40px;
+  height: 380px;
+  background: #131318;
+  clip-path: polygon(0 0, 100% 0, 100% 72%, 92% 84%, 82% 72%, 71% 86%, 61% 73%, 50% 87%, 39% 73%, 28% 86%, 18% 72%, 8% 85%, 0 72%);
+}
+.layout-paper-cut .core { z-index: 3; }
+
+/* ------------------------------------------------------------
+  14. DOODLE BOIL — traco desenhado a mao, fervendo
+   ------------------------------------------------------------ */
+.layout-doodle-boil .boil {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+.layout-doodle-boil .boil svg {
+  position: absolute;
+  left: 70px;
+  width: 780px;
+  height: 300px;
+  margin-top: -150px;
+  overflow: visible;
+}
+.layout-doodle-boil .boil path {
+  fill: none;
+  stroke: rgba(178, 58, 46, 0.85);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 2400;
+  stroke-dashoffset: 2400;
+}
+.layout-doodle-boil .core { z-index: 3; }
+
+/* ------------------------------------------------------------
+  15. VERTIGO — o quadro empurra, o fundo recua
+   ------------------------------------------------------------ */
+.layout-vertigo .core { transform-origin: 50% 50%; }
+.layout-vertigo .ly-decor {
+  background: repeating-conic-gradient(from 0deg at 50% 50%, rgba(232, 230, 225, 0.02) 0deg 2deg, transparent 2deg 15deg);
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------
+  16. COVER STORY — capa de revista
+   ------------------------------------------------------------ */
+.layout-cover-story .cover {
+  position: absolute;
+  left: 110px;
+  right: 110px;
+  top: 240px;
+  bottom: 320px;
+  z-index: 2;
+  padding: 40px 38px 34px;
+  border: 1px solid rgba(232, 230, 225, 0.2);
+  background: linear-gradient(165deg, #17171d, #0b0b0f 72%);
+  display: flex;
+  flex-direction: column;
+}
+.layout-cover-story .masthead {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 58px;
+  letter-spacing: 12px;
+  line-height: 1;
+  color: var(--ink);
+  padding-bottom: 14px;
+}
+.layout-cover-story .rule {
+  height: 3px;
+  background: var(--accent);
+  transform-origin: left center;
+}
+.layout-cover-story .issue {
+  margin-top: 12px;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 19px;
+  letter-spacing: 5px;
+  color: var(--dim);
+}
+.layout-cover-story .cover .core {
+  flex: 1;
+  padding: 0;
+  justify-content: center;
+}
+.layout-cover-story .barcode {
+  position: absolute;
+  right: 38px;
+  bottom: 34px;
+  width: 128px;
+  height: 46px;
+  background: repeating-linear-gradient(90deg, rgba(232, 230, 225, 0.55) 0 3px, transparent 3px 7px);
+  transform-origin: left center;
+}
+.layout-cover-story .call {
+  position: absolute;
+  left: 38px;
+  bottom: 34px;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 20px;
+  letter-spacing: 3px;
+  color: var(--accent);
+}
+
+/* ------------------------------------------------------------
+  17. GLASS TYPE — painel de vidro (gradiente estatico)
+   ------------------------------------------------------------ */
+.layout-glass-type .pane {
+  position: absolute;
+  left: 96px;
+  right: 96px;
+  top: 50%;
+  height: 700px;
+  margin-top: -350px;
+  z-index: 2;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.02) 52%, rgba(255, 255, 255, 0.08));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.38),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    0 30px 80px rgba(0, 0, 0, 0.5);
+}
+.layout-glass-type .pane::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  background: radial-gradient(120% 70% at 18% 0%, rgba(255, 255, 255, 0.16), transparent 58%);
+}
+.layout-glass-type .core { z-index: 3; padding: 0 150px; }
+.layout-glass-type h1 { text-shadow: 0 1px 0 rgba(255, 255, 255, 0.22), 0 18px 40px rgba(0, 0, 0, 0.55); }

@@ -65,7 +65,7 @@ if (-not (Test-Path $html)) { throw "sem index.html em $Episodio" }
 # ---- 1. cenas: id, inicio, duracao -----------------------------------------
 $texto = Get-Content $html -Raw -Encoding UTF8
 $cenas = @()
-foreach ($m in [regex]::Matches($texto, '<section class="scene (\S+) clip" id="(\S+)"[^>]*data-start="([\d.]+)"[^>]*data-duration="([\d.]+)"')) {
+foreach ($m in [regex]::Matches($texto, '<section class="scene (\S+) clip[^"]*" id="(\S+)"[^>]*data-start="([\d.]+)"[^>]*data-duration="([\d.]+)"')) {
   $cenas += [pscustomobject]@{
     id     = $m.Groups[2].Value
     inicio = [double]::Parse($m.Groups[3].Value, $inv)

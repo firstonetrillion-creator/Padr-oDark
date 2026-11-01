@@ -1,0 +1,167 @@
+{
+  "slug": "003-layouts-17",
+  "composition_id": "lab003",
+  "titulo_pagina": "LAB 003 — biblioteca de layouts",
+  "duracao": 45,
+  "marca": "DOSSIÊ 45",
+  "dossie": "LAB 003",
+  "rodape": "LABORATÓRIO 003 — BIBLIOTECA DE LAYOUTS · 17 ESTILOS",
+  "audio": {
+    "voz": 1.0,
+    "drone": 0.16
+  },
+  "cenas": [
+    {
+      "id": "s01",
+      "tipo": "orbit",
+      "kicker": "ORBIT",
+      "titulo": ["A ÓRBITA", "DO CASO"],
+      "pequeno": ["TUDO GIRA EM VOLTA"],
+      "fonte_px": 160,
+      "fala": "Órbita. O título gira em volta."
+    },
+    {
+      "id": "s02",
+      "tipo": "couch-wall",
+      "kicker": "COUCH WALL",
+      "titulo": ["O ACERVO", "INTEIRO"],
+      "pequeno": ["UMA IMAGEM IMPORTA"],
+      "fala": "Parede de sofá. O acervo ao fundo."
+    },
+    {
+      "id": "s03",
+      "tipo": "ui-world",
+      "kicker": "UI WORLD",
+      "titulo": ["O ARQUIVO", "ABERTO"],
+      "pequeno": ["O SISTEMA NÃO MENTE"],
+      "janela": "arquivo.gov/1948/caso",
+      "fala": "Mundo de interface. A janela do arquivo."
+    },
+    {
+      "id": "s04",
+      "tipo": "frame-break",
+      "kicker": "FRAME BREAK",
+      "titulo": ["NÃO CABE", "NO QUADRO"],
+      "pequeno": ["O TEXTO ATRAVESSA"],
+      "fonte_px": 126,
+      "fala": "Quebra de moldura. O texto atravessa."
+    },
+    {
+      "id": "s05",
+      "tipo": "digital-zoom",
+      "kicker": "DIGITAL ZOOM",
+      "titulo": ["APROXIMA", "EM DEGRAUS"],
+      "pequeno": ["COMO FITA VHS"],
+      "fonte_px": 118,
+      "fala": "Zoom digital. Aproxima em degraus."
+    },
+    {
+      "id": "s06",
+      "tipo": "phone-mockup",
+      "kicker": "PHONE MOCKUP",
+      "titulo": ["NA SUA", "MÃO"],
+      "pequeno": ["A TELA É O ARQUIVO"],
+      "fala": "Mockup de celular. A tela na mão."
+    },
+    {
+      "id": "s07",
+      "tipo": "checklist",
+      "kicker": "CHECKLIST",
+      "titulo": ["O QUE", "FALTAVA"],
+      "itens": ["SEM DOCUMENTO", "SEM ETIQUETA", "SEM NOME"],
+      "fala": "Lista. Cada evidência entra marcada."
+    },
+    {
+      "id": "s08",
+      "tipo": "headline-wall",
+      "kicker": "HEADLINE WALL",
+      "titulo": ["TODO MUNDO", "NOTICIOU"],
+      "manchetes": ["HOMEM MORTO NA PRAIA", "CÓDIGO NA ROUPA", "CASO SEM NOME", "POLÍCIA SEM PISTA", "74 ANOS DEPOIS", "O PAPEL AMARELOU"],
+      "fonte_px": 120,
+      "fala": "Parede de manchetes. O ruído da imprensa."
+    },
+    {
+      "id": "s09",
+      "tipo": "zoom-through",
+      "kicker": "ZOOM-THROUGH CUT",
+      "titulo": ["ATRAVESSA", "A PALAVRA"],
+      "pequeno": ["O CORTE É O ZOOM"],
+      "fonte_px": 132,
+      "fala": "Corte por zoom. Atravessa a palavra."
+    },
+    {
+      "id": "s10",
+      "tipo": "chart-grow",
+      "kicker": "CHART GROW",
+      "titulo": ["AS HORAS", "NÃO BATEM"],
+      "valores": [9, 14, 38],
+      "rotulos": ["1959", "2015", "2020"],
+      "pequeno": ["TRÊS VERSÕES"],
+      "fonte_px": 132,
+      "fala": "Gráfico. As barras crescem."
+    },
+    {
+      "id": "s11",
+      "tipo": "pull-back",
+      "kicker": "PULL-BACK REVEAL",
+      "titulo": ["O DETALHE", "E O TODO"],
+      "pequeno": ["PRIMEIRO FECHADO"],
+      "fonte_px": 130,
+      "fala": "Recuo revelador. Do detalhe ao todo."
+    },
+    {
+      "id": "s12",
+      "tipo": "green-screen",
+      "kicker": "GREEN SCREEN",
+      "titulo": ["A SILHUETA", "NA FRENTE"],
+      "pequeno": ["SEM FOOTAGE"],
+      "fala": "Fundo verde. A silhueta na frente."
+    },
+    {
+      "id": "s13",
+      "tipo": "paper-cut",
+      "kicker": "PAPER CUT",
+      "titulo": ["CAMADAS", "DE PAPEL"],
+      "pequeno": ["PROFUNDIDADE FÍSICA"],
+      "fonte_px": 150,
+      "fala": "Recorte de papel. Camadas em paralaxe."
+    },
+    {
+      "id": "s14",
+      "tipo": "doodle-boil",
+      "kicker": "DOODLE BOIL",
+      "titulo": ["A MÃO", "INSTÁVEL"],
+      "pequeno": ["TRAÇO QUE FERVE"],
+      "fonte_px": 150,
+      "fala": "Traço fervendo. A mão instável."
+    },
+    {
+      "id": "s15",
+      "tipo": "vertigo",
+      "kicker": "VERTIGO",
+      "titulo": ["O QUADRO", "EMPURRA"],
+      "pequeno": ["E O FUNDO RECUA"],
+      "fonte_px": 150,
+      "fala": "Vertigo. O quadro empurra e gira."
+    },
+    {
+      "id": "s16",
+      "tipo": "cover-story",
+      "kicker": "COVER STORY",
+      "titulo": ["CAPA", "DE REVISTA"],
+      "masthead": "ARQUIVO",
+      "edicao": "Nº 45 · OUTUBRO",
+      "manchete": "O HOMEM SEM NOME",
+      "fala": "Capa de revista. Estatuto de matéria."
+    },
+    {
+      "id": "s17",
+      "tipo": "glass-type",
+      "kicker": "GLASS TYPE",
+      "titulo": ["PAINEL", "FRIO"],
+      "pequeno": ["VIDRO SEM BLUR"],
+      "fonte_px": 158,
+      "fala": "Tipografia de vidro. Painel frio."
+    }
+  ]
+}

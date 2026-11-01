@@ -2,7 +2,7 @@
 
 > **Leia este arquivo primeiro.** Ele é a memória de retomada do projeto.
 > Depois: `AGENTS.md` (regras) → `docs/PLANO.md` (fases) → `docs/HISTORICO.md` (o que já foi entregue).
-> Última atualização: **2026-10-27**. Se você é uma sessão nova, não refaça o que está marcado como entregue.
+> Última atualização: **2026-10-31**. Se você é uma sessão nova, não refaça o que está marcado como entregue.
 
 ## 1. Onde estamos
 
@@ -28,6 +28,7 @@
 | `codebase-memory-mcp` | **não instalado** (adiado) | decisão em `docs/DECISOES.md` |
 | Memória de sessão | **`ESTADO.md` como `instructions`** | `opencode.jsonc`, `docs/HISTORICO.md` 2026-10-23 |
 | Canais de teste | **método criado (27/10)** — um canal por modelo, uma variável | `canais/README.md`, `canais/dossie45/` |
+| Biblioteca de layouts | **17 estilos implementados (31/10)** — LAB 003 com **QA PASS**, aguardando aprovação | `templates/layouts/`, `laboratorio/003-layouts-17/` |
 
 ## 2. O que já foi entregue
 
@@ -50,6 +51,7 @@
 - `scripts/medir-texto.ps1`: mede a **tinta** do texto no frame (`snapshot` → PNG → `ffmpeg gray` → bbox por linha) e sugere `fonte_px`; `-Aplicar` grava no `roteiro.json`. Fecha o ciclo que custou 3 correções manuais no LAB 001.
 - `scripts/nicho.py`: coleta metadados de Shorts por nicho (views/inscrito, engajamento); não baixa vídeo.
 - `tools/youtube-agent-skill/`: vendor MIT com retenção 3 s/10 s, `hooks.json` e lint de título PT-BR; testes em `scripts/test_youtube_agent.py`.
+- `templates/layouts/`: **biblioteca de 17 estilos de cena** (CSS+GSAP, asset opcional) + `registro.json` como fonte de verdade. Inlinada no `index.html` na geração — não há cópia por episódio. Sem `tipo` no roteiro, a saída continua **byte-idêntica ao v1**.
 
 ### Piloto 001 — Eilean Mor
 - `narracao.txt` (118 palavras) → `voz_raw.wav` 41,45 s → `voz.wav` 45,00 s.
@@ -154,6 +156,34 @@
 - `templates/misterio-45/beat-sheet.md` — 13 beats, tempos e orçamento de palavras.
 - `templates/misterio-45/README.md` — passo a passo completo, incluindo armadilhas.
 
+### Biblioteca de layouts — 17 estilos (31/10/2026)
+
+- **O que é:** 17 estilos de cena pedidos pelo usuário, implementados como
+  **4 famílias sobre o cartão de texto do v1** — não 17 layouts paralelos:
+  - *câmera:* `orbit`, `digital-zoom`, `zoom-through`, `pull-back`, `vertigo`
+  - *moldura:* `ui-world`, `phone-mockup`, `cover-story`, `couch-wall`,
+    `green-screen`, `frame-break`
+  - *widget:* `checklist`, `chart-grow`
+  - *tipografia:* `headline-wall`, `glass-type`, `paper-cut`, `doodle-boil`
+- **Contrato:** `"tipo"` no `roteiro.json`; **sem `tipo` = v1 byte-idêntico**
+  (007 conferido por SHA-256 em 31/10). Asset é opcional em todos; sem foto,
+  cada estilo tem stand-in em CSS/SVG (não depende da política de imagem aberta
+  em `docs/LAYOUTS.md` §9).
+- **Onde:** `templates/layouts/{registro.json,layouts.css,layouts.js,README.md}`.
+  `gerar-episodio.py` lê o registro, injeta CSS+JS no `index.html` e **valida**
+  (tipo desconhecido, `itens`/`valores` faltando, asset sem crédito/licença,
+  `zoom-through` como última cena).
+- **Contrato automático:** `check-contrato.ps1` §2b confere `data-layout`,
+  `window.__layouts` inlinado, classe `layout-<tipo>` e arquivo de asset.
+- **Prova:** `laboratorio/003-layouts-17/` — 17 cenas, 45,077 s, **QA PASS**
+  (3m06s de render, −15,0 LUFS, TP −2,5, 1352 frames). `qa.md` com a tinta por
+  cena e os dois contact sheets. **Aguarda aprovação humana** antes de entrar
+  em episódio.
+- **Armadilha registrada:** câmera estoura os 840 px **por desenho**; o
+  `medir-texto.ps1` marca `ESTOURA` e isso não reprova (`digital-zoom`,
+  `vertigo`, `pull-back`, `zoom-through`). Decoro também infla o bbox
+  (moldura, barras, parede de manchetes).
+
 ### Versionamento (21/10/2026)
 - `git init -b main`; commit baseline `782df62` com **59 arquivos de texto/código**; tag anotada `ep-001-publicado`.
 - `.gitignore` deixa fora `.venv/` (415 MB), mídia `*.mp4`/`*.wav`/`*.onnx` (123 MB), `qa-frames/`, `qa-final/` e as variantes `*-brand-antigo/`. **Nada foi apagado do disco**: evidência continua na pasta.
@@ -235,6 +265,17 @@
 - Registro em `docs/PLANO.md` §Melhorias visuais — backlog pós-validação.
 - Só depois dos 6 vídeos e do Gate 2; **003–006 ficam no v1** para não contaminar a comparação.
 - ReelMimic, WebGL/Three.js e afins ficam fora do MVP; reavaliar depois do gate 3.
+
+### 3.8 Biblioteca de layouts — aguarda aprovação (31/10/2026)
+
+- Os **17 estilos** estão implementados e provados no LAB 003 (`QA PASS`).
+  **Nada entra em episódio antes da aprovação explícita do usuário.**
+- Aprovado o conjunto, o caminho natural é **usar 1–2 estilos por episódio**
+  (gancho + um cartão de dado), não trocar o v1 inteiro: o lote 007–011 testa o
+  **gancho**, e mudar visual junto contaminaria a leitura.
+- Estilos que pedem decisão antes de uso real: `green-screen` (asset de imagem),
+  `cover-story` (masthead de revista fictícia) e `chart-grow` (só faz sentido
+  com 3 números reais e fonte).
 
 ## 4. Ambiente e restrições
 

@@ -203,9 +203,16 @@ fonte).
 - Sem `tempos_cenas.json` o script **não escreve nada** (só a tabela): tempo
   provisório não vai para render. Rode voz + `remapear.py` antes.
 - `--narracao` reescreve `narracao.txt` com as falas, uma por parágrafo.
+- `tipo` (opcional, v2) escolhe um dos **17 layouts** de `templates/layouts/`
+  (`orbit`, `checklist`, `chart-grow`, `phone-mockup`, `glass-type`, …). Sem
+  `tipo`, a saída é byte a byte a do v1. CSS e JS da biblioteca são inlinados no
+  `index.html`; nada a copiar por episódio. Detalhe: `templates/layouts/README.md`
+  e `docs/LAYOUTS.md` §10.
 
 Validação embutida: ids únicos, cena com título, no máximo 5 linhas de texto,
-cena acima de 6 s e cena curta demais viram aviso na tabela.
+cena acima de 6 s e cena curta demais viram aviso na tabela. Com `tipo`:
+layout desconhecido, campo obrigatório ausente (`itens`, `valores`), asset sem
+`credito`/`licenca` e `zoom-through` na última cena **falham**.
 
 **Teste de aceitação:** gerado a partir do `roteiro.json` do 005, o HTML sai
 idêntico ao escrito à mão naquele episódio — as únicas diferenças são o

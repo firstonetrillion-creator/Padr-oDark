@@ -1,0 +1,205 @@
+{
+  "versao": 2,
+  "atualizado": "2026-10-31",
+  "nota": "Fonte da verdade dos layouts. gerar-episodio.py le este arquivo para validar e para escalar fonte; check-contrato.ps1 le para validar o HTML. Layout sem asset e o padrao: asset e opcional em todos menos em none.",
+  "layouts": [
+    {
+      "id": "texto",
+      "nome": "Texto",
+      "familia": "tipografia",
+      "papel": "cartao tipografico (v1 congelado do 001-007)",
+      "asset": "nao",
+      "campos": [],
+      "custo": 0,
+      "escala_fonte": 1.0,
+      "nota": "Sem `tipo` no roteiro o gerador emite exatamente o v1. Nao mexer: e o que sustenta 002-007."
+    },
+    {
+      "id": "orbit",
+      "nome": "Orbita",
+      "familia": "camera",
+      "papel": "dar centro e escala a um dado isolado (uma data, um numero)",
+      "asset": "opcional",
+      "campos": ["orbitas"],
+      "custo": 1,
+      "escala_fonte": 1.0,
+      "nota": "Anel de pontos girando; so rotation. `orbitas` = rotulos curtos (2 a 5). Sem `orbitas`, usa 4 pontos cegos."
+    },
+    {
+      "id": "couch-wall",
+      "nome": "Parede de sofa",
+      "familia": "moldura",
+      "papel": "sugerir acervo/arquivo: muitas imagens, uma importa",
+      "asset": "opcional",
+      "campos": [],
+      "custo": 2,
+      "escala_fonte": 0.92,
+      "nota": "Grade 3x4 em perspectiva. Sem asset vira parede de cartoes vazios; com asset, as 3 primeiras celulas recebem a imagem."
+    },
+    {
+      "id": "ui-world",
+      "nome": "Mundo de interface",
+      "familia": "moldura",
+      "papel": "dar contexto de tela: arquivo, sistema, banco de dados",
+      "asset": "opcional",
+      "campos": ["janela"],
+      "custo": 1,
+      "escala_fonte": 0.76,
+      "nota": "Janela de navegador com barra e URL. `janela` = texto da barra de endereco (ex.: arquivo.gov/1948)."
+    },
+    {
+      "id": "frame-break",
+      "nome": "Quebra de moldura",
+      "familia": "moldura",
+      "papel": "dar tensao: o texto nao cabe no quadrado",
+      "asset": "nao",
+      "campos": [],
+      "custo": 1,
+      "escala_fonte": 1.0,
+      "nota": "Moldura desenha em dois eixos e o titulo atravessa a linha. Sem duplicar texto."
+    },
+    {
+      "id": "digital-zoom",
+      "nome": "Zoom digital",
+      "familia": "camera",
+      "papel": "aproximar em degraus, como zoom de video antigo",
+      "asset": "nao",
+      "campos": [],
+      "custo": 0,
+      "escala_fonte": 0.86,
+      "nota": "scale com ease steps(6). Sem custo: transform puro."
+    },
+    {
+      "id": "phone-mockup",
+      "nome": "Mockup de celular",
+      "familia": "moldura",
+      "papel": "trazer a informacao para a tela do espectador",
+      "asset": "opcional",
+      "campos": [],
+      "custo": 1,
+      "escala_fonte": 0.55,
+      "nota": "Celular desenhado em CSS. A fonte cai para 55% porque a tela util tem ~560 px."
+    },
+    {
+      "id": "checklist",
+      "nome": "Lista de verificacao",
+      "familia": "widget",
+      "papel": "enumerar evidencias; cada item entra marcado",
+      "asset": "nao",
+      "campos": ["itens"],
+      "custo": 1,
+      "escala_fonte": 1.0,
+      "nota": "2 a 5 itens obrigatorios. O risco (path) desenha por stroke-dashoffset."
+    },
+    {
+      "id": "headline-wall",
+      "nome": "Parede de manchetes",
+      "familia": "tipografia",
+      "papel": "mostrar cobertura/ruido da imprensa",
+      "asset": "nao",
+      "campos": ["manchetes"],
+      "custo": 1,
+      "escala_fonte": 1.0,
+      "nota": "`manchetes` = 4 a 8 fragmentos. Sem eles, o gerador usa o proprio titulo repetido."
+    },
+    {
+      "id": "zoom-through",
+      "nome": "Corte por zoom",
+      "familia": "camera",
+      "papel": "emendar duas cenas: atravessar a palavra",
+      "asset": "nao",
+      "campos": [],
+      "custo": 0,
+      "escala_fonte": 1.0,
+      "nota": "O titulo cresce ate 5,2x nos ultimos 0,45 s. Combina com a cena seguinte, nao substitui."
+    },
+    {
+      "id": "chart-grow",
+      "nome": "Grafico que cresce",
+      "familia": "widget",
+      "papel": "comparar grandezas (vitimas, anos, horas)",
+      "asset": "nao",
+      "campos": ["valores", "rotulos"],
+      "custo": 1,
+      "escala_fonte": 0.95,
+      "nota": "2 a 5 barras. `valores` numericos; `rotulos` opcional (padrao: os proprios valores)."
+    },
+    {
+      "id": "pull-back",
+      "nome": "Recuo revelador",
+      "familia": "camera",
+      "papel": "comecar fechado no detalhe e abrir o contexto",
+      "asset": "nao",
+      "campos": [],
+      "custo": 0,
+      "escala_fonte": 1.0,
+      "nota": "Comeca em 1,55x e recua para 1,0. O `pequeno` so aparece depois do recuo."
+    },
+    {
+      "id": "green-screen",
+      "nome": "Fundo verde",
+      "familia": "moldura",
+      "papel": "por alguem (ou algo) na frente do fundo",
+      "asset": "opcional",
+      "campos": [],
+      "custo": 1,
+      "escala_fonte": 1.0,
+      "nota": "Sem footage (regra 7): silhueta vetorial no lugar do sujeito. Com `asset`, a imagem entra no painel."
+    },
+    {
+      "id": "paper-cut",
+      "nome": "Recorte de papel",
+      "familia": "tipografia",
+      "papel": "dar profundidade fisica: camadas de papel",
+      "asset": "nao",
+      "campos": [],
+      "custo": 1,
+      "escala_fonte": 1.0,
+      "nota": "Tres camadas com clip-path fixo; so o x anima (parallax). clip-path animado e proibido na HD 620."
+    },
+    {
+      "id": "doodle-boil",
+      "nome": "Traco fervendo",
+      "familia": "tipografia",
+      "papel": "marcar a frase a mao, com instabilidade de desenho",
+      "asset": "nao",
+      "campos": [],
+      "custo": 2,
+      "escala_fonte": 1.0,
+      "nota": "Tres variantes do mesmo traco alternando a ~10 fps. Nao usa feTurbulence: seria caro em area cheia."
+    },
+    {
+      "id": "vertigo",
+      "nome": "Vertigo",
+      "familia": "camera",
+      "papel": "desconforto: o quadro empurra enquanto o fundo recua",
+      "asset": "nao",
+      "campos": [],
+      "custo": 0,
+      "escala_fonte": 0.86,
+      "nota": "Efeito dolly sem 3D: core cresce e gira 1,2 grau, decor recua."
+    },
+    {
+      "id": "cover-story",
+      "nome": "Capa de revista",
+      "familia": "moldura",
+      "papel": "dar estatuto de materia publicada",
+      "asset": "opcional",
+      "campos": ["manchete", "edicao"],
+      "custo": 1,
+      "escala_fonte": 0.8,
+      "nota": "Capa com masthead, filete, codigo de barras e numero da edicao. `manchete` vai na chamada."
+    },
+    {
+      "id": "glass-type",
+      "nome": "Tipografia de vidro",
+      "familia": "tipografia",
+      "papel": "isolar a frase num painel frio, quase clinico",
+      "asset": "nao",
+      "campos": [],
+      "custo": 2,
+      "escala_fonte": 0.92,
+      "nota": "Vidro simulado com gradientes estaticos. backdrop-filter animado derruba a captura na HD 620."
+    }
+  ]
+}

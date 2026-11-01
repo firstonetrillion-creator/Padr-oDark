@@ -69,6 +69,39 @@ Sem isso, o texto da cena continua com `opacity: 1` depois do fim e aparece como
 
 A entrada do `<h1>` é `from({ opacity: 0, y: 36, duration: 0.55 })`, com variantes para `.kicker`, `.small` e `.accent`.
 
+#### 2.2.1 Layouts (v2) — atributo `data-layout`
+
+Uma cena pode declarar um layout (`roteiro.json`: `"tipo": "orbit"`). O gerador
+então emite três coisas a mais, e **nada muda para quem não declara `tipo`**:
+
+| Extra no HTML | Função |
+|---|---|
+| `class="scene <id> clip layout layout-<tipo>"` | o CSS da biblioteca mira em `.layout-<tipo>` |
+| `data-layout="<tipo>"` | a timeline escolhe a função de animação |
+| `data-asset` / `data-credito` / `data-licenca` | só quando a cena tem imagem; o `check-contrato.ps1` cobra |
+
+O miolo de texto é o mesmo do v1 (`_core()`): `.kicker`, `h1`, `.small`,
+`.accent` — o `medir-texto.ps1` continua medindo o `h1`. O que muda é a
+**moldura** em volta (`_moldura()` no gerador, `layouts.css` + `layouts.js` em
+`templates/layouts/`), inlinada no `index.html` na geração — o render não
+depende de copiar arquivo por episódio.
+
+```js
+const lay = root.dataset.layout || "texto";
+const fn = (window.__layouts && window.__layouts[lay]) || window.__layouts.texto;
+fn(root, tl, t, dur, start);
+```
+
+**Regra de ouro:** layout não pode quebrar o contrato de `autoAlpha`, de
+`data-start/duration` nem de `?t=`. Toda animação de layout é `transform` ou
+`opacity`; nada de filtro em área cheia (Intel HD 620).
+
+**Exceção medida:** os layouts de câmera (`digital-zoom`, `vertigo`,
+`pull-back`, `zoom-through`) **saem dos 840 px de propósito** durante o
+movimento. O `medir-texto.ps1` vai marcá-los como `ESTOURA` — é esperado. A
+regra dos 840 vale para o estado de repouso; nesses layouts o gerador já reduz a
+fonte (`escala_fonte` no registro) para o pico caber nos 1080 px.
+
 ### 2.3 Áudio
 
 ```html
@@ -235,17 +268,21 @@ gerar-episodio.py -> medir-texto.ps1 -> (-Aplicar) -> gerar-episodio.py -> rende
 hastes e do kerning. No LAB 001, três cenas passavam na caixa e estouravam o
 quadro no render. A medição oficial é `ffmpeg → gray → bbox por linha` no PNG.
 
-### v2: layout como configuração (especificado, **não implementado**)
+### v2: layout como configuração — **implementado em 31/10/2026**
 
-O v1 só sabe fazer cartão de texto. Para um canal novo não custar um rebuild
-visual, o v2 transforma estrutura de cena em **dado**: cada cena do
-`roteiro.json` ganha `tipo` (`texto`, `capa`, `numero`, `cronologia`,
-`documento`, `mapa`, `prova`, `fecho`) e o gerador passa a ter um renderizador
-por tipo. **Sem `tipo`, a cena é `texto`** — os episódios 001–006 continuam
-válidos sem alteração.
+O v1 só sabia fazer cartão de texto. O v2 transforma estrutura de cena em
+**dado**: cada cena do `roteiro.json` ganha `tipo` e o gerador escolhe o
+renderizador. **Sem `tipo`, a cena é `texto`** — 001–007 continuam válidos e a
+saída é byte a byte igual (conferido por SHA-256 no 007 em 31/10).
 
-Especificação completa, manifesto de assets, política de imagem e plano de
-adoção: **`docs/LAYOUTS.md`**. Nada disso entra antes do Gate 2.
+O que existe hoje: **17 layouts + `texto`**, registro em
+`templates/layouts/registro.json`, CSS/JS em `templates/layouts/`, validação em
+`check-contrato.ps1` e ensaio em `laboratorio/003-layouts-17/`.
+
+Os oito tipos planejados em 27/10 (`capa`, `numero`, `cronologia`, `documento`,
+`mapa`, `prova`, `fecho`) **não** foram implementados como tais; parte do papel
+deles é coberto pelos 17 (ver o mapa em `docs/LAYOUTS.md` §10.4). Manifesto de
+assets, política de imagem e o que falta: **`docs/LAYOUTS.md`**.
 
 
 ## 8. O que o código já entregou

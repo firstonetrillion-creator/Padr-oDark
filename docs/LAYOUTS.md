@@ -1,10 +1,12 @@
 # LAYOUTS — a biblioteca visual do v2
 
-> **Status: especificação. Nada implementado.** O v1 (só tipografia) continua
-> congelado no 001–006 até o Gate 2.
-> Este documento existe para que **abrir um canal novo deixe de ser um rebuild
-> visual** e passe a ser configuração + roteiros.
-> Última atualização: **2026-10-27**.
+> **Status: implementado em 2026-10-31** (§10). O v1 continua sendo o padrão:
+> sem `tipo` no `roteiro.json`, a cena é `texto` e a saída é byte a byte a do v1.
+> Os 17 estilos existem como módulo do gerador (`templates/layouts/`), validados
+> por `check-contrato.ps1` e ensaiados em `laboratorio/003-layouts-17/`.
+> §3–§9 são a especificação de 27/10 e continuam valendo como plano (assets,
+> política de imagem, os oito tipos originais).
+> Última atualização: **2026-10-31**.
 
 ## 1. O problema que resolve
 
@@ -135,3 +137,112 @@ mesma disciplina vale para imagem).
 - [ ] Imagem de arquivo (domínio público) **ou** IA ilustrativa **ou** só CSS/SVG?
 - [ ] Som audível entra junto com o visual, ou em A/B separado? (Uma variável por vez.)
 - [ ] A regra 7 (nada de footage de terceiros) continua valendo para arquivo fílmico em domínio público?
+
+---
+
+# 10. Os 17 estilos (implementado em 31/10/2026)
+
+O usuário pediu 17 estilos de vídeo. Eles **não são 17 layouts paralelos**: são
+quatro famílias que se combinam com o cartão de texto que já existe. O que muda
+é a moldura e o movimento, não o contrato.
+
+## 10.1 Onde está cada coisa
+
+| Peça | Caminho | Papel |
+|---|---|---|
+| Registro | `templates/layouts/registro.json` | fonte da verdade: id, família, papel, campos, custo, `escala_fonte` |
+| CSS | `templates/layouts/layouts.css` | estrutura de cada moldura (só `transform`/`opacity` animados) |
+| JS | `templates/layouts/layouts.js` | `window.__layouts[<id>](root, tl, t, dur, start)` |
+| Gerador | `scripts/gerar-episodio.py` | `_moldura()` + `_core()`; inlina CSS/JS quando há `tipo` |
+| Contrato | `scripts/check-contrato.ps1` §2b | valida `data-layout`, biblioteca inlinada, `asset` com crédito e licença |
+| Ensaio | `laboratorio/003-layouts-17/` | 17 cenas, 45 s, uma por estilo |
+
+## 10.2 Uso
+
+```json
+{ "id": "s7", "tipo": "checklist", "kicker": "O QUE FALTAVA",
+  "titulo": ["SEM", "ETIQUETA"], "itens": ["SEM DOCUMENTO", "SEM NOME"],
+  "fala": "..." }
+```
+
+```
+gerar-episodio.py <ep>  ->  medir-texto.ps1 <ep>  ->  (-Aplicar)  ->  gerar-episodio.py  ->  render
+```
+
+Sem `tipo` nada muda. Tipo desconhecido ou campo obrigatório ausente **falha na
+geração**, não no render.
+
+## 10.3 As quatro famílias
+
+**Câmera** — movimento, não conteúdo. Vale em cima de qualquer moldura.
+`orbit`, `digital-zoom`, `zoom-through`, `pull-back`, `vertigo`.
+
+**Moldura** — uma casca em volta do texto: `ui-world`, `phone-mockup`,
+`cover-story`, `couch-wall`, `green-screen`, `frame-break`.
+
+**Widget** — conteúdo estruturado: `checklist` (`itens`), `chart-grow`
+(`valores`, `rotulos`).
+
+**Tipografia** — tratamento de tipo: `headline-wall`, `glass-type`,
+`paper-cut`, `doodle-boil`.
+
+## 10.4 Os 17, um por um
+
+| # | `tipo` | Nome | Família | Papel narrativo | Campos extras | Asset | Custo |
+|---:|---|---|---|---|---|---|---|
+| 1 | `orbit` | Órbita | câmera | dar centro/escala a um dado isolado | — | opcional | 1 |
+| 2 | `couch-wall` | Parede de sofá | moldura | acervo: muitas imagens, uma importa | — | opcional | 2 |
+| 3 | `ui-world` | Mundo de interface | moldura | contexto de tela (arquivo, sistema) | `janela` | opcional | 1 |
+| 4 | `frame-break` | Quebra de moldura | moldura | tensão: o texto não cabe | — | não | 1 |
+| 5 | `digital-zoom` | Zoom digital | câmera | aproximar em degraus (VHS) | — | não | 0 |
+| 6 | `phone-mockup` | Mockup de celular | moldura | trazer a informação para a tela | — | opcional | 1 |
+| 7 | `checklist` | Lista de verificação | widget | enumerar evidências | `itens` (2–5) | não | 1 |
+| 8 | `headline-wall` | Parede de manchetes | tipografia | ruído da imprensa | `manchetes` | não | 1 |
+| 9 | `zoom-through` | Corte por zoom | câmera | emendar duas cenas atravessando a palavra | — | não | 0 |
+| 10 | `chart-grow` | Gráfico que cresce | widget | comparar grandezas | `valores` (2–5), `rotulos` | não | 1 |
+| 11 | `pull-back` | Recuo revelador | câmera | do detalhe ao contexto | — | não | 0 |
+| 12 | `green-screen` | Fundo verde | moldura | pôr alguém/algo na frente | — | opcional | 1 |
+| 13 | `paper-cut` | Recorte de papel | tipografia | profundidade física (camadas) | — | não | 1 |
+| 14 | `doodle-boil` | Traço fervendo | tipografia | marcar a frase à mão, instável | — | não | 2 |
+| 15 | `vertigo` | Vertigo | câmera | desconforto: quadro empurra, fundo recua | — | não | 0 |
+| 16 | `cover-story` | Capa de revista | moldura | estatuto de matéria publicada | `masthead`, `edicao`, `manchete` | opcional | 1 |
+| 17 | `glass-type` | Tipografia de vidro | tipografia | isolar a frase num painel frio | — | não | 2 |
+
+**Mapa para os oito tipos de §3:** `numero` ≈ `chart-grow` de uma barra;
+`cronologia` ≈ `orbit`/`headline-wall` com datas; `prova` ≈ `frame-break` +
+`credito`; `fecho` continua sendo o cartão final do v1; `capa`, `documento` e
+`mapa` seguem **não implementados** — precisam de asset de verdade (documento,
+carta) ou de SVG autoral (mapa), e a política de imagem de §6 continua aberta.
+
+## 10.5 Regras de máquina (medidas, não estimadas)
+
+- **Só `transform` e `opacity`.** `backdrop-filter` animado, `blur` em área cheia
+  e `feTurbulence` derrubam a captura na Intel HD 620. O vidro do `glass-type` é
+  gradiente estático; o "ferver" do `doodle-boil` são **três traços alternando a
+  10 fps**, não um filtro.
+- **`clip-path` só estático.** `paper-cut` anima apenas `x` das camadas.
+- **Câmera estoura os 840 px de propósito.** `digital-zoom`, `vertigo`,
+  `pull-back` e `zoom-through` movem o texto para fora da coluna segura durante o
+  movimento; o `medir-texto.ps1` marca `ESTOURA` e **isso é esperado**. Para o
+  pico caber nos 1080 px, o registro já reduz a fonte (`escala_fonte` 0,86 em
+  `digital-zoom` e `vertigo`; 0,55 no `phone-mockup`, 0,76 no `ui-world`, 0,80
+  no `cover-story`).
+- **`doodle-boil` assume até 2 linhas de título** — o traço é dimensionado para o
+  bloco de duas linhas.
+- **`zoom-through` não pode ser a última cena** (não há corte depois) — o gerador
+  avisa.
+
+## 10.6 O que o LAB 003 mediu
+
+`laboratorio/003-layouts-17/` — 17 cenas, 45,0 s, voz de 34,0 s (17 blocos), um
+render. Ver `qa.md` para os números e os frames. Achados que viraram correção:
+
+1. `chart-grow` nasceu com barras de 0 px: `.bar` sem altura definida não resolve
+   `height: %` do filho.
+2. `doodle-boil` com o traço por cima do texto parecia artefato; foi para trás do
+   texto (z-index) e o círculo foi estreitado para 780 px.
+3. `green-screen` e `vertigo` estavam fortes demais (silhueta virou borrão verde,
+   raios dominavam o quadro) — alpha reduzido.
+4. `paper-cut` tinha um filete que cortava o texto: removido.
+5. Nove títulos quebravam em 3 linhas no frame: fonte reduzida cena a cena.
+

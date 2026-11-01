@@ -132,6 +132,11 @@ foreach ($s in $secoes) {
     Duracao  = To-Numero (Get-Atributo $attrs 'data-duration')
     Track    = Get-Atributo $attrs 'data-track-index'
     Clipado  = ($classe -match '(?i)\bclip\b')
+    Classe   = $classe
+    Layout   = Get-Atributo $attrs 'data-layout'
+    Asset    = Get-Atributo $attrs 'data-asset'
+    Credito  = Get-Atributo $attrs 'data-credito'
+    Licenca  = Get-Atributo $attrs 'data-licenca'
   }
 }
 
@@ -182,6 +187,65 @@ if ($cenas.Count -eq 0) {
     if ($html -notmatch ('(?i)\.' + [regex]::Escape($c.Id) + '\s+h1\s*\{')) { $semCss += $c.Id }
   }
   if ($semCss.Count -eq 0) { Pass 'CSS por cena' 'font-size definido' } else { Warn 'CSS por cena' ('sem regra .<id> h1: ' + ($semCss -join ', ')) }
+}
+
+# ---------- 2b. layouts (docs/LAYOUTS.md §10) ----------
+$registroLayouts = Join-Path $PSScriptRoot '..\templates\layouts\registro.json'
+$layoutsValidos = @()
+if (Test-Path -LiteralPath $registroLayouts) {
+  try {
+    $reg = Get-Content -LiteralPath $registroLayouts -Raw -Encoding UTF8 | ConvertFrom-Json
+    $layoutsValidos = @($reg.layouts | ForEach-Object { $_.id })
+  } catch { Warn 'registro de layouts' 'registro.json ilegivel (JSON invalido)' }
+} else {
+  Warn 'registro de layouts' 'templates/layouts/registro.json ausente'
+}
+
+$comLayout = @($cenas | Where-Object { -not [string]::IsNullOrWhiteSpace($_.Layout) })
+if ($comLayout.Count -gt 0) {
+  if ($layoutsValidos.Count -eq 0) {
+    Warn 'layout declarado' ($comLayout.Count.ToString() + ' cenas com data-layout; registro nao lido')
+  } else {
+    $fora = @($comLayout | Where-Object { $layoutsValidos -notcontains $_.Layout })
+    if ($fora.Count -eq 0) {
+      Pass 'layout declarado' (($comLayout | ForEach-Object { $_.Layout } | Sort-Object -Unique) -join ', ')
+    } else {
+      Fail 'layout declarado' ('desconhecido: ' + (($fora | ForEach-Object { $_.Id + '=' + $_.Layout }) -join ', '))
+    }
+  }
+
+  if ($html -match 'window\.__layouts') {
+    Pass 'biblioteca de layouts' 'inlinada (window.__layouts)'
+  } else {
+    Fail 'biblioteca de layouts' 'data-layout sem window.__layouts: layouts.js nao foi inlinado'
+  }
+
+  $semClasse = @($comLayout | Where-Object { $_.Classe -notmatch ('(?i)\blayout-' + [regex]::Escape($_.Layout) + '\b') })
+  if ($semClasse.Count -eq 0) {
+    Pass 'classe por layout' 'layout-<tipo> em todas'
+  } else {
+    Warn 'classe por layout' ('sem class layout-<tipo>: ' + (($semClasse | ForEach-Object { $_.Id }) -join ', '))
+  }
+
+  # regra 5 vale para imagem: asset na tela precisa de credito e licenca
+  $comAsset = @($comLayout | Where-Object { -not [string]::IsNullOrWhiteSpace($_.Asset) })
+  if ($comAsset.Count -gt 0) {
+    $problemas = @()
+    $licencas = @('autoral', 'dominio-publico', 'cc-by-4.0', 'licenciado', 'ia')
+    foreach ($s in $comAsset) {
+      if (-not (Test-Path -LiteralPath (Join-Path $dir $s.Asset))) { $problemas += ($s.Id + ': arquivo ausente (' + $s.Asset + ')') }
+      if ([string]::IsNullOrWhiteSpace($s.Credito)) { $problemas += ($s.Id + ': sem credito (vai na tela)') }
+      if ([string]::IsNullOrWhiteSpace($s.Licenca)) { $problemas += ($s.Id + ': sem licenca') }
+      elseif ($licencas -notcontains $s.Licenca) { $problemas += ($s.Id + ': licenca fora do padrao (' + $s.Licenca + ')') }
+    }
+    if ($problemas.Count -eq 0) {
+      Pass 'asset com fonte' ($comAsset.Count.ToString() + ' asset(s) com credito e licenca')
+    } else {
+      Fail 'asset com fonte' ($problemas -join '; ')
+    }
+  }
+} elseif ($html -match 'window\.__layouts') {
+  Warn 'biblioteca de layouts' 'inlinada sem cena com data-layout'
 }
 
 # ---------- 3. audio ----------
