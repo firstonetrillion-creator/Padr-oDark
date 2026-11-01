@@ -1,9 +1,10 @@
 # LAYOUTS — a biblioteca visual do v2
 
-> **Status: implementado em 2026-10-31** (§10). O v1 continua sendo o padrão:
-> sem `tipo` no `roteiro.json`, a cena é `texto` e a saída é byte a byte a do v1.
-> Os 17 estilos existem como módulo do gerador (`templates/layouts/`), validados
-> por `check-contrato.ps1` e ensaiados em `laboratorio/003-layouts-17/`.
+> **Status: implementado em 2026-10-31 e aprovado em 2026-11-01.** O v1 continua
+> sendo o padrão: sem `tipo` no `roteiro.json`, a cena é `texto` e a saída é byte
+> a byte a do v1. Os 17 estilos existem como módulo do gerador
+> (`templates/layouts/`), validados por `check-contrato.ps1` e ensaiados em
+> `laboratorio/003-layouts-17/` (QA PASS).
 > §3–§9 são a especificação de 27/10 e continuam valendo como plano (assets,
 > política de imagem, os oito tipos originais).
 > Última atualização: **2026-10-31**.

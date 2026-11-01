@@ -3,6 +3,10 @@
 17 estilos + o cartão de texto do v1, como **dado** no `roteiro.json`.
 Spec: `docs/LAYOUTS.md` §10 · contrato: `docs/ARQUITETURA.md` §2.2.1.
 
+**Status: aprovado em 01/11/2026** (LAB 003, `QA PASS`). Regra de uso: **1–2
+estilos por episódio** — gancho e/ou um cartão de dado. Trocar o visual inteiro
+de um episódio é uma variável nova, não decoração.
+
 ## Arquivos
 
 | Arquivo | Papel |

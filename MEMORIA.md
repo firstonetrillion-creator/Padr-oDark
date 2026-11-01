@@ -28,7 +28,7 @@
 | `codebase-memory-mcp` | **não instalado** (adiado) | decisão em `docs/DECISOES.md` |
 | Memória de sessão | **`ESTADO.md` como `instructions`** | `opencode.jsonc`, `docs/HISTORICO.md` 2026-10-23 |
 | Canais de teste | **método criado (27/10)** — um canal por modelo, uma variável | `canais/README.md`, `canais/dossie45/` |
-| Biblioteca de layouts | **17 estilos implementados (31/10)** — LAB 003 com **QA PASS**, aguardando aprovação | `templates/layouts/`, `laboratorio/003-layouts-17/` |
+| Biblioteca de layouts | **17 estilos implementados (31/10) e APROVADOS (01/11)** | `templates/layouts/`, `laboratorio/003-layouts-17/` |
 
 ## 2. O que já foi entregue
 
@@ -177,8 +177,10 @@
   `window.__layouts` inlinado, classe `layout-<tipo>` e arquivo de asset.
 - **Prova:** `laboratorio/003-layouts-17/` — 17 cenas, 45,077 s, **QA PASS**
   (3m06s de render, −15,0 LUFS, TP −2,5, 1352 frames). `qa.md` com a tinta por
-  cena e os dois contact sheets. **Aguarda aprovação humana** antes de entrar
-  em episódio.
+  cena e os dois contact sheets. **Aprovado pelo usuário em 01/11/2026.**
+- **Como usar (regra de 01/11):** **1–2 estilos por episódio** — gancho e/ou um
+  cartão de dado. O lote 007–011 testa o gancho; trocar o visual inteiro junto
+  seria uma segunda variável na mesma medição.
 - **Armadilha registrada:** câmera estoura os 840 px **por desenho**; o
   `medir-texto.ps1` marca `ESTOURA` e isso não reprova (`digital-zoom`,
   `vertigo`, `pull-back`, `zoom-through`). Decoro também infla o bbox
@@ -266,13 +268,14 @@
 - Só depois dos 6 vídeos e do Gate 2; **003–006 ficam no v1** para não contaminar a comparação.
 - ReelMimic, WebGL/Three.js e afins ficam fora do MVP; reavaliar depois do gate 3.
 
-### 3.8 Biblioteca de layouts — aguarda aprovação (31/10/2026)
+### 3.8 Biblioteca de layouts — **aprovada em 01/11/2026**
 
-- Os **17 estilos** estão implementados e provados no LAB 003 (`QA PASS`).
-  **Nada entra em episódio antes da aprovação explícita do usuário.**
-- Aprovado o conjunto, o caminho natural é **usar 1–2 estilos por episódio**
-  (gancho + um cartão de dado), não trocar o v1 inteiro: o lote 007–011 testa o
-  **gancho**, e mudar visual junto contaminaria a leitura.
+- Os **17 estilos** estão implementados e provados no LAB 003 (`QA PASS`) e
+  foram **aprovados pelo usuário em 01/11/2026** — nenhum corte.
+- **Regra de uso:** **1–2 estilos por episódio** (gancho + um cartão de dado).
+  Não trocar o v1 inteiro: o lote 007–011 testa o **gancho**, e visual junto
+  contaminaria a leitura. Primeiro uso previsto: gancho do **008** em `orbit`
+  ou `digital-zoom`.
 - Estilos que pedem decisão antes de uso real: `green-screen` (asset de imagem),
   `cover-story` (masthead de revista fictícia) e `chart-grow` (só faz sentido
   com 3 números reais e fonte).

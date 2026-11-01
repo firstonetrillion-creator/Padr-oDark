@@ -4,7 +4,7 @@
 > Depois de uma compactação, a versão atual deste arquivo é relida do disco e vira a baseline da sessão.
 > Memória longa continua em `MEMORIA.md`; aqui só o suficiente para retomar sem reler nada.
 
-**Atualizado:** 2026-10-31 · **Gate 2 PASSA (3 de 6)** · **007 Somerton: QA PASS, aguardando aprovação humana** · **17 layouts: LAB 003 QA PASS, aguardando aprovação** · canal único · `sombra-direta` pausado
+**Atualizado:** 2026-11-01 · **Gate 2 PASSA (3 de 6)** · **007 Somerton: QA PASS, aguardando aprovação humana** · **17 layouts: APROVADOS em 01/11** · canal único · `sombra-direta` pausado
 
 ## Onde estamos
 
@@ -23,12 +23,12 @@ depois do gancho”.
 ficou no limite e **caiu no gancho** (ficaram 38,2% contra 46,5%). O miolo foi
 resolvido — o próximo ajuste é o **primeiro segundo**.
 
-**Fora da fila, pronto e parado:** a **biblioteca de 17 estilos de cena**
-(`templates/layouts/`) passou o LAB 003 com QA PASS em 31/10. É aditiva: sem
-`tipo` no roteiro, o HTML sai idêntico ao v1 (007 conferido por SHA-256). Não
-entra em episódio antes da aprovação.
+**Fora da fila, aprovada em 01/11:** a **biblioteca de 17 estilos de cena**
+(`templates/layouts/`) passou o LAB 003 com QA PASS em 31/10 e foi **aprovada
+pelo usuário em 01/11**. É aditiva: sem `tipo` no roteiro, o HTML sai idêntico
+ao v1 (007 conferido por SHA-256). Uso: **1–2 estilos por episódio**.
 
-## Biblioteca de layouts — 17 estilos (31/10, aguardando aprovação)
+## Biblioteca de layouts — 17 estilos (**aprovada** em 01/11)
 
 | Etapa | Estado |
 |---|---|
@@ -38,7 +38,7 @@ entra em episódio antes da aprovação.
 | Retrocompatível | **provado** — 007 regerado sem `tipo`: `index.html` com o **mesmo SHA-256** |
 | LAB 003 | **QA PASS** — `laboratorio/003-layouts-17/`: 17 cenas, 45,077 s, 3m06s de render, −15,0 LUFS, TP −2,5, 1352 frames; SHA-256 `59D282C2…5E9AF7` |
 | Frames | **conferidos** — 17 frames do `final.mp4` + `contact-1.png`/`contact-2.png`; nenhum título em 3 linhas |
-| Aprovação | **pendente** — nada entra em episódio antes |
+| Aprovação | **APROVADA em 01/11** — os 17 entram, 1–2 por episódio |
 
 **Os 17:** orbit · couch-wall · ui-world · frame-break · digital-zoom ·
 phone-mockup · checklist · headline-wall · zoom-through · chart-grow ·
@@ -456,9 +456,10 @@ Gate 2, via LAB 002 (20–30 s, 3 layouts), nunca direto num episódio.
 
 **Próximo comando (o que decidir agora):** o gate está fechado, então a fila é
 **decisão**, não produção. Em ordem:
-1. **Aprovar o LAB 003** — quais dos 17 estilos entram (ou cortar). Aprovado,
-   o uso é 1–2 por episódio (gancho + cartão de dado), nunca trocar o v1
-   inteiro no meio do lote 007–011, que testa o **gancho**.
+1. **Usar a biblioteca no 008** — aprovada em 01/11: **1–2 estilos por episódio**
+   (gancho + um cartão de dado). O lote 007–011 testa o **gancho**, então visual
+   não pode virar segunda variável: no máximo o gancho do 008 em `orbit` ou
+   `digital-zoom`, o resto igual ao 005.
 2. **Aprovar ou não** o `sombra-direta` 001 (`QA PASS`, cópia pronta) — precisa de
    conta Google separada, que ainda não existe.
 3. **Escolher o modelo do canal 2** (A/B/C, adiado de propósito para depois do
@@ -473,9 +474,9 @@ Gate 2, via LAB 002 (20–30 s, 3 layouts), nunca direto num episódio.
 - **v1 não está mais congelado pelo Gate 2** (fechado em 29/10), mas continua
   sendo a referência: mudança de fonte/efeito/imagem entra como **uma variável**
   em **canal separado**, nunca direto no Dossiê 45.
-- **Os 17 layouts não entram no Dossiê 45** antes da aprovação do LAB 003; e,
-  aprovados, entram como **1–2 cartões por episódio**, não como troca do v1 —
-  o lote 007–011 testa o gancho.
+- **Os 17 layouts estão aprovados (01/11)** e entram no Dossiê 45 como **1–2
+  cartões por episódio**, nunca como troca do v1 — o lote 007–011 testa o
+  gancho, e visual junto seria uma segunda variável.
 - Alerta em `qa.md`: cena 2 é cartão estático de 6,57 s. Só dividir se a retenção do 003 pedir.
 - `docs/PLANO.md` (correção da fonte 004 → Comissão NZ, Apia) commitado junto com o 004.
 - **Gate 2 usa janela fixa de 48 h** para “% média assistida”. A duração média

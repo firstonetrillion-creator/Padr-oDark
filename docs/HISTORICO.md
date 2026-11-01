@@ -2,7 +2,17 @@
 
 > Linha do tempo do que foi **entregue**, com data, evidência e decisão.
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
-> Mais recente no topo. Última atualização: **2026-10-31**.
+> Mais recente no topo. Última atualização: **2026-11-01**.
+
+## 2026-11-01 — biblioteca de 17 estilos aprovada
+
+**Decisão**
+- Usuário aprovou **os 17** estilos sem corte (LAB 003, `QA PASS` em 31/10).
+- **Regra de uso:** **1–2 estilos por episódio** — gancho e/ou um cartão de dado.
+  O lote 007–011 testa o **gancho**; trocar o visual inteiro junto seria uma
+  segunda variável na mesma medição. Primeiro uso previsto: gancho do **008**
+  em `orbit` ou `digital-zoom`, resto igual ao 005.
+- `docs/LAYOUTS.md` §10 sai de “implementado” para **implementado e aprovado**.
 
 ## 2026-10-31 — 17 estilos de cena: biblioteca de layouts + LAB 003 (QA PASS)
 
