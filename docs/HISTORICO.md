@@ -4,6 +4,37 @@
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
 > Mais recente no topo. Última atualização: **2026-11-01**.
 
+## 2026-11-01 — episódio 008 Max Headroom (QA PASS, 1º uso dos layouts)
+
+**Entregue**
+- `episodios/008-max-headroom/` — briefing com **3 fontes numeradas**
+  (Wikipédia EN “Max Headroom signal hijackings”; WTTW News 21/11/2017;
+  VICE/Motherboard 25/11/2013), gancho aprovado no lote, `roteiro.json` com
+  **12 cenas / 106 palavras**, voz por cena, `index.html`, `final.mp4`,
+  `capa.png`, `publicacao.md`, `qa.md`.
+- **Primeiro episódio com a biblioteca de layouts:** `digital-zoom` na cena 1
+  (gancho) e `orbit` na cena 11 (`NÃO PODEM SER PRESOS.`). As outras 10 cenas
+  continuam o cartão do v1; contrato §2b **OK**.
+- Áudio: `voz_raw` **−15,7 LUFS / TP +0,1** (Piper quente) → `volume=-6.3dB`
+  + limitador 0,85 → `voz.wav` −22,0 LUFS; render cru −19,1 LUFS → pós
+  **+4,1 dB** → `final.mp4` **45,013 s · 3.914.187 bytes · −15,0 LUFS ·
+  TP −2,1 · LRA 2,4**. SHA-256 `70CB5963…F704A7`. `qa.ps1 -Duracao 45`
+  **PASS**; render 3m30,0s, 5 segmentos, 0 retries, 1.350 frames.
+- QA visual: 12 frames do mp4 + 3 extras da cena 1; pior tinta **802 px** de
+  840. Capa em 31,1 s (“A TORRE ESTAVA VAZIA. / NINGUÉM PODIA CORTAR.”);
+  título `Max Headroom: a TV invadida que ninguém explicou` (48 chars, lint
+  98/100).
+
+**Decisão / achado**
+- **O `digital-zoom` no gancho não contamina a variável do lote:** a cena 1 fica
+  **legível em 0,10 s** (no v1 o primeiro frame é só a moldura, texto por volta
+  de 0,6 s). O texto é o mesmo do gancho aprovado; o layout só muda a entrada.
+- **Fecho corrigido antes do render final:** “trinta e oito anos sem nome”
+  apodreceria em 22/11/2026 (39 anos). Trocado por “NINGUÉM SABE QUEM USAVA A
+  MÁSCARA.” — voz e render refeitos.
+- **Aguarda aprovação humana explícita**; fila 1/dia às 19h: 007 em 02/11,
+  008 em 03/11.
+
 ## 2026-11-01 — biblioteca de 17 estilos aprovada
 
 **Decisão**

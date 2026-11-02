@@ -1,0 +1,171 @@
+{
+  "slug": "008-max-headroom",
+  "composition_id": "ep008",
+  "titulo_pagina": "Max Headroom: a TV invadida que ninguém explicou",
+  "duracao": 45,
+  "marca": "DOSSIÊ 45",
+  "dossie": "008",
+  "rodape": "FONTE · WIKIPÉDIA EN · WTTW, 2017 · VICE, 2013",
+  "audio": {
+    "voz": 1.0,
+    "drone": 0.16
+  },
+  "cenas": [
+    {
+      "id": "s1",
+      "tipo": "digital-zoom",
+      "kicker": "O ARQUIVO · MAX HEADROOM",
+      "titulo": [
+        "DOIS CANAIS",
+        "INVADIDOS",
+        "AO VIVO."
+      ],
+      "pequeno": [
+        "NINGUÉM FOI PRESO."
+      ],
+      "acento": true,
+      "fala": "Dois canais de TV foram invadidos ao vivo. Ninguém foi preso."
+    },
+    {
+      "id": "s2",
+      "titulo": [
+        "CHICAGO,",
+        "1987."
+      ],
+      "pequeno": [
+        "O SINAL VINHA",
+        "POR MICRO-ONDAS."
+      ],
+      "fonte_px": 168,
+      "fala": "Chicago, 1987. O sinal vinha por micro-ondas."
+    },
+    {
+      "id": "s3",
+      "kicker": "WGN · CANAL 9",
+      "titulo": [
+        "O ESPORTE",
+        "SAI DO AR."
+      ],
+      "pequeno": [
+        "21H14 · AO VIVO."
+      ],
+      "fala": "Nove e catorze. Na WGN, o esporte sai do ar."
+    },
+    {
+      "id": "s4",
+      "titulo": [
+        "UMA",
+        "MÁSCARA",
+        "DE MAX",
+        "HEADROOM."
+      ],
+      "pequeno": [
+        "SEM ÁUDIO. SÓ CHIADO."
+      ],
+      "fonte_px": 134,
+      "fala": "Uma máscara de Max Headroom. Sem áudio. Só chiado."
+    },
+    {
+      "id": "s5",
+      "titulo": [
+        "O",
+        "ENGENHEIRO",
+        "TROCA A",
+        "FREQUÊNCIA."
+      ],
+      "pequeno": [
+        "O SINAL VOLTA."
+      ],
+      "fonte_px": 124,
+      "fala": "O engenheiro troca a frequência. O sinal volta."
+    },
+    {
+      "id": "s6",
+      "titulo": [
+        "EU TAMBÉM",
+        "NÃO SEI O",
+        "QUE HOUVE."
+      ],
+      "pequeno": [
+        "DAN ROAN, AO VIVO."
+      ],
+      "fonte_px": 138,
+      "fala": "O âncora voltou dizendo: eu também não sei o que houve."
+    },
+    {
+      "id": "s7",
+      "kicker": "DUAS HORAS DEPOIS · WTTW",
+      "titulo": [
+        "DOCTOR",
+        "WHO",
+        "SAI DO AR."
+      ],
+      "pequeno": [
+        "CANAL 11, PBS."
+      ],
+      "fala": "Duas horas depois, a WTTW. Doctor Who sai do ar."
+    },
+    {
+      "id": "s8",
+      "titulo": [
+        "DESSA VEZ,",
+        "TEM VOZ."
+      ],
+      "pequeno": [
+        "DISTORCIDA.",
+        "QUASE ILEGÍVEL."
+      ],
+      "fala": "Dessa vez tem voz. Distorcida, quase ilegível."
+    },
+    {
+      "id": "s9",
+      "titulo": [
+        "A TORRE",
+        "ESTAVA VAZIA."
+      ],
+      "pequeno": [
+        "NINGUÉM PODIA",
+        "CORTAR."
+      ],
+      "fala": "A torre estava vazia. Ninguém podia cortar."
+    },
+    {
+      "id": "s10",
+      "titulo": [
+        "A FCC",
+        "INVESTIGOU."
+      ],
+      "pequeno": [
+        "O FBI EXAMINOU",
+        "A FITA."
+      ],
+      "fala": "A FCC investigou. O FBI examinou a fita."
+    },
+    {
+      "id": "s11",
+      "tipo": "orbit",
+      "kicker": "1992 · O PRAZO VENCEU",
+      "titulo": [
+        "NÃO PODEM",
+        "SER PRESOS."
+      ],
+      "pequeno": [
+        "PRESCREVEU."
+      ],
+      "fala": "Se aparecerem hoje, não podem ser presos. Prescreveu em noventa e dois."
+    },
+    {
+      "id": "s12",
+      "titulo": [
+        "MAX",
+        "HEADROOM."
+      ],
+      "pequeno": [
+        "NINGUÉM SABE QUEM",
+        "USAVA A MÁSCARA."
+      ],
+      "fonte_px": 134,
+      "fala": "Max Headroom. Ninguém sabe quem usava a máscara."
+    }
+  ]
+}

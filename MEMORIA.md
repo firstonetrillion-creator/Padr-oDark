@@ -2,7 +2,7 @@
 
 > **Leia este arquivo primeiro.** Ele é a memória de retomada do projeto.
 > Depois: `AGENTS.md` (regras) → `docs/PLANO.md` (fases) → `docs/HISTORICO.md` (o que já foi entregue).
-> Última atualização: **2026-10-31**. Se você é uma sessão nova, não refaça o que está marcado como entregue.
+> Última atualização: **2026-11-01**. Se você é uma sessão nova, não refaça o que está marcado como entregue.
 
 ## 1. Onde estamos
 
@@ -21,6 +21,7 @@
 | 6 vídeos de validação | **6/6 publicados — Fase 2 concluída** | 001–006 no ar |
 | **Gate 2 (48 h)** | **PASSA em 29/10/2026 — 3 de 6 > 50%** | 002 87,0% · 003 87,0% · 005 **54,3%** · 004 45,7% · 006 **50,0%** (limite) · 001 33,3% (fora) |
 | Episódio 007 — Homem de Somerton | **produzido (31/10) — QA PASS, publicação pronta, aguardando aprovação** | `episodios/007-homem-de-somerton/` |
+| Episódio 008 — Max Headroom | **produzido (01/11) — QA PASS, publicação pronta, aguardando aprovação** | `episodios/008-max-headroom/` |
 | Episódio 002 — Mary Celeste | **publicado** (21/10/2026) | `episodios/002-mary-celeste/`, [Shorts](https://youtube.com/shorts/n6dtveQguf4) |
 | Episódio 003 — Roanoke | **publicado** (23/10/2026) | `episodios/003-roanoke/`, [Shorts](https://youtube.com/shorts/8ptxqKGe4Bk) |
 | Canal | **Dossiê 45**: nome, avatar/banner, descrição no ar e 9 shorts antigos privados | [canal](https://youtube.com/@Dossie45), `docs/REBRANDING.md` |
@@ -151,6 +152,33 @@
   pacote em `publicacao.md`.
 - **Aguarda aprovação humana explícita** para publicar. Retenção 48 h: D+2.
 
+### Episódio 008 — Max Headroom (produzido 01/11/2026, não publicado)
+- **Gancho do lote:** “Dois canais de TV foram invadidos ao vivo. Ninguém foi
+  preso.” — o ato no primeiro segundo; cena 2 entrega o **mecanismo**
+  (micro-ondas), não contexto.
+- **1º episódio com a biblioteca de layouts:** `digital-zoom` na cena 1 e
+  `orbit` na cena 11; as outras 10 cenas são o cartão do v1. Contrato §2b OK.
+- 106 palavras / **12 cenas**; máx **4,70 s** (s11). A cena 11 pedia 5,508 s com
+  o ano por extenso; encurtada para “prescreveu em noventa e dois” (o kicker já
+  mostra 1992).
+- **Voz por cena:** 36,927 s de fala + 8,073 s de silêncio (17,9%) → 45,000 s.
+  Piper saiu **quente** (−15,7 LUFS, TP **+0,1**) → `voz.wav` `volume=-6.3dB`
+  + limitador 0,85 → −22,0 LUFS.
+- Render (01/11): 1.350 frames, 5 segmentos, 0 retries, **3m30,0s**;
+  `final_raw` −19,1 LUFS → `final.mp4` **45,013 s, 3.914.187 bytes, −15,0 LUFS,
+  TP −2,1, LRA 2,4** (ganho **+4,1 dB**); `qa.ps1 -Duracao 45` **PASS**;
+  SHA-256 `70CB5963…F704A7`.
+- QA visual: 12 frames do mp4 + 3 extras da cena 1; pior tinta **802 px** de 840.
+  **Achado:** com `digital-zoom` a cena 1 fica **legível em 0,10 s** (no v1 o
+  primeiro frame é só a moldura).
+- **Correção antes do render final:** o fecho dizia “trinta e oito anos sem
+  nome”; em 22/11/2026 o caso completa 39 anos, e o número apodreceria em três
+  semanas. Trocado por “NINGUÉM SABE QUEM USAVA A MÁSCARA.” (voz e render
+  refeitos).
+- Capa em 31,1 s (“A TORRE ESTAVA VAZIA. / NINGUÉM PODIA CORTAR.”); título
+  `Max Headroom: a TV invadida que ninguém explicou` (48 chars, lint 98/100);
+  pacote em `publicacao.md`. **Aguarda aprovação humana explícita.**
+
 ### Template
 - `templates/misterio-45/index.html` — composição validada, 13 cenas, áudio `voz`/`drone`, QA por `?t=`.
 - `templates/misterio-45/beat-sheet.md` — 13 beats, tempos e orçamento de palavras.
@@ -242,10 +270,11 @@
 - `codebase-memory-mcp` pode ser instalado e o projeto indexado, **fora de uma janela de render** (RAM de 8 GB).
 - OpenMontage continua fora até o gate 3 (ver `docs/PLANO.md`).
 
-### 3.6 Lote 007–011 — aprovado em 29/10/2026 (007 concluído em 31/10)
+### 3.6 Lote 007–011 — aprovado em 29/10/2026 (007 e 008 concluídos)
 
-- **007 concluído:** QA PASS, `publicacao.md` pronto, **aguardando aprovação
-  humana explícita** para publicar. 008–011 nada produzido.
+- **007 concluído (31/10) e 008 concluído (01/11):** ambos com QA PASS,
+  `publicacao.md` pronto, **aguardando aprovação humana explícita** para
+  publicar (1/dia, 19h: 007 em 02/11, 008 em 03/11). 009–011 nada produzido.
 
 - **Canal único** (decisão de 29/10): Dossiê 45. `sombra-direta` (001 com QA PASS,
   nunca publicado) e `mente-obscura` ficam **pausados**, arquivo em disco.
@@ -274,8 +303,11 @@
   foram **aprovados pelo usuário em 01/11/2026** — nenhum corte.
 - **Regra de uso:** **1–2 estilos por episódio** (gancho + um cartão de dado).
   Não trocar o v1 inteiro: o lote 007–011 testa o **gancho**, e visual junto
-  contaminaria a leitura. Primeiro uso previsto: gancho do **008** em `orbit`
-  ou `digital-zoom`.
+  contaminaria a leitura.
+- **Primeiro uso real: 008** — `digital-zoom` na cena 1 e `orbit` na cena 11,
+  contrato §2b OK. Efeito colateral medido: com o zoom, a cena 1 fica **legível
+  em 0,10 s**, contra ~0,6 s do v1 — o layout serve à variável do lote, não
+  contra ela.
 - Estilos que pedem decisão antes de uso real: `green-screen` (asset de imagem),
   `cover-story` (masthead de revista fictícia) e `chart-grow` (só faz sentido
   com 3 números reais e fonte).
@@ -409,6 +441,8 @@ ffmpeg -i final_raw.mp4 -c:v copy `
 | Frame do `final.mp4` parece ter texto duplicado | a imagem foi **exibida em escala reduzida**; serifa fina ganha fantasma | medir bandas de tinta (`ffmpeg → gray → max por linha`). No 006 a checagem deu exatamente 3 linhas + linha pequena |
 | `frame_s1.png` e `frame_fecho.png` com o **mesmo SHA-256** (007) | a extração de frames falhou e gravou o mesmo PNG duas vezes | **conferir o hash dos frames de QA** antes de olhar a imagem; re-extrair do `final.mp4` com `select='eq(n,X)'` e `−vsync 0` |
 | `final_raw.mp4` sai em **−10,6 LUFS** (007) em vez de ~−22 | a voz foi **pré-normalizada (+5 dB) antes do render** (em 004–006 o ganho era no pós); o pós-render da sessão anterior reduziu o volume sem registrar o filtro | **medir o cru antes** de escolher o sinal do pós e gravar o comando exato (`volume=XdB,alimiter=…`) no `status.md`/`qa.md`; no 007 ficou `volume=-4.4dB` → −15,0 LUFS |
+| Número redondo no fecho que **envelhece** (“trinta e oito anos sem nome”, 008) | contagem relativa à data de publicação: o caso completava 39 anos três semanas depois | trocar por fato **permanente** (“ninguém sabe quem usava a máscara”) ou por data fixa; nunca deixar número relativo em vídeo que fica no ar |
+| Piper sai **quente** (008: −15,7 LUFS, TP **+0,1**) em vez de ~−22 | `volume=1.0` do Piper não é estável entre textos; frase com muitas pausas sobe a média | medir `voz_raw.wav` sempre; no 008 foi `volume=-6.3dB` → −22,0 LUFS, e o pós ficou **+4,1 dB** |
 
 ## 8. Decisões que não se reabrem
 

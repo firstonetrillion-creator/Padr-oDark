@@ -4,7 +4,7 @@
 > Depois de uma compactação, a versão atual deste arquivo é relida do disco e vira a baseline da sessão.
 > Memória longa continua em `MEMORIA.md`; aqui só o suficiente para retomar sem reler nada.
 
-**Atualizado:** 2026-11-01 · **Gate 2 PASSA (3 de 6)** · **007 Somerton: QA PASS, aguardando aprovação humana** · **17 layouts: APROVADOS em 01/11** · canal único · `sombra-direta` pausado
+**Atualizado:** 2026-11-01 · **Gate 2 PASSA (3 de 6)** · **007 e 008: QA PASS, aguardando aprovação humana** · **17 layouts: APROVADOS em 01/11 — 1º uso no 008** · canal único · `sombra-direta` pausado
 
 ## Onde estamos
 
@@ -39,6 +39,7 @@ ao v1 (007 conferido por SHA-256). Uso: **1–2 estilos por episódio**.
 | LAB 003 | **QA PASS** — `laboratorio/003-layouts-17/`: 17 cenas, 45,077 s, 3m06s de render, −15,0 LUFS, TP −2,5, 1352 frames; SHA-256 `59D282C2…5E9AF7` |
 | Frames | **conferidos** — 17 frames do `final.mp4` + `contact-1.png`/`contact-2.png`; nenhum título em 3 linhas |
 | Aprovação | **APROVADA em 01/11** — os 17 entram, 1–2 por episódio |
+| 1º uso em episódio | **008** — `digital-zoom` na cena 1 e `orbit` na cena 11; as outras 10 cenas seguem o cartão do v1 |
 
 **Os 17:** orbit · couch-wall · ui-world · frame-break · digital-zoom ·
 phone-mockup · checklist · headline-wall · zoom-through · chart-grow ·
@@ -65,15 +66,46 @@ v1, Piper, 1080×1920/30 fps). **Hipótese:** mediana de “ficaram” ≥ 46,5%
 | # | Slug | Tema | Gancho | Estado |
 |---|---|---|---|---|
 | 007 | `007-homem-de-somerton` | Homem de Somerton (1948) | “Um homem morto na praia. Um código costurado na roupa.” | **QA PASS 31/10 — publicação pronta, aguardando aprovação** |
-| 008 | `008-max-headroom` | Invasão Max Headroom (1987) | “Dois canais de TV foram invadidos ao vivo. Ninguém foi preso.” | nada produzido |
+| 008 | `008-max-headroom` | Invasão Max Headroom (1987) | “Dois canais de TV foram invadidos ao vivo. Ninguém foi preso.” | **QA PASS 01/11 — publicação pronta, aguardando aprovação** |
 | 009 | `009-mascaras-de-chumbo` | Máscaras de chumbo (1966) | “Dois homens mortos no morro. Máscaras de chumbo. Nenhuma marca.” | nada produzido |
 | 010 | `010-carroll-a-deering` | Carroll A. Deering (1921) | “O navio apareceu vazio. E a comida ainda estava na mesa.” | nada produzido |
 | 011 | `011-ss-baychimo` | SS Baychimo (1931–1969) | “Abandonaram o navio no gelo. Ele navegou 38 anos sozinho.” | nada produzido |
 
-**Próximo comando:** o **007 está pronto para publicar** — falta escuta humana
-dos nomes e **aprovação explícita** (“publique” conta; “conclua” não). Publicado
-o 007, começar o **008** com `briefing.md` (fontes numeradas), gancho e
-`roteiro.json`. Cadência: 1/dia, 19h, seg–sex.
+**Próximo comando:** há **dois vídeos prontos e sem aprovação** (007 e 008).
+Falta escuta humana dos nomes e **aprovação explícita** (“publique” conta;
+“conclua” não) — e **um por dia**, 19h, seg–sex: o 007 em 02/11, o 008 em 03/11.
+Aprovado o 008, começar o **009** (`briefing.md` com fontes numeradas, gancho,
+`roteiro.json`).
+
+## Episódio 008 — Max Headroom
+
+| Etapa | Estado |
+|---|---|
+| Briefing | **pronto** — Wikipédia (EN) “Max Headroom signal hijackings”; WTTW News 21/11/2017; VICE/Motherboard 25/11/2013 |
+| Gancho | **aprovado no lote** — “Dois canais de TV foram invadidos ao vivo. Ninguém foi preso.” (fórmula 17) |
+| Roteiro | **pronto** — `roteiro.json`, 106 palavras, **12 cenas**, máx **4,70 s** (s11) |
+| Voz | **pronta** — cena por cena (`montar-voz.py`): 36,927 s de fala + 8,073 s de silêncio (17,9%) → `voz_raw.wav` 45,000 s |
+| Áudio pré-render | **cru −15,7 LUFS / TP +0,1** (Piper quente) → `voz.wav` `volume=-6.3dB` + limitador 0,85 → **−22,0 LUFS**, TP −6,2 |
+| Composição | **pronta** — 12 cenas; **1º episódio com layouts**: `digital-zoom` (s1) e `orbit` (s11); contrato **OK, 1 aviso** |
+| QA visual | **concluído** — 12 snapshots + 12 frames do `final.mp4` + 3 extras da cena 1; pior tinta **802 px** de 840 |
+| Render | **concluído** — `final_raw.mp4` 45,000 s, 1.350 frames, 5 segmentos, 0 retries, **3m30,0s** |
+| Áudio final | **+4,1 dB** + limitador 0,85 (cru −19,1) → **−15,0 LUFS**, TP −2,1, LRA 2,4 |
+| QA | **QA PASS** — `qa.ps1 -Duracao 45`; `qa.md` escrito em 01/11 |
+| Capa | **pronta** — `capa.png` em 31,1 s (“A TORRE ESTAVA VAZIA. / NINGUÉM PODIA CORTAR.”) |
+| publicacao.md | **pronto** — título `Max Headroom: a TV invadida que ninguém explicou` (48 chars, lint **98/100**); SHA-256 `70CB5963…F704A7` |
+| Aprovação humana | **pendente** — escuta dos nomes + aprovação explícita |
+| Publicação | **pendente** — 1/dia, 19h: 007 em 02/11, 008 em 03/11 |
+
+**Dois achados novos:** (1) **o `digital-zoom` resolve o primeiro segundo** — a
+cena 1 fica legível em **0,10 s**, contra ~0,6 s do v1 (medido em frame do mp4);
+(2) **o Piper saiu quente** (−15,7 LUFS, TP +0,1, o oposto do 006 em −22,17) e
+por isso o pós foi **+4,1 dB**, não +7. Medir o cru antes de escolher o sinal
+continua sendo a regra.
+
+**Correção antes do render final:** o fecho dizia “TRINTA E OITO ANOS SEM NOME”
+— em 22/11/2026 o caso completa 39 anos, e o número apodreceria em três
+semanas. Trocado pelo fato permanente “NINGUÉM SABE QUEM USAVA A MÁSCARA.”,
+com voz e render refeitos.
 
 ## Episódio 007 — Homem de Somerton
 
@@ -434,10 +466,11 @@ Gate 2, via LAB 002 (20–30 s, 3 layouts), nunca direto num episódio.
 
 ## Esperando (nada a fazer até as datas)
 
-- **007** — escutar os nomes (Somerton, Adelaide, Tamám Shud, Omar Caiame,
-  Glenelg), obter **aprovação explícita** e publicar. 31/10 é sábado; próxima
-  janela da cadência (seg–sex): **segunda 02/11 às 19h**. Retenção 48 h: **D+2
-  da data de publicação**.
+- **007 e 008** — escutar os nomes (007: Somerton, Adelaide, Tamám Shud, Omar
+  Caiame, Glenelg; 008: Máks Rédrum, Chicágo, dábliu gê êne, dábliu tê tê
+  dábliu, Dóktor U, éfe cê cê, éfe bê i), obter **aprovação explícita** e
+  publicar **um por dia, 19h, seg–sex**: 007 em **02/11**, 008 em **03/11**.
+  Retenção 48 h de cada um: **D+2 da data de publicação**.
 - ~~**2026-10-29** — retenção de 48 h de **005** e **006**~~ **feito** (29/10):
   **005 54,3%** (224 views, ficaram 46,5%, 0:25 de 0:46) e **006 50,0%**
   (79 views, ficaram 38,2%, 0:23 de 0:46 — no limite do arredondamento).
@@ -454,18 +487,19 @@ Gate 2, via LAB 002 (20–30 s, 3 layouts), nunca direto num episódio.
   (36,1% vs 42,2%): slide de −32,4 p.p. entre 10 s e 44,5 s. Hipótese: a
   explicação do CROATOAN entregue cedo demais.
 
-**Próximo comando (o que decidir agora):** o gate está fechado, então a fila é
-**decisão**, não produção. Em ordem:
-1. **Usar a biblioteca no 008** — aprovada em 01/11: **1–2 estilos por episódio**
-   (gancho + um cartão de dado). O lote 007–011 testa o **gancho**, então visual
-   não pode virar segunda variável: no máximo o gancho do 008 em `orbit` ou
-   `digital-zoom`, o resto igual ao 005.
-2. **Aprovar ou não** o `sombra-direta` 001 (`QA PASS`, cópia pronta) — precisa de
+**Próximo comando (o que decidir agora):** produção do lote em dia (007 e 008
+prontos), então a fila é **decisão**, não produção. Em ordem:
+1. **Aprovar e publicar o 007** (janela 02/11, 19h) e o **008** (03/11, 19h) —
+   falta só escuta humana dos nomes e “publique”.
+2. **Usar a biblioteca no 009** — já provada no 008 (1–2 estilos por episódio:
+   o gancho em `digital-zoom` e um dado isolado em `orbit`). No 009, manter a
+   mesma disciplina: no máximo o gancho + um cartão de dado.
+3. **Aprovar ou não** o `sombra-direta` 001 (`QA PASS`, cópia pronta) — precisa de
    conta Google separada, que ainda não existe.
-3. **Escolher o modelo do canal 2** (A/B/C, adiado de propósito para depois do
+4. **Escolher o modelo do canal 2** (A/B/C, adiado de propósito para depois do
    gate). Com 005 acima de 50% e 006 no limite por gancho, a leitura favorece
    testar **gancho/visual** antes de nicho.
-4. Só depois: LAB 002 (layouts) e o A/B de v2.
+5. Só depois: o A/B de v2.
 
 ## Bloqueios e regras vivas
 
@@ -477,6 +511,14 @@ Gate 2, via LAB 002 (20–30 s, 3 layouts), nunca direto num episódio.
 - **Os 17 layouts estão aprovados (01/11)** e entram no Dossiê 45 como **1–2
   cartões por episódio**, nunca como troca do v1 — o lote 007–011 testa o
   gancho, e visual junto seria uma segunda variável.
+- **Layout no gancho não quebra a variável do lote:** o 008 pôs `digital-zoom` na
+  cena 1 e `orbit` na cena 11. O texto do primeiro segundo continua igual ao do
+  gancho aprovado; o layout só muda *como* o cartão entra (e o zoom deixa o
+  texto legível em 0,10 s, contra ~0,6 s do v1).
+- **Áudio: medir o cru antes de escolher o sinal.** O Piper não tem volume
+  previsível: 006 saiu em −22,17 LUFS, 007 em −15,2 (por isso o pós foi −4,4 dB)
+  e 008 em −15,7 (pós +4,1 dB). Medir `voz_raw.wav` e `final_raw.mp4` com
+  `ebur128` e ler o **true peak**, nunca o pico de amostra.
 - Alerta em `qa.md`: cena 2 é cartão estático de 6,57 s. Só dividir se a retenção do 003 pedir.
 - `docs/PLANO.md` (correção da fonte 004 → Comissão NZ, Apia) commitado junto com o 004.
 - **Gate 2 usa janela fixa de 48 h** para “% média assistida”. A duração média
