@@ -61,7 +61,11 @@ produzido.** Canal único: Dossiê 45 (`sombra-direta` e `mente-obscura` pausado
 **A variável do lote é o gancho:** o primeiro segundo abre com ação/consequência,
 nunca com contexto. Tudo o mais fica igual ao 005 (45 s, **12 cartões**, ≤5 s,
 v1, Piper, 1080×1920/30 fps). **Hipótese:** mediana de “ficaram” ≥ 46,5% e de
-`% média` > 54,3%. **Cadência fixa:** 1/dia, 19h de Brasília, seg–sex.
+`% média` > 54,3%. **Cadência (decidida pelo usuário em 02/11): 3–4 vídeos por
+dia**, publicados manualmente. A cadência anterior (1/dia, 19h, seg–sex) valia
+até 01/11. Com 3–4/dia os vídeos competem pela mesma audiência no feed: a
+retenção de 48 h vale por vídeo, mas a comparação entre vídeos do mesmo dia fica
+confundida — ler a mediana do lote como **sinal**, não como teste controlado.
 
 | # | Slug | Tema | Gancho | Estado |
 |---|---|---|---|---|
@@ -73,9 +77,10 @@ v1, Piper, 1080×1920/30 fps). **Hipótese:** mediana de “ficaram” ≥ 46,5%
 
 **Próximo comando:** há **três vídeos prontos e sem aprovação** (007, 008 e 009).
 Falta escuta humana dos nomes e **aprovação explícita** (“publique” conta;
-“conclua” não) — e **um por dia**, 19h, seg–sex: o 007 em 02/11, o 008 em 03/11,
-o 009 em 04/11. O 009 está com **QA PASS** desde 02/11 (`briefing.md` com 9
-fontes numeradas, gancho, `roteiro.json`, `qa.md`, `publicacao.md`).
+“conclua” não). **Cadência nova (02/11): 3–4 por dia**, na ordem que o usuário
+definir. Com três prontos, o estoque cobre **menos de um dia**; **010 e 011
+fecham o lote em 5**. O 009 está com **QA PASS** desde 02/11 (`briefing.md` com
+9 fontes numeradas, gancho, `roteiro.json`, `qa.md`, `publicacao.md`).
 
 ## Episódio 009 — Máscaras de chumbo
 
@@ -94,7 +99,7 @@ fontes numeradas, gancho, `roteiro.json`, `qa.md`, `publicacao.md`).
 | Capa | **pronta** — `capa.png` em 32,68 s (“CAUSA / INDETERMINADA.”) |
 | publicacao.md | **pronto** — título `Máscaras de chumbo: dois mortos em 1966` (39 chars, lint **100/100**); SHA-256 `3E0A2ACE…D173AC` |
 | Aprovação humana | **pendente** — escuta dos nomes + aprovação explícita |
-| Publicação | **pendente** — depois do 007 (02/11) e do 008 (03/11), 1/dia, 19h |
+| Publicação | **pendente** — cadência de **3–4/dia**; ordem definida pelo usuário |
 
 **Números finais:** `final.mp4` **45,013 s · 3.834.702 bytes · −14,9 LUFS ·
 TP −1,7 · LRA 3,9** (ganho **+4,1 dB** sobre −19,1). SHA-256

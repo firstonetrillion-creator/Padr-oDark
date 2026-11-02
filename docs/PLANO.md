@@ -105,11 +105,20 @@ O 005 abre com ação (“Cinco aviões pediram socorro”); o 006 abre com cont
   - **Se nenhuma passar:** o problema não é gancho nem miolo; reavaliar formato
     (45 s é curto?) antes de produzir mais.
 
-### Cadência e horário (constantes, não variáveis)
+### Cadência e horário (decisão do usuário em 02/11/2026)
 
-- **1 vídeo por dia, 19h de Brasília, segunda a sexta.** Slot **fixo** durante o
-  lote: com 5 vídeos não se testa horário (confunde com dia da semana e com o
-  próprio gancho). Fixar é remover ruído, não otimizar.
+- **3 a 4 vídeos por dia**, publicados manualmente pelo usuário no Studio.
+  Substitui a cadência anterior (1/dia, 19h, seg–sex), que valia até 01/11.
+- **Custo de medição, registrado:** com 3–4 vídeos no mesmo dia, eles competem
+  pela mesma audiência no feed. A retenção de 48 h continua válida **por
+  vídeo**, mas a comparação entre vídeos do mesmo dia fica confundida
+  (canibalização + público frio). A mediana do lote 007–011 passa a misturar
+  dias: ler como **sinal**, não como teste controlado.
+- **O que continua constante:** formato (45 s, 12 cartões, ≤5 s, v1, Piper,
+  1080×1920/30 fps) e a variável do lote (o gancho). Horário deixa de ser
+  controlado — com 3–4/dia não existe "slot".
+- **Estoque em 02/11:** 3 vídeos prontos (007, 008, 009) = menos de um dia na
+  nova cadência. 010 e 011 fecham o lote em 5.
 - Não temos dado de horário. O que se sabe: Shorts feed foi **92,2%** das views
   do 003 e **98,9%** do 004 — o feed não respeita horário. No 005 o search já
   pesou **28,6%**, e aí horário pesa.
