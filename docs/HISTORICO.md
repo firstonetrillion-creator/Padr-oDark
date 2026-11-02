@@ -2,7 +2,45 @@
 
 > Linha do tempo do que foi **entregue**, com data, evidência e decisão.
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
-> Mais recente no topo. Última atualização: **2026-11-01**.
+> Mais recente no topo. Última atualização: **2026-11-02**.
+
+## 2026-11-02 — episódio 009 Máscaras de chumbo (QA PASS)
+
+**Entregue**
+- `episodios/009-mascaras-de-chumbo/` — briefing com **9 fontes numeradas**
+  (Wikipédia PT como base; Wikipédia EN; *O Globo* 22/08 e 14/09/1966;
+  *O Cruzeiro* 12/09/1966; *Correio da Manhã* 27/10/1966; Aventuras na História
+  2019; Linha Direta; Skeptoid), gancho aprovado no lote, `roteiro.json` com
+  **12 cenas / 109 palavras**, voz por cena, `index.html`, `final.mp4`,
+  `capa.png`, `publicacao.md`, `qa.md`, `status.md`.
+- **2 layouts**, como a regra de 1–2 por episódio: `digital-zoom` na cena 1
+  (mesmo tratamento do gancho do 008, variável controlada) e `checklist` na
+  cena 4, com os quatro comandos do bilhete separados. As outras 10 cenas são o
+  cartão do v1; contrato §2b **OK, 1 aviso**.
+- Áudio: `voz_raw` **−16,1 LUFS / TP +0,1** (Piper quente, como no 008) →
+  `volume=-5.9dB` + limitador 0,85 → `voz.wav` −22,0 LUFS; render cru −19,1
+  LUFS → pós **+4,1 dB** → `final.mp4` **45,013 s · 3.834.702 bytes · −14,9
+  LUFS · TP −1,7 · LRA 3,9**. SHA-256 `3E0A2ACE…D173AC`. `qa.ps1 -Duracao 45`
+  **PASS**; render 3m32,0s, 5 segmentos, 0 retries, 1.350 frames.
+- QA visual: 12 frames do mp4; pior tinta **800 px** de 840. Capa em 32,68 s
+  ("CAUSA / INDETERMINADA."); título `Máscaras de chumbo: dois mortos em 1966`
+  (39 chars, lint **100/100**).
+
+**Decisão / achado**
+- **O título do plano foi trocado pelo lint:** `Máscaras de chumbo: dois mortos
+  sem uma marca` (45 chars) dava **76/100** — truncava no mobile e não tinha
+  número nem nome próprio. `Máscaras de chumbo: dois mortos em 1966` (39 chars)
+  dá **100/100**; o "sem uma marca" continua no gancho e na capa.
+- **O disco voador entra como lenda**, não como fato: s11 com kicker **A LENDA**
+  e a linha **NUNCA PROVADO.** O que o vídeo afirma é o bilhete, o laudo
+  indeterminado e o arquivamento.
+- **Duas correções de medida antes do render:** s3 a 170 px quebrava "UMA CAPA"
+  em duas linhas (3 em vez de 2) e s7 a 170 px estourava para x1 = 969. Foram
+  para 150 e 160. O item único "PROTEGER METAIS · AGUARDAR SINAL" ia a 930 px;
+  dividido em dois itens, caiu para 838.
+- **Aguarda aprovação humana explícita**; fila 1/dia às 19h: 007 em 02/11,
+  008 em 03/11, 009 em 04/11.
+
 
 ## 2026-11-01 — episódio 008 Max Headroom (QA PASS, 1º uso dos layouts)
 

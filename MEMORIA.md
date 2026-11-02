@@ -2,7 +2,7 @@
 
 > **Leia este arquivo primeiro.** Ele é a memória de retomada do projeto.
 > Depois: `AGENTS.md` (regras) → `docs/PLANO.md` (fases) → `docs/HISTORICO.md` (o que já foi entregue).
-> Última atualização: **2026-11-01**. Se você é uma sessão nova, não refaça o que está marcado como entregue.
+> Última atualização: **2026-11-02**. Se você é uma sessão nova, não refaça o que está marcado como entregue.
 
 ## 1. Onde estamos
 
@@ -21,7 +21,8 @@
 | 6 vídeos de validação | **6/6 publicados — Fase 2 concluída** | 001–006 no ar |
 | **Gate 2 (48 h)** | **PASSA em 29/10/2026 — 3 de 6 > 50%** | 002 87,0% · 003 87,0% · 005 **54,3%** · 004 45,7% · 006 **50,0%** (limite) · 001 33,3% (fora) |
 | Episódio 007 — Homem de Somerton | **produzido (31/10) — QA PASS, publicação pronta, aguardando aprovação** | `episodios/007-homem-de-somerton/` |
-| Episódio 008 — Max Headroom | **produzido (01/11) — QA PASS, publicação pronta, aguardando aprovação** | `episodios/008-max-headroom/` |
+| Episódio 008 - Max Headroom | **produzido (01/11) - QA PASS, publicação pronta, aguardando aprovação** | `episodios/008-max-headroom/` |
+| Episódio 009 - Máscaras de chumbo | **produzido (02/11) - QA PASS, publicação pronta, aguardando aprovação** | `episodios/009-mascaras-de-chumbo/` |
 | Episódio 002 — Mary Celeste | **publicado** (21/10/2026) | `episodios/002-mary-celeste/`, [Shorts](https://youtube.com/shorts/n6dtveQguf4) |
 | Episódio 003 — Roanoke | **publicado** (23/10/2026) | `episodios/003-roanoke/`, [Shorts](https://youtube.com/shorts/8ptxqKGe4Bk) |
 | Canal | **Dossiê 45**: nome, avatar/banner, descrição no ar e 9 shorts antigos privados | [canal](https://youtube.com/@Dossie45), `docs/REBRANDING.md` |
@@ -270,11 +271,20 @@
 - `codebase-memory-mcp` pode ser instalado e o projeto indexado, **fora de uma janela de render** (RAM de 8 GB).
 - OpenMontage continua fora até o gate 3 (ver `docs/PLANO.md`).
 
-### 3.6 Lote 007–011 — aprovado em 29/10/2026 (007 e 008 concluídos)
+### 3.6 Lote 007–011 — aprovado em 29/10/2026 (007, 008 e 009 concluídos)
 
-- **007 concluído (31/10) e 008 concluído (01/11):** ambos com QA PASS,
-  `publicacao.md` pronto, **aguardando aprovação humana explícita** para
-  publicar (1/dia, 19h: 007 em 02/11, 008 em 03/11). 009–011 nada produzido.
+- **007 concluído (31/10), 008 concluído (01/11) e 009 concluído (02/11):** os
+  três com QA PASS, `publicacao.md` pronto, **aguardando aprovação humana
+  explícita** para publicar (1/dia, 19h: 007 em 02/11, 008 em 03/11, 009 em
+  04/11). 010–011 nada produzido.
+
+- **009 em resumo:** 9 fontes numeradas, 12 cenas / 109 palavras, 34,958 s de
+  fala + 22,3% de silêncio, `final.mp4` **45,013 s · −14,9 LUFS · TP −1,7 ·
+  SHA-256 `3E0A2ACE…D173AC`**, QA PASS. Dois layouts (`digital-zoom` no gancho,
+  `checklist` no bilhete). O disco voador entra **marcado como lenda** (s11:
+  “A LENDA / NUNCA PROVADO”). Título do plano trocado pelo lint: `Máscaras de
+  chumbo: dois mortos sem uma marca` (76/100) → `Máscaras de chumbo: dois mortos
+  em 1966` (**100/100**, 39 chars).
 
 - **Canal único** (decisão de 29/10): Dossiê 45. `sombra-direta` (001 com QA PASS,
   nunca publicado) e `mente-obscura` ficam **pausados**, arquivo em disco.
