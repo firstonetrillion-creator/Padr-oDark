@@ -4,7 +4,7 @@
 > Depois de uma compactação, a versão atual deste arquivo é relida do disco e vira a baseline da sessão.
 > Memória longa continua em `MEMORIA.md`; aqui só o suficiente para retomar sem reler nada.
 
-**Atualizado:** 2026-11-01 · **Gate 2 PASSA (3 de 6)** · **007 e 008: QA PASS, aguardando aprovação humana** · **17 layouts: APROVADOS em 01/11 — 1º uso no 008** · canal único · `sombra-direta` pausado
+**Atualizado:** 2026-11-02 · **Gate 2 PASSA (3 de 6)** · **007, 008 e 009: QA PASS, aguardando aprovação humana** · 17 layouts: APROVADOS em 01/11 — 1º uso no 008 · canal único · `sombra-direta` pausado
 
 ## Onde estamos
 
@@ -67,15 +67,49 @@ v1, Piper, 1080×1920/30 fps). **Hipótese:** mediana de “ficaram” ≥ 46,5%
 |---|---|---|---|---|
 | 007 | `007-homem-de-somerton` | Homem de Somerton (1948) | “Um homem morto na praia. Um código costurado na roupa.” | **QA PASS 31/10 — publicação pronta, aguardando aprovação** |
 | 008 | `008-max-headroom` | Invasão Max Headroom (1987) | “Dois canais de TV foram invadidos ao vivo. Ninguém foi preso.” | **QA PASS 01/11 — publicação pronta, aguardando aprovação** |
-| 009 | `009-mascaras-de-chumbo` | Máscaras de chumbo (1966) | “Dois homens mortos no morro. Máscaras de chumbo. Nenhuma marca.” | nada produzido |
+| 009 | `009-mascaras-de-chumbo` | Máscaras de chumbo (1966) | “Dois homens mortos no morro. Máscaras de chumbo. Nenhuma marca.” | **QA PASS 02/11 — publicação pronta, aguardando aprovação** |
 | 010 | `010-carroll-a-deering` | Carroll A. Deering (1921) | “O navio apareceu vazio. E a comida ainda estava na mesa.” | nada produzido |
 | 011 | `011-ss-baychimo` | SS Baychimo (1931–1969) | “Abandonaram o navio no gelo. Ele navegou 38 anos sozinho.” | nada produzido |
 
-**Próximo comando:** há **dois vídeos prontos e sem aprovação** (007 e 008).
+**Próximo comando:** há **três vídeos prontos e sem aprovação** (007, 008 e 009).
 Falta escuta humana dos nomes e **aprovação explícita** (“publique” conta;
-“conclua” não) — e **um por dia**, 19h, seg–sex: o 007 em 02/11, o 008 em 03/11.
-Aprovado o 008, começar o **009** (`briefing.md` com fontes numeradas, gancho,
-`roteiro.json`).
+“conclua” não) — e **um por dia**, 19h, seg–sex: o 007 em 02/11, o 008 em 03/11,
+o 009 em 04/11. O 009 está com **QA PASS** desde 02/11 (`briefing.md` com 9
+fontes numeradas, gancho, `roteiro.json`, `qa.md`, `publicacao.md`).
+
+## Episódio 009 — Máscaras de chumbo
+
+| Etapa | Estado |
+|---|---|
+| Briefing | **pronto** — 9 fontes numeradas: Wikipédia PT (base), Wikipédia EN, O Globo 22/08 e 14/09/1966, O Cruzeiro 12/09/1966, Correio da Manhã 27/10/1966, Aventuras na História 2019, Linha Direta, Skeptoid |
+| Gancho | **aprovado no lote** — “Dois homens mortos no morro. Máscaras de chumbo. Nenhuma marca.” (fórmula 17 + 14) |
+| Roteiro | **pronto** — `roteiro.json`, 109 palavras, **12 cenas**, máx **4,64 s** (s2) |
+| Voz | **pronta** — cena por cena (`montar-voz.py`): 34,958 s de fala + 10,042 s de silêncio (22,3%) → `voz_raw.wav` 45,000 s |
+| Áudio pré-render | **cru −16,1 LUFS / TP +0,1** → `voz.wav` `volume=-5.9dB` + limitador 0,85 → **−22,0 LUFS**, TP −5,8 |
+| Composição | **pronta** — 12 cenas; **2 layouts**: `digital-zoom` (s1) e `checklist` (s4, o bilhete); contrato **OK, 1 aviso** |
+| QA visual | **concluído** — 11 cenas no snapshot; pior tinta **800 px** (s6 e s8); s1 só no frame do mp4, legível no 1º frame |
+| Render | **concluído** — `final_raw.mp4` 45,000 s, 1.350 frames, 5 segmentos, 0 retries, **3m32,0s** |
+| Áudio final | **+4,1 dB** + limitador 0,85 (cru −19,1) → **−14,9 LUFS**, TP −1,7, LRA 3,9 |
+| QA | **QA PASS** — `qa.ps1 -Duracao 45`; `qa.md` escrito em 02/11 |
+| Capa | **pronta** — `capa.png` em 32,68 s (“CAUSA / INDETERMINADA.”) |
+| publicacao.md | **pronto** — título `Máscaras de chumbo: dois mortos em 1966` (39 chars, lint **100/100**); SHA-256 `3E0A2ACE…D173AC` |
+| Aprovação humana | **pendente** — escuta dos nomes + aprovação explícita |
+| Publicação | **pendente** — depois do 007 (02/11) e do 008 (03/11), 1/dia, 19h |
+
+**Números finais:** `final.mp4` **45,013 s · 3.834.702 bytes · −14,9 LUFS ·
+TP −1,7 · LRA 3,9** (ganho **+4,1 dB** sobre −19,1). SHA-256
+`3E0A2ACEEEEE0A09E51049F00B634B059607CB9341A462FA79C4B04E1BD173AC`.
+
+**Decisões do episódio:** o bilhete entra em `checklist` com os quatro comandos
+separados (16h30 · local; 18h30 · cápsula; proteger metais; aguardar sinal) —
+o layout existe para enumerar evidência, e o bilhete é o documento do caso. O
+disco voador entra **marcado como lenda** (s11: “A LENDA / NUNCA PROVADO”), como
+o 008 fez com a autoria nunca provada.
+
+**Achados de medida:** a s3 a 170 px quebrou “UMA CAPA” em duas linhas (3 linhas
+em vez de 2) e a s7 a 170 px estourou para x1 = 969. Corrigidas para 150 e 160.
+A lista do bilhete, com o item único “PROTEGER METAIS · AGUARDAR SINAL”, ia a
+930 px; dividida em dois itens, caiu para 838.
 
 ## Episódio 008 — Max Headroom
 

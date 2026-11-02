@@ -1,0 +1,186 @@
+{
+  "slug": "009-mascaras-de-chumbo",
+  "composition_id": "ep009",
+  "titulo_pagina": "Máscaras de chumbo: dois mortos sem uma marca",
+  "duracao": 45,
+  "marca": "DOSSIÊ 45",
+  "dossie": "009",
+  "rodape": "FONTE · WIKIPÉDIA PT · O GLOBO, 1966 · O CRUZEIRO, 1966",
+  "audio": {
+    "voz": 1.0,
+    "drone": 0.16
+  },
+  "cenas": [
+    {
+      "id": "s1",
+      "tipo": "digital-zoom",
+      "kicker": "O ARQUIVO · NITERÓI, 1966",
+      "titulo": [
+        "DOIS MORTOS",
+        "NO MORRO."
+      ],
+      "pequeno": [
+        "MÁSCARAS DE CHUMBO.",
+        "NENHUMA MARCA."
+      ],
+      "acento": true,
+      "fonte_px": 124,
+      "fala": "Dois homens mortos no morro. Máscaras de chumbo. Nenhuma marca."
+    },
+    {
+      "id": "s2",
+      "kicker": "17 DE AGOSTO DE 1966",
+      "titulo": [
+        "ELES IAM",
+        "A SÃO PAULO."
+      ],
+      "pequeno": [
+        "O ÔNIBUS",
+        "FOI PARA NITERÓI."
+      ],
+      "fonte_px": 124,
+      "fala": "Saíram de Campos. Iam a São Paulo. Foram para Niterói."
+    },
+    {
+      "id": "s3",
+      "kicker": "A ATENDENTE DA LOJA",
+      "titulo": [
+        "UMA CAPA",
+        "E ÁGUA."
+      ],
+      "pequeno": [
+        "ELE PARECIA TER",
+        "HORA MARCADA."
+      ],
+      "fonte_px": 150,
+      "fala": "Compraram capa e água. Ele parecia ter hora marcada."
+    },
+    {
+      "id": "s4",
+      "tipo": "checklist",
+      "kicker": "O BILHETE NO BOLSO",
+      "titulo": [
+        "A LETRA",
+        "ERA DE MIGUEL."
+      ],
+      "itens": [
+        "16H30 · LOCAL DETERMINADO",
+        "18H30 · INGERIR CÁPSULA",
+        "PROTEGER METAIS",
+        "AGUARDAR SINAL"
+      ],
+      "fonte_px": 96,
+      "fala": "Um bilhete no bolso. Dezesseis e trinta: local determinado."
+    },
+    {
+      "id": "s5",
+      "kicker": "O QUE O BILHETE PEDIA",
+      "titulo": [
+        "INGERIR",
+        "CÁPSULA."
+      ],
+      "pequeno": [
+        "APÓS O EFEITO.",
+        "QUE EFEITO?"
+      ],
+      "fonte_px": 170,
+      "fala": "Dezoito e trinta: ingerir cápsula após o efeito."
+    },
+    {
+      "id": "s6",
+      "kicker": "MORRO DO VINTÉM · 20 DE AGOSTO",
+      "titulo": [
+        "QUATRO DIAS",
+        "DEPOIS."
+      ],
+      "pequeno": [
+        "UM MENINO",
+        "EMPINANDO PIPA."
+      ],
+      "fonte_px": 124,
+      "fala": "Quatro dias depois, um menino achou os corpos."
+    },
+    {
+      "id": "s7",
+      "titulo": [
+        "TERNO E",
+        "MÁSCARA."
+      ],
+      "pequeno": [
+        "CAPA IMPERMEÁVEL.",
+        "CHUMBO EM FORMA DE ÓCULOS."
+      ],
+      "fonte_px": 160,
+      "fala": "Terno, capa e máscara de chumbo em forma de óculos. Nenhum ferimento."
+    },
+    {
+      "id": "s8",
+      "kicker": "NO BOLSO",
+      "titulo": [
+        "CÓDIGOS DE",
+        "VÁLVULAS."
+      ],
+      "pequeno": [
+        "ELES ERAM",
+        "TÉCNICOS."
+      ],
+      "fonte_px": 136,
+      "fala": "No bolso, códigos de válvulas eletrônicas."
+    },
+    {
+      "id": "s9",
+      "kicker": "O LAUDO · DOIS MESES DEPOIS",
+      "titulo": [
+        "CAUSA",
+        "INDETERMINADA."
+      ],
+      "pequeno": [
+        "SEM EXAME",
+        "TOXICOLÓGICO."
+      ],
+      "fonte_px": 94,
+      "fala": "Dois meses depois, o laudo: causa indeterminada."
+    },
+    {
+      "id": "s10",
+      "kicker": "O DELEGADO IDOVAN FERREIRA",
+      "titulo": [
+        "EXPERIÊNCIA",
+        "MALSUCEDIDA."
+      ],
+      "pequeno": [
+        "PARAPSICOLOGIA,",
+        "DISSE ELE."
+      ],
+      "fonte_px": 112,
+      "fala": "O delegado falou em experiência parapsicológica."
+    },
+    {
+      "id": "s11",
+      "kicker": "A LENDA",
+      "titulo": [
+        "UMA VIZINHA",
+        "VIU UM DISCO."
+      ],
+      "pequeno": [
+        "ÀS SETE DA NOITE.",
+        "NUNCA PROVADO."
+      ],
+      "fonte_px": 106,
+      "fala": "Uma vizinha disse ter visto um disco às sete da noite."
+    },
+    {
+      "id": "s12",
+      "titulo": [
+        "O CASO FOI",
+        "ARQUIVADO."
+      ],
+      "pequeno": [
+        "NINGUÉM SABE",
+        "O QUE ESPERAVAM."
+      ],
+      "fonte_px": 124,
+      "fala": "O caso foi arquivado. Ninguém sabe o que esperavam."
+    }
+  ]
+}
