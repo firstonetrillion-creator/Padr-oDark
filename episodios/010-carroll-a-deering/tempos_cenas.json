@@ -1,0 +1,74 @@
+[
+  {
+    "cena": 1,
+    "inicio": 0.6,
+    "start": 0.0,
+    "duration": 4.49
+  },
+  {
+    "cena": 2,
+    "inicio": 4.54,
+    "start": 4.49,
+    "duration": 3.323
+  },
+  {
+    "cena": 3,
+    "inicio": 7.863,
+    "start": 7.813,
+    "duration": 2.952
+  },
+  {
+    "cena": 4,
+    "inicio": 10.815,
+    "start": 10.765,
+    "duration": 3.927
+  },
+  {
+    "cena": 5,
+    "inicio": 14.742,
+    "start": 14.692,
+    "duration": 3.116
+  },
+  {
+    "cena": 6,
+    "inicio": 17.858,
+    "start": 17.808,
+    "duration": 3.537
+  },
+  {
+    "cena": 7,
+    "inicio": 21.395,
+    "start": 21.345,
+    "duration": 3.408
+  },
+  {
+    "cena": 8,
+    "inicio": 24.803,
+    "start": 24.753,
+    "duration": 4.111
+  },
+  {
+    "cena": 9,
+    "inicio": 28.914,
+    "start": 28.864,
+    "duration": 4.15
+  },
+  {
+    "cena": 10,
+    "inicio": 33.064,
+    "start": 33.014,
+    "duration": 3.465
+  },
+  {
+    "cena": 11,
+    "inicio": 36.529,
+    "start": 36.479,
+    "duration": 3.947
+  },
+  {
+    "cena": 12,
+    "inicio": 40.476,
+    "start": 40.426,
+    "duration": 4.574
+  }
+]

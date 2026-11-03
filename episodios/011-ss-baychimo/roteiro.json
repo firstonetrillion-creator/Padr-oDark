@@ -1,0 +1,186 @@
+{
+  "slug": "011-ss-baychimo",
+  "composition_id": "ep011",
+  "titulo_pagina": "SS Baychimo: o navio que ninguém alcançou",
+  "duracao": 45,
+  "marca": "DOSSIÊ 45",
+  "dossie": "011",
+  "rodape": "FONTE · WIKIPÉDIA · DALTON & DELGADO, 2006",
+  "audio": {
+    "voz": 1.0,
+    "drone": 0.16
+  },
+  "cenas": [
+    {
+      "id": "s1",
+      "tipo": "digital-zoom",
+      "kicker": "O ARQUIVO · ÁRTICO, 1931",
+      "titulo": [
+        "ABANDONARAM",
+        "NO GELO."
+      ],
+      "pequeno": [
+        "O NAVIO VOLTOU.",
+        "38 ANOS SOZINHO."
+      ],
+      "acento": true,
+      "fonte_px": 118,
+      "fala": "Abandonaram o navio no gelo. Ele navegou 38 anos sozinho."
+    },
+    {
+      "id": "s2",
+      "kicker": "24 DE NOVEMBRO DE 1931",
+      "titulo": [
+        "TEMPORAL",
+        "LEVOU ELE."
+      ],
+      "pequeno": [
+        "E ELE",
+        "VOLTOU."
+      ],
+      "fonte_px": 140,
+      "fala": "Um temporal levou ele. E ele voltou."
+    },
+    {
+      "id": "s3",
+      "kicker": "O NAVIO",
+      "titulo": [
+        "CARGUEIRO",
+        "DE PELES."
+      ],
+      "pequeno": [
+        "DA HUDSON'S BAY.",
+        "NOVE VIAGENS AO ÁRTICO."
+      ],
+      "fonte_px": 140,
+      "fala": "Um cargueiro da Hudson's Bay, carregado de peles."
+    },
+    {
+      "id": "s4",
+      "kicker": "OUTUBRO DE 1931",
+      "titulo": [
+        "O GELO",
+        "FECHOU."
+      ],
+      "pequeno": [
+        "VINTE E DOIS SAÍRAM",
+        "DE AVIÃO. QUINZE FICARAM."
+      ],
+      "fonte_px": 168,
+      "fala": "O gelo fechou. Vinte e dois saíram de avião. Quinze ficaram."
+    },
+    {
+      "id": "s5",
+      "kicker": "O ABANDONO",
+      "titulo": [
+        "TIRARAM",
+        "AS PELES."
+      ],
+      "pequeno": [
+        "E DEIXARAM",
+        "O NAVIO."
+      ],
+      "fonte_px": 150,
+      "fala": "Voltaram ao navio. Tiraram as peles. E deixaram ele."
+    },
+    {
+      "id": "s6",
+      "kicker": "AS APARIÇÕES",
+      "titulo": [
+        "45 MILHAS",
+        "AO SUL."
+      ],
+      "pequeno": [
+        "DEPOIS, TREZENTAS",
+        "A LESTE."
+      ],
+      "fonte_px": 150,
+      "fala": "Ele apareceu quarenta e cinco milhas ao sul. Depois, trezentas a leste."
+    },
+    {
+      "id": "s7",
+      "kicker": "11 DE AGOSTO DE 1933",
+      "titulo": [
+        "ESTRANHOS",
+        "A BORDO."
+      ],
+      "pequeno": [
+        "O PORÃO AINDA",
+        "TINHA PELES."
+      ],
+      "fonte_px": 138,
+      "fala": "Estranhos subiram a bordo. O porão ainda tinha peles."
+    },
+    {
+      "id": "s8",
+      "kicker": "O TESTEMUNHO",
+      "titulo": [
+        "PARECIA",
+        "UMA TORRE."
+      ],
+      "pequeno": [
+        "ACIMA DO GELO.",
+        "ESCREVEU ELA."
+      ],
+      "fonte_px": 124,
+      "fala": "Uma botânica escreveu: parecia uma torre acima do gelo."
+    },
+    {
+      "id": "s9",
+      "kicker": "NOVEMBRO DE 1939",
+      "titulo": [
+        "TENTARAM",
+        "REBOCAR."
+      ],
+      "pequeno": [
+        "O GELO",
+        "NÃO DEIXOU."
+      ],
+      "fonte_px": 146,
+      "fala": "Tentaram rebocar. O gelo não deixou."
+    },
+    {
+      "id": "s10",
+      "tipo": "orbit",
+      "kicker": "A ÚLTIMA APARIÇÃO · 1969",
+      "titulo": [
+        "38 ANOS",
+        "DEPOIS."
+      ],
+      "pequeno": [
+        "NUNCA MAIS",
+        "FOI VISTO."
+      ],
+      "fonte_px": 170,
+      "fala": "Em 1969, foi visto pela última vez."
+    },
+    {
+      "id": "s11",
+      "kicker": "2006",
+      "titulo": [
+        "O ALASCA",
+        "PROCUROU."
+      ],
+      "pequeno": [
+        "NÃO ACHOU",
+        "NADA."
+      ],
+      "fonte_px": 140,
+      "fala": "O Alasca procurou o navio. Não achou nada."
+    },
+    {
+      "id": "s12",
+      "kicker": "O QUE RESTOU",
+      "titulo": [
+        "NUNCA FOI",
+        "ENCONTRADO."
+      ],
+      "pequeno": [
+        "SE AFUNDOU,",
+        "OU SE AINDA ESTÁ LÁ."
+      ],
+      "fonte_px": 110,
+      "fala": "Ninguém sabe se ele afundou. Ninguém sabe onde ele está."
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 > Depois de uma compactação, a versão atual deste arquivo é relida do disco e vira a baseline da sessão.
 > Memória longa continua em `MEMORIA.md`; aqui só o suficiente para retomar sem reler nada.
 
-**Atualizado:** 2026-11-02 · **Gate 2 PASSA (3 de 6)** · **007, 008 e 009: QA PASS, aguardando aprovação humana** · 17 layouts: APROVADOS em 01/11 — 1º uso no 008 · canal único · `sombra-direta` pausado
+**Atualizado:** 2026-11-03 · **Gate 2 PASSA (3 de 6)** · **007–011: QA PASS, aguardando aprovação humana** · 17 layouts: APROVADOS em 01/11 — 1º uso no 008 · canal único · `sombra-direta` pausado
 
 ## Onde estamos
 
@@ -72,15 +72,90 @@ confundida — ler a mediana do lote como **sinal**, não como teste controlado.
 | 007 | `007-homem-de-somerton` | Homem de Somerton (1948) | “Um homem morto na praia. Um código costurado na roupa.” | **QA PASS 31/10 — publicação pronta, aguardando aprovação** |
 | 008 | `008-max-headroom` | Invasão Max Headroom (1987) | “Dois canais de TV foram invadidos ao vivo. Ninguém foi preso.” | **QA PASS 01/11 — publicação pronta, aguardando aprovação** |
 | 009 | `009-mascaras-de-chumbo` | Máscaras de chumbo (1966) | “Dois homens mortos no morro. Máscaras de chumbo. Nenhuma marca.” | **QA PASS 02/11 — publicação pronta, aguardando aprovação** |
-| 010 | `010-carroll-a-deering` | Carroll A. Deering (1921) | “O navio apareceu vazio. E a comida ainda estava na mesa.” | nada produzido |
-| 011 | `011-ss-baychimo` | SS Baychimo (1931–1969) | “Abandonaram o navio no gelo. Ele navegou 38 anos sozinho.” | nada produzido |
+| 010 | `010-carroll-a-deering` | Carroll A. Deering (1921) | “O navio apareceu vazio. E a comida ainda estava na mesa.” | **QA PASS 03/11 — publicação pronta, aguardando aprovação** |
+| 011 | `011-ss-baychimo` | SS Baychimo (1931–1969) | “Abandonaram o navio no gelo. Ele navegou 38 anos sozinho.” | **QA PASS 03/11 — publicação pronta, aguardando aprovação** |
 
-**Próximo comando:** há **três vídeos prontos e sem aprovação** (007, 008 e 009).
-Falta escuta humana dos nomes e **aprovação explícita** (“publique” conta;
-“conclua” não). **Cadência nova (02/11): 3–4 por dia**, na ordem que o usuário
-definir. Com três prontos, o estoque cobre **menos de um dia**; **010 e 011
-fecham o lote em 5**. O 009 está com **QA PASS** desde 02/11 (`briefing.md` com
-9 fontes numeradas, gancho, `roteiro.json`, `qa.md`, `publicacao.md`).
+**Próximo comando:** o **lote 007–011 está produzido** — **cinco vídeos prontos e
+sem aprovação** (007, 008, 009, 010 e 011). Falta escuta humana dos nomes e
+**aprovação explícita** (“publique” conta; “conclua” não). **Cadência nova
+(02/11): 3–4 por dia**, na ordem que o usuário definir — com cinco prontos, o
+estoque cobre **de um a dois dias**.
+
+
+## Episódio 011 — SS Baychimo
+
+| Etapa | Estado |
+|---|---|
+| Briefing | **pronto** — 9 fontes numeradas: Wikipédia EN, Kenn Harper (*Nunatsiaq News* 24/11/2006), Dalton & Delgado 2006, Hutchison 1934, Manitoba Museum 2020, *Time* 29/02/1932, Gillingham 1955, *UNESCO Courier* 1991, projeto do Alasca 2006 |
+| Gancho | **aprovado no lote** — “Abandonaram o navio no gelo. Ele navegou 38 anos sozinho.” (fórmula 17) |
+| Roteiro | **pronto** — `roteiro.json`, 113 palavras, **12 cenas**, máx **5,23 s** (s1, 233 ms acima do teto — registrado) |
+| Voz | **pronta** — cena por cena (`montar-voz.py`): 36,049 s de fala + 8,951 s de silêncio (19,9%) → `voz_raw.wav` 45,000 s |
+| Áudio pré-render | **cru −15,1 LUFS / TP +0,1** → `voz.wav` `volume=-6.9dB` + limitador 0,85 → **−22,0 LUFS**, TP −6,8 |
+| Composição | **pronta** — 12 cenas; **2 layouts**: `digital-zoom` (s1) e `orbit` (s10); contrato **OK, 1 aviso** |
+| QA visual | **concluído** — 11 cenas no snapshot; pior tinta **807 px** (s3); s1 só no frame do mp4, legível em 0,10 s |
+| Render | **concluído** — `final_raw.mp4` 45,000 s, 1.350 frames, 5 segmentos, 0 retries, **3m15,9s** |
+| Áudio final | **+4,1 dB** + limitador 0,85 (cru −19,1) → **−15,0 LUFS**, TP −2,7, LRA 3,8 |
+| QA | **QA PASS** — `qa.ps1 -Duracao 45`; `qa.md` escrito em 03/11 |
+| Capa | **pronta** — `capa.png` em 25,52 s (“ESTRANHOS A BORDO. / O PORÃO AINDA TINHA PELES.”) |
+| publicacao.md | **pronto** — título `SS Baychimo: 38 anos à deriva no gelo` (37 chars, lint **100/100**); SHA-256 `4C71CB58…B70869` |
+| Aprovação humana | **pendente** |
+| Publicação | **pendente** — cadência de 3–4/dia |
+
+**Correções antes do render:** o primeiro take deu **42,4 s de fala** (silêncio
+de 5,8%) e a cena 10 em **5,748 s**; saíram as datas faladas que já estavam nos
+kickers (s5 11→9 palavras, s7 16→9, s9 13→6, s10 17→12) e o silêncio voltou a
+19,9%. `O TEMPORAL` → `TEMPORAL` (s2) e `UM CARGUEIRO` → `CARGUEIRO` (s3)
+quebravam em 3 linhas. Fonte reduzida em 5 cenas (s7 138, s8 124, s9 146, s11
+140, s12 110) e a **s1 de 128 para 118**: no pico do zoom “ABANDONARAM” ia a
+**1040 px**, a 40 px da borda; agora fecha em 960.
+
+**Dois achados:** (1) o **`orbit` não consome `orbitas`** — a chave não vira
+rótulo nenhum no HTML (o layout desenha só o anel com quatro pontos), e foi
+removida do `roteiro.json`; (2) o anel passa **atrás** do texto e gira de −26° a
+62°, então um ponto atravessa a linha do kicker por uma fração de segundo — não
+cobre letra, é decoro aprovado no LAB 003.
+
+**Armadilha nova:** o rodapé do 011 nasceu com **`NPS`** copiado do 010 — fonte
+do caso anterior, não deste. Corrigido para `FONTE · WIKIPÉDIA · DALTON &
+DELGADO, 2006` **antes** do render final; o rodapé aparece nas 12 cenas, então
+conferir fonte no rodapé é etapa, não detalhe.
+
+**Decisão do episódio:** o gancho diz “navegou”, mas o **corpo nunca repete a
+palavra** — o navio “apareceu”, “voltou”, “ficou no gelo”. O `briefing.md`
+registra que o Baychimo **derivava** com o gelo, sem leme e sem máquina, e que
+“afundou em 1969” é **presunção**, não registro (a cena 12 pergunta, não
+conclui). Ninguém morreu: os 22 saíram de avião em outubro e os 15 em março.
+
+## Episódio 010 — Carroll A. Deering
+
+| Etapa | Estado |
+|---|---|
+| Briefing | **pronto** — 12 fontes numeradas: Wikipédia EN e DE, NPS Cape Hatteras (“The Ghost Ship of the Outer Banks”), Simpson 2002/2005, McAllister 2009, Grenon 2010, NYT e Washington Post (jun/1921), New York Herald 26/08/1921, Boston Globe 05/04/1919, AP/St. Louis Post-Dispatch 21/06/1921, News & Observer 23/09/1955 |
+| Gancho | **aprovado no lote** — “O navio apareceu vazio. E a comida ainda estava na mesa.” (fórmula 17) |
+| Roteiro | **pronto** — `roteiro.json`, 113 palavras, **12 cenas**, máx **4,57 s** (s12) |
+| Voz | **pronta** — cena por cena (`montar-voz.py`): 36,188 s de fala + 8,812 s de silêncio (19,6%) → `voz_raw.wav` 45,000 s |
+| Áudio pré-render | **cru −16,3 LUFS / TP +0,2** → `voz.wav` `volume=-5.7dB` + limitador 0,85 → **−22,0 LUFS**, TP −5,5 |
+| Composição | **pronta** — 12 cenas; **2 layouts**: `digital-zoom` (s1) e `checklist` (s4, o que faltava a bordo); contrato **OK, 1 aviso** |
+| QA visual | **concluído** — 11 cenas no snapshot; pior tinta **805 px** (s3); s1 só no frame do mp4 |
+| Render | **concluído** — `final_raw.mp4` 45,000 s, 1.350 frames, 5 segmentos, 0 retries, **3m56,5s** |
+| Áudio final | **+4,1 dB** + limitador 0,85 (cru −19,1) → **−15,0 LUFS**, TP −1,4, LRA 3,6 |
+| QA | **QA PASS** — `qa.ps1 -Duracao 45`; `qa.md` escrito em 03/11 |
+| Capa | **pronta** — `capa.png` em 9,6 s ("ONZE HOMENS. / NENHUM CORPO. / NENHUM BOTE.") |
+| publicacao.md | **pronto** — título `Carroll A. Deering: 1921, o navio vazio` (39 chars, lint **100/100**); SHA-256 `33FC547F…360A225D` |
+| Aprovação humana | **pendente** |
+| Publicação | **pendente** — cadência de 3–4/dia |
+
+**Correções antes do render:** s2 168→162, s3 186→184, s4 138→134, s5 150→142,
+s7 138→122, s10 140→132, s11 128→122, s12 124→122; s12 e s9 trocaram de título
+(“O CASCO FOI / DINAMITADO.” e “A GARRAFA / NA PRAIA.”) porque a linha a 14 e a 11
+caracteres quebrava em duas. A s7 ganhou kicker **O HOMEM DO MEGAFONE** — sem ele
+o bloco subia e desalinhava do resto.
+
+**Decisão do episódio:** **o Triângulo das Bermudas não entra em cartão**. A
+ligação é posterior (Fort 1931, Gaddis 1965, Berlitz 1974) e o naufrágio foi em
+Cape Hatteras; fica marcada como lenda no `briefing.md` e numa linha da descrição
+em `publicacao.md`. O 009 usou cartão de lenda porque o disco voador estava no
+material de 1966; aqui não há documento de época que sustente a lenda.
 
 ## Episódio 009 — Máscaras de chumbo
 

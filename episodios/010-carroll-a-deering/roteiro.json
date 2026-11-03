@@ -1,0 +1,188 @@
+{
+  "slug": "010-carroll-a-deering",
+  "composition_id": "ep010",
+  "titulo_pagina": "Carroll A. Deering: o navio voltou vazio",
+  "duracao": 45,
+  "marca": "DOSSIÊ 45",
+  "dossie": "010",
+  "rodape": "FONTE · NPS · WIKIPÉDIA · SIMPSON, 2005",
+  "audio": {
+    "voz": 1.0,
+    "drone": 0.16
+  },
+  "cenas": [
+    {
+      "id": "s1",
+      "tipo": "digital-zoom",
+      "kicker": "O ARQUIVO · CAPE HATTERAS, 1921",
+      "titulo": [
+        "O NAVIO",
+        "VEIO VAZIO."
+      ],
+      "pequeno": [
+        "E A COMIDA",
+        "AINDA NA MESA."
+      ],
+      "acento": true,
+      "fonte_px": 124,
+      "fala": "O navio apareceu vazio. E a comida ainda estava na mesa."
+    },
+    {
+      "id": "s2",
+      "kicker": "4 DE FEVEREIRO DE 1921",
+      "titulo": [
+        "A BORDO,",
+        "NINGUÉM."
+      ],
+      "pequeno": [
+        "AS VELAS",
+        "ESTAVAM POSTAS."
+      ],
+      "fonte_px": 162,
+      "fala": "O guarda costeiro subiu a bordo. Não havia ninguém."
+    },
+    {
+      "id": "s3",
+      "titulo": [
+        "ONZE",
+        "HOMENS."
+      ],
+      "pequeno": [
+        "NENHUM CORPO.",
+        "NENHUM BOTE."
+      ],
+      "fonte_px": 184,
+      "fala": "Onze homens. Nenhum corpo. Nenhum bote."
+    },
+    {
+      "id": "s4",
+      "tipo": "checklist",
+      "kicker": "O QUE FALTAVA",
+      "titulo": [
+        "TUDO O QUE",
+        "IMPORTAVA."
+      ],
+      "itens": [
+        "OS DOIS BOTES",
+        "O DIÁRIO DE BORDO",
+        "CRONÔMETRO E SEXTANTE",
+        "PERTENCES DA TRIPULAÇÃO",
+        "AS DUAS ÂNCORAS"
+      ],
+      "fonte_px": 134,
+      "fala": "Faltavam os botes, o diário, os instrumentos e as âncoras."
+    },
+    {
+      "id": "s5",
+      "kicker": "O QUE ENCONTRARAM",
+      "titulo": [
+        "O LEME",
+        "QUEBRADO."
+      ],
+      "pequeno": [
+        "O TIMÃO EM PEDAÇOS.",
+        "O NAVIO NÃO GOVERNAVA."
+      ],
+      "fonte_px": 142,
+      "fala": "O leme estava quebrado. O navio não governava."
+    },
+    {
+      "id": "s6",
+      "kicker": "29 DE JANEIRO DE 1921",
+      "titulo": [
+        "O ÚLTIMO",
+        "RECADO."
+      ],
+      "pequeno": [
+        "PELO MEGAFONE,",
+        "NO FAROL FLUTUANTE."
+      ],
+      "fonte_px": 168,
+      "fala": "No farol de Cape Lookout, um homem gritou pelo megafone."
+    },
+    {
+      "id": "s7",
+      "kicker": "O HOMEM DO MEGAFONE",
+      "titulo": [
+        "PERDEMOS",
+        "AS ÂNCORAS."
+      ],
+      "pequeno": [
+        "E NÃO ERA O CAPITÃO",
+        "QUEM FALAVA."
+      ],
+      "fonte_px": 122,
+      "fala": "Perdemos as âncoras. E não era o capitão quem falava."
+    },
+    {
+      "id": "s8",
+      "kicker": "BARBADOS · 9 DE JANEIRO",
+      "titulo": [
+        "EU PEGO",
+        "O CAPITÃO."
+      ],
+      "pequeno": [
+        "ANTES DE CHEGAR",
+        "A NORFOLK."
+      ],
+      "fonte_px": 150,
+      "fala": "Em Barbados, o imediato disse: pego o capitão antes de Norfolk."
+    },
+    {
+      "id": "s9",
+      "kicker": "ABRIL DE 1921",
+      "titulo": [
+        "A GARRAFA",
+        "NA PRAIA."
+      ],
+      "pequeno": [
+        "DENTRO: PIRATAS.",
+        "LEVARAM A TRIPULAÇÃO."
+      ],
+      "fonte_px": 140,
+      "fala": "Em abril, uma garrafa apareceu na praia. Dizia que eram piratas."
+    },
+    {
+      "id": "s10",
+      "kicker": "A GARRAFA ERA FALSA",
+      "titulo": [
+        "O PESCADOR",
+        "ESCREVEU."
+      ],
+      "pequeno": [
+        "ELE CONFESSOU.",
+        "QUERIA UM EMPREGO."
+      ],
+      "fonte_px": 132,
+      "fala": "O pescador que a achou tinha escrito ela. E confessou."
+    },
+    {
+      "id": "s11",
+      "kicker": "O INQUÉRITO · 1921–1922",
+      "titulo": [
+        "CINCO",
+        "REPARTIÇÕES."
+      ],
+      "pequeno": [
+        "NENHUMA RESPOSTA.",
+        "NENHUM PRESO."
+      ],
+      "fonte_px": 122,
+      "fala": "Cinco repartições investigaram. O caso fechou sem resposta."
+    },
+    {
+      "id": "s12",
+      "kicker": "O QUE RESTOU",
+      "titulo": [
+        "O CASCO FOI",
+        "DINAMITADO."
+      ],
+      "pequeno": [
+        "NENHUM DOS ONZE",
+        "FOI ENCONTRADO."
+      ],
+      "fonte_px": 122,
+      "fala": "O casco foi dinamitado. Nenhum dos onze foi encontrado."
+    }
+  ]
+}
