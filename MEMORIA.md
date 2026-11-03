@@ -23,6 +23,8 @@
 | Episódio 007 — Homem de Somerton | **produzido (31/10) — QA PASS, publicação pronta, aguardando aprovação** | `episodios/007-homem-de-somerton/` |
 | Episódio 008 - Max Headroom | **produzido (01/11) - QA PASS, publicação pronta, aguardando aprovação** | `episodios/008-max-headroom/` |
 | Episódio 009 - Máscaras de chumbo | **produzido (02/11) - QA PASS, publicação pronta, aguardando aprovação** | `episodios/009-mascaras-de-chumbo/` |
+| Episódio 010 - Carroll A. Deering | **produzido (03/11) - QA PASS, publicação pronta, aguardando aprovação** | `episodios/010-carroll-a-deering/` |
+| Episódio 011 - SS Baychimo | **produzido (03/11) - QA PASS, publicação pronta, aguardando aprovação** | `episodios/011-ss-baychimo/` |
 | Episódio 002 — Mary Celeste | **publicado** (21/10/2026) | `episodios/002-mary-celeste/`, [Shorts](https://youtube.com/shorts/n6dtveQguf4) |
 | Episódio 003 — Roanoke | **publicado** (23/10/2026) | `episodios/003-roanoke/`, [Shorts](https://youtube.com/shorts/8ptxqKGe4Bk) |
 | Canal | **Dossiê 45**: nome, avatar/banner, descrição no ar e 9 shorts antigos privados | [canal](https://youtube.com/@Dossie45), `docs/REBRANDING.md` |
@@ -180,6 +182,49 @@
   `Max Headroom: a TV invadida que ninguém explicou` (48 chars, lint 98/100);
   pacote em `publicacao.md`. **Aguarda aprovação humana explícita.**
 
+### Episódio 010 — Carroll A. Deering (produzido 03/11/2026, não publicado)
+- **Gancho do lote:** “O navio apareceu vazio. E a comida ainda estava na mesa.” —
+  o achado no primeiro segundo; cena 2 entrega o **abordar**, não contexto.
+- 113 palavras (o maior do lote) / **12 cenas**; máx **4,57 s** (s12), a mais
+  curta das quatro primeiras do lote — falas curtas e 19,6% de silêncio.
+- **2 layouts:** `digital-zoom` na cena 1 (variável controlada) e `checklist` na
+  cena 4 (o que faltava a bordo: botes, diário, instrumentos, pertences, âncoras).
+- **Voz por cena:** 36,188 s de fala + 8,812 s de silêncio → 45,000 s. Piper
+  quente (−16,3 LUFS, TP +0,2) → `volume=-5.7dB` → −22,0 LUFS.
+- Render: 1.350 frames, 5 segmentos, 0 retries, **3m56,5s**; `final_raw` −19,1 →
+  `final.mp4` **45,013 s, 4.088.419 bytes, −15,0 LUFS, TP −1,4, LRA 3,6**;
+  `qa.ps1 -Duracao 45` **PASS**; SHA-256 `33FC547F…360A225D`.
+- **Decisão:** o **Triângulo das Bermudas não entra em cartão** — a ligação é
+  posterior (Fort 1931, Gaddis 1965, Berlitz 1974) e o naufrágio foi em Cape
+  Hatteras. Fica no `briefing.md` e numa linha da descrição.
+- Capa em 9,6 s (“ONZE HOMENS. / NENHUM CORPO. / NENHUM BOTE.”) para não repetir
+  título nem gancho; título `Carroll A. Deering: 1921, o navio vazio` (39 chars,
+  lint **100/100**). **Aguarda aprovação humana explícita.**
+
+### Episódio 011 — SS Baychimo (produzido 03/11/2026, não publicado)
+- **Gancho do lote:** “Abandonaram o navio no gelo. Ele navegou 38 anos sozinho.”
+- **O gancho é compressão e o corpo corrige:** o Baychimo **derivava** com o gelo,
+  sem leme e sem máquina — depois da cena 1 o vídeo nunca repete “navegou”
+  (“apareceu”, “voltou”, “ficou no gelo”). “Afundou em 1969” é **presunção**: a
+  cena 12 pergunta, não conclui. Ninguém morreu no caso.
+- 113 palavras / **12 cenas**; máx **5,23 s** (s1, **233 ms acima do teto**,
+  registrado — o gancho aprovado em uma frase só).
+- **2 layouts:** `digital-zoom` (s1) e `orbit` (s10, o intervalo 1931–1969).
+- **Correção que valeu um render:** o 1º take deu **42,4 s de fala** (silêncio de
+  5,8%) e a cena 10 em **5,748 s**. Saíram as datas faladas que já estavam nos
+  kickers (s5 11→9 palavras, s7 16→9, s9 13→6, s10 17→12) → **36,0 s de fala e
+  19,9% de silêncio**.
+- **Achado do gerador:** o `orbit` **não consome `orbitas`** — a chave não vira
+  rótulo nenhum no HTML. Removida do `roteiro.json`; as datas ficam nos kickers.
+- **Armadilha:** o rodapé nasceu com **`NPS`** copiado do 010 (fonte de outro
+  caso) e aparece nas 12 cenas. Corrigido antes do render final.
+- Render: 1.350 frames, 5 segmentos, 0 retries, **3m15,9s**; `final_raw` −19,1 →
+  `final.mp4` **45,013 s, 4.008.609 bytes, −15,0 LUFS, TP −2,7, LRA 3,8**;
+  `qa.ps1 -Duracao 45` **PASS**; SHA-256 `4C71CB58…B70869`.
+- Capa em 25,52 s (“ESTRANHOS A BORDO. / O PORÃO AINDA TINHA PELES.”); título
+  `SS Baychimo: 38 anos à deriva no gelo` (37 chars, lint **100/100**).
+  **Aguarda aprovação humana explícita.**
+
 ### Template
 - `templates/misterio-45/index.html` — composição validada, 13 cenas, áudio `voz`/`drone`, QA por `?t=`.
 - `templates/misterio-45/beat-sheet.md` — 13 beats, tempos e orçamento de palavras.
@@ -271,12 +316,21 @@
 - `codebase-memory-mcp` pode ser instalado e o projeto indexado, **fora de uma janela de render** (RAM de 8 GB).
 - OpenMontage continua fora até o gate 3 (ver `docs/PLANO.md`).
 
-### 3.6 Lote 007–011 — aprovado em 29/10/2026 (007, 008 e 009 concluídos)
+### 3.6 Lote 007–011 — aprovado em 29/10/2026 (**lote produzido**, 5 de 5)
 
-- **007 concluído (31/10), 008 concluído (01/11) e 009 concluído (02/11):** os
-  três com QA PASS, `publicacao.md` pronto, **aguardando aprovação humana
-  explícita** para publicar (1/dia, 19h: 007 em 02/11, 008 em 03/11, 009 em
-  04/11). 010–011 nada produzido.
+- **007 (31/10), 008 (01/11), 009 (02/11), 010 (03/11) e 011 (03/11) — todos com
+  QA PASS**, `publicacao.md` pronto e **aguardando aprovação humana explícita**.
+  O lote está **produzido**; a fila agora é **decisão e publicação**.
+
+- **010 em resumo:** 12 fontes numeradas, 12 cenas / 113 palavras, 36,188 s de
+  fala + 19,6% de silêncio, `final.mp4` **45,013 s · −15,0 LUFS · TP −1,4 ·
+  SHA-256 `33FC547F…360A225D`**, QA PASS. Dois layouts (`digital-zoom` no gancho,
+  `checklist` no que faltava a bordo). Triângulo das Bermudas **fora do vídeo**.
+
+- **011 em resumo:** 9 fontes numeradas, 12 cenas / 113 palavras, 36,049 s de
+  fala + 19,9% de silêncio, `final.mp4` **45,013 s · −15,0 LUFS · TP −2,7 ·
+  SHA-256 `4C71CB58…B70869`**, QA PASS. Dois layouts (`digital-zoom` no gancho,
+  `orbit` no intervalo de 1931 a 1969).
 
 - **009 em resumo:** 9 fontes numeradas, 12 cenas / 109 palavras, 34,958 s de
   fala + 22,3% de silêncio, `final.mp4` **45,013 s · −14,9 LUFS · TP −1,7 ·
@@ -293,8 +347,11 @@
 - **Hipótese:** mediana de “ficaram para assistir” ≥ **46,5%** (005) e de
   `% média` > **54,3%** (005). Se só uma passar → próxima variável é ritmo/visual
   (LAB 002); se nenhuma → reavaliar formato.
-- **Cadência fixa:** 1/dia, 19h de Brasília, seg–sex. Horário é **constante**, não
-  variável: com 5 vídeos não se isola horário de dia da semana e de gancho.
+- **Cadência:** **3–4 vídeos por dia**, publicados manualmente (decisão do usuário
+  em 02/11, substituindo 1/dia às 19h). Com 3–4/dia os vídeos competem pela mesma
+  audiência no feed: a retenção de 48 h vale por vídeo, mas a comparação entre
+  vídeos do mesmo dia fica confundida — ler a mediana do lote como **sinal**, não
+  como teste controlado.
 - **Temas aprovados:** 007 Somerton (1948) · 008 Max Headroom (1987) · 009 Máscaras
   de chumbo (1966, nacional) · 010 Carroll A. Deering (1921) · 011 SS Baychimo
   (1931–1969). Reservas: Hinterkaifeck, Mulher de Isdal, Yuba County Five, Voynich.

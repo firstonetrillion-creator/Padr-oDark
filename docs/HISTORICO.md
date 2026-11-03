@@ -2,7 +2,56 @@
 
 > Linha do tempo do que foi **entregue**, com data, evidência e decisão.
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
-> Mais recente no topo. Última atualização: **2026-11-02**.
+> Mais recente no topo. Última atualização: **2026-11-03**.
+
+## 2026-11-03 — episódios 010 Carroll A. Deering e 011 SS Baychimo: lote 007–011 fechado
+
+**Entregue**
+- `episodios/010-carroll-a-deering/` — **12 fontes numeradas** (Wikipédia EN e
+  DE; NPS Cape Hatteras; Simpson 2002/2005; McAllister 2009; Grenon 2010; *NYT* e
+  *Washington Post* de jun/1921; *New York Herald* 26/08/1921; *Boston Globe*
+  05/04/1919; AP/St. Louis Post-Dispatch 21/06/1921; *News & Observer*
+  23/09/1955), `roteiro.json` com **12 cenas / 113 palavras**, voz por cena,
+  `index.html`, `final.mp4`, `capa.png`, `publicacao.md`, `qa.md`, `status.md`.
+- `episodios/011-ss-baychimo/` — **9 fontes numeradas** (Wikipédia EN; Kenn
+  Harper, *Nunatsiaq News* 24/11/2006; Dalton & Delgado 2006; Hutchison 1934;
+  Manitoba Museum 2020; *Time* 29/02/1932; Gillingham 1955; *UNESCO Courier*
+  1991; projeto do Alasca de 2006), **12 cenas / 113 palavras**, mesma cadeia de
+  artefatos.
+- **2 layouts em cada**, como a regra de 1–2 por episódio: `digital-zoom` na cena
+  1 nos dois (variável controlada do lote) e, no 010, `checklist` na cena 4 (o
+  que faltava a bordo); no 011, `orbit` na cena 10 (o intervalo de 1931 a 1969).
+  Contrato §2b **OK, 1 aviso** nos dois.
+- Números finais: **010** `45,013 s · 4.088.419 bytes · −15,0 LUFS · TP −1,4 ·
+  LRA 3,6`, SHA-256 `33FC547F…360A225D`, render 3m56,5s; **011** `45,013 s ·
+  4.008.609 bytes · −15,0 LUFS · TP −2,7 · LRA 3,8`, SHA-256 `4C71CB58…B70869`,
+  render 3m15,9s. `qa.ps1 -Duracao 45` **PASS** nos dois, 1.350 frames, 5
+  segmentos, 0 retries.
+- QA visual: 12 frames do mp4 por episódio + frames do gancho. Pior tinta **805
+  px** (010, s3) e **807 px** (011, s3) de 840.
+
+**Decisão / achado**
+- **010:** o **Triângulo das Bermudas não entra em cartão**. A ligação é posterior
+  (Fort 1931, Gaddis 1965, Berlitz 1974) e o naufrágio foi em Cape Hatteras; fica
+  no `briefing.md` e numa linha da descrição. Capa na cena 3 ("ONZE HOMENS. /
+  NENHUM CORPO. / NENHUM BOTE.") para não repetir título nem gancho.
+- **011:** o gancho ("navegou 38 anos") é **compressão** e o corpo corrige — o
+  navio **derivava** com o gelo, sem leme e sem máquina; "afundou em 1969" é
+  presunção, e a cena 12 pergunta em vez de concluir.
+- **O 1º take do 011 foi descartado:** 42,4 s de fala (silêncio de 5,8%) e cena
+  10 em 5,748 s. Saíram as datas faladas que já estavam nos kickers → 36,0 s de
+  fala e 19,9% de silêncio, na média do lote.
+- **O `orbit` não consome `orbitas`:** a chave não vira rótulo nenhum no HTML
+  (o layout desenha só o anel com quatro pontos). Removida do `roteiro.json`; as
+  datas ficam nos kickers das cenas 7, 9 e 10.
+- **Armadilha nova:** o rodapé do 011 nasceu com **`NPS`** copiado do 010 —
+  fonte de outro caso, e o rodapé aparece nas 12 cenas. Corrigido antes do render
+  final; conferir fonte no rodapé é etapa, não detalhe.
+- **Fonte da cena 1 do 011 de 128 para 118:** no pico do `digital-zoom` a palavra
+  "ABANDONARAM" ia a **1040 px**, a 40 px da borda; agora fecha em 960.
+- **Aguarda aprovação humana explícita** nos dois. Cadência vigente: **3–4
+  vídeos por dia**, publicados manualmente (decisão de 02/11).
+
 
 ## 2026-11-02 — episódio 009 Máscaras de chumbo (QA PASS)
 
