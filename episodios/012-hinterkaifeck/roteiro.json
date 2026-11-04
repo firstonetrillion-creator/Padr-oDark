@@ -1,0 +1,190 @@
+{
+  "slug": "012-hinterkaifeck",
+  "composition_id": "ep012",
+  "titulo_pagina": "Hinterkaifeck: seis mortos e alguém que ficou",
+  "duracao": 45,
+  "marca": "DOSSIÊ 45",
+  "dossie": "012",
+  "rodape": "FONTE · WIKIPÉDIA · SALZBURGER WACHT, 1922",
+  "audio": {
+    "voz": 1.0,
+    "drone": 0.16
+  },
+  "cenas": [
+    {
+      "id": "s1",
+      "tipo": "digital-zoom",
+      "kicker": "O ARQUIVO · BAVIERA, 1922",
+      "titulo": [
+        "SEIS MORTOS",
+        "NA FAZENDA."
+      ],
+      "pequeno": [
+        "ALGUÉM AINDA",
+        "ORDENHOU AS VACAS."
+      ],
+      "acento": true,
+      "fonte_px": 118,
+      "fala": "Seis pessoas mortas na fazenda. Alguém ainda ordenhou as vacas."
+    },
+    {
+      "id": "s2",
+      "kicker": "HINTERKAIFECK",
+      "titulo": [
+        "ISOLADA",
+        "NA MATA."
+      ],
+      "pequeno": [
+        "70 KM AO NORTE",
+        "DE MUNIQUE."
+      ],
+      "fonte_px": 150,
+      "fala": "Uma fazenda isolada na floresta, ao norte de Munique."
+    },
+    {
+      "id": "s3",
+      "kicker": "DIAS ANTES",
+      "titulo": [
+        "PEGADAS",
+        "NA NEVE."
+      ],
+      "pequeno": [
+        "NENHUMA",
+        "DE VOLTA."
+      ],
+      "acento": true,
+      "fonte_px": 150,
+      "fala": "Dias antes, apareceram pegadas na neve. Só de ida."
+    },
+    {
+      "id": "s4",
+      "tipo": "checklist",
+      "kicker": "O QUE ELE VIU",
+      "titulo": [
+        "ANTES",
+        "DA NOITE."
+      ],
+      "itens": [
+        "A VACA SOLTA NO ESTÁBULO",
+        "CHAVE DA PORTA SUMIDA",
+        "CADEADO ARROMBADO",
+        "PASSOS NO SÓTÃO"
+      ],
+      "fonte_px": 140,
+      "fala": "A chave sumiu. O cadeado foi arrombado. E passos no sótão."
+    },
+    {
+      "id": "s5",
+      "kicker": "31 DE MARÇO DE 1922",
+      "titulo": [
+        "A NOVA",
+        "EMPREGADA."
+      ],
+      "pequeno": [
+        "CHEGOU À TARDE.",
+        "PRIMEIRO DIA."
+      ],
+      "fonte_px": 132,
+      "fala": "Naquela tarde chegou a nova empregada. Primeiro dia."
+    },
+    {
+      "id": "s6",
+      "kicker": "A NOITE",
+      "titulo": [
+        "UM POR",
+        "UM."
+      ],
+      "pequeno": [
+        "A ARMA ERA",
+        "DO SÍTIO."
+      ],
+      "fonte_px": 168,
+      "fala": "Um por um, foram ao celeiro. A arma era do sítio."
+    },
+    {
+      "id": "s7",
+      "kicker": "DEPOIS",
+      "titulo": [
+        "E DENTRO",
+        "DA CASA."
+      ],
+      "pequeno": [
+        "A EMPREGADA",
+        "E O MENINO."
+      ],
+      "fonte_px": 150,
+      "fala": "Depois, dentro da casa: a empregada e o menino."
+    },
+    {
+      "id": "s8",
+      "kicker": "4 DE ABRIL DE 1922",
+      "titulo": [
+        "4 DIAS",
+        "DEPOIS."
+      ],
+      "pequeno": [
+        "A PORTA ESTAVA",
+        "TRANCADA."
+      ],
+      "fonte_px": 170,
+      "fala": "Quatro dias depois, os vizinhos arrombaram o portão."
+    },
+    {
+      "id": "s9",
+      "kicker": "A CASA AINDA VIVA",
+      "titulo": [
+        "O PÃO",
+        "ACABOU."
+      ],
+      "pequeno": [
+        "A CARNE,",
+        "RECÉM-CORTADA."
+      ],
+      "acento": true,
+      "fonte_px": 150,
+      "fala": "O pão tinha acabado. E a carne, recém-cortada."
+    },
+    {
+      "id": "s10",
+      "kicker": "A CAÇADA",
+      "titulo": [
+        "CEM MIL",
+        "MARCOS."
+      ],
+      "pequeno": [
+        "CEM SUSPEITOS.",
+        "NENHUMA ACUSAÇÃO."
+      ],
+      "fonte_px": 150,
+      "fala": "Cem mil marcos de recompensa. Cem suspeitos. Nenhuma acusação."
+    },
+    {
+      "id": "s11",
+      "kicker": "1955 · 1986",
+      "titulo": [
+        "OS AUTOS",
+        "FECHARAM."
+      ],
+      "pequeno": [
+        "AINDA CHAMAVAM",
+        "PARA DEPOR."
+      ],
+      "fonte_px": 140,
+      "fala": "Os autos fecharam. Décadas depois, ainda ouviam testemunhas."
+    },
+    {
+      "id": "s12",
+      "kicker": "O QUE RESTOU",
+      "titulo": [
+        "NINGUÉM FOI",
+        "ACUSADO."
+      ],
+      "pequeno": [
+        "A FAZENDA",
+        "CAIU EM 1923."
+      ],
+      "fonte_px": 116,
+      "fala": "Ninguém foi acusado. Hoje, ali é só lavoura."
+    }
+  ]
+}

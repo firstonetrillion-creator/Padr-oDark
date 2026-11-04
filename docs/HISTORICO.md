@@ -2,7 +2,47 @@
 
 > Linha do tempo do que foi **entregue**, com data, evidência e decisão.
 > Não é um diário: é o registro de marcos para uma sessão nova saber o que já existe.
-> Mais recente no topo. Última atualização: **2026-11-03**.
+> Mais recente no topo. Última atualização: **2026-11-04**.
+
+## 2026-11-04 — episódio 012 Hinterkaifeck: fora do lote, mesmo formato
+
+**Entregue**
+- `episodios/012-hinterkaifeck/` — **10 fontes numeradas** (Wikipédia DE e EN;
+  *Salzburger Wacht* 06/04/1922; *Salzburger Volksblatt* 22/04/1922 e 01/02/1935;
+  Donaukurier 2012; Augsburger Allgemeine 2012; Leuschner 1997; Bill James 2017;
+  Hinterkaifeck-Wiki), `briefing.md`, `gancho.md`, `roteiro.json` com **12 cenas
+  / 108 palavras**, `narracao_tts.txt`, voz por cena (`montar-voz.py`),
+  `index.html`, `final.mp4`, `capa.png`, `publicacao.md`, `qa.md`, `status.md`.
+- `final.mp4`: **45,013 s · 3.783.232 bytes · −15,0 LUFS · TP −1,4 · LRA 4,0**,
+  1080×1920/30 fps, 1.350 frames, QA **PASS**; SHA-256
+  `6B3E3F5458D3DAC1D1AA4F6CCB8ECDB1599A9C5BB6F656053AB55AA3E16F28C6`.
+- Título `Hinterkaifeck: 1922 sem um acusado` (34 chars, lint **98/100**); capa em
+  **10,20 s** (“PEGADAS NA NEVE. / NENHUMA DE VOLTA.”).
+
+**Decisão**
+- Tema escolhido como **reserva mais próxima do nicho** depois do lote 007–011
+  (descartados Isdal — corpo sem nome + código na roupa, igual ao 007 —, Yuba
+  County Five — próximo do 009 — e Voynich — documento, não desaparecimento).
+- **Sem idades** no vídeo (fontes divergem: Andreas 63/64, Maria 44/45) e **sem
+  graphicidade** (o detalhe da autópsia da menina ficou no `briefing.md`).
+- Dois layouts: `digital-zoom` no gancho (variável controlada) e `checklist` nas
+  quatro coisas que Andreas viu antes da noite.
+
+**Achados**
+- `text-wrap: balance` faz uma linha de título que não cabe **quebrar em duas** —
+  `FOI ACUSADO.` a 130 px dava título de 3 linhas; a fonte desceu para 116.
+- `Set-Content -Encoding UTF8` no PowerShell 5.1 grava **BOM** e derruba o
+  `gerar-episodio.py` (`Unexpected UTF-8 BOM`).
+- O `medir-texto.ps1` não conta os `itens` do `checklist` (mede o `h1`): a
+  conferência da lista é visual, no frame.
+- Nenhuma cena passa de 5 s (máx 4,63 s) — primeiro episódio do lote sem exceção
+  no teto.
+
+**Evidência**
+- `episodios/012-hinterkaifeck/{qa.md,publicacao.md,status.md,contact-1.png,contact-2.png,capa.png}`
+- `qa-frames/` (12 frames + gancho em 0,10 s e 0,60 s)
+
+---
 
 ## 2026-11-03 — episódios 010 Carroll A. Deering e 011 SS Baychimo: lote 007–011 fechado
 

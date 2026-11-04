@@ -2,7 +2,7 @@
 
 > **Leia este arquivo primeiro.** Ele é a memória de retomada do projeto.
 > Depois: `AGENTS.md` (regras) → `docs/PLANO.md` (fases) → `docs/HISTORICO.md` (o que já foi entregue).
-> Última atualização: **2026-11-02**. Se você é uma sessão nova, não refaça o que está marcado como entregue.
+> Última atualização: **2026-11-04**. Se você é uma sessão nova, não refaça o que está marcado como entregue.
 
 ## 1. Onde estamos
 
@@ -25,6 +25,7 @@
 | Episódio 009 - Máscaras de chumbo | **produzido (02/11) - QA PASS, publicação pronta, aguardando aprovação** | `episodios/009-mascaras-de-chumbo/` |
 | Episódio 010 - Carroll A. Deering | **produzido (03/11) - QA PASS, publicação pronta, aguardando aprovação** | `episodios/010-carroll-a-deering/` |
 | Episódio 011 - SS Baychimo | **produzido (03/11) - QA PASS, publicação pronta, aguardando aprovação** | `episodios/011-ss-baychimo/` |
+| Episódio 012 - Hinterkaifeck | **produzido (04/11) - QA PASS, publicação pronta, aguardando aprovação** | `episodios/012-hinterkaifeck/` |
 | Episódio 002 — Mary Celeste | **publicado** (21/10/2026) | `episodios/002-mary-celeste/`, [Shorts](https://youtube.com/shorts/n6dtveQguf4) |
 | Episódio 003 — Roanoke | **publicado** (23/10/2026) | `episodios/003-roanoke/`, [Shorts](https://youtube.com/shorts/8ptxqKGe4Bk) |
 | Canal | **Dossiê 45**: nome, avatar/banner, descrição no ar e 9 shorts antigos privados | [canal](https://youtube.com/@Dossie45), `docs/REBRANDING.md` |
@@ -225,6 +226,38 @@
   `SS Baychimo: 38 anos à deriva no gelo` (37 chars, lint **100/100**).
   **Aguarda aprovação humana explícita.**
 
+### Episódio 012 — Hinterkaifeck (produzido 04/11/2026, não publicado)
+- **Gancho do lote:** “Seis pessoas mortas na fazenda. Alguém ainda ordenhou as
+  vacas.” — consequência → contradição, sem contexto.
+- **O corpo paga o gancho com o inquérito:** o gado foi **ordenhado e recebeu
+  água** nos quatro dias, o pão acabou e havia carne recém-cortada. O vídeo diz
+  “alguém ficou”, não que o assassino “morou” na casa.
+- 108 palavras / **12 cenas**; máx **4,63 s** (s12) — primeiro episódio do lote
+  **sem nenhuma exceção** no teto de 5 s.
+- **2 layouts:** `digital-zoom` (s1) e `checklist` (s4, as quatro coisas que
+  Andreas viu antes da noite).
+- **Correção que valeu um render:** o 1º take deu **40,0 s de fala** (silêncio de
+  11,1%) e a s11 em **6,278 s** — os dois anos soletrados estouravam a cena. A
+  s11 virou “Os autos fecharam. Décadas depois, ainda ouviam testemunhas.” e os
+  anos ficaram no kicker `1955 · 1986`. A s12 fechava em **5,745 s** (a última
+  cena absorve a cauda) e virou “Ninguém foi acusado. Hoje, ali é só lavoura.” →
+  **35,96 s de fala e 20,1% de silêncio**.
+- **Achado do `text-wrap: balance`:** `FOI ACUSADO.` a 130 px quebrava em duas e
+  o título saía em **3 linhas** (628 px medidos). Voltou para `NINGUÉM FOI /
+  ACUSADO.` com fonte **116** (751 px). O `medir-texto.ps1` só vê isso depois de
+  o HTML ser gerado de novo.
+- **Armadilha nova:** `Set-Content -Encoding UTF8` no PowerShell 5.1 grava
+  **BOM**; o `gerar-episodio.py` morre com `Unexpected UTF-8 BOM`.
+- Render: 1.350 frames, 5 segmentos, 0 retries, **3m11,8s** (o 1º, antes do
+  ajuste do checklist, levou 4m16,9s); `final_raw` −19,1 → `final.mp4`
+  **45,013 s, 3.783.232 bytes, −15,0 LUFS, TP −1,4, LRA 4,0**;
+  `qa.ps1 -Duracao 45` **PASS**; SHA-256 `6B3E3F54…E16F28C6`.
+- Capa em 10,20 s (“PEGADAS NA NEVE. / NENHUMA DE VOLTA.”); título
+  `Hinterkaifeck: 1922 sem um acusado` (34 chars, lint **98/100**).
+  **Aguarda aprovação humana explícita.**
+- **Cuidado editorial registrado:** sem idades (fontes divergem) e sem
+  graphicidade — o detalhe da autópsia da menina ficou só no `briefing.md`.
+
 ### Template
 - `templates/misterio-45/index.html` — composição validada, 13 cenas, áudio `voz`/`drone`, QA por `?t=`.
 - `templates/misterio-45/beat-sheet.md` — 13 beats, tempos e orçamento de palavras.
@@ -316,11 +349,19 @@
 - `codebase-memory-mcp` pode ser instalado e o projeto indexado, **fora de uma janela de render** (RAM de 8 GB).
 - OpenMontage continua fora até o gate 3 (ver `docs/PLANO.md`).
 
-### 3.6 Lote 007–011 — aprovado em 29/10/2026 (**lote produzido**, 5 de 5)
+### 3.6 Lote 007–011 — aprovado em 29/10/2026 (**lote produzido**, 5 de 5; **012** fora do lote em 04/11)
 
 - **007 (31/10), 008 (01/11), 009 (02/11), 010 (03/11) e 011 (03/11) — todos com
   QA PASS**, `publicacao.md` pronto e **aguardando aprovação humana explícita**.
   O lote está **produzido**; a fila agora é **decisão e publicação**.
+- **012 (04/11) — Hinterkaifeck**, produzido **fora** do lote aprovado (tema
+  escolhido como reserva mais próxima do nicho), no mesmo formato e com a mesma
+  variável (o gancho). Também com QA PASS e aguardando aprovação.
+
+- **012 em resumo:** 10 fontes numeradas, 12 cenas / 108 palavras, 35,958 s de
+  fala + 20,1% de silêncio, `final.mp4` **45,013 s · −15,0 LUFS · TP −1,4 ·
+  SHA-256 `6B3E3F54…E16F28C6`**, QA PASS. Dois layouts (`digital-zoom` no gancho,
+  `checklist` nas quatro coisas que Andreas viu). Sem idades e sem graphicidade.
 
 - **010 em resumo:** 12 fontes numeradas, 12 cenas / 113 palavras, 36,188 s de
   fala + 19,6% de silêncio, `final.mp4` **45,013 s · −15,0 LUFS · TP −1,4 ·

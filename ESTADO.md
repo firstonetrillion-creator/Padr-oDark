@@ -4,7 +4,7 @@
 > Depois de uma compactação, a versão atual deste arquivo é relida do disco e vira a baseline da sessão.
 > Memória longa continua em `MEMORIA.md`; aqui só o suficiente para retomar sem reler nada.
 
-**Atualizado:** 2026-11-03 · **Gate 2 PASSA (3 de 6)** · **007–011: QA PASS, aguardando aprovação humana** · 17 layouts: APROVADOS em 01/11 — 1º uso no 008 · canal único · `sombra-direta` pausado
+**Atualizado:** 2026-11-04 · **Gate 2 PASSA (3 de 6)** · **007–012: QA PASS, aguardando aprovação humana** · 17 layouts: APROVADOS em 01/11 — 1º uso no 008 · canal único · `sombra-direta` pausado
 
 ## Onde estamos
 
@@ -54,9 +54,9 @@ limita **amostra**, não inter-sample (`voz.wav`: pico −1,41, TP **+0,2**);
 
 ## Fila imediata — lote 007–011 (temas **aprovados** em 29/10)
 
-Plano completo em `docs/PLANO.md` §“Fase 3 — lote 007–011”. **007 concluído em
-31/10 (QA PASS, publicação pronta, aguardando aprovação); 008–011 nada
-produzido.** Canal único: Dossiê 45 (`sombra-direta` e `mente-obscura` pausados).
+Plano completo em `docs/PLANO.md` §“Fase 3 — lote 007–011”. **007 a 012
+concluídos** (todos com QA PASS, publicação pronta, aguardando aprovação). Canal
+único: Dossiê 45 (`sombra-direta` e `mente-obscura` pausados).
 
 **A variável do lote é o gancho:** o primeiro segundo abre com ação/consequência,
 nunca com contexto. Tudo o mais fica igual ao 005 (45 s, **12 cartões**, ≤5 s,
@@ -74,13 +74,61 @@ confundida — ler a mediana do lote como **sinal**, não como teste controlado.
 | 009 | `009-mascaras-de-chumbo` | Máscaras de chumbo (1966) | “Dois homens mortos no morro. Máscaras de chumbo. Nenhuma marca.” | **QA PASS 02/11 — publicação pronta, aguardando aprovação** |
 | 010 | `010-carroll-a-deering` | Carroll A. Deering (1921) | “O navio apareceu vazio. E a comida ainda estava na mesa.” | **QA PASS 03/11 — publicação pronta, aguardando aprovação** |
 | 011 | `011-ss-baychimo` | SS Baychimo (1931–1969) | “Abandonaram o navio no gelo. Ele navegou 38 anos sozinho.” | **QA PASS 03/11 — publicação pronta, aguardando aprovação** |
+| 012 | `012-hinterkaifeck` | Hinterkaifeck (1922) | “Seis pessoas mortas na fazenda. Alguém ainda ordenhou as vacas.” | **QA PASS 04/11 — publicação pronta, aguardando aprovação** |
 
-**Próximo comando:** o **lote 007–011 está produzido** — **cinco vídeos prontos e
-sem aprovação** (007, 008, 009, 010 e 011). Falta escuta humana dos nomes e
-**aprovação explícita** (“publique” conta; “conclua” não). **Cadência nova
-(02/11): 3–4 por dia**, na ordem que o usuário definir — com cinco prontos, o
-estoque cobre **de um a dois dias**.
+**Próximo comando:** o lote está produzido — **seis vídeos prontos e sem
+aprovação** (007 a 012). Falta escuta humana dos nomes e **aprovação explícita**
+(“publique” conta; “conclua” não). **Cadência nova (02/11): 3–4 por dia**, na
+ordem que o usuário definir — com seis prontos, o estoque cobre **de um a dois
+dias**.
 
+
+## Episódio 012 — Hinterkaifeck
+
+| Etapa | Estado |
+|---|---|
+| Briefing | **pronto** — 10 fontes numeradas: Wikipédia DE e EN, *Salzburger Wacht* 06/04/1922, *Salzburger Volksblatt* 22/04/1922 e 01/02/1935, Donaukurier 2012, Augsburger Allgemeine 2012, Leuschner 1997, Bill James 2017, Hinterkaifeck-Wiki |
+| Gancho | **aprovado no lote** — “Seis pessoas mortas na fazenda. Alguém ainda ordenhou as vacas.” |
+| Roteiro | **pronto** — `roteiro.json`, 108 palavras, **12 cenas**, máx **4,63 s** (s12) |
+| Voz | **pronta** — cena por cena (`montar-voz.py`): 35,958 s de fala + 9,042 s de silêncio (20,1%) → `voz_raw.wav` 45,000 s |
+| Áudio pré-render | **cru −16,4 LUFS / TP +0,1** → `voz.wav` `volume=-5.6dB` + limitador 0,85 → **−22,0 LUFS**, TP −5,5 |
+| Composição | **pronta** — 12 cenas; **2 layouts**: `digital-zoom` (s1) e `checklist` (s4); contrato **OK, 1 aviso** |
+| QA visual | **concluído** — 11 cenas no snapshot + 12 frames do mp4 + gancho em 0,10 s e 0,60 s; pior tinta **810 px** (s5); s1 só no frame do mp4 |
+| Render | **concluído** — `final_raw.mp4` 45,000 s, 1.350 frames, 5 segmentos, 0 retries, **3m11,8s** (4m16,9s no 1º, antes do ajuste do checklist) |
+| Áudio final | **+4,1 dB** + limitador 0,85 (cru −19,1) → **−15,0 LUFS**, TP −1,4, LRA 4,0 |
+| QA | **QA PASS** — `qa.ps1 -Duracao 45`; `qa.md` escrito em 04/11 |
+| Capa | **pronta** — `capa.png` em 10,20 s (“PEGADAS NA NEVE. / NENHUMA DE VOLTA.”) |
+| publicacao.md | **pronto** — título `Hinterkaifeck: 1922 sem um acusado` (34 chars, lint **98/100**); SHA-256 `6B3E3F54…E16F28C6` |
+| Aprovação humana | **pendente** |
+| Publicação | **pendente** — cadência de 3–4/dia |
+
+**Correções antes do render:** o primeiro take deu **40,0 s de fala** (silêncio de
+11,1%) e a **s11 em 6,278 s**, porque os dois anos soletrados (“mil novecentos e
+cinquenta e cinco”) estouravam a cena. A s11 virou “Os autos fecharam. Décadas
+depois, ainda ouviam testemunhas.” e os anos ficaram no kicker `1955 · 1986`. O
+fecho também encurtou: a s12 fechava em **5,745 s** (a última cena absorve a cauda
+do vídeo) e virou “Ninguém foi acusado. Hoje, ali é só lavoura.”, com o ano no
+cartão pequeno.
+
+**Achado do `text-wrap: balance`:** `FOI ACUSADO.` a 130 px (12 caracteres ≈
+940 px) quebrava em duas e fazia o título sair em **3 linhas**. Voltou para
+`NINGUÉM FOI / ACUSADO.` com fonte **116** (751 px). O gerador não avisa — só o
+`medir-texto.ps1` pega, e só depois de o HTML novo ser gerado (snapshot antigo não
+serve).
+
+**Achado do `checklist`:** os `itens` são texto pequeno e **não** entram na conta
+de linhas do `medir-texto.ps1` (que mede o `h1`); a conferência é visual.
+
+**Armadilha nova:** `Set-Content -Encoding UTF8` no PowerShell 5.1 grava **BOM** e
+o `gerar-episodio.py` morre com `Unexpected UTF-8 BOM`. Editar `roteiro.json` com
+o `edit` tool ou com `[IO.File]::WriteAllText` + `UTF8Encoding($false)`.
+
+**Decisões do episódio:** **sem idades** (as fontes divergem: Andreas 63/64,
+Maria 44/45) e **sem graphicidade** — o detalhe da autópsia da menina ficou só no
+`briefing.md`; o vídeo diz o que aconteceu, não como o corpo ficou. O item 1 do
+`checklist` era “pegadas só de ida”, que a s3 acabava de dizer; entrou **“A VACA
+SOLTA NO ESTÁBULO”**, um fato do briefing que só o cartão entrega. Nenhuma cena
+passa de 5 s — primeiro episódio do lote sem exceção no teto.
 
 ## Episódio 011 — SS Baychimo
 
