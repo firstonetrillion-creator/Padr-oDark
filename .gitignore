@@ -29,6 +29,14 @@ episodios/*/render.log
 
 # ===== Caches =====
 logs/nicho-cache/
+logs/*.log
+
+# ===== Maestri canvas (estado local, nao versionar) =====
+maestri/
+.maestri/
+
+# ===== Arquivos temporarios =====
+concat.txt
 
 # ===== graphify =====
 # Descomente para versionar o grafo, ou mantenha ignorado se preferir regerar.

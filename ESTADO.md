@@ -4,7 +4,58 @@
 > Depois de uma compactação, a versão atual deste arquivo é relida do disco e vira a baseline da sessão.
 > Memória longa continua em `MEMORIA.md`; aqui só o suficiente para retomar sem reler nada.
 
-**Atualizado:** 2026-11-04 · **Gate 2 PASSA (3 de 6)** · **007–012: QA PASS, aguardando aprovação humana** · 17 layouts: APROVADOS em 01/11 — 1º uso no 008 · canal único · `sombra-direta` pausado
+**Atualizado:** 2026-11-06 · **Gate 2 PASSA (3 de 6)** · **007–011 PUBLICADOS; lote medido: gancho passa (50,0%), miolo falha (41,6%); 012 pronto** · 17 layouts: APROVADOS em 01/11 — 1º uso no 008 · canal único · `sombra-direta` pausado
+
+## Correção de estado — 06/11 (leitura pública do canal)
+
+O lote **saiu do papel**: 007 a 011 estão **no ar**, sem registro interno. Números
+lidos por `yt-dlp` em 06/11 16:43 UTC (views **acumuladas**, não 48 h):
+
+| # | Publicado | Views | Likes/views | Views/dia |
+|---|---|---|---:|---:|
+| 007 Somerton | 02/11 | 1.265 | 0,71% | 317 |
+| 008 Max Headroom | 02/11 | 1.222 | 0,74% | 306 |
+| 009 Máscaras de chumbo | 04/11 | **1.657** | 0,84% | 809 |
+| 010 Carroll A. Deering | 04/11 | 522 | 0,38% | 255 |
+| 011 SS Baychimo | 05/11 | **1** | — | 0,8 |
+
+Canal: **11 vídeos · 6.850 views · 12 inscritos** (0,18% de conversão). Mediana de
+views por vídeo: 250 (001–006) → **1.222** (lote). Curtidas por view: 2,55% →
+0,73%.
+
+**A retenção foi lida (06/11, curvas exportadas).** O `% média` foi recalculado
+pela integral da curva e validado nos vídeos com painel (002 90,2 vs 87,0; 003
+88,1 vs 87,0; 004 46,5 vs 45,7):
+
+| # | Janela | 3 s | 8 s¹ | 10 s | Fim | % média |
+|---|---|---:|---:|---:|---:|---:|
+| 007 Somerton | 4 dias | 94,0 | 51,6 | 41,0 | 8,5 | **34,9** |
+| 008 Max Headroom | 4 dias | 94,1 | 51,5 | 44,4 | 15,1 | **42,5** |
+| 009 Máscaras | ~48 h | 93,7 | 48,5 | 42,7 | 15,2 | **42,8** |
+| 010 Deering | ~48 h | 90,1 | 37,8 | 31,7 | 14,8 | **40,7** |
+
+¹ proxy de "ficaram para assistir", calibrado no 004 (painel 54,0 ↔ curva 54,1 em 8 s).
+
+**A hipótese do lote falhou no miolo e passou no gancho:** mediana de `% média`
+**41,6%** (meta > 54,3%; nenhum passou de 50) e mediana do proxy de "ficaram"
+**50,0%** (meta ≥ 46,5%). Pela regra escrita em `docs/PLANO.md`, **só uma mediana
+passa → a próxima variável é ritmo/visual**, não gancho.
+
+**Mas o alcance confunde a comparação:** 5–10× mais views que o 005/006. Em
+consumo absoluto (views × `% média`), o lote fez **1.881 views-equivalentes contra
+163** do 005+006 (11,5×). O canal não piorou — trocou retenção por alcance.
+
+**Onde quebra, nos quatro:** a virada da cena 1 para a cena 2. As maiores quedas
+são todas entre 4,0 s e 6,8 s (−26 a −36 p.p.), e cada vídeo tem uma cena 2
+diferente — o custo é do **corte**, não da frase. O 008 comete o erro que o lote
+proibia: `CHICAGO, 1987.` como cena 2. Dois extremos: **007** tem o melhor gancho
+(94,0) e o pior corpo (slide −32,5, fim 8,5); **010** tem o pior gancho (37,8) e o
+melhor corpo (slide −16,8).
+
+Achado operacional: o **011 está morto** (1 view em 29,7 h, público e sem
+restrição de idade) — checar no Studio.
+
+Avaliação completa: `canais/dossie45/avaliacao-2026-11-06.md`.
 
 ## Onde estamos
 
@@ -54,9 +105,9 @@ limita **amostra**, não inter-sample (`voz.wav`: pico −1,41, TP **+0,2**);
 
 ## Fila imediata — lote 007–011 (temas **aprovados** em 29/10)
 
-Plano completo em `docs/PLANO.md` §“Fase 3 — lote 007–011”. **007 a 012
-concluídos** (todos com QA PASS, publicação pronta, aguardando aprovação). Canal
-único: Dossiê 45 (`sombra-direta` e `mente-obscura` pausados).
+Plano completo em `docs/PLANO.md` §“Fase 3 — lote 007–011”. **007 a 011
+publicados** (02–05/11); **012 pronto e não publicado**. Canal único: Dossiê 45
+(`sombra-direta` e `mente-obscura` pausados).
 
 **A variável do lote é o gancho:** o primeiro segundo abre com ação/consequência,
 nunca com contexto. Tudo o mais fica igual ao 005 (45 s, **12 cartões**, ≤5 s,
@@ -69,18 +120,22 @@ confundida — ler a mediana do lote como **sinal**, não como teste controlado.
 
 | # | Slug | Tema | Gancho | Estado |
 |---|---|---|---|---|
-| 007 | `007-homem-de-somerton` | Homem de Somerton (1948) | “Um homem morto na praia. Um código costurado na roupa.” | **QA PASS 31/10 — publicação pronta, aguardando aprovação** |
-| 008 | `008-max-headroom` | Invasão Max Headroom (1987) | “Dois canais de TV foram invadidos ao vivo. Ninguém foi preso.” | **QA PASS 01/11 — publicação pronta, aguardando aprovação** |
-| 009 | `009-mascaras-de-chumbo` | Máscaras de chumbo (1966) | “Dois homens mortos no morro. Máscaras de chumbo. Nenhuma marca.” | **QA PASS 02/11 — publicação pronta, aguardando aprovação** |
-| 010 | `010-carroll-a-deering` | Carroll A. Deering (1921) | “O navio apareceu vazio. E a comida ainda estava na mesa.” | **QA PASS 03/11 — publicação pronta, aguardando aprovação** |
-| 011 | `011-ss-baychimo` | SS Baychimo (1931–1969) | “Abandonaram o navio no gelo. Ele navegou 38 anos sozinho.” | **QA PASS 03/11 — publicação pronta, aguardando aprovação** |
-| 012 | `012-hinterkaifeck` | Hinterkaifeck (1922) | “Seis pessoas mortas na fazenda. Alguém ainda ordenhou as vacas.” | **QA PASS 04/11 — publicação pronta, aguardando aprovação** |
+| 007 | `007-homem-de-somerton` | Homem de Somerton (1948) | “Um homem morto na praia. Um código costurado na roupa.” | **PUBLICADO 02/11** — 1.265 views em 06/11; retenção 48 h não lida |
+| 008 | `008-max-headroom` | Invasão Max Headroom (1987) | “Dois canais de TV foram invadidos ao vivo. Ninguém foi preso.” | **PUBLICADO 02/11** — 1.222 views em 06/11; retenção 48 h não lida |
+| 009 | `009-mascaras-de-chumbo` | Máscaras de chumbo (1966) | “Dois homens mortos no morro. Máscaras de chumbo. Nenhuma marca.” | **PUBLICADO 04/11** — 1.657 views em 06/11; 48 h vence hoje |
+| 010 | `010-carroll-a-deering` | Carroll A. Deering (1921) | “O navio apareceu vazio. E a comida ainda estava na mesa.” | **PUBLICADO 04/11** — 522 views em 06/11; 48 h vence hoje |
+| 011 | `011-ss-baychimo` | SS Baychimo (1931–1969) | “Abandonaram o navio no gelo. Ele navegou 38 anos sozinho.” | **PUBLICADO 05/11** — **1 view em 29,7 h**; investigar no Studio |
+| 012 | `012-hinterkaifeck` | Hinterkaifeck (1922) | “Seis pessoas mortas na fazenda. Alguém ainda ordenhou as vacas.” | **QA PASS 04/11 — pronto, não publicado** (estoque) |
 
-**Próximo comando:** o lote está produzido — **seis vídeos prontos e sem
-aprovação** (007 a 012). Falta escuta humana dos nomes e **aprovação explícita**
-(“publique” conta; “conclua” não). **Cadência nova (02/11): 3–4 por dia**, na
-ordem que o usuário definir — com seis prontos, o estoque cobre **de um a dois
-dias**.
+**Próximo comando (06/11):** o lote está **medido** (`retencao.md` em 007–010,
+`metricas.csv` e `publicados.csv` atualizados). Falta o operacional:
+1. **Abrir o 011 no Studio** — 1 view em 29,7 h, público e sem restrição visível.
+   Se estiver limpo e morto, apagar e subir de novo (1 view não custa perder).
+2. **Publicar o 012** — o canal está escuro hoje e o estoque é de um.
+3. **Escolher a variável do próximo lote: a transição da cena 1 para a 2.**
+   Opções: encurtar a cena 1 para ~3,5 s **ou** entrar na cena 2 com continuidade
+   visual (mesmo elemento, sem corte seco). Uma das duas, medida em 5 vídeos.
+4. Não repetir navio fantasma (4 de 11) e não usar cartão de contexto na cena 2.
 
 
 ## Episódio 012 — Hinterkaifeck

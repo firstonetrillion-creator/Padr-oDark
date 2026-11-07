@@ -5,3 +5,8 @@ data,video_id,titulo,views_48h,retencao_3s,retencao_10s,fim_curva,pct_media,like
 2026-10-24,rlSArCY3bH0,004 — MV Joyita,1200,90.9,43.4,17.3,45.7,21,,"1.141 na janela de 48 h; 1.200 no snapshot de 26/10; leitura em 26/10"
 2026-10-27,wlPEoYErlZQ,005 — Voo 19,224,,,,54.3,,,"48 h lidas em 29/10; ficaram 46,5%; 0:25 de 0:46; 3 s/10 s não exportáveis no painel"
 2026-10-27,K_sgJjNHg84,006 — Passo Dyatlov,79,,,,50.0,,,"48 h lidas em 29/10; ficaram 38,2%; 0:23 de 0:46 = limite (49,1–50,9% com o arredondamento)"
+2026-11-02,UBexvONb974,007 — Somerton,,94.0,41.0,8.5,34.9,,,"1.265 views acumuladas; curva de 02–06/11 (4 dias, não 48 h) — valores são piso; lida em 06/11"
+2026-11-02,gRYCwGVl_pg,008 — Max Headroom,,94.1,44.4,15.1,42.5,,,"1.222 views acumuladas; curva de 02–06/11 (4 dias, não 48 h) — valores são piso; lida em 06/11"
+2026-11-04,t0nM3JDpHoo,009 — Máscaras de chumbo,1657,93.7,42.7,15.2,42.8,,,"janela de 48 h (export 04–06/11); melhor do lote em views e % média; lida em 06/11"
+2026-11-04,GFxip8S7-vY,010 — Carroll A. Deering,522,90.1,31.7,14.8,40.7,,,"janela de 48 h (export 04–06/11); pior gancho, melhor corpo (slide -16,8); lida em 06/11"
+2026-11-05,P3q2sc3GZAQ,011 — SS Baychimo,,,,,,,,"publicado; 1 view em 29,7 h (06/11) — sem distribuição; investigar no Studio"
