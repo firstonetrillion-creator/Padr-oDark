@@ -19,7 +19,6 @@ Cada etapa tem um artefato e um gate. Sem template, não há escala.
 
 ## O que não é
 
-- Não é escritório 3D (Hermes3D está fora)
 - Não é SaaS
 - Não é geração de vídeo por IA local (a máquina não tem GPU)
 - Não é "fazemos qualquer vídeo" — são formatos fixos por canal
