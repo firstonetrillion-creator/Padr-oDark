@@ -136,6 +136,7 @@ confundida — ler a mediana do lote como **sinal**, não como teste controlado.
    Opções: encurtar a cena 1 para ~3,5 s **ou** entrar na cena 2 com continuidade
    visual (mesmo elemento, sem corte seco). Uma das duas, medida em 5 vídeos.
 4. Não repetir navio fantasma (4 de 11) e não usar cartão de contexto na cena 2.
+5. **Projeto preparado para GitHub** (commit 959f5aa): LICENSE (MIT), README atualizado, .gitignore estendido (maestri/, .maestri/, concat.txt, logs/*.log), dados de retenção 007–010 commitados. Falta adicionar remote e fazer push.
 
 
 ## Episódio 012 — Hinterkaifeck
